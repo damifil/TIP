@@ -27,9 +27,9 @@ namespace TIPySerwer
             return output;
         }
         
-        public async static Task<bool> AddUser(UserView user)                     // dodanie uzytkownika do bazy danych
+        public async static Task<bool> AddUser(string login, string password)  // dodanie uzytkownika do bazy danych
         {
-            if (IsLoginExists(user.Login))
+            if (IsLoginExists(login))
             {
                 Console.WriteLine("Login jest zajety");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                 return false;
@@ -37,14 +37,38 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users newUser = new Users();
-                newUser.Login = user.Login;
-                newUser.Password = await HashPassword(user.Password);
+                newUser.Login = login;
+                newUser.Password = await HashPassword(password);
                 db.Users.Add(newUser);
                 db.SaveChanges();
                 return true;
             }
         }
-        
+
+
+        public async static Task<bool> Logging(string login, string password, string IP)  // proces logowania
+        {            
+            if (!IsLoginExists(login))
+            {
+                Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                return false;
+            }
+            using (tipBDEntities db = new tipBDEntities())
+            {
+
+                byte[] userPass = db.Users.Where(x => x.Login == "Damian").Select(x => x.Password).SingleOrDefault();
+                byte[] pass = await HashPassword(password);
+                if (!userPass.SequenceEqual(pass))
+                {
+                    Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                    return false;
+                }
+
+                Console.WriteLine("Zostałeś zalogowany");
+                return true;
+            }
+
+        }
         
     }
 }
