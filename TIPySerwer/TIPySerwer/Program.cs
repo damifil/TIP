@@ -15,11 +15,11 @@ namespace TIPySerwer
     {
         static void Main(string[] args)
         {
-            UserView u = new UserView();
+            UserView u = new UserView();            
             u.Login = "Damian";
             u.Password = "damian";
             u.PasswordRepeat = "damian";
-            UserManager.AddUser(u);
+            UserManager.AddUser(u).Wait();
 
             /*
                         tipBDEntities db = new tipBDEntities();
