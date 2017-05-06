@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tipBDModelStoreContainer" CdmEntityContainer="tipBDEntities">
+    <EntitySetMapping Name="Calls">
+      <EntityTypeMapping TypeName="tipBDModel.Calls">
+        <MappingFragment StoreEntitySet="Calls">
+          <ScalarProperty Name="ID_Calls" ColumnName="ID_Calls" />
+          <ScalarProperty Name="From_ID" ColumnName="From_ID" />
+          <ScalarProperty Name="To_ID" ColumnName="To_ID" />
+          <ScalarProperty Name="Date_Begin" ColumnName="Date_Begin" />
+          <ScalarProperty Name="Date_End" ColumnName="Date_End" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="tipBDModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
+          <ScalarProperty Name="DateLastActiv" ColumnName="DateLastActiv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friends">
+      <EntityTypeMapping TypeName="tipBDModel.Friends">
+        <MappingFragment StoreEntitySet="Friends">
+          <ScalarProperty Name="UserID_From" ColumnName="UserID_From" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

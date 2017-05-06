@@ -1,0 +1,14 @@
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.dll
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.xml
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe.config
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Desktop\TIPySerwer\TIPySerwer\bin\Debug\HashLib.dll
