@@ -98,33 +98,31 @@ namespace TIPySerwer
                 var callsDBFrom = db.Calls.Where(x => x.From_ID == user.ID);
                 var callsDBTo = db.Calls.Where(x => x.To_ID == user.ID);
 
-                foreach(var item in callsDBTo)
-                {
-                    Console.WriteLine(" " + item.To_ID + " " + item.From_ID + " " + item.Date_Begin + "  " + item.Date_End);
-                }
+                
 
-                CallsHistoryModel call = new CallsHistoryModel();
+                
                 foreach(Calls item in callsDBFrom)
                 {
-
+                    CallsHistoryModel call = new CallsHistoryModel();
                     call.login = db.Users.Where(x => x.ID == item.To_ID).Select(x => x.Login).Single();
                     call.dateBegin = item.Date_Begin;
                     call.dateEnd = item.Date_End;
-                    callsHistory.Add(call);
+                    callsHistory.Add(call);                   
                 }
-
+                
                 foreach (Calls item in callsDBTo)
                 {
-
+                    CallsHistoryModel call = new CallsHistoryModel();
                     call.login = db.Users.Where(x => x.ID == item.From_ID).Select(x => x.Login).Single();
                     call.dateBegin = item.Date_Begin;
                     call.dateEnd = item.Date_End;
                     callsHistory.Add(call);
                 }
-            }
+
                 
+            }
             
-            return callsHistory; 
+            return callsHistory.OrderBy(x => x.dateBegin).ToList();
         }
 
 
