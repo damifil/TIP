@@ -99,14 +99,20 @@ namespace TIPySerwer
         static void Main(string[] args)
         {
             //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
-            TcpServer server = new TcpServer(5555);
+            //TcpServer server = new TcpServer(5555);
 
 
 
             //
-            //UserManager.AddUser("Damian", "haslo").Wait();
-            //UserManager.Logging("Damian", "haslo", "192.168.122.123").Wait();
-
+            UserManager.AddUser("Dawid", "haslo").Wait();
+            UserManager.Logging("Damian", "haslo", "192.168.122.123").Wait();
+            UserManager.SavaCall("Dawid", "Damian", DateTime.Now).Wait();
+            List<CallsHistoryModel> listCalls = UserManager.GetCalls("Dawid");
+            foreach(CallsHistoryModel item in listCalls)
+            {
+                Console.WriteLine("Rozmowa z użytkownikiem " + item.login + " rozpoczęła się " + item.dateBegin
+                    + " i zakończyła się " + item.dateEnd);
+            }
 
             /*
                         tipBDEntities db = new tipBDEntities();

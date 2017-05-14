@@ -40,7 +40,7 @@ namespace TIPySerwer
                 newUser.Login = login;
                 newUser.Password = await HashPassword(password);
                 db.Users.Add(newUser);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return true;
             }
         }
@@ -56,7 +56,7 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
 
-                byte[] userPass = db.Users.Where(x => x.Login == "Damian").Select(x => x.Password).SingleOrDefault();
+                byte[] userPass = db.Users.Where(x => x.Login == login).Select(x => x.Password).SingleOrDefault();
                 byte[] pass = await HashPassword(password);
                 if (!userPass.SequenceEqual(pass))
                 {
@@ -69,6 +69,65 @@ namespace TIPySerwer
             }
 
         }
+
+        public async static Task<bool> SavaCall(string login, string login1, DateTime dateBegin)   // zapisanie rozmowy 
+        {
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                Users user1 = db.Users.Where(x => x.Login == login1).Single();
+
+                Calls call = new Calls();
+                call.From_ID = user.ID;
+                call.To_ID = user1.ID;
+                call.Date_Begin = dateBegin;
+                call.Date_End = DateTime.Now;
+                db.Calls.Add(call);
+                await db.SaveChangesAsync();
+            }
+            return true;
+        }
+
+        public static List<CallsHistoryModel> GetCalls(string login)   // pobranie rozmow danego uzytkownika
+        {
+            string calls = "";
+            List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                var callsDBFrom = db.Calls.Where(x => x.From_ID == user.ID);
+                var callsDBTo = db.Calls.Where(x => x.To_ID == user.ID);
+
+                foreach(var item in callsDBTo)
+                {
+                    Console.WriteLine(" " + item.To_ID + " " + item.From_ID + " " + item.Date_Begin + "  " + item.Date_End);
+                }
+
+                CallsHistoryModel call = new CallsHistoryModel();
+                foreach(Calls item in callsDBFrom)
+                {
+
+                    call.login = db.Users.Where(x => x.ID == item.To_ID).Select(x => x.Login).Single();
+                    call.dateBegin = item.Date_Begin;
+                    call.dateEnd = item.Date_End;
+                    callsHistory.Add(call);
+                }
+
+                foreach (Calls item in callsDBTo)
+                {
+
+                    call.login = db.Users.Where(x => x.ID == item.From_ID).Select(x => x.Login).Single();
+                    call.dateBegin = item.Date_Begin;
+                    call.dateEnd = item.Date_End;
+                    callsHistory.Add(call);
+                }
+            }
+                
+            
+            return callsHistory; 
+        }
+
+
         
     }
 }
