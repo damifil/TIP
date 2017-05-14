@@ -81,6 +81,7 @@
     <Compile Include="Models\Calls.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FriendModel.cs" />
     <Compile Include="Models\Friends.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>

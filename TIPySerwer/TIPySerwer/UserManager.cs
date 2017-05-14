@@ -90,7 +90,6 @@ namespace TIPySerwer
 
         public static List<CallsHistoryModel> GetCalls(string login)   // pobranie rozmow danego uzytkownika
         {
-            string calls = "";
             List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -125,7 +124,32 @@ namespace TIPySerwer
             return callsHistory.OrderBy(x => x.dateBegin).ToList();
         }
 
+        public async static Task<bool> AddFriend(string login, string newFriend)  // dodanie znajomego
+        {
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                Users nFriend = db.Users.Where(x => x.Login == newFriend).Single();
 
+                Friends friend = new Friends();
+                friend.UserID = nFriend.ID;
+                friend.UserID_From = user.ID;
+                db.Friends.Add(friend);
+                await db.SaveChangesAsync();
+            }
+            return true;
+        }
+
+        public static List<FriendModel> GetFriends(string login)        // pobranie listy znajomych
+        {
+            List<FriendModel> listFriends = new List<FriendModel>();
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                bool checkHasFriends = db.Friends.Where(x => x.UserID == user.ID).Any(); 
+            }
+            return listFriends;
+        }
         
     }
 }

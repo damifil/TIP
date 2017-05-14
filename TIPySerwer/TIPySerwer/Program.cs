@@ -103,7 +103,7 @@ namespace TIPySerwer
 
 
 
-            //
+            /*
             UserManager.AddUser("Dawid", "haslo").Wait();
             UserManager.Logging("Damian", "haslo", "192.168.122.123").Wait();
             UserManager.SavaCall("Dawid", "Damian", DateTime.Now).Wait();
@@ -112,7 +112,7 @@ namespace TIPySerwer
             {
                 Console.WriteLine("Rozmowa z użytkownikiem " + item.login + " rozpoczęła się " + item.dateBegin
                     + " i zakończyła się " + item.dateEnd);
-            }
+            }*/
 
             /*
                         tipBDEntities db = new tipBDEntities();
