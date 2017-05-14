@@ -45,6 +45,21 @@ namespace TIPySerwer
             }
         }
 
+        public async static Task<bool> UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
+        {
+            if (!IsLoginExists(login))
+            {
+                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+            }
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                user.DateLastActiv = DateTime.Now;
+                
+                await db.SaveChangesAsync();
+            }
+            return true;
+        }
 
         public async static Task<bool> Logging(string login, string password, string IP)  // proces logowania
         {            
@@ -96,9 +111,6 @@ namespace TIPySerwer
                 Users user = db.Users.Where(x => x.Login == login).Single();
                 var callsDBFrom = db.Calls.Where(x => x.From_ID == user.ID);
                 var callsDBTo = db.Calls.Where(x => x.To_ID == user.ID);
-
-                
-
                 
                 foreach(Calls item in callsDBFrom)
                 {
@@ -116,37 +128,76 @@ namespace TIPySerwer
                     call.dateBegin = item.Date_Begin;
                     call.dateEnd = item.Date_End;
                     callsHistory.Add(call);
-                }
-
-                
+                }                
             }
             
             return callsHistory.OrderBy(x => x.dateBegin).ToList();
         }
 
-        public async static Task<bool> AddFriend(string login, string newFriend)  // dodanie znajomego
+        public static bool AddFriend(string login, string newFriend)  // dodanie znajomego
         {
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                Users nFriend = db.Users.Where(x => x.Login == newFriend).Single();
+                Users nFriend = db.Users.Where(x => x.Login == newFriend).Single();               
+                bool checkHasFriend = db.Friends.Where(x => x.UserID == user.ID && x.UserID_From == nFriend.ID).Any();
+                bool checkHasFriend1 = db.Friends.Where(x => x.UserID == nFriend.ID && x.UserID_From == user.ID).Any();
+                
+                if (checkHasFriend == true || checkHasFriend1 == true)
+                {
+                    return false;    // uzytkownik ma juz takiego znajomego
+                }
 
                 Friends friend = new Friends();
                 friend.UserID = nFriend.ID;
                 friend.UserID_From = user.ID;
                 db.Friends.Add(friend);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             return true;
         }
 
-        public static List<FriendModel> GetFriends(string login)        // pobranie listy znajomych
+        public static string GetFriends(string login)        // pobranie listy znajomych
         {
-            List<FriendModel> listFriends = new List<FriendModel>();
+
+            string listFriends = "";
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                bool checkHasFriends = db.Friends.Where(x => x.UserID == user.ID).Any(); 
+                bool checkHasFriends = db.Friends.Where(x => x.UserID == user.ID).Any();
+                int friendsCount = 0;
+                if(!checkHasFriends)
+                {
+                                       // brak znajomych
+                }
+                else
+                {
+                    var friends = db.Friends.Where(x => x.UserID == user.ID);
+                    foreach (Friends item in friends)
+                    {
+                        Users friend = db.Users.Where(x => x.ID == item.UserID_From).Single();
+                        listFriends = listFriends + friend.Login + "&"; // znak & oddziela jeden login od drugiego 
+                        friendsCount++;
+                    }
+                }
+                
+
+                checkHasFriends = db.Friends.Where(x => x.UserID_From == user.ID).Any();
+                if(!checkHasFriends)
+                {
+                                        // brak znajomych
+                }
+                else
+                {
+                    var friends1 = db.Friends.Where(x => x.UserID_From == user.ID);
+                    foreach (Friends item in friends1)
+                    {
+                        Users friend = db.Users.Where(x => x.ID == item.UserID).Single();
+                        listFriends = listFriends + friend.Login + "&";
+                        friendsCount++;
+                    }
+                }
+                listFriends = listFriends + friendsCount;   // dodanie na koncu liczby znajomych
             }
             return listFriends;
         }
