@@ -54,8 +54,7 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                user.DateLastActiv = DateTime.Now;
-                
+                user.DateLastActiv = DateTime.Now;                
                 await db.SaveChangesAsync();
             }
             return true;
@@ -103,7 +102,7 @@ namespace TIPySerwer
             return true;
         }
 
-        public static List<CallsHistoryModel> GetCalls(string login)   // pobranie rozmow danego uzytkownika
+        public static List<CallsHistoryModel> GetCalls(string login)   // pobranie wszystkich rozmow danego uzytkownika
         {
             List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
             using (tipBDEntities db = new tipBDEntities())
@@ -132,6 +131,38 @@ namespace TIPySerwer
             }
             
             return callsHistory.OrderBy(x => x.dateBegin).ToList();
+        }
+
+        public static List<CallsHistoryModel> GetCallsConcreteUser(string login, string login1)  // pobranie rozmow z konkretym uzytkownikiem
+        {
+            List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                Users user1 = db.Users.Where(x => x.Login == login1).Single();
+                var callsDBFrom = db.Calls.Where(x => x.From_ID == user.ID && x.To_ID == user1.ID);
+                var callsDBTo = db.Calls.Where(x => x.To_ID == user.ID && x.From_ID == user1.ID);
+
+                foreach (Calls item in callsDBFrom)
+                {
+                    CallsHistoryModel call = new CallsHistoryModel();
+                    call.login = db.Users.Where(x => x.ID == item.To_ID).Select(x => x.Login).Single();
+                    call.dateBegin = item.Date_Begin;
+                    call.dateEnd = item.Date_End;
+                    callsHistory.Add(call);
+                }
+
+                foreach (Calls item in callsDBTo)
+                {
+                    CallsHistoryModel call = new CallsHistoryModel();
+                    call.login = db.Users.Where(x => x.ID == item.From_ID).Select(x => x.Login).Single();
+                    call.dateBegin = item.Date_Begin;
+                    call.dateEnd = item.Date_End;
+                    callsHistory.Add(call);
+                }
+
+                return callsHistory.OrderBy(x => x.dateBegin).ToList();
+            }
         }
 
         public static bool AddFriend(string login, string newFriend)  // dodanie znajomego
@@ -202,5 +233,30 @@ namespace TIPySerwer
             return listFriends;
         }
         
+        public static string SearchUser(string loginSearch)
+        {
+            using (tipBDEntities db = new tipBDEntities())
+            {               
+               /* bool isExists = db.Users.Contains(x => x.Login == loginSearch);
+                if(!isExists)
+                {
+                    return String.Empty; // brak uzytkownikow o podanej nazwie
+                }*/
+
+                var users = from us in db.Users
+                            where us.Login.Contains(loginSearch)
+                            select us;
+
+                string listUsers = "";
+                int usersCount = 0;
+                foreach(Users item in users)
+                {
+                    listUsers = listUsers + "" + item.Login + "&";
+                    usersCount++;
+                }
+                listUsers = listUsers + "" + usersCount;
+                return listUsers;
+            }
+        }
     }
 }

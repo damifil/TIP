@@ -13,17 +13,29 @@ namespace TIPySerwer
             /*
             UserManager.AddUser("Dawid", "haslo").Wait();
             UserManager.Logging("Damian", "haslo", "192.168.122.123").Wait();
-            UserManager.SavaCall("Dawid", "Damian", DateTime.Now).Wait();
-            List<CallsHistoryModel> listCalls = UserManager.GetCalls("Dawid");
+            UserManager.SavaCall("Dawid", "Damian", DateTime.Now).Wait();*/
+            /*List<CallsHistoryModel> listCalls = UserManager.GetCalls("Andrzej");
             foreach(CallsHistoryModel item in listCalls)
             {
                 Console.WriteLine("Rozmowa z użytkownikiem " + item.login + " rozpoczęła się " + item.dateBegin
                     + " i zakończyła się " + item.dateEnd);
-            }*/
+            }
+            */
 
-            UserManager.UpdateActivityUser("Dawid").Wait();
+           /* List<CallsHistoryModel> listCalls = UserManager.GetCallsConcreteUser("Damian", "Dawid");
+            foreach (CallsHistoryModel item in listCalls)
+            {
+                Console.WriteLine("Rozmowa z użytkownikiem " + item.login + " rozpoczęła się " + item.dateBegin
+                    + " i zakończyła się " + item.dateEnd);
+            }*/
+            
+
+
+            //UserManager.UpdateActivityUser("Dawid").Wait();
             /*Console.WriteLine("b " + UserManager.AddFriend("Dawid", "Robert"));
             Console.WriteLine("Znajomi Damiana: " + UserManager.GetFriends("Dawid"));*/
+
+            //Console.WriteLine("Szukajka: " + UserManager.SearchUser("Da"));
 
             /*
                         tipBDEntities db = new tipBDEntities();
