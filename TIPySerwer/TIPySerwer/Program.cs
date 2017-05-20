@@ -102,16 +102,49 @@ namespace TIPySerwer
             //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
             //TcpServer server = new TcpServer(5555);
 
-            var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
-            myPBX.Start();
+            /* var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
+             myPBX.Start();
 
-            Console.ReadLine();
-            myPBX.Stop();
+             Console.ReadLine();
+             myPBX.Stop();*/
 
+            
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
 
-
+        public static void listen(string communication)
+        {
+            string[] fragmentCommunication = communication.Split(' ');
+            bool flag;
+            string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
+            switch (fragmentCommunication[0])
+            {
+                case "REGISTER":  // dodanie uzytkownika do bazy danych
+                    flag = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]);
+                    break;
+                case "CHPASS":    // zmiana hasla
+                    flag = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]);
+                    break;
+                case "ADDFRIEND":  // dodanie znajomego
+                    flag = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]);
+                    break;
+                case "DELFRIEND":  // usuniecie znajomego
+                    break;
+                case "SRCH":       // szukanie uzytkowika
+                    contentToSend = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]);
+                    break;
+                case "ISONLINE":   // aktualizacja statniej aktywnosci 
+                    flag = UserManager.UpdateActivityUser(fragmentCommunication[1]);
+                    break;
+                case "GETHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
+                    contentToSend = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
+                    break;
+                default:
+                    flag = false;
+                    break;
+                
+            }
+        }
     
     }
 }

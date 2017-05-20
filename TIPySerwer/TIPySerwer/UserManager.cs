@@ -27,7 +27,7 @@ namespace TIPySerwer
             return output;
         }
         
-        public async static Task<bool> AddUser(string login, string password)  // dodanie uzytkownika do bazy danych
+        public static bool AddUser(string login, string password)  // dodanie uzytkownika do bazy danych
         {
             if (IsLoginExists(login))
             {
@@ -40,12 +40,12 @@ namespace TIPySerwer
                 newUser.Login = login;
                 newUser.Password =  HashPassword(password);
                 db.Users.Add(newUser);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return true;
             }
         }
 
-        public async static Task<bool> UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
+        public static bool UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
         {
             if (!IsLoginExists(login))
             {
@@ -55,7 +55,7 @@ namespace TIPySerwer
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
                 user.DateLastActiv = DateTime.Now;                
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             return true;
         }
@@ -84,7 +84,23 @@ namespace TIPySerwer
 
         }
 
-        public async static Task<bool> SavaCall(string login, string login1, DateTime dateBegin)   // zapisanie rozmowy 
+        public static bool ChangePassword(string login, string password)  // zmiana hasla
+        {
+            if (!IsLoginExists(login))
+            {
+                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+            }
+            using (tipBDEntities db = new tipBDEntities())
+            {
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                byte[] pass = Encoding.UTF8.GetBytes(password);
+                user.Password = pass;
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public static bool SavaCall(string login, string login1, DateTime dateBegin)   // zapisanie rozmowy 
         {
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -97,7 +113,7 @@ namespace TIPySerwer
                 call.Date_Begin = dateBegin;
                 call.Date_End = DateTime.Now;
                 db.Calls.Add(call);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             return true;
         }
@@ -133,8 +149,9 @@ namespace TIPySerwer
             return callsHistory.OrderBy(x => x.dateBegin).ToList();
         }
 
-        public static List<CallsHistoryModel> GetCallsConcreteUser(string login, string login1)  // pobranie rozmow z konkretym uzytkownikiem
+        public static string GetCallsConcreteUser(string login, string login1)  // pobranie rozmow z konkretym uzytkownikiem
         {
+            string listCallsHistory = "";
             List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -143,7 +160,7 @@ namespace TIPySerwer
                 var callsDBFrom = db.Calls.Where(x => x.From_ID == user.ID && x.To_ID == user1.ID);
                 var callsDBTo = db.Calls.Where(x => x.To_ID == user.ID && x.From_ID == user1.ID);
 
-                foreach (Calls item in callsDBFrom)
+                foreach (Calls item in callsDBFrom) 
                 {
                     CallsHistoryModel call = new CallsHistoryModel();
                     call.login = db.Users.Where(x => x.ID == item.To_ID).Select(x => x.Login).Single();
@@ -160,8 +177,12 @@ namespace TIPySerwer
                     call.dateEnd = item.Date_End;
                     callsHistory.Add(call);
                 }
-
-                return callsHistory.OrderBy(x => x.dateBegin).ToList();
+                callsHistory = callsHistory.OrderBy(x => x.dateBegin).ToList();
+                foreach(CallsHistoryModel item in callsHistory)
+                {
+                    listCallsHistory = listCallsHistory + item.login + " " + item.dateBegin + " " + item.dateEnd + "&";
+                }
+                return listCallsHistory;
             }
         }
 
@@ -233,7 +254,7 @@ namespace TIPySerwer
             return listFriends;
         }
         
-        public static string SearchUser(string loginSearch)
+        public static string SearchUser(string loginUser, string loginSearch)
         {
             using (tipBDEntities db = new tipBDEntities())
             {               
