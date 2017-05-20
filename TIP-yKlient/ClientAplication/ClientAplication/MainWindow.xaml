@@ -1,0 +1,53 @@
+﻿<Window x:Class="ClientAplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientAplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+    <Grid>
+        <TextBox x:Name="textBox" TextWrapping="Wrap" Text="wyszukaj" Margin="25,130,377.664,305.784"  TextChanged="textBox_TextChanged" RenderTransformOrigin="0.505,0.007"/>
+        <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
+
+        </StackPanel>
+        <TextBlock x:Name="textBlock1" Height="110" Margin="273,34,9.664,0" TextWrapping="Wrap" Text="Witaj nazwa_Użytkownika" VerticalAlignment="Top" Width="311" FontSize="32"/>
+        <TextBlock x:Name="textBlock2" Height="32" Margin="273,158,39.664,0" TextWrapping="Wrap" Text="twoja ostatnia aktywność:" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,33,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBlock x:Name="home" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
+        <TextBlock x:Name="settings" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="search" Text="&#xf002;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="24" Margin="221,135,344.664,306.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647"></TextBlock>
+
+        <ListBox IsSynchronizedWithCurrentItem="True"
+        Name="lbUsers" ItemsSource="{Binding}"
+         Margin="15,175,345.664,10.784" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.242"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.764"/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=IcoUser}" FontFamily="{StaticResource FontAwesome}" Width="20"/>
+                        <TextBlock Text="{Binding Path=Name}" Width="100" />
+                        <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+    <Window.Resources>
+       
+    </Window.Resources>
+
+
+
+</Window>
