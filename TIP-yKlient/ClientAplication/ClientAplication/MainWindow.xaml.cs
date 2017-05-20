@@ -37,8 +37,9 @@ namespace ClientAplication
             InitializeComponent();
             history.AddHandler(FrameworkElement.MouseLeftButtonDownEvent, new MouseButtonEventHandler(this.historyTextboxaction), true);
 
-
+            //inicjalizacja odpowiedzialna za wyswietlanie znajomych
             Users = new ObservableCollection<User>() {
+                //użytkownicy
             new User() { Name = "ofline" ,IcoCall="\uf098", IcoUser="\uf2c0"},
             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
@@ -47,25 +48,29 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
 
         }
-        private void cmdDeleteUser_Clicked(object sender, RoutedEventArgs e)
+
+
+        //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob
+        private void searchClick(object sender, RoutedEventArgs e)
         {
-            Button cmd = (Button)sender;
-            if (cmd.DataContext is User)
-            {
-                User deleteme = (User)cmd.DataContext;
-                Users.Remove(deleteme);
-            }
+            string value = searchInput.Text;
+            Users = new ObservableCollection<User>() {
+                //uzytkownicy
+            new User() { Name = value ,IcoCall="\uf098", IcoUser="\uf2c0"},
+        
+            };
+            lbUsers.DataContext = Users;
         }
         
              private void callToUser(object sender, MouseButtonEventArgs e)
-        {
-            TextBlock cmd = (TextBlock)sender;
-            if (cmd.DataContext is User)
-            {
-                User deleteme = (User)cmd.DataContext;
-                MessageBox.Show(deleteme.Name);
-            }
-        }
+                {
+                   TextBlock cmd = (TextBlock)sender;
+                   if (cmd.DataContext is User)
+                    {
+                        User user = (User)cmd.DataContext;
+                        MessageBox.Show(user.Name);
+                    }
+                }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {

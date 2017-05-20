@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="600">
     <Grid>
-        <TextBox x:Name="textBox" TextWrapping="Wrap" Text="wyszukaj" Margin="25,130,377.664,305.784"  TextChanged="textBox_TextChanged" RenderTransformOrigin="0.505,0.007"/>
+        <TextBox x:Name="searchInput" TextWrapping="Wrap" Margin="25,130,377.664,309.784" Height="25" TextChanged="textBox_TextChanged" Text="wyszukaj..." IsEnabled="True" SpellCheck.IsEnabled="True" ToolTip="sda" />
         <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
 
@@ -19,11 +19,11 @@
         <TextBlock x:Name="home" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
         <TextBlock x:Name="settings" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="search" Text="&#xf002;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="24" Margin="221,135,344.664,306.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647"></TextBlock>
+        <TextBlock x:Name="search" Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="21.333" Margin="221,133,342.664,305.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
 
         <ListBox IsSynchronizedWithCurrentItem="True"
         Name="lbUsers" ItemsSource="{Binding}"
-         Margin="15,175,345.664,10.784" RenderTransformOrigin="0.5,0.5" >
+         Margin="15,182,345.664,3.784" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -45,7 +45,7 @@
     </Grid>
 
     <Window.Resources>
-       
+
     </Window.Resources>
 
 
