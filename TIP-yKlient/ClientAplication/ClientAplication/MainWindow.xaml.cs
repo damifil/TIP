@@ -21,7 +21,7 @@ namespace ClientAplication
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-
+ 
     
     public partial class MainWindow : Window
     {
@@ -35,9 +35,30 @@ namespace ClientAplication
         public MainWindow()
         {
             InitializeComponent();
-            history.AddHandler(FrameworkElement.MouseLeftButtonDownEvent, new MouseButtonEventHandler(this.historyTextboxaction), true);
 
             //inicjalizacja odpowiedzialna za wyswietlanie znajomych
+            lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
+            welcomeString.Text = "Witaj nazwa_Użytkownika";
+        }
+
+
+        bool _shown;
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+
+            if (_shown)
+                return;
+
+            _shown = true;
+            if (Users != null)
+            { lbUsers.DataContext = Users; }
+            else
+            { addUSerToList(); }
+        }
+
+        internal void addUSerToList()
+        {
             Users = new ObservableCollection<User>() {
                 //użytkownicy
             new User() { Name = "ofline" ,IcoCall="\uf098", IcoUser="\uf2c0"},
@@ -46,10 +67,7 @@ namespace ClientAplication
             };
 
             lbUsers.DataContext = Users;
-
         }
-
-
         //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob
         private void searchClick(object sender, RoutedEventArgs e)
         {
@@ -78,8 +96,35 @@ namespace ClientAplication
         }
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)  
         {
-            MessageBox.Show("dziala");
+           
+            History main = new History();
+            App.Current.MainWindow = main;
+            main.Users = Users;
+            main.Left = this.Left;
+            main.Top = this.Top;
+            this.Close();
+            main.Show();
         }
+
+        private void homeTextboxaction(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
+        {
+
+            Settings main = new Settings();
+            App.Current.MainWindow = main;
+            main.Users = Users;
+            main.Left = this.Left;
+            main.Top = this.Top;
+            this.Close();
+            main.Show();
+        }
+
+        
+            
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
