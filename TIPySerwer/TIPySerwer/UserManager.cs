@@ -18,7 +18,7 @@ namespace TIPySerwer
                 return db.Users.Where(u => u.Login.Equals(login)).Any();
             }
         }
-        public async static Task<byte[]> HashPassword(string password)          // haszowanie hasla
+        public static byte[] HashPassword(string password)          // haszowanie hasla
         {
             IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
             HashAlgorithm hashAlgo = HashFactory.Wrappers.HashToHashAlgorithm(hash);
@@ -38,7 +38,7 @@ namespace TIPySerwer
             {
                 Users newUser = new Users();
                 newUser.Login = login;
-                newUser.Password = await HashPassword(password);
+                newUser.Password =  HashPassword(password);
                 db.Users.Add(newUser);
                 await db.SaveChangesAsync();
                 return true;
@@ -60,7 +60,7 @@ namespace TIPySerwer
             return true;
         }
 
-        public async static Task<bool> Logging(string login, string password, string IP)  // proces logowania
+        public  static bool Logging(string login, string password)  // proces logowania
         {            
             if (!IsLoginExists(login))
             {
@@ -71,7 +71,7 @@ namespace TIPySerwer
             {
 
                 byte[] userPass = db.Users.Where(x => x.Login == login).Select(x => x.Password).SingleOrDefault();
-                byte[] pass = await HashPassword(password);
+                byte[] pass =  HashPassword(password);
                 if (!userPass.SequenceEqual(pass))
                 {
                     Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
@@ -258,5 +258,6 @@ namespace TIPySerwer
                 return listUsers;
             }
         }
+
     }
 }

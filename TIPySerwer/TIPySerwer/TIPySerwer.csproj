@@ -59,6 +59,9 @@
     <Reference Include="HashLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HashLib.2.0.1\lib\net40\HashLib.dll</HintPath>
     </Reference>
+    <Reference Include="OzekiSDK">
+      <HintPath>..\..\..\..\Documents\Ozeki\Ozeki SDK\Examples\VoIP\02_PBX\01_BasePBX\BasePBX\bin\Debug\OzekiSDK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -99,6 +102,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PBX.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testDawid.cs" />

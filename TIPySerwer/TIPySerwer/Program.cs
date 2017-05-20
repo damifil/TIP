@@ -1,4 +1,5 @@
 ﻿using HashLib;
+using Ozeki.Network;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -101,9 +102,13 @@ namespace TIPySerwer
             //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
             //TcpServer server = new TcpServer(5555);
 
+            var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
+            myPBX.Start();
 
+            Console.ReadLine();
+            myPBX.Stop();
 
-            testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
+            //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
 
 

@@ -26,3 +26,4 @@ C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlSe
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\bin\Debug\OzekiSDK.dll

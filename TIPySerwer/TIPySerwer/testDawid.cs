@@ -32,8 +32,8 @@ namespace TIPySerwer
 
 
             //UserManager.UpdateActivityUser("Dawid").Wait();
-            /*Console.WriteLine("b " + UserManager.AddFriend("Dawid", "Robert"));
-            Console.WriteLine("Znajomi Damiana: " + UserManager.GetFriends("Dawid"));*/
+          //  Console.WriteLine("b " + UserManager.AddFriend("Dawid", "Robert"));
+            Console.WriteLine("Znajomi Damiana: " + UserManager.GetFriends("Damian"));
 
             //Console.WriteLine("Szukajka: " + UserManager.SearchUser("Da"));
 
