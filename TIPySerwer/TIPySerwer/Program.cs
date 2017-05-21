@@ -62,17 +62,65 @@ namespace TIPySerwer
             {
                 //nasluchiwanie komunikatu
                 sData = sReader.ReadLine();
+                
+                string[] fragmentCommunication = sData.Split(' ');
+                string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
+                switch (fragmentCommunication[0])
+                {
+                    case "CREATE":
+                        diffieHelman.createDH(diffieHelman, sReader, sWriter);
+                        break;
+                    case "SEND":
+                        sData = diffieHelman.messageRecive(sReader, diffieHelman);
+                        Console.WriteLine("Otrzymana wiadomosc: " + sData);
+                        Console.WriteLine("Wiadomosc zwrotna: ");
+                        sData = Console.ReadLine();
 
+                        //funnkcja odpowiedzialna za wysylanie do klieenta chwilowo nie przewidzialem by klient wiadomosci odroznial podlug komunikatow
+                        //tylko po prostu je odbiera
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        break;
+                    case "EXIT":
+                        bClientConnected = false;
+                        break;
+                    case "REGISTER":  // dodanie uzytkownika do bazy danych
+                        contentToSend = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        break;
+                    case "CHPASS":    // zmiana hasla
+                        contentToSend = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        break;
+                    case "ADDFRIEND":  // dodanie znajomego
+                        contentToSend = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        break;
+                    case "DELFRIEND":  // usuniecie znajomego
+                        break;
+                    case "SRCH":       // szukanie uzytkowika
+                        contentToSend = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        break;
+                    case "ISONLINE":   // aktualizacja statniej aktywnosci 
+                        contentToSend = UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
+                        break;
+                    case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
+                        contentToSend = UserManager.GetCalls(fragmentCommunication[1]);
+                        break;
+                    case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
+                        contentToSend = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
+                        break;
+                    default:
+                        contentToSend = "Nieprawidłowe żądanie";
+                        break;
+
+                }
                 //ify dotyczace komunikatow
-                if (sData == "CREATE")
+               /* if (sData == "CREATE")
                 {
                     //utworzenie DH
                     diffieHelman.createDH(diffieHelman, sReader, sWriter);
-                }
+                }*/
                 //if(sData =="LOGIN")
                 //if(sData== "REGISTER")
                 //itd. w zaleznosci od potrzeb
-                if (sData == "send")
+              /*  if (sData == "send")
                 {
                     sData = diffieHelman.messageRecive(sReader, diffieHelman);
                     Console.WriteLine("Otrzymana wiadomosc: " + sData);
@@ -82,12 +130,12 @@ namespace TIPySerwer
                     //funnkcja odpowiedzialna za wysylanie do klieenta chwilowo nie przewidzialem by klient wiadomosci odroznial podlug komunikatow
                     //tylko po prostu je odbiera
                     diffieHelman.sendMessage(sData, diffieHelman, sWriter);
-                }
+                }*/
 
-                if (sData == "exit")
+               /* if (sData == "exit")
                 {
                     bClientConnected = false;
-                }
+                }*/
             }
 
         }
@@ -114,36 +162,7 @@ namespace TIPySerwer
 
         public static void listen(string communication)
         {
-            string[] fragmentCommunication = communication.Split(' ');
-            bool flag;
-            string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
-            switch (fragmentCommunication[0])
-            {
-                case "REGISTER":  // dodanie uzytkownika do bazy danych
-                    flag = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]);
-                    break;
-                case "CHPASS":    // zmiana hasla
-                    flag = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]);
-                    break;
-                case "ADDFRIEND":  // dodanie znajomego
-                    flag = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]);
-                    break;
-                case "DELFRIEND":  // usuniecie znajomego
-                    break;
-                case "SRCH":       // szukanie uzytkowika
-                    contentToSend = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]);
-                    break;
-                case "ISONLINE":   // aktualizacja statniej aktywnosci 
-                    flag = UserManager.UpdateActivityUser(fragmentCommunication[1]);
-                    break;
-                case "GETHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
-                    contentToSend = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
-                    break;
-                default:
-                    flag = false;
-                    break;
-                
-            }
+           
         }
     
     }

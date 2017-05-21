@@ -118,8 +118,9 @@ namespace TIPySerwer
             return true;
         }
 
-        public static List<CallsHistoryModel> GetCalls(string login)   // pobranie wszystkich rozmow danego uzytkownika
+        public static string GetCalls(string login)   // pobranie wszystkich rozmow danego uzytkownika
         {
+            string history = "";
             List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -145,10 +146,15 @@ namespace TIPySerwer
                     callsHistory.Add(call);
                 }                
             }
-            
-            return callsHistory.OrderBy(x => x.dateBegin).ToList();
-        }
 
+            callsHistory = callsHistory.OrderBy(x => x.dateBegin).ToList();
+            foreach (CallsHistoryModel item in callsHistory)
+            {
+                history = history + item.login + " " + item.dateBegin + " " + item.dateEnd + "&";
+            }
+            return history;
+
+        }
         public static string GetCallsConcreteUser(string login, string login1)  // pobranie rozmow z konkretym uzytkownikiem
         {
             string listCallsHistory = "";
