@@ -22,9 +22,29 @@ namespace ClientAplication
     {
         internal User user;
         internal ObservableCollection<User> Users;
+        internal ObservableCollection<itemTB> items;
+
+        
         public UserWindow()
         {
             InitializeComponent();
+            stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem Nazwa uzytkownika";
+
+            items = new ObservableCollection<itemTB>() {
+                //użytkownicy
+            new itemTB() {
+            Name="Kowalski",
+            Describe ="Rozmowa",
+            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
+            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
+            Date="12.03.2017"
+            }
+            
+
+            };
+
+            lbHistoryAll.DataContext = items;
+
         }
 
         bool _shown;
@@ -81,6 +101,15 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
         }
 
+        private void callToFriend(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Dzwonimy do " + user.Name);
+        }
+        private void deleteFriend(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("usuwamy " + user.Name);
+        }
+
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
@@ -90,5 +119,22 @@ namespace ClientAplication
                 MessageBox.Show(user.Name);
             }
         }
+
+
+        private void searchClickHistoryuser(object sender, RoutedEventArgs e)
+        {
+            string value = userhistorysearchinput.Text;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (value != items[i].Date)
+                {
+                    items.RemoveAt(i);
+                    i--;
+                }
+            }
+
+        }
+
+
     }
 }

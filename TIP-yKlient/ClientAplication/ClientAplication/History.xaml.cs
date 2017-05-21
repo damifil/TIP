@@ -40,7 +40,7 @@ namespace ClientAplication
             Describe ="Rozmowa z użytkownikem Makumba",
             Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
             Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-             Date="13.03.2017"
+            Date="13.03.2017"
             },
             new itemTB() {
             Name="Iksinski",
@@ -54,7 +54,7 @@ namespace ClientAplication
             Describe ="Rozmowa z użytkownikem Walenrod",
             Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
             Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-             Date="15.03.2017"
+            Date="15.03.2017"
             }
 
             };

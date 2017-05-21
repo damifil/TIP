@@ -65,7 +65,7 @@ namespace ClientAplication
             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
             };
-
+            Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });
             lbUsers.DataContext = Users;
         }
         //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob
