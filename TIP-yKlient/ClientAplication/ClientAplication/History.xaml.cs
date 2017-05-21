@@ -20,12 +20,48 @@ namespace ClientAplication
     /// </summary>
     public partial class History : Window
     {
-
+        internal ObservableCollection<itemTB> items;
         internal ObservableCollection<User> Users;
         public History()
         {
             InitializeComponent();
-            
+
+           items = new ObservableCollection<itemTB>() {
+                //użytkownicy
+            new itemTB() {
+            Name="Kowalski",
+            Describe ="Rozmowa z użytkownikem Kowalski ",
+            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
+            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
+            Date="12.03.2017"
+            },
+            new itemTB() {
+            Name="Makumba",
+            Describe ="Rozmowa z użytkownikem Makumba",
+            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
+            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
+             Date="13.03.2017"
+            },
+            new itemTB() {
+            Name="Iksinski",
+            Describe ="Rozmowa z użytkownikem Iksinski",
+            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
+            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
+             Date="14.03.2017"
+            },
+            new itemTB() {
+            Name="Walenrod",
+            Describe ="Rozmowa z użytkownikem Walenrod",
+            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
+            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
+             Date="15.03.2017"
+            }
+
+            };
+
+            lbHistoryAll.DataContext = items;
+
+
         }
         bool _shown;
 
@@ -40,6 +76,25 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
         }
 
+
+
+        private void goToUser(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock cmd = (TextBlock)sender;
+            if (cmd.DataContext is User)
+            {
+                User user = (User)cmd.DataContext;
+                UserWindow main = new UserWindow();
+                main.Users = Users;
+                App.Current.MainWindow = main;
+                main.user = user;
+                main.Left = this.Left;
+                main.Top = this.Top;
+                this.Close();
+                main.Show();
+            }
+        }
+    
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
            
@@ -80,7 +135,22 @@ namespace ClientAplication
             };
             lbUsers.DataContext = Users;
         }
+        private void searchClickHistory(object sender, RoutedEventArgs e)
+        {
+            string value = historysearchinput.Text;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (value != items[i].Date)
+                {
+                    items.RemoveAt(i);
+                    i--;
+                }
+            }
 
+        }
+
+
+        
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
@@ -89,9 +159,25 @@ namespace ClientAplication
                 User user = (User)cmd.DataContext;
                 MessageBox.Show(user.Name);
             }
+            if (cmd.DataContext is itemTB)
+            {
+                itemTB item = (itemTB)cmd.DataContext;
+                MessageBox.Show(item.Name);
+            }
+
         }
 
 
+       
+    }
 
+
+    class itemTB
+    {
+        public string Describe { get; set; }
+        public string Describe2 { get; set; }
+        public string Describe3 { get; set; }
+        public string Name { get; set; }
+        public string Date { get; set; }
     }
 }

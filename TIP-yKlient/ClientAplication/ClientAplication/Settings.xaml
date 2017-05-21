@@ -13,7 +13,7 @@
 
         </StackPanel>
 
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,33,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,31,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <TextBlock x:Name="home" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
         <TextBlock x:Name="settings" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
@@ -34,7 +34,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=IcoUser}" FontFamily="{StaticResource FontAwesome}" Width="20"/>
-                        <TextBlock Text="{Binding Path=Name}" Width="100" />
+                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" Width="100" />
                         <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
                     </StackPanel>
                 </DataTemplate>

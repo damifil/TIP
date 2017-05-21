@@ -16,12 +16,13 @@ using System.Windows.Shapes;
 namespace ClientAplication
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for UserWindow.xaml
     /// </summary>
-    public partial class Settings : Window
+    public partial class UserWindow : Window
     {
+        internal User user;
         internal ObservableCollection<User> Users;
-        public Settings()
+        public UserWindow()
         {
             InitializeComponent();
         }
@@ -38,23 +39,6 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
         }
 
-
-        private void goToUser(object sender, MouseButtonEventArgs e)
-        {
-            TextBlock cmd = (TextBlock)sender;
-            if (cmd.DataContext is User)
-            {
-                User user = (User)cmd.DataContext;
-                UserWindow main = new UserWindow();
-                main.Users = Users;
-                App.Current.MainWindow = main;
-                main.user = user;
-                main.Left = this.Left;
-                main.Top = this.Top;
-                this.Close();
-                main.Show();
-            }
-        }
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
 
@@ -82,7 +66,7 @@ namespace ClientAplication
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
 
-            
+
         }
 
 
@@ -106,6 +90,5 @@ namespace ClientAplication
                 MessageBox.Show(user.Name);
             }
         }
-
     }
 }

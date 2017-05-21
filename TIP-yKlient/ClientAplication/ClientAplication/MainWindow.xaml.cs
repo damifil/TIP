@@ -90,6 +90,25 @@ namespace ClientAplication
                     }
                 }
 
+        private void goToUser(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock cmd = (TextBlock)sender;
+            if (cmd.DataContext is User)
+            {
+                User user = (User)cmd.DataContext;
+                UserWindow main = new UserWindow();
+                main.Users = Users;
+                App.Current.MainWindow = main;
+                main.user = user;
+                main.Left = this.Left;
+                main.Top = this.Top;
+                this.Close();
+                main.Show();
+            }
+        }
+       
+
+
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
