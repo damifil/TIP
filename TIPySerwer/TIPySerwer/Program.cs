@@ -65,7 +65,6 @@ namespace TIPySerwer
                 Console.WriteLine("otrzymano " + sData);
                 
                 string[] fragmentCommunication = sData.Split(' ');
-                string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
                 switch (fragmentCommunication[0])
                 {
                     case "CREATE":
@@ -85,33 +84,34 @@ namespace TIPySerwer
                         bClientConnected = false;
                         break;
                     case "LOGIN":       // logowanie użytkownika
-                        contentToSend = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         break;
                     case "REGISTER":  // dodanie uzytkownika do bazy danych
-                        contentToSend = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "CHPASS":    // zmiana hasla
-                        contentToSend = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         break;
                     case "ADDFRIEND":  // dodanie znajomego
-                        contentToSend = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         break;
                     case "DELFRIEND":  // usuniecie znajomego
                         break;
                     case "SRCH":       // szukanie uzytkowika
-                        contentToSend = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         break;
                     case "ISONLINE":   // aktualizacja statniej aktywnosci 
-                        contentToSend = UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
+                        sData = UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
                         break;
                     case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
-                        contentToSend = UserManager.GetCalls(fragmentCommunication[1]);
+                        sData = UserManager.GetCalls(fragmentCommunication[1]);
                         break;
                     case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
-                        contentToSend = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
+                        sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
                         break;
                     default:
-                        contentToSend = "Nieprawidłowe żądanie";
+                        sData = "Nieprawidłowe żądanie";
                         break;
 
                 }

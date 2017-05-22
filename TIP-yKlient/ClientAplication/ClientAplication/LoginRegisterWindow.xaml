@@ -20,11 +20,11 @@
         <TextBlock HorizontalAlignment="Left" Margin="298,50,0,0" TextWrapping="Wrap" Text="Jeśli nie posiadasz konta" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,79,0,0" TextWrapping="Wrap" Text="zarejestruj się" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,137,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="298,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="loginInputRegister" HorizontalAlignment="Left" Height="23" Margin="298,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,201,0,0" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" RenderTransformOrigin="-0.052,-0.108"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="298,222,0,0" VerticalAlignment="Top" Width="116"/>
+        <PasswordBox x:Name="password1InputRegister" HorizontalAlignment="Left" Margin="298,222,0,0" VerticalAlignment="Top" Width="116"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,259,0,0" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="298,280,0,0" VerticalAlignment="Top" Width="116"/>
+        <PasswordBox x:Name="password2InputRegister" HorizontalAlignment="Left" Margin="298,280,0,0" VerticalAlignment="Top" Width="116"/>
         <Button Content="Zarejestruj się" HorizontalAlignment="Left" Margin="475,201,0,0" VerticalAlignment="Top" Width="85" Click="Button_Click_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="27,41.5,0,0" TextWrapping="Wrap" Text="Zmień domyślny adres IP serwera" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="234" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,41.5,0,0" TextWrapping="Wrap" Text="Zmień domyślny port serwera" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Grid.Row="1"/>

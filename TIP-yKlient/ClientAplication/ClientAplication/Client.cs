@@ -12,8 +12,8 @@ namespace ClientAplication
     {
         private TcpClient _client;
 
-        private StreamReader _sReader;
-        private StreamWriter _sWriter;
+        private static StreamReader _sReader;
+        private static StreamWriter _sWriter;
 
         private Boolean _isConnected;
         private DiffieHelman diffieHelman;
@@ -26,9 +26,7 @@ namespace ClientAplication
 
             HandleCommunication();
 
-            _client.GetStream().Close();
-            _client.Close();
-            _client.Dispose();
+         
         }
 
 
@@ -65,15 +63,15 @@ namespace ClientAplication
               }*/
         }
 
-        public void sendMessage(string content)
+        public string sendMessage(string content)
         {
            
             _isConnected = true;
             String sData = null;
             
             diffieHelman.sendMessage1(content, diffieHelman, _sWriter);
-            //String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
-            //Console.WriteLine("Otrzymane dane z serwera: " + sDataIncomming);
+            String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
+            return sDataIncomming;
         }
     }
 }

@@ -41,3 +41,17 @@ D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerC
 D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
 D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe.config
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.dll
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\HashLib.dll
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.xml
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb

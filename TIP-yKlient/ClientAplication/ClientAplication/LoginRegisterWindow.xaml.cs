@@ -35,23 +35,18 @@ namespace ClientAplication
             byte[] output = hashAlgo.ComputeHash(input);
             return output;
         }
-        public static string login = "";
-        public static byte[] pass;
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.userName = loginInput.Text;
-            login = loginInput.Text;
-            pass = HashPassword(passwordInput.Password);
+            string login = loginInput.Text;
+            string password = passwordInput.Password;
 
-
-            string password = Encoding.UTF8.GetString(pass, 0, pass.Length);
-            Client client = new Client("192.168.8.100", 5555);
-            Console.WriteLine(login + " pass " + password + "\n");
+            Client client = new Client("192.168.0.100", 5555);
             client.sendMessage("REGISTER " + login + " " + password);
 
-            /// wyslanie 
             this.Close();
             main.Show();
         }
@@ -66,7 +61,28 @@ namespace ClientAplication
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            MainWindow main = new MainWindow();
+            main.userName = loginInputRegister.Text;
+            string login = loginInputRegister.Text;
+            string password1 = password1InputRegister.Password;
+            string password2 = password2InputRegister.Password;
 
+            if(password1 != password2)
+            {
+                MessageBox.Show("Hasła nie są takie same");
+                return;
+            }
+
+            Client client = new Client("192.168.0.100", 5555);
+            string flag = client.sendMessage("REGISTER " + login + " " + password1);
+            Console.WriteLine("flag" + flag);
+            if(flag == "False")
+            {
+                MessageBox.Show("Login jest zajęty");
+                return;
+            }
+            this.Close();
+            main.Show();
         }
     }
 }
