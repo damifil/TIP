@@ -29,6 +29,12 @@ namespace ClientAplication
          
         }
 
+        public void destroyfunction()
+        {
+            _client.GetStream().Close();
+            _client.Close();
+            _client.Dispose();
+        }
 
 
         public void HandleCommunication()

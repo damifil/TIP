@@ -32,6 +32,7 @@ namespace ClientAplication
         // internal ObservableCollection<User> Users { get; private set; }
         internal ObservableCollection<User> Users;
         internal string userName;
+        internal Client client;
         public MainWindow()
         {
             InitializeComponent();
@@ -149,7 +150,8 @@ namespace ClientAplication
         {
 
             LoginRegisterWindow main = new LoginRegisterWindow();
-            
+           // client.destroyfunction();
+            main.client = null;
             this.Close();
             main.Show();
         }

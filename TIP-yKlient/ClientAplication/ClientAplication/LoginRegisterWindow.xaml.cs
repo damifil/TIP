@@ -22,7 +22,7 @@ namespace ClientAplication
     /// </summary>
     public partial class LoginRegisterWindow : Window
     {
-        Client client;
+        internal Client client;
         public LoginRegisterWindow()
         {
             InitializeComponent();
@@ -93,6 +93,8 @@ namespace ClientAplication
             }
             this.Close();
             main.Show();
+            main.client = client;
+
         }
     }
 }
