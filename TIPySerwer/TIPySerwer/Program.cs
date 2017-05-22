@@ -151,16 +151,36 @@ namespace TIPySerwer
         static void Main(string[] args)
         {
             //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
-           TcpServer server = new TcpServer(5555);
-          /*  
-             var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
-             myPBX.Start();
+            //  TcpServer server = new TcpServer(5555);
 
-             Console.ReadLine();
-             myPBX.Stop();
-             */
+            /*   var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
+               myPBX.Start();
+
+               Console.ReadLine();
+               myPBX.Stop();
+            */
+
+            Thread threadServer = new Thread(new ThreadStart(runServer));
+            threadServer.Start();
+            Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
+            threadOzeki.Start();
             
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
+        public static void runServer()
+        {
+            TcpServer server = new TcpServer(5555);
+        }
+
+        public static void runOzeki()
+        {
+            var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
+            myPBX.Start();
+
+            Console.ReadLine();
+            myPBX.Stop();
+        }
     }
+
+    
 }
