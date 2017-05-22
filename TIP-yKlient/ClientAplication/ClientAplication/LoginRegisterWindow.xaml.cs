@@ -23,6 +23,14 @@ namespace ClientAplication
         {
             InitializeComponent();
         }
+        public static byte[] HashPassword(string password)          // haszowanie hasla
+        {
+            IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
+            HashAlgorithm hashAlgo = HashFactory.Wrappers.HashToHashAlgorithm(hash);
+            byte[] input = Encoding.UTF8.GetBytes(password);
+            byte[] output = hashAlgo.ComputeHash(input);
+            return output;
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -30,6 +38,11 @@ namespace ClientAplication
             main.userName = loginInput.Text;
             this.Close();
             main.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
