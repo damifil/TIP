@@ -93,26 +93,34 @@ namespace TIPySerwer
                         break;
                     case "CHPASS":    // zmiana hasla
                         sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ADDFRIEND":  // dodanie znajomego
                         sData = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "DELFRIEND":  // usuniecie znajomego
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "SRCH":       // szukanie uzytkowika
                         sData = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ISONLINE":   // aktualizacja statniej aktywnosci 
                         sData = UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
                         sData = UserManager.GetCalls(fragmentCommunication[1]);
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
                         sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     default:
                         sData = "Nieprawidłowe żądanie";
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
 
                 }
