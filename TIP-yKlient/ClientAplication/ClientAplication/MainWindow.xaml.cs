@@ -87,8 +87,10 @@ namespace ClientAplication
                    if (cmd.DataContext is User)
                     {
                         User user = (User)cmd.DataContext;
-                        MessageBox.Show(user.Name);
-                    }
+                       CallToWindow main = new CallToWindow();
+                        main.user = user;
+                        main.Show();
+            }
                 }
 
         private void goToUser(object sender, MouseButtonEventArgs e)
