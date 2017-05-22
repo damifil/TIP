@@ -70,10 +70,10 @@ namespace ClientAplication
            
             _isConnected = true;
             String sData = null;
-            diffieHelman = new DiffieHelman();
+            
             diffieHelman.sendMessage1(content, diffieHelman, _sWriter);
-            String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
-            Console.WriteLine("Otrzymane dane z serwera: " + sDataIncomming);
+            //String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
+            //Console.WriteLine("Otrzymane dane z serwera: " + sDataIncomming);
         }
     }
 }

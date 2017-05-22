@@ -45,8 +45,12 @@ namespace ClientAplication
             login = loginInput.Text;
             pass = HashPassword(passwordInput.Password);
 
-            Thread threadServer = new Thread(new ThreadStart(doDziela));
-            threadServer.Start();
+
+            string password = Encoding.UTF8.GetString(pass, 0, pass.Length);
+            Client client = new Client("192.168.8.100", 5555);
+            Console.WriteLine(login + " pass " + password + "\n");
+            client.sendMessage("REGISTER " + login + " " + password);
+
             /// wyslanie 
             this.Close();
             main.Show();
@@ -56,10 +60,7 @@ namespace ClientAplication
         public static void doDziela()
         {
            
-            string password = Encoding.UTF8.GetString(pass, 0, pass.Length);
-            Client client = new Client("192.168.8.100", 5555);
-            Console.WriteLine(login + " pass " + password + "\n");
-            client.sendMessage("REGISTER " + login+ " " + password);
+           
         }
        
 
