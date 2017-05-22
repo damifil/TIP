@@ -22,6 +22,7 @@ namespace ClientAplication
     /// </summary>
     public partial class LoginRegisterWindow : Window
     {
+        Client client;
         public LoginRegisterWindow()
         {
             InitializeComponent();
@@ -43,8 +44,9 @@ namespace ClientAplication
             main.userName = loginInput.Text;
             string login = loginInput.Text;
             string password = passwordInput.Password;
-
-            Client client = new Client("192.168.0.100", 5555);
+            if (client == null) {
+             client= new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
+            }
             string flag = client.sendMessage("LOGIN " + login + " " + password);
             if(flag == "False")
             {
@@ -78,7 +80,10 @@ namespace ClientAplication
                 return;
             }
 
-            Client client = new Client("192.168.0.100", 5555);
+            if (client == null)
+            {
+                client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
+            }
             string flag = client.sendMessage("REGISTER " + login + " " + password1);
             Console.WriteLine("flag" + flag);
             if(flag == "False")

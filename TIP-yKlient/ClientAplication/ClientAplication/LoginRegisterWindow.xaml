@@ -29,11 +29,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="27,41.5,0,0" TextWrapping="Wrap" Text="Zmień domyślny adres IP serwera" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="234" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,41.5,0,0" TextWrapping="Wrap" Text="Zmień domyślny port serwera" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="27,119.5,0,0" TextWrapping="Wrap" Text="adres ip serwera" VerticalAlignment="Top" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,140.5,0,0" TextWrapping="Wrap" Text="192.168.8.100" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Button Content="zmień" HorizontalAlignment="Left" Margin="27,181.5,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <TextBox x:Name="adresIPinput" HorizontalAlignment="Left" Height="23" Margin="27,140.5,0,0" TextWrapping="Wrap" Text="192.168.8.100" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,119.5,0,0" TextWrapping="Wrap" Text="numer portu serwera" VerticalAlignment="Top" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="298,140.5,0,0" TextWrapping="Wrap" Text="5555" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Button Content="zmień" HorizontalAlignment="Left" Margin="298,181.5,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <TextBox x:Name="numberPortInput" HorizontalAlignment="Left" Height="23" Margin="298,140.5,0,0" TextWrapping="Wrap" Text="5555" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
 
 
         <StackPanel Orientation="Horizontal" Grid.RowSpan="2">
