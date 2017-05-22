@@ -62,7 +62,7 @@ namespace TIPySerwer
             {
                 //nasluchiwanie komunikatu
                 sData = sReader.ReadLine();
-                
+                Console.WriteLine(sData);
                 string[] fragmentCommunication = sData.Split(' ');
                 string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
                 switch (fragmentCommunication[0])
@@ -82,6 +82,9 @@ namespace TIPySerwer
                         break;
                     case "EXIT":
                         bClientConnected = false;
+                        break;
+                    case "LOGIN":       // logowanie użytkownika
+                        contentToSend = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         break;
                     case "REGISTER":  // dodanie uzytkownika do bazy danych
                         contentToSend = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
@@ -148,22 +151,16 @@ namespace TIPySerwer
         static void Main(string[] args)
         {
             //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
-            //TcpServer server = new TcpServer(5555);
-
-            /* var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
+           TcpServer server = new TcpServer(5555);
+          /*  
+             var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
              myPBX.Start();
 
              Console.ReadLine();
-             myPBX.Stop();*/
-
+             myPBX.Stop();
+             */
             
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
-
-        public static void listen(string communication)
-        {
-           
-        }
-    
     }
 }

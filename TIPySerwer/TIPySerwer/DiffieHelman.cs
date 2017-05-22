@@ -71,6 +71,7 @@ namespace TIPySerwer
             diffieHelman.b = rnd.Next(10, 10000);
 
             diffieHelman.B = diffieHelman.powMod((int)diffieHelman.G, (int)diffieHelman.b, (int)diffieHelman.P);
+            Console.WriteLine("g" + diffieHelman.G + " b" + diffieHelman.b + " p" + diffieHelman.P);
             string sData = diffieHelman.B.ToString();
             sWriter.WriteLine(sData);
             sWriter.Flush();
