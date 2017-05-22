@@ -31,7 +31,7 @@ namespace ClientAplication
 
         // internal ObservableCollection<User> Users { get; private set; }
         internal ObservableCollection<User> Users;
-
+        internal string userName;
         public MainWindow()
         {
             InitializeComponent();
@@ -50,6 +50,7 @@ namespace ClientAplication
             if (_shown)
                 return;
 
+            userNameTB.Text = userName;
             _shown = true;
             if (Users != null)
             { lbUsers.DataContext = Users; }

@@ -15,7 +15,7 @@
         <TextBlock x:Name="welcomeString" Height="110" Margin="273,34,9.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="32"/>
         <TextBlock x:Name="lastActivity" Height="32" Margin="273,158,39.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,33,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBlock x:Name="userNameTB" HorizontalAlignment="Left" Margin="25,33,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <TextBlock x:Name="home" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
         <TextBlock x:Name="settings" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
