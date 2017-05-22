@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ClientAplication
 {
@@ -60,7 +61,7 @@ namespace ClientAplication
             int q = 1;
             do
             {
-                q = rnd.Next(3);
+                q = rnd.Next(3,1000);
                 chek = 0;
                 for (int i = 1; i <= (p - 1); i++)
                 {
@@ -116,6 +117,7 @@ namespace ClientAplication
 
             //ilosc przesylanych liczb (znakow)
             sData = messagearray.Length.ToString();
+            
             _sWriter.WriteLine(sData);
             _sWriter.Flush();
 

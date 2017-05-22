@@ -61,8 +61,9 @@ namespace TIPySerwer
             while (bClientConnected)
             {
                 //nasluchiwanie komunikatu
-                sData = sReader.ReadLine();
+                sData = diffieHelman.messageRecive(sReader, diffieHelman);
                 Console.WriteLine("otrzymano " + sData);
+                
                 string[] fragmentCommunication = sData.Split(' ');
                 string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
                 switch (fragmentCommunication[0])

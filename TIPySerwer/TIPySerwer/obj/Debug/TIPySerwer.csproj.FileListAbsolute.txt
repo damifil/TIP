@@ -27,3 +27,17 @@ C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojReso
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
 C:\Users\Dawid\Desktop\TIP\TIPySerwer\TIPySerwer\bin\Debug\OzekiSDK.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe.config
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.pdb
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\HashLib.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\System.Data.SqlServerCe.dll
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.xml
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
+D:\GIT_REPOSITORY\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb

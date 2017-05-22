@@ -86,6 +86,7 @@ namespace TIPySerwer
             double encryptValue = 0;
             string sData = sReader.ReadLine();
             string messageDecrypt = "";
+            if (sData == "CREATE") { return sData; }
             for (int i = Int32.Parse(sData); i > 0; i--)
             {
                 sData = sReader.ReadLine();
