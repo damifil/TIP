@@ -58,6 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CallFrom.xaml.cs">
+      <DependentUpon>CallFrom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CallToWindow.xaml.cs">
+      <DependentUpon>CallToWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CallTransmision.xaml.cs">
+      <DependentUpon>CallTransmision.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginRegisterWindow.xaml.cs">
       <DependentUpon>LoginRegisterWindow.xaml</DependentUpon>
     </Compile>
@@ -67,6 +76,18 @@
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="CallFrom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CallToWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CallTransmision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="History.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
