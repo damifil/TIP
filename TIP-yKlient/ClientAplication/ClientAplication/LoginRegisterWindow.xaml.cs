@@ -45,7 +45,12 @@ namespace ClientAplication
             string password = passwordInput.Password;
 
             Client client = new Client("192.168.0.100", 5555);
-            client.sendMessage("REGISTER " + login + " " + password);
+            string flag = client.sendMessage("LOGIN " + login + " " + password);
+            if(flag == "False")
+            {
+                MessageBox.Show("Login lub hasło jest błędne");
+                return;
+            }
 
             this.Close();
             main.Show();

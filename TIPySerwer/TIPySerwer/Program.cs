@@ -85,6 +85,7 @@ namespace TIPySerwer
                         break;
                     case "LOGIN":       // logowanie użytkownika
                         sData = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "REGISTER":  // dodanie uzytkownika do bazy danych
                         sData = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
