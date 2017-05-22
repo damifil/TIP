@@ -67,6 +67,8 @@
     <Compile Include="CallTransmision.xaml.cs">
       <DependentUpon>CallTransmision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs" />
+    <Compile Include="DiffieHelman.cs" />
     <Compile Include="LoginRegisterWindow.xaml.cs">
       <DependentUpon>LoginRegisterWindow.xaml</DependentUpon>
     </Compile>

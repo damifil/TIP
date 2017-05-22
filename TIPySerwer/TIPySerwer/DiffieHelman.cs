@@ -64,9 +64,11 @@ namespace TIPySerwer
         public void createDH(DiffieHelman diffieHelman, StreamReader sReader, StreamWriter sWriter)
         {
             diffieHelman.P = Convert.ToDouble(sReader.ReadLine());
+            Console.WriteLine(" p" + diffieHelman.P);
             diffieHelman.G = Convert.ToDouble(sReader.ReadLine());
+            Console.WriteLine(" g" + diffieHelman.G);
             diffieHelman.A = Convert.ToDouble(sReader.ReadLine());
-
+            Console.WriteLine(" a" + diffieHelman.A);
 
             diffieHelman.b = rnd.Next(10, 10000);
 

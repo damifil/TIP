@@ -4,3 +4,9 @@ C:\Users\damian\Desktop\Studia\TIP-y\ConsoleApplication1\ConsoleApplication1\bin
 C:\Users\damian\Desktop\Studia\TIP-y\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\damian\Desktop\Studia\TIP-y\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
 C:\Users\damian\Desktop\Studia\TIP-y\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Dawid\Documents\GitHub\TIP\testowyKonsolowyKlient\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

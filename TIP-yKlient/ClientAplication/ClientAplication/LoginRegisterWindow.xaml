@@ -15,7 +15,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="27,91,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
         <TextBox x:Name="loginInput" HorizontalAlignment="Left" Height="23" Margin="27,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="27,150,0,0" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="27,171,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Margin="27,171,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Zaloguj się" HorizontalAlignment="Left" Margin="33,214,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,50,0,0" TextWrapping="Wrap" Text="Jeśli nie posiadasz konta" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="298,79,0,0" TextWrapping="Wrap" Text="zarejestruj się" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>

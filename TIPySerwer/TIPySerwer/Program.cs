@@ -62,7 +62,7 @@ namespace TIPySerwer
             {
                 //nasluchiwanie komunikatu
                 sData = sReader.ReadLine();
-                Console.WriteLine(sData);
+                Console.WriteLine("otrzymano " + sData);
                 string[] fragmentCommunication = sData.Split(' ');
                 string contentToSend;                // wiadomosc ktora wyslemy do uzytkownika
                 switch (fragmentCommunication[0])
@@ -163,7 +163,7 @@ namespace TIPySerwer
             Thread threadServer = new Thread(new ThreadStart(runServer));
             threadServer.Start();
             Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
-            threadOzeki.Start();
+          //  threadOzeki.Start();
             
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
