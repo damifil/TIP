@@ -18,7 +18,9 @@
         <TextBlock x:Name="userNameTB" HorizontalAlignment="Left" Margin="25,33,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <TextBlock x:Name="home" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-        <TextBlock x:Name="settings" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="settings" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,84,409.664,356.784" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="logOut" MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="190,84,348.664,356.784" VerticalAlignment="Center"></TextBlock>
+
         <TextBlock x:Name="search" Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="21.333" Margin="221,133,342.664,305.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
 
         <ListBox IsSynchronizedWithCurrentItem="True"

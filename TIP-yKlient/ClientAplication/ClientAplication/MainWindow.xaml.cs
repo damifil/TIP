@@ -145,8 +145,15 @@ namespace ClientAplication
             main.Show();
         }
 
-        
+        private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
+        {
+
+            LoginRegisterWindow main = new LoginRegisterWindow();
             
+            this.Close();
+            main.Show();
+        }
+
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
