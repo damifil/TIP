@@ -18,15 +18,16 @@ namespace ClientAplication
         private Boolean _isConnected;
         private DiffieHelman diffieHelman;
         Random rnd = new Random();
-
-        public Client(String ipAddress, int portNum)
+        internal string ipAddres;
+        internal int portnumber;
+        public Client(string ipAddress, int portNum)
         {
             _client = new TcpClient();
             _client.Connect(ipAddress, portNum);
 
             HandleCommunication();
-
-         
+            ipAddres = ipAddress;
+            portnumber = portNum;
         }
 
         public void destroyfunction()

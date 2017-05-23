@@ -23,6 +23,7 @@ namespace ClientAplication
         public CallFrom()
         {
             InitializeComponent();
+
         }
 
 

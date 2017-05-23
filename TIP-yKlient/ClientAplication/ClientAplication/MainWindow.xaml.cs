@@ -32,7 +32,9 @@ namespace ClientAplication
         // internal ObservableCollection<User> Users { get; private set; }
         internal ObservableCollection<User> Users;
         internal string userName;
+        internal string password;
         internal Client client;
+        internal PhoneVOIP phoneVOIP;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace ClientAplication
             //inicjalizacja odpowiedzialna za wyswietlanie znajomych
             lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
             welcomeString.Text = "Witaj nazwa_Użytkownika";
+            phoneVOIP.InitializeSoftPhone(userName, password, client.ipAddres, client.portnumber.ToString());
         }
 
 
@@ -88,9 +91,11 @@ namespace ClientAplication
                    if (cmd.DataContext is User)
                     {
                         User user = (User)cmd.DataContext;
-                       CallToWindow main = new CallToWindow();
-                        main.user = user;
-                        main.Show();
+                phoneVOIP.btn_PickUp_Click(user.Name);
+
+                      // CallToWindow main = new CallToWindow();
+                      //main.user = user;
+                      // main.Show();
             }
                 }
 
