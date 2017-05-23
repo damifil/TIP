@@ -53,7 +53,7 @@ namespace ClientAplication
                 MessageBox.Show("Login lub hasło jest błędne");
                 return;
             }
-
+            main.client = client;
             this.Close();
             main.Show();
         }
@@ -91,9 +91,10 @@ namespace ClientAplication
                 MessageBox.Show("Login jest zajęty");
                 return;
             }
+            main.client = client;
             this.Close();
             main.Show();
-            main.client = client;
+           
 
         }
     }

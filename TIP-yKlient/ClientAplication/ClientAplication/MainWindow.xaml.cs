@@ -148,9 +148,12 @@ namespace ClientAplication
 
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            Console.WriteLine("przedfunkcja2");
 
+            client.sendMessage("EXIT " + userName);
+            Console.WriteLine("przedfunkcja");
+            client.destroyfunction();
             LoginRegisterWindow main = new LoginRegisterWindow();
-           // client.destroyfunction();
             main.client = null;
             this.Close();
             main.Show();

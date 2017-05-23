@@ -31,8 +31,13 @@ namespace ClientAplication
 
         public void destroyfunction()
         {
+            Console.WriteLine("tutaj1");
             _client.GetStream().Close();
+            Console.WriteLine("tutaj2");
+
             _client.Close();
+            Console.WriteLine("tutaj3");
+
             _client.Dispose();
         }
 

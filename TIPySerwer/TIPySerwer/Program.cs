@@ -82,6 +82,8 @@ namespace TIPySerwer
                         break;
                     case "EXIT":
                         bClientConnected = false;
+                        Console.WriteLine("klient "+ fragmentCommunication[1]+" zostal wylogowany");
+                        diffieHelman.sendMessage("Logut", diffieHelman, sWriter);
                         break;
                     case "LOGIN":       // logowanie użytkownika
                         sData = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
@@ -118,6 +120,7 @@ namespace TIPySerwer
                         sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
+                    
                     default:
                         sData = "Nieprawidłowe żądanie";
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
