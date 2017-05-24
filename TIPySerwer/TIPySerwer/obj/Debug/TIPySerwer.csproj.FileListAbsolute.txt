@@ -69,3 +69,4 @@ D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.xml
 D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
 D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\OzekiSDK.dll

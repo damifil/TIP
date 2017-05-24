@@ -156,19 +156,18 @@ namespace ClientAplication
             diffieHelman.P = diffieHelman.generateP();
             sData = diffieHelman.P.ToString();
             _sWriter.WriteLine(sData);
-            Console.WriteLine("P " + diffieHelman.P);
+
             _sWriter.Flush();
 
             //utworzenie G i wyslanie
             diffieHelman.G = diffieHelman.generateG(diffieHelman.P, 100);
-            Console.WriteLine("G " + diffieHelman.G);
+ 
             sData = diffieHelman.G.ToString();
             _sWriter.WriteLine(sData);
             _sWriter.Flush();
 
             //wygenerowanie tajnego a
             diffieHelman.a = rnd.Next(10, 1000);
-            Console.WriteLine("A " + diffieHelman.a);
             //wygenerowanie i wyslanie jawnego A
             diffieHelman.A = diffieHelman.powMod((int)diffieHelman.G, (int)diffieHelman.a, (int)diffieHelman.P);
             sData = diffieHelman.A.ToString();

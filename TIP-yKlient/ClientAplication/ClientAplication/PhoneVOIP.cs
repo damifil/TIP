@@ -42,9 +42,9 @@ namespace ClientAplication
             return output;
         }
 
-       public void InitializeSoftPhone(string login,string password,string adresIP, string port)
+       public void InitializeSoftPhone(string login,string password,string adresIP, int port)
         {
-            try
+          //  try
             {
                 _softPhone = SoftPhoneFactory.CreateSoftPhone(SoftPhoneFactory.GetLocalIP(), 5700, 5750);
                 InvokeGUIThread(() => {  });
@@ -68,10 +68,10 @@ namespace ClientAplication
 
                 ConnectMedia();
             }
-            catch (Exception ex)
+           /* catch (Exception ex)
             {
                 InvokeGUIThread(() => { MessageBox.Show("Problem z polaczeniem do OZEKI"); });
-            }
+            }*/
         }
 
 

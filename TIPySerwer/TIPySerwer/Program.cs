@@ -176,7 +176,7 @@ namespace TIPySerwer
             Thread threadServer = new Thread(new ThreadStart(runServer));
             threadServer.Start();
             Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
-          //  threadOzeki.Start();
+            threadOzeki.Start();
             
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }

@@ -37,12 +37,9 @@ namespace ClientAplication
         internal PhoneVOIP phoneVOIP;
         public MainWindow()
         {
+            
             InitializeComponent();
-
-            //inicjalizacja odpowiedzialna za wyswietlanie znajomych
-            lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
-            welcomeString.Text = "Witaj nazwa_Użytkownika";
-            phoneVOIP.InitializeSoftPhone(userName, password, client.ipAddres, client.portnumber.ToString());
+         
         }
 
 
@@ -60,6 +57,12 @@ namespace ClientAplication
             { lbUsers.DataContext = Users; }
             else
             { addUSerToList(); }
+            phoneVOIP = new PhoneVOIP();
+            //inicjalizacja odpowiedzialna za wyswietlanie znajomych
+            lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
+            welcomeString.Text = "Witaj nazwa_Użytkownika";
+            Console.WriteLine("user" + userName + " pass: " + password + " ip " + client.ipAddres);
+            phoneVOIP.InitializeSoftPhone(userName, password, client.ipAddres, 5060);
         }
 
         internal void addUSerToList()

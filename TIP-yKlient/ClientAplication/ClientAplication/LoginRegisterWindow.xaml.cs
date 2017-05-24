@@ -54,6 +54,7 @@ namespace ClientAplication
                 return;
             }
             main.client = client;
+            main.password = password;
             this.Close();
             main.Show();
         }
