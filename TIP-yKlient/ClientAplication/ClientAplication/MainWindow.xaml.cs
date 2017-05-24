@@ -17,11 +17,7 @@ using System.Windows.Shapes;
 
 namespace ClientAplication
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 
- 
+    
     
     public partial class MainWindow : Window
     {
@@ -29,17 +25,13 @@ namespace ClientAplication
 
 
 
-        // internal ObservableCollection<User> Users { get; private set; }
         internal ObservableCollection<User> Users;
-        internal string userName;
-        internal string password;
+        internal User user;
         internal Client client;
         internal PhoneVOIP phoneVOIP;
         public MainWindow()
-        {
-            
+        {            
             InitializeComponent();
-         
         }
 
 
@@ -51,19 +43,25 @@ namespace ClientAplication
             if (_shown)
                 return;
 
-            userNameTB.Text = userName;
+            userNameTB.Text = user.Name;
             _shown = true;
             if (Users != null)
             { lbUsers.DataContext = Users; }
             else
             { addUSerToList(); }
             phoneVOIP = new PhoneVOIP();
-            //inicjalizacja odpowiedzialna za wyswietlanie znajomych
             lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
             welcomeString.Text = "Witaj nazwa_Użytkownika";
-            Console.WriteLine("user" + userName + " pass: " + password + " ip " + client.ipAddres);
-            phoneVOIP.InitializeSoftPhone(userName, password, client.ipAddres, 5060);
+            Console.WriteLine("user" + user.Name + " pass: " + user.password + " ip " + client.ipAddres);
+
+            try
+            {
+                phoneVOIP.InitializeSoftPhone(user.Name, user.password, client.ipAddres, 5060);
+            }
+            catch(Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
         }
+
+        //inicjalizacja odpowiedzialna za wyswietlanie znajomych (wstepne testowanie wyswietlania)
 
         internal void addUSerToList()
         {
@@ -76,15 +74,13 @@ namespace ClientAplication
             Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });
             lbUsers.DataContext = Users;
         }
-        //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob
+
+        //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob (wstepne testowanie wyswietlania)
         private void searchClick(object sender, RoutedEventArgs e)
         {
             string value = searchInput.Text;
             Users = new ObservableCollection<User>() {
-                //uzytkownicy
-            new User() { Name = value ,IcoCall="\uf098", IcoUser="\uf2c0"},
-        
-            };
+            new User() { Name = value ,IcoCall="\uf098", IcoUser="\uf2c0"}};
             lbUsers.DataContext = Users;
         }
         
@@ -94,12 +90,12 @@ namespace ClientAplication
                    if (cmd.DataContext is User)
                     {
                         User user = (User)cmd.DataContext;
-                phoneVOIP.btn_PickUp_Click(user.Name);
+                        phoneVOIP.btn_PickUp_Click(user.Name);
 
                       // CallToWindow main = new CallToWindow();
                       //main.user = user;
                       // main.Show();
-            }
+                    }
                 }
 
         private void goToUser(object sender, MouseButtonEventArgs e)
@@ -119,15 +115,11 @@ namespace ClientAplication
             }
         }
        
-
-
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)  
         {
-           
             History main = new History();
             App.Current.MainWindow = main;
             main.Users = Users;
@@ -156,10 +148,8 @@ namespace ClientAplication
 
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine("przedfunkcja2");
 
-            client.sendMessage("EXIT " + userName);
-            Console.WriteLine("przedfunkcja");
+            client.sendMessage("EXIT " + user.Name);
             client.destroyfunction();
             LoginRegisterWindow main = new LoginRegisterWindow();
             main.client = null;
@@ -184,9 +174,3 @@ namespace ClientAplication
     }
 }
 
-class User
-{
-    public string Name { get; set; }
-    public string IcoUser { get; set; }
-    public string IcoCall { get; set; }
-}

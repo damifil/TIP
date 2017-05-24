@@ -30,6 +30,8 @@ namespace ClientAplication
             InitializeComponent();
             stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem Nazwa uzytkownika";
 
+
+            //wstepne testowanie wpisywania do listboxa
             items = new ObservableCollection<itemTB>() {
                 //użytkownicy
             new itemTB() {

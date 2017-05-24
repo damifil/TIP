@@ -44,18 +44,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
-        
-        
-        
+
     </Grid>
-
-    <Window.Resources>
-       
-        
-        
-    </Window.Resources>
-
-
 
 </Window>

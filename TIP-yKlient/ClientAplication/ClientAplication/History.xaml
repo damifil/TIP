@@ -42,7 +42,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBlock x:Name="textBlock2" Text="&#xf002;" MouseLeftButtonDown="searchClickHistory" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap"  Margin="425,145,118.664,297.784" Width="50"/>
+        <TextBlock x:Name="tbSearchIco" Text="&#xf002;" MouseLeftButtonDown="searchClickHistory" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap"  Margin="425,145,118.664,297.784" Width="50"/>
         <TextBox x:Name="historysearchinput" TextWrapping="Wrap" Text="wpisz date..." Width="120" Margin="288,144,185.664,301.784"/>
         
         <ListBox IsSynchronizedWithCurrentItem="True"

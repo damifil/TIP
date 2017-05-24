@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace ClientAplication
 {
-    /// <summary>
-    /// Interaction logic for LoginRegisterWindow.xaml
-    /// </summary>
+    
     public partial class LoginRegisterWindow : Window
     {
         internal Client client;
@@ -38,14 +36,19 @@ namespace ClientAplication
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_login(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.userName = loginInput.Text;
+           
+
             string login = loginInput.Text;
             string password = passwordInput.Password;
+            //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
             if (client == null) {
-             client= new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
+                try
+                {
+                    client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
+                }
+                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); }
             }
             string flag = client.sendMessage("LOGIN " + login + " " + password);
             if(flag == "False")
@@ -53,8 +56,13 @@ namespace ClientAplication
                 MessageBox.Show("Login lub hasło jest błędne");
                 return;
             }
+
+
+            MainWindow main = new MainWindow();
+            User userTosend = new User();
+            userTosend.Name = loginInput.Text;
+            userTosend.password = password;
             main.client = client;
-            main.password = password;
             this.Close();
             main.Show();
         }
@@ -67,10 +75,9 @@ namespace ClientAplication
         }
        
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_register(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.userName = loginInputRegister.Text;
+            
             string login = loginInputRegister.Text;
             string password1 = password1InputRegister.Password;
             string password2 = password2InputRegister.Password;
@@ -92,6 +99,13 @@ namespace ClientAplication
                 MessageBox.Show("Login jest zajęty");
                 return;
             }
+
+            //nalezy sie zastanowic tutaj czy po rejestracji jestesmy juz zalogowani
+            User userToSend = new User();
+            userToSend.Name = login;
+            userToSend.password = password1;
+            MainWindow main = new MainWindow();
+            main.user = userToSend;
             main.client = client;
             this.Close();
             main.Show();

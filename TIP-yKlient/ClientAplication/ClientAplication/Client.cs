@@ -10,20 +10,20 @@ namespace ClientAplication
 {
     class Client
     {
-        private TcpClient _client;
+        private TcpClient client;
 
-        private static StreamReader _sReader;
-        private static StreamWriter _sWriter;
+        private static StreamReader streamReader;
+        private static StreamWriter streamWriter;
 
-        private Boolean _isConnected;
+        private Boolean isConnected;
         private DiffieHelman diffieHelman;
         Random rnd = new Random();
         internal string ipAddres;
         internal int portnumber;
         public Client(string ipAddress, int portNum)
         {
-            _client = new TcpClient();
-            _client.Connect(ipAddress, portNum);
+            client = new TcpClient();
+            client.Connect(ipAddress, portNum);
 
             HandleCommunication();
             ipAddres = ipAddress;
@@ -32,21 +32,20 @@ namespace ClientAplication
 
         public void destroyfunction()
         {
-            _client.GetStream().Close();
-            _client.Close();
-            _client.Dispose();
+            client.GetStream().Close();
+            client.Close();
+            client.Dispose();
         }
 
 
         public void HandleCommunication()
         {
-            _sReader = new StreamReader(_client.GetStream(), Encoding.ASCII);
-            _sWriter = new StreamWriter(_client.GetStream(), Encoding.ASCII);
+            streamReader = new StreamReader(client.GetStream(), Encoding.ASCII);
+            streamWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
 
-            _isConnected = true;
-            String sData = null;
+            isConnected = true;
             diffieHelman = new DiffieHelman();
-            diffieHelman.CreateDH(_sReader, _sWriter, diffieHelman);
+            diffieHelman.CreateDH(streamReader, streamWriter, diffieHelman);
             Console.WriteLine("create");
             /*  while (_isConnected) {
                   Console.WriteLine("create");
@@ -73,11 +72,10 @@ namespace ClientAplication
         public string sendMessage(string content)
         {
            
-            _isConnected = true;
-            String sData = null;
+            isConnected = true;
             
-            diffieHelman.sendMessage1(content, diffieHelman, _sWriter);
-            String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
+            diffieHelman.sendMessage1(content, diffieHelman, streamWriter);
+            String sDataIncomming = diffieHelman.reciveMessage(streamReader, diffieHelman);
             return sDataIncomming;
         }
     }

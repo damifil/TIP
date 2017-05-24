@@ -25,7 +25,7 @@ namespace ClientAplication
         public History()
         {
             InitializeComponent();
-
+            //testowe wypelnienie
            items = new ObservableCollection<itemTB>() {
                 //użytkownicy
             new itemTB() {
@@ -63,6 +63,7 @@ namespace ClientAplication
 
 
         }
+
         bool _shown;
 
         protected override void OnContentRendered(EventArgs e)
