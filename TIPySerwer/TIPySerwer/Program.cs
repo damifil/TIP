@@ -20,30 +20,33 @@ namespace TIPySerwer
 
     class TcpServer
     {
-        private TcpListener _server;
-        private Boolean _isRunning;
+        private TcpListener server;
+        private Boolean isRunning;
         private DiffieHelman diffieHelman;
         public TcpServer(int port)
         {
-            _server = new TcpListener(IPAddress.Any, port);
-            _server.Start();
+            server = new TcpListener(IPAddress.Any, port);
+            server.Start();
 
-            _isRunning = true;
+            isRunning = true;
 
             LoopClients();
         }
 
         public void LoopClients()
         {
-            while (_isRunning)
+            while (isRunning)
             {
-                // wait for client connection
-                TcpClient newClient = _server.AcceptTcpClient();
+                
+                TcpClient newClient = server.AcceptTcpClient();
 
-                // client found.
-                // create a thread to handle communication
+               
                 Thread t = new Thread(new ParameterizedThreadStart(HandleClient));
-                t.Start(newClient);
+                try
+                {
+                    t.Start(newClient);
+                }
+                catch (Exception ex) { Console.WriteLine("klient nieprawidlowo zakonczylpolaczenie"); }
             }
         }
 
