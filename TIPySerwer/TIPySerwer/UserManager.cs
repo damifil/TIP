@@ -54,7 +54,8 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                user.DateLastActiv = DateTime.Now;                
+                user.DateLastActiv = DateTime.Now;
+                user.Is_Active = true;
                 db.SaveChanges();
             }
             return true;
@@ -77,13 +78,29 @@ namespace TIPySerwer
                     Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                     return false;
                 }
-
+                UpdateActivityUser(login);
                 Console.WriteLine("Zostałeś zalogowany");
                 return true;
             }
-
         }
 
+
+        public static bool LogOff(string login)  // proces wylogowania
+        {
+            if (!IsLoginExists(login))
+            {
+                Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                return false;
+            }
+            using (tipBDEntities db = new tipBDEntities())
+            {
+
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                user.Is_Active = false;
+                db.SaveChanges();
+                return true;
+            }
+        }
         public static bool ChangePassword(string login, string password)  // zmiana hasla
         {
             if (!IsLoginExists(login))
@@ -234,7 +251,7 @@ namespace TIPySerwer
                     foreach (Friends item in friends)
                     {
                         Users friend = db.Users.Where(x => x.ID == item.UserID_From).Single();
-                        listFriends = listFriends + friend.Login + "&"; // znak & oddziela jeden login od drugiego 
+                        listFriends = listFriends + friend.Login + " " + friend.Is_Active + "&"; // znak & oddziela jeden login od drugiego 
                         friendsCount++;
                     }
                 }
@@ -251,15 +268,15 @@ namespace TIPySerwer
                     foreach (Friends item in friends1)
                     {
                         Users friend = db.Users.Where(x => x.ID == item.UserID).Single();
-                        listFriends = listFriends + friend.Login + "&";
+                        listFriends = listFriends + friend.Login + " " + friend.Is_Active + "&";
                         friendsCount++;
                     }
                 }
-                listFriends = listFriends + friendsCount;   // dodanie na koncu liczby znajomych
             }
             return listFriends;
         }
-        
+
+      
         public static string SearchUser(string loginUser, string loginSearch)
         {
             using (tipBDEntities db = new tipBDEntities())

@@ -281,6 +281,10 @@ namespace ClientAplication
             _call.Start();
         }
 
+
+
+       
+
         private void btn_HangUp_Click(object sender, EventArgs e)
         {
             if (_call != null)

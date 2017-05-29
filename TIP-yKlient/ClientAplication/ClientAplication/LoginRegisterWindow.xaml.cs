@@ -55,15 +55,37 @@ namespace ClientAplication
                 return;
             }
 
+           
+
+           
             MainWindow main = new MainWindow();
             User userToSend = new User();
             userToSend.Name = loginInput.Text;
             userToSend.password = password;
             main.user = userToSend;
+            main.listUsers = GetFriends(loginInput.Text);
             main.client = client;
             this.Close();
             main.Show();
         }       
+
+        private List<ListUser> GetFriends(string login)
+        {
+            string friendsList = client.sendMessage("GETFRIENDS " + login);
+
+            string[] splitFriends = friendsList.Split('&');
+            List<ListUser> listUsers = new List<ListUser>();
+            for (int i = 0; i < (splitFriends.Length - 1); i++)
+            {
+                ListUser user = new ListUser();
+                string[] sp = splitFriends[i].Split(' ');
+                user.name = sp[0];
+
+                user.active = sp[1];
+                listUsers.Add(user);
+            }
+            return listUsers;
+        }
 
         private void Button_register(object sender, RoutedEventArgs e)
         {

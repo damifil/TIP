@@ -32,6 +32,7 @@
           <Property Name="Password" Type="varbinary" MaxLength="200" Nullable="false" />
           <Property Name="IP_Address" Type="varchar" MaxLength="15" />
           <Property Name="DateLastActiv" Type="datetime" />
+          <Property Name="Is_Active" Type="bit" />
         </EntityType>
         <Association Name="FK_Calls_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
@@ -162,6 +163,7 @@
           <NavigationProperty Name="Calls1" Relationship="tipBDModel.FK_Calls_Users1" FromRole="Users" ToRole="Calls" />
           <NavigationProperty Name="Friends" Relationship="tipBDModel.FK_Friends_User" FromRole="Users" ToRole="Friends" />
           <NavigationProperty Name="Friends1" Relationship="tipBDModel.FK_Friends_User1" FromRole="Users" ToRole="Friends" />
+          <Property Name="Is_Active" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Calls_Users">
           <End Type="tipBDModel.Users" Role="Users" Multiplicity="1" />
@@ -240,6 +242,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="tipBDModel.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
                 <ScalarProperty Name="DateLastActiv" ColumnName="DateLastActiv" />
                 <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

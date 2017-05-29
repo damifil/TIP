@@ -30,6 +30,7 @@ namespace ClientAplication
         internal User user;
         internal Client client;
         internal PhoneVOIP phoneVOIP;
+        internal List<ListUser> listUsers;
         public MainWindow()
         {            
             InitializeComponent();
@@ -66,13 +67,29 @@ namespace ClientAplication
 
         internal void addUSerToList()
         {
-            Users = new ObservableCollection<User>() {
+            Users = new ObservableCollection<User>();
+            foreach (ListUser item in listUsers)
+                Console.WriteLine("n " + item.active + " " + item.name);
+            Console.WriteLine("tu przy addlist");
+            foreach(ListUser item in listUsers)
+            {
+                if (item.active == "True")
+                {
+
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
+                }
+                else
+                {
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                }
+            }
+           /* Users = new ObservableCollection<User>() {
                 //użytkownicy
             new User() { Name = "Adam" ,IcoCall="\uf098", IcoUser="\uf2c0"},
             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
             };
-            Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });
+            Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });*/
             lbUsers.DataContext = Users;
         }
 

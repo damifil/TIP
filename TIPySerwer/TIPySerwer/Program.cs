@@ -86,6 +86,7 @@ namespace TIPySerwer
                     case "EXIT":
                         bClientConnected = false;
                         Console.WriteLine("klient "+ fragmentCommunication[1]+" zostal wylogowany");
+                        UserManager.LogOff(fragmentCommunication[1]);
                         diffieHelman.sendMessage("Logut", diffieHelman, sWriter);
                         break;
                     case "LOGIN":       // logowanie użytkownika
@@ -112,7 +113,8 @@ namespace TIPySerwer
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ISONLINE":   // aktualizacja statniej aktywnosci 
-                        sData = UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
+                        UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
+                        sData = UserManager.GetFriends(fragmentCommunication[1]);
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
@@ -121,6 +123,10 @@ namespace TIPySerwer
                         break;
                     case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
                         sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        break;
+                    case "GETFRIENDS":
+                        sData = UserManager.GetFriends(fragmentCommunication[1]);
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     
