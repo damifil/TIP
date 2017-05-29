@@ -13,5 +13,9 @@ namespace ClientAplication
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            Console.WriteLine("exit a app.xaml.cs");
+        }
     }
 }

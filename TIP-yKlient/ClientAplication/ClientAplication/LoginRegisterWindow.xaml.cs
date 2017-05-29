@@ -38,8 +38,6 @@ namespace ClientAplication
 
         private void Button_login(object sender, RoutedEventArgs e)
         {
-           
-
             string login = loginInput.Text;
             string password = passwordInput.Password;
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
@@ -57,27 +55,18 @@ namespace ClientAplication
                 return;
             }
 
-
             MainWindow main = new MainWindow();
-            User userTosend = new User();
-            userTosend.Name = loginInput.Text;
-            userTosend.password = password;
+            User userToSend = new User();
+            userToSend.Name = loginInput.Text;
+            userToSend.password = password;
+            main.user = userToSend;
             main.client = client;
             this.Close();
             main.Show();
-        }
-
-
-        public static void doDziela()
-        {
-           
-           
-        }
-       
+        }       
 
         private void Button_register(object sender, RoutedEventArgs e)
         {
-            
             string login = loginInputRegister.Text;
             string password1 = password1InputRegister.Password;
             string password2 = password2InputRegister.Password;

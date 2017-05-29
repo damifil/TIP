@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,7 @@ namespace ClientAplication
         {
             Users = new ObservableCollection<User>() {
                 //użytkownicy
-            new User() { Name = "ofline" ,IcoCall="\uf098", IcoUser="\uf2c0"},
+            new User() { Name = "Adam" ,IcoCall="\uf098", IcoUser="\uf2c0"},
             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
             };
@@ -170,7 +171,7 @@ namespace ClientAplication
 
         
 
-      
+
     }
 }
 
