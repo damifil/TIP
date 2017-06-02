@@ -120,13 +120,37 @@ namespace ClientAplication
             }
         }
 
+
+        private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
+        {
+            string historyListString = client.sendMessage("USERHISTORY " + login + " " + login1);
+            string[] historySplit = historyListString.Split('&');
+            List<ListHistory> historyList = new List<ListHistory>();
+            for (int i = 0; i < (historySplit.Length - 1); i++)
+            {
+                ListHistory history = new ListHistory();
+                string[] sp = historySplit[i].Split(' ');
+                history.userName = sp[0];
+                history.dayBegin = sp[1];
+                history.hourBegin = sp[2];
+                history.dayEnd = sp[3];
+                history.hourEnd = sp[4];
+                historyList.Add(history);
+            }
+            return historyList;
+        }
+
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
+            string userName = user.Name;
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                UserWindow main = new UserWindow();
+                
+                List<ListHistory> listHistory = GetConcreteHistory(userName,user.Name);
+     
+                UserWindow main = new UserWindow(listHistory);
                 main.Users = Users;
                 App.Current.MainWindow = main;
                 main.user = user;
@@ -141,7 +165,7 @@ namespace ClientAplication
         {
         }
 
-        private List<ListHistory> GetAllHistory(string login) // uzyskanie calej hisorii rozmow
+        private List<ListHistory> GetAllHistory(string login)                       // uzyskanie calej hisorii rozmow
         {
             string historyListString = client.sendMessage("ALLHISTORY " + login);
             string[] historySplit = historyListString.Split('&');
