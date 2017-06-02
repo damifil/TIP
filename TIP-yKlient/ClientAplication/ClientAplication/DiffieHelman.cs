@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace ClientAplication
         public double generateP()
         {
 
-            int p = rnd.Next(3, 20);
-            string line = File.ReadLines("primary_value.txt").Skip(p).Take(1).First();
+            int p = rnd.Next(200, 500);
+            string line = File.ReadLines("10000.prm").Skip(p).Take(1).First();
             p = Int32.Parse(line);
             return p;
         }
@@ -53,27 +54,30 @@ namespace ClientAplication
             return wyn;
         }
 
-        public int generateG(double x, int size)
+        public double generateG(double x)
         {
-
-            int p = (int)x;
-            int chek = 0;
-            int q = 1;
-            do
+            double px = x;
+            double k;
+            double o = 1;
+            ArrayList al = new ArrayList();
+            for (double r = 2; r < px; r++)
             {
-                q = rnd.Next(3,1000);
-                chek = 0;
-                for (int i = 1; i <= (p - 1); i++)
+                k = Math.Pow(r, o);
+                k = k % px;
+                while (k > 1)
                 {
-                    for (int j = 1; j <= (p - 1); j++)
-                    {
-                        if ((i % p) == powMod(q, j, p)) { chek++; j = p; }
-                    }
-
+                    o++;
+                    k *= r;
+                    k %= px;
                 }
-            } while (chek != (p - 1));
+                if (o == (px - 1)) { al.Add(r); }
+                o = 1;
+            }
 
-            return q;
+
+            int index = rnd.Next(1, al.Count);
+            return Convert.ToDouble(al[index]);
+
         }
 
         public double[] generateDoubleArrayFromStrin(string message)
@@ -90,12 +94,12 @@ namespace ClientAplication
 
 
 
-        public void sendMessage(string sData, DiffieHelman diffieHelman, StreamWriter _sWriter, string comunique)
+        public void sendMessage(string sData,  StreamWriter _sWriter, string comunique)
         {
             _sWriter.WriteLine(comunique);
             _sWriter.Flush();
 
-            double[] messagearray = diffieHelman.generateDoubleArrayFromStrin(sData);
+            double[] messagearray = generateDoubleArrayFromStrin(sData);
 
             //ilosc przesylanych liczb (znakow)
             sData = messagearray.Length.ToString();
@@ -104,16 +108,16 @@ namespace ClientAplication
 
             for (int i = 0; i < messagearray.Length; i++)
             {
-                messagearray[i] = messagearray[i] * diffieHelman.s;
+                messagearray[i] = messagearray[i] *s;
                 _sWriter.WriteLine(messagearray[i].ToString());
                 _sWriter.Flush();
             }
         }
 
 
-        public void sendMessage1(string sData, DiffieHelman diffieHelman, StreamWriter _sWriter)
+        public void sendMessage1(string sData, StreamWriter _sWriter)
         {
-            double[] messagearray = diffieHelman.generateDoubleArrayFromStrin(sData);
+            double[] messagearray = generateDoubleArrayFromStrin(sData);
 
             //ilosc przesylanych liczb (znakow)
             sData = messagearray.Length.ToString();
@@ -123,13 +127,13 @@ namespace ClientAplication
 
             for (int i = 0; i < messagearray.Length; i++)
             {
-                messagearray[i] = messagearray[i] * diffieHelman.s;
+                messagearray[i] = messagearray[i] * s;
                 _sWriter.WriteLine(messagearray[i].ToString());
                 _sWriter.Flush();
             }
         }
 
-        public string reciveMessage(StreamReader sReader, DiffieHelman diffieHelman)
+        public string reciveMessage(StreamReader sReader)
         {
             string sData = sReader.ReadLine();
             string messageDecrypt = "";
@@ -139,12 +143,12 @@ namespace ClientAplication
             {
                 sData = sReader.ReadLine();
                 encryptValue = Convert.ToDouble(sData);
-                messageDecrypt = messageDecrypt + (char)(encryptValue * Math.Pow(diffieHelman.s, -1));
+                messageDecrypt = messageDecrypt + (char)(encryptValue * Math.Pow(s, -1));
             }
             return messageDecrypt;
         }
 
-        public void CreateDH(StreamReader _sReader, StreamWriter _sWriter, DiffieHelman diffieHelman)
+        public void CreateDH(StreamReader _sReader, StreamWriter _sWriter)
         {
             String sData;
             //tutaj ustalamy difiego 
@@ -153,24 +157,24 @@ namespace ClientAplication
             _sWriter.Flush();
 
             //utworzenie P i wysłanie
-            diffieHelman.P = diffieHelman.generateP();
-            sData = diffieHelman.P.ToString();
+            P = generateP();
+            sData = P.ToString();
             _sWriter.WriteLine(sData);
 
             _sWriter.Flush();
 
             //utworzenie G i wyslanie
-            diffieHelman.G = diffieHelman.generateG(diffieHelman.P, 100);
+            G = generateG(P);
  
-            sData = diffieHelman.G.ToString();
+            sData = G.ToString();
             _sWriter.WriteLine(sData);
             _sWriter.Flush();
 
             //wygenerowanie tajnego a
-            diffieHelman.a = rnd.Next(10, 1000);
+            a = rnd.Next(10, 1000);
             //wygenerowanie i wyslanie jawnego A
-            diffieHelman.A = diffieHelman.powMod((int)diffieHelman.G, (int)diffieHelman.a, (int)diffieHelman.P);
-            sData = diffieHelman.A.ToString();
+            A =powMod((int)G, (int)a, (int)P);
+            sData = A.ToString();
             _sWriter.WriteLine(sData);
             _sWriter.Flush();
 
@@ -179,7 +183,7 @@ namespace ClientAplication
             double B = Convert.ToDouble(sDataIncomming);
             //utworzenie sekretu
 
-            diffieHelman.s = diffieHelman.powMod((int)B, (int)diffieHelman.a, (int)diffieHelman.P);
+            s = powMod((int)B, (int)a, (int)P);
         }
     }
 }
