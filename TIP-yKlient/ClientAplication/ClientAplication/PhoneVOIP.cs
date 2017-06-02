@@ -157,7 +157,7 @@ namespace ClientAplication
         }
 
 
-
+        
         private void phoneLine_PhoneLineInformation(object sender, RegistrationStateChangedArgs e)
         {
             _phoneLineInformation = e.State;
@@ -194,16 +194,12 @@ namespace ClientAplication
                     CallTransmision main = new CallTransmision();
                     main.user = new User();
                     main.Show();
-
-
-
-
                 });
             }
 
             if (e.State == CallState.InCall)
             {
-             
+                
                 StartDevices();
             }
 
@@ -249,43 +245,46 @@ namespace ClientAplication
        
 
 
-        public void btn_PickUp_Click(string Name)
+        public bool btn_PickUp_Click(string Name)
         {
             if (_inComingCall)
             {
+                
                 _inComingCall = false;
                 _call.Answer();
 
                 InvokeGUIThread(() => {
                     CallTransmision main = new CallTransmision();
                     main.user = new User();
+                    main.phoneVOIP = this;
                     main.Show();
 
                 });
-                return;
+                return false;
             }
 
             if (_call != null)
             {
-                return;
+                return false;
             }
 
             if (_phoneLineInformation != RegState.RegistrationSucceeded)
             {
                 InvokeGUIThread(() => { });
-                return;
+                return false;
             }
 
             _call = _softPhone.CreateCallObject(_phoneLine, Name);
             WireUpCallEvents();
             _call.Start();
+            return true;
         }
 
 
 
        
 
-        private void btn_HangUp_Click(object sender, EventArgs e)
+        public void btn_HangUp_Click(string Name)
         {
             if (_call != null)
             {

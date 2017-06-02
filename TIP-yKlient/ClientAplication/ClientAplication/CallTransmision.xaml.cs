@@ -19,6 +19,7 @@ namespace ClientAplication
     /// </summary>
     public partial class CallTransmision : Window
     {
+        internal PhoneVOIP phoneVOIP;
         internal User user;
         public CallTransmision()
         {
@@ -42,6 +43,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
 
         }

@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 
 namespace ClientAplication
 {
-    
-    
+
+
     public partial class MainWindow : Window
     {
-       
+
 
 
 
@@ -34,7 +34,7 @@ namespace ClientAplication
         internal List<History> listHistory; // lista rozmow
 
         public MainWindow()
-        {            
+        {
             InitializeComponent();
         }
 
@@ -61,7 +61,7 @@ namespace ClientAplication
             {
                 phoneVOIP.InitializeSoftPhone(user.Name, user.password, client.ipAddres, 5060);
             }
-            catch(Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
+            catch (Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
         }
 
         //inicjalizacja odpowiedzialna za wyswietlanie znajomych (wstepne testowanie wyswietlania)
@@ -70,7 +70,7 @@ namespace ClientAplication
         {
             Users = new ObservableCollection<User>();
 
-            foreach(ListUser item in listUsers)
+            foreach (ListUser item in listUsers)
             {
                 if (item.active == "True")
                 {
@@ -82,13 +82,13 @@ namespace ClientAplication
                     Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
                 }
             }
-           /* Users = new ObservableCollection<User>() {
-                //użytkownicy
-            new User() { Name = "Adam" ,IcoCall="\uf098", IcoUser="\uf2c0"},
-            new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
-            new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
-            };
-            Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });*/
+            /* Users = new ObservableCollection<User>() {
+                 //użytkownicy
+             new User() { Name = "Adam" ,IcoCall="\uf098", IcoUser="\uf2c0"},
+             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
+             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
+             };
+             Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });*/
             lbUsers.DataContext = Users;
         }
 
@@ -100,20 +100,25 @@ namespace ClientAplication
             new User() { Name = value ,IcoCall="\uf098", IcoUser="\uf2c0"}};
             lbUsers.DataContext = Users;
         }
-        
-             private void callToUser(object sender, MouseButtonEventArgs e)
-                {
-                   TextBlock cmd = (TextBlock)sender;
-                   if (cmd.DataContext is User)
-                    {
-                        User user = (User)cmd.DataContext;
-                        phoneVOIP.btn_PickUp_Click(user.Name);
 
-                      // CallToWindow main = new CallToWindow();
-                      //main.user = user;
-                      // main.Show();
-                    }
+        private void callToUser(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock cmd = (TextBlock)sender;
+            if (cmd.DataContext is User)
+            {
+                User user = (User)cmd.DataContext;
+                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
+
+                CallToWindow main = new CallToWindow();
+                if (call == true)
+                {
+                    main.user = user;
+                    main.phoneVOIP = phoneVOIP;
+                    main.Show();
                 }
+
+            }
+        }
 
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
@@ -131,7 +136,7 @@ namespace ClientAplication
                 main.Show();
             }
         }
-       
+
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
@@ -155,7 +160,7 @@ namespace ClientAplication
             return historyList;
         }
 
-        private void historyTextboxaction(object sender, MouseButtonEventArgs e)  
+        private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
             List<ListHistory> listHistory = GetAllHistory(user.Name);
             History main = new History(user.Name, listHistory);
@@ -207,7 +212,7 @@ namespace ClientAplication
         }
 
 
-        
+
 
 
     }
