@@ -23,27 +23,25 @@ namespace ClientAplication
         internal User user;
         internal ObservableCollection<User> Users;
         internal ObservableCollection<itemTB> items;
-
         
-        public UserWindow()
+
+        public UserWindow(List<ListHistory> listHistory)
         {
             InitializeComponent();
             stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem Nazwa uzytkownika";
 
-
-            //wstepne testowanie wpisywania do listboxa
-            items = new ObservableCollection<itemTB>() {
-                //użytkownicy
-            new itemTB() {
-            Name="Kowalski",
-            Describe ="Rozmowa",
-            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
-            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-            Date="12.03.2017"
+            items = new ObservableCollection<itemTB>();
+            foreach (ListHistory item in listHistory)
+            {
+                items.Add(new itemTB()
+                {
+                    Name = item.userName,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
+                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
+                    Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
+                    Date = "dzinen"
+                });
             }
-            
-
-            };
 
             lbHistoryAll.DataContext = items;
 

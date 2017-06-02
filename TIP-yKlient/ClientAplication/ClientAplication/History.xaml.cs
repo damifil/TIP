@@ -59,7 +59,7 @@ namespace ClientAplication
 
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
-            TextBlock cmd = (TextBlock)sender;
+         /*   TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
@@ -71,7 +71,7 @@ namespace ClientAplication
                 main.Top = this.Top;
                 this.Close();
                 main.Show();
-            }
+            }*/
         }
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
