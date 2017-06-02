@@ -22,46 +22,24 @@ namespace ClientAplication
     {
         internal ObservableCollection<itemTB> items;
         internal ObservableCollection<User> Users;
-        public History()
+        internal Client client;
+
+      
+        public History(string login, List<ListHistory> listHistory)
         {
-            InitializeComponent();
-            //testowe wypelnienie
-           items = new ObservableCollection<itemTB>() {
-                //użytkownicy
-            new itemTB() {
-            Name="Kowalski",
-            Describe ="Rozmowa z użytkownikem Kowalski ",
-            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
-            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-            Date="12.03.2017"
-            },
-            new itemTB() {
-            Name="Makumba",
-            Describe ="Rozmowa z użytkownikem Makumba",
-            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
-            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-            Date="13.03.2017"
-            },
-            new itemTB() {
-            Name="Iksinski",
-            Describe ="Rozmowa z użytkownikem Iksinski",
-            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
-            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-             Date="14.03.2017"
-            },
-            new itemTB() {
-            Name="Walenrod",
-            Describe ="Rozmowa z użytkownikem Walenrod",
-            Describe2="rozpoczęła się dnia 12.03.2017 o gdzoinie 13:00 ",
-            Describe3="i zakończyła się dnia 14.03.2017 o godzinie 00:34",
-            Date="15.03.2017"
+            items = new ObservableCollection<itemTB>();
+            foreach (ListHistory item in listHistory)
+            {
+                items.Add(new itemTB() { Name = item.userName,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
+                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
+                    Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
+                    Date = "dzinen"
+                });
             }
-
-            };
-
+    
+            InitializeComponent();
             lbHistoryAll.DataContext = items;
-
-
         }
 
         bool _shown;
@@ -95,11 +73,11 @@ namespace ClientAplication
                 main.Show();
             }
         }
-    
+
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-           
-            
+
+
         }
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
@@ -151,7 +129,7 @@ namespace ClientAplication
         }
 
 
-        
+
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
@@ -169,7 +147,7 @@ namespace ClientAplication
         }
 
 
-       
+
     }
 
 

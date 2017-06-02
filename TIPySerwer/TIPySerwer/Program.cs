@@ -118,7 +118,7 @@ namespace TIPySerwer
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
-                        sData = UserManager.GetCalls(fragmentCommunication[1]);
+                        sData = UserManager.GetAllHistory(fragmentCommunication[1]);
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem

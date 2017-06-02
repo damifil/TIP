@@ -135,7 +135,7 @@ namespace TIPySerwer
             return true;
         }
 
-        public static string GetCalls(string login)   // pobranie wszystkich rozmow danego uzytkownika
+        public static string GetAllHistory(string login)   // pobranie wszystkich rozmow danego uzytkownika
         {
             string history = "";
             List<CallsHistoryModel> callsHistory = new List<CallsHistoryModel>();

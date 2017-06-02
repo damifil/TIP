@@ -30,7 +30,9 @@ namespace ClientAplication
         internal User user;
         internal Client client;
         internal PhoneVOIP phoneVOIP;
-        internal List<ListUser> listUsers;
+        internal List<ListUser> listUsers; // lista uzytkownikow
+        internal List<History> listHistory; // lista rozmow
+
         public MainWindow()
         {            
             InitializeComponent();
@@ -54,7 +56,6 @@ namespace ClientAplication
             phoneVOIP = new PhoneVOIP();
             lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
             welcomeString.Text = "Witaj nazwa_Użytkownika";
-            Console.WriteLine("user" + user.Name + " pass: " + user.password + " ip " + client.ipAddres);
 
             try
             {
@@ -68,9 +69,7 @@ namespace ClientAplication
         internal void addUSerToList()
         {
             Users = new ObservableCollection<User>();
-            foreach (ListUser item in listUsers)
-                Console.WriteLine("n " + item.active + " " + item.name);
-            Console.WriteLine("tu przy addlist");
+
             foreach(ListUser item in listUsers)
             {
                 if (item.active == "True")
@@ -136,10 +135,32 @@ namespace ClientAplication
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
+
+        private List<ListHistory> GetAllHistory(string login) // uzyskanie calej hisorii rozmow
+        {
+            string historyListString = client.sendMessage("ALLHISTORY " + login);
+            string[] historySplit = historyListString.Split('&');
+            List<ListHistory> historyList = new List<ListHistory>();
+            for (int i = 0; i < (historySplit.Length - 1); i++)
+            {
+                ListHistory history = new ListHistory();
+                string[] sp = historySplit[i].Split(' ');
+                history.userName = sp[0];
+                history.dayBegin = sp[1];
+                history.hourBegin = sp[2];
+                history.dayEnd = sp[3];
+                history.hourEnd = sp[4];
+                historyList.Add(history);
+            }
+            return historyList;
+        }
+
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)  
         {
-            History main = new History();
+            List<ListHistory> listHistory = GetAllHistory(user.Name);
+            History main = new History(user.Name, listHistory);
             App.Current.MainWindow = main;
+            main.client = client;
             main.Users = Users;
             main.Left = this.Left;
             main.Top = this.Top;

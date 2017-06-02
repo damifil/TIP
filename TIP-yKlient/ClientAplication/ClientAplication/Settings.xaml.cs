@@ -55,16 +55,16 @@ namespace ClientAplication
                 main.Show();
             }
         }
-        private void historyTextboxaction(object sender, MouseButtonEventArgs e)
+        private void historyTextboxaction(object sender, MouseButtonEventArgs e)/////////////////////////////////////////////////////////
         {
 
-            History main = new History();
+          /*  History main = new History();
             App.Current.MainWindow = main;
             main.Users = Users;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
-            main.Show();
+            main.Show();*/
         }
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
