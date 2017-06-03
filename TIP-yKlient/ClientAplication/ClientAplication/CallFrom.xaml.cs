@@ -53,7 +53,7 @@ namespace ClientAplication
 
         private void callAceptTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            //tutaj funkcje 
+            MessageBox.Show("hmm");
             pv.btn_PickUp_Click(user.Name);
             this.Close();
 

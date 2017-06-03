@@ -30,8 +30,8 @@ namespace ClientAplication
         private string _reDialNumber;
 
         private bool _localHeld;
-
-
+        CallFrom main;
+        CallTransmision transimiso;
 
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
@@ -145,7 +145,7 @@ namespace ClientAplication
           
             System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
-                CallFrom main = new CallFrom();
+                main = new CallFrom();
                 main.user = new User();
                 main.pv = this;
                 main.user.Name = e.Item.DialInfo.ToString();
@@ -193,12 +193,13 @@ namespace ClientAplication
 
                 _mediaReceiver.AttachToCall(_call);
                 _mediaSender.AttachToCall(_call);
-
+              
 
                 InvokeGUIThread(() => {
-                    CallTransmision main = new CallTransmision();
-                    main.user = new User();
-                    main.Show();
+                    transimiso = new CallTransmision();
+                    transimiso.phoneVOIP = this;
+                    transimiso.user = new User();
+                    transimiso.Show();
                 });
             }
 
@@ -220,7 +221,7 @@ namespace ClientAplication
                 WireDownCallEvents();
 
                 _call = null;
-                //wylaczamy wszystkie okienka
+                transimiso.Close();
                 InvokeGUIThread(() => {  });
 
             }
@@ -258,14 +259,7 @@ namespace ClientAplication
                 _inComingCall = false;
                 _call.Answer();
 
-                InvokeGUIThread(() => {
-                    CallTransmision main = new CallTransmision();
-                    main.user = new User();
-                    main.phoneVOIP = this;
-                    main.phoneVOIP = this;
-                    main.Show();
-
-                });
+              
                 return false;
             }
 
