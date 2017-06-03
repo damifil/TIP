@@ -104,7 +104,6 @@ namespace ClientAplication
                 client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
             }
             string flag = client.sendMessage("REGISTER " + login + " " + password1);
-            Console.WriteLine("flag" + flag);
             if(flag == "False")
             {
                 MessageBox.Show("Login jest zajęty");

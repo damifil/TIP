@@ -21,8 +21,10 @@ namespace ClientAplication
     public partial class UserWindow : Window
     {
         internal User user;
+        internal Client client;
         internal ObservableCollection<User> Users;
-        internal ObservableCollection<itemTB> items;
+        internal List<ListUser> listUsers;
+        internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
         
 
         public UserWindow(List<ListHistory> listHistory)
@@ -59,17 +61,83 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
         }
 
-        private void historyTextboxaction(object sender, MouseButtonEventArgs e)////////////////////////////////////////////
+        private List<ListHistory> GetAllHistory(string login)                       // uzyskanie calej hisorii rozmow
         {
+            Console.WriteLine("GetALL in userwindow: " + login);
+            string historyListString = client.sendMessage("ALLHISTORY " + login);
+            string[] historySplit = historyListString.Split('&');
+            List<ListHistory> historyList = new List<ListHistory>();
+            for (int i = 0; i < (historySplit.Length - 1); i++)
+            {
+                ListHistory history = new ListHistory();
+                string[] sp = historySplit[i].Split(' ');
+                history.userName = sp[0];
+                history.dayBegin = sp[1];
+                history.hourBegin = sp[2];
+                history.dayEnd = sp[3];
+                history.hourEnd = sp[4];
+                historyList.Add(history);
+            }
+            return historyList;
+        }
 
-           /* History main = new History();
+        private void historyTextboxaction(object sender, MouseButtonEventArgs e)
+        {
+            List<ListHistory> listHistory = GetAllHistory(user.Name);
+            History main = new History(user.Name, listHistory);
             App.Current.MainWindow = main;
+            main.client = client;
             main.Users = Users;
+            main.user = user;
+            main.listUsers = listUsers;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
-            main.Show();*/
+            main.Show();
         }
+
+        private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
+        {
+            string historyListString = client.sendMessage("USERHISTORY " + login + " " + login1);
+            string[] historySplit = historyListString.Split('&');
+            List<ListHistory> historyList = new List<ListHistory>();
+            for (int i = 0; i < (historySplit.Length - 1); i++)
+            {
+                ListHistory history = new ListHistory();
+                string[] sp = historySplit[i].Split(' ');
+                history.userName = sp[0];
+                history.dayBegin = sp[1];
+                history.hourBegin = sp[2];
+                history.dayEnd = sp[3];
+                history.hourEnd = sp[4];
+                historyList.Add(history);
+            }
+            return historyList;
+        }
+
+        private void goToUser(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock cmd = (TextBlock)sender;
+            if (cmd.DataContext is User)
+            {
+                User userFriend = (User)cmd.DataContext;
+
+                List<ListHistory> listHistory = GetConcreteHistory(user.Name, userFriend.Name);
+
+                UserWindow main = new UserWindow(listHistory);
+                main.Users = Users;
+                App.Current.MainWindow = main;
+                main.client = client;
+                main.user = user;
+                main.listUsers = listUsers;
+                main.Left = this.Left;
+                main.Top = this.Top;
+                this.Close();
+                main.Show();
+            }
+        }
+
+
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
@@ -77,6 +145,9 @@ namespace ClientAplication
             MainWindow main = new MainWindow();
             App.Current.MainWindow = main;
             main.Users = Users;
+            main.listUsers = listUsers;
+            main.client = client;
+            main.user = user;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
@@ -86,7 +157,15 @@ namespace ClientAplication
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
 
-
+            Settings main = new Settings();
+            App.Current.MainWindow = main;
+            main.Users = Users;
+            main.listUsers = listUsers;
+            main.client = client;
+            main.Left = this.Left;
+            main.Top = this.Top;
+            this.Close();
+            main.Show();
         }
 
 

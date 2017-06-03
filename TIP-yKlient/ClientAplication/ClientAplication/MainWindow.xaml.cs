@@ -75,11 +75,11 @@ namespace ClientAplication
                 if (item.active == "True")
                 {
 
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
                 }
                 else
                 {
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
                 }
             }
             /* Users = new ObservableCollection<User>() {
@@ -142,18 +142,19 @@ namespace ClientAplication
 
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
-            string userName = user.Name;
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
-                User user = (User)cmd.DataContext;
+                User userFriend = (User)cmd.DataContext;
                 
-                List<ListHistory> listHistory = GetConcreteHistory(userName,user.Name);
+                List<ListHistory> listHistory = GetConcreteHistory(user.Name, userFriend.Name);
      
                 UserWindow main = new UserWindow(listHistory);
                 main.Users = Users;
                 App.Current.MainWindow = main;
+                main.client = client;
                 main.user = user;
+                main.listUsers = listUsers;
                 main.Left = this.Left;
                 main.Top = this.Top;
                 this.Close();
@@ -191,6 +192,7 @@ namespace ClientAplication
             App.Current.MainWindow = main;
             main.client = client;
             main.Users = Users;
+            main.listUsers = listUsers;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
@@ -208,6 +210,8 @@ namespace ClientAplication
             Settings main = new Settings();
             App.Current.MainWindow = main;
             main.Users = Users;
+            main.listUsers = listUsers;
+            main.client = client;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
