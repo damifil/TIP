@@ -142,13 +142,17 @@ namespace ClientAplication
 
         private void softPhone_inComingCall(object sender, VoIPEventArgs<IPhoneCall> e)
         {
-            InvokeGUIThread(() => {
-            CallFrom main = new CallFrom();
-            main.user =new User();
-            main.user.Name = e.Item.DialInfo.ToString();
-            main.Show();
+            MessageBox.Show("tuttaaj");
+            System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                CallFrom main = new CallFrom();
+                main.user = new User();
+                main.user.Name = e.Item.DialInfo.ToString();
+                main.Show();
+            }));
 
-            });
+
+           
 
             _reDialNumber = e.Item.DialInfo.Dialed;
             _call = e.Item;
@@ -170,7 +174,7 @@ namespace ClientAplication
                 }
                 else
                 {
-                    MessageBox.Show("blad");                }
+                            }
 
             });
         }

@@ -45,7 +45,7 @@ namespace ClientAplication
 
             isConnected = true;
             diffieHelman = new DiffieHelman();
-            diffieHelman.CreateDH(streamReader, streamWriter, diffieHelman);
+            diffieHelman.CreateDH(streamReader, streamWriter);
             Console.WriteLine("create");
             /*  while (_isConnected) {
                   Console.WriteLine("create");
@@ -74,8 +74,8 @@ namespace ClientAplication
            
             isConnected = true;
             
-            diffieHelman.sendMessage1(content, diffieHelman, streamWriter);
-            String sDataIncomming = diffieHelman.reciveMessage(streamReader, diffieHelman);
+            diffieHelman.sendMessage1(content,  streamWriter);
+            String sDataIncomming = diffieHelman.reciveMessage(streamReader);
             return sDataIncomming;
         }
     }
