@@ -142,11 +142,12 @@ namespace ClientAplication
 
         private void softPhone_inComingCall(object sender, VoIPEventArgs<IPhoneCall> e)
         {
-            MessageBox.Show("tuttaaj");
+          
             System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
                 CallFrom main = new CallFrom();
                 main.user = new User();
+                main.pv = this;
                 main.user.Name = e.Item.DialInfo.ToString();
                 main.Show();
             }));
@@ -260,6 +261,7 @@ namespace ClientAplication
                 InvokeGUIThread(() => {
                     CallTransmision main = new CallTransmision();
                     main.user = new User();
+                    main.phoneVOIP = this;
                     main.phoneVOIP = this;
                     main.Show();
 

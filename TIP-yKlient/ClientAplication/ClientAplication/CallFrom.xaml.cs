@@ -19,6 +19,7 @@ namespace ClientAplication
     /// </summary>
     public partial class CallFrom : Window
     {
+        internal PhoneVOIP pv;
         internal User user;
         public CallFrom()
         {
@@ -26,6 +27,8 @@ namespace ClientAplication
 
         }
 
+
+      
 
         bool _shown;
         protected override void OnContentRendered(EventArgs e)
@@ -50,9 +53,8 @@ namespace ClientAplication
 
         private void callAceptTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            CallToWindow main = new CallToWindow();
-            main.user = user;
-            main.Show();
+            //tutaj funkcje 
+            pv.btn_PickUp_Click(user.Name);
             this.Close();
 
         }
