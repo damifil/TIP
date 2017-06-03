@@ -25,8 +25,8 @@ namespace ClientAplication
         internal ObservableCollection<User> Users;
         internal List<ListUser> listUsers;
         internal Client client;
+        internal PhoneVOIP phoneVOIP;
 
-      
         public History(string login, List<ListHistory> listHistory)
         {
             items = new ObservableCollection<itemTB>();
@@ -78,6 +78,9 @@ namespace ClientAplication
             return historyList;
         }
 
+        
+
+
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
@@ -92,6 +95,7 @@ namespace ClientAplication
                 App.Current.MainWindow = main;
                 main.client = client;
                 main.user = user;
+                main.phoneVOIP = phoneVOIP;
                 main.listUsers = listUsers;
                 main.Left = this.Left;
                 main.Top = this.Top;
@@ -114,6 +118,7 @@ namespace ClientAplication
             App.Current.MainWindow = main;
             main.Users = Users;
             main.listUsers = listUsers;
+            main.phoneVOIP = phoneVOIP;
             main.client = client;
             main.user = user;
             main.Left = this.Left;
@@ -129,6 +134,7 @@ namespace ClientAplication
             App.Current.MainWindow = main;
             main.Users = Users;
             main.listUsers = listUsers;
+            main.phoneVOIP = phoneVOIP;
             main.client = client;
             main.user = user;
             main.Left = this.Left;
@@ -162,22 +168,25 @@ namespace ClientAplication
         }
 
 
-
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                MessageBox.Show(user.Name);
-            }
-            if (cmd.DataContext is itemTB)
-            {
-                itemTB item = (itemTB)cmd.DataContext;
-                MessageBox.Show(item.Name);
-            }
+                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
 
+                CallToWindow main = new CallToWindow();
+                if (call == true)
+                {
+                    main.user = user;
+                    main.phoneVOIP = phoneVOIP;
+                    main.Show();
+                }
+
+            }
         }
+       
 
 
 

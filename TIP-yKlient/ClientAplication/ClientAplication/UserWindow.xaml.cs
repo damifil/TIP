@@ -24,6 +24,7 @@ namespace ClientAplication
         internal Client client;
         internal ObservableCollection<User> Users;
         internal List<ListUser> listUsers;
+        internal PhoneVOIP phoneVOIP;
         internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
         
 
@@ -88,6 +89,7 @@ namespace ClientAplication
             App.Current.MainWindow = main;
             main.client = client;
             main.Users = Users;
+            main.phoneVOIP = phoneVOIP;
             main.user = user;
             main.listUsers = listUsers;
             main.Left = this.Left;
@@ -130,6 +132,7 @@ namespace ClientAplication
                 main.client = client;
                 main.user = user;
                 main.listUsers = listUsers;
+                main.phoneVOIP = phoneVOIP;
                 main.Left = this.Left;
                 main.Top = this.Top;
                 this.Close();
@@ -147,6 +150,7 @@ namespace ClientAplication
             main.Users = Users;
             main.listUsers = listUsers;
             main.client = client;
+            main.phoneVOIP = phoneVOIP;
             main.user = user;
             main.Left = this.Left;
             main.Top = this.Top;
@@ -160,6 +164,7 @@ namespace ClientAplication
             Settings main = new Settings();
             App.Current.MainWindow = main;
             main.Users = Users;
+            main.phoneVOIP = phoneVOIP;
             main.user = user;
             main.listUsers = listUsers;
             main.client = client;
@@ -196,7 +201,16 @@ namespace ClientAplication
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                MessageBox.Show(user.Name);
+                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
+
+                CallToWindow main = new CallToWindow();
+                if (call == true)
+                {
+                    main.user = user;
+                    main.phoneVOIP = phoneVOIP;
+                    main.Show();
+                }
+
             }
         }
 

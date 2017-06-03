@@ -24,6 +24,7 @@ namespace ClientAplication
         internal User user;
         internal ObservableCollection<User> Users;
         internal List<ListUser> listUsers;
+        internal PhoneVOIP phoneVOIP;
         internal Client client; public Settings()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace ClientAplication
             return historyList;
         }
 
+
         private void goToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
@@ -74,6 +76,7 @@ namespace ClientAplication
                 main.Users = Users;
                 App.Current.MainWindow = main;
                 main.client = client;
+                main.phoneVOIP = phoneVOIP;
                 main.user = user;
                 main.listUsers = listUsers;
                 main.Left = this.Left;
@@ -109,6 +112,7 @@ namespace ClientAplication
             main.client = client;
             main.Users = Users;
             main.listUsers = listUsers;
+            main.phoneVOIP = phoneVOIP;
             main.user = user;
             main.Left = this.Left;
             main.Top = this.Top;
@@ -126,6 +130,7 @@ namespace ClientAplication
             main.listUsers = listUsers;
             main.client = client;
             main.user = user;
+            main.phoneVOIP = phoneVOIP;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
@@ -150,13 +155,23 @@ namespace ClientAplication
             lbUsers.DataContext = Users;
         }
 
+
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                MessageBox.Show(user.Name);
+                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
+
+                CallToWindow main = new CallToWindow();
+                if (call == true)
+                {
+                    main.user = user;
+                    main.phoneVOIP = phoneVOIP;
+                    main.Show();
+                }
+
             }
         }
 

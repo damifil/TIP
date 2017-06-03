@@ -292,16 +292,15 @@ namespace TIPySerwer
                             select us;
 
                 string listUsers = "";
-                int usersCount = 0;
                 foreach(Users item in users)
                 {
-                    listUsers = listUsers + "" + item.Login + "&";
-                    usersCount++;
+                    if(item.Login != loginUser)
+                        listUsers = listUsers + item.Login + " " + item.Is_Active + "&";
+                    Console.WriteLine(item.Login);
                 }
-                listUsers = listUsers + "" + usersCount;
                 return listUsers;
             }
         }
 
-    }
+        }
 }
