@@ -47,13 +47,14 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            pv.btn_HangUp_Click(user.Name);
             this.Close();
 
         }
 
         private void callAceptTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("hmm");
+            
             pv.btn_PickUp_Click(user.Name);
             this.Close();
 
