@@ -37,7 +37,7 @@ namespace ClientAplication
             if (_shown)
                 return;
 
-
+            phoneVOIP.callto = this;
             stringWithName.Text = "Nawiązywanie połączenia z " + user.Name;
             _shown = true;
             

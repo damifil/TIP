@@ -24,14 +24,14 @@ namespace ClientAplication
         MediaConnector _connector = new MediaConnector();
         PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
-
+        internal  CallToWindow callto=null;
         private bool _inComingCall;
 
         private string _reDialNumber;
 
         private bool _localHeld;
         CallFrom main;
-        CallTransmision transimiso;
+        internal CallTransmision transimiso=null;
 
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
@@ -186,27 +186,25 @@ namespace ClientAplication
             InvokeGUIThread(() => { });
 
             if (e.State == CallState.Answered)
-            {
-               
+            {  
 
                 StartDevices();
-
                 _mediaReceiver.AttachToCall(_call);
-                _mediaSender.AttachToCall(_call);
-              
-
-                InvokeGUIThread(() => {
-                    transimiso = new CallTransmision();
-                    transimiso.phoneVOIP = this;
-                    transimiso.user = new User();
-                    transimiso.Show();
-                });
+                _mediaSender.AttachToCall(_call); 
             }
 
             if (e.State == CallState.InCall)
             {
-                
-                StartDevices();
+
+                System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    if (callto != null)
+                    { callto.Close(); callto = null; }
+                    transimiso = new CallTransmision();
+                    transimiso.phoneVOIP = this;
+                    transimiso.user = new User();
+                    transimiso.Show();
+                }));
             }
 
             if (e.State.IsCallEnded())
@@ -221,13 +219,22 @@ namespace ClientAplication
                 WireDownCallEvents();
 
                 _call = null;
-                transimiso.Close();
+           
                 InvokeGUIThread(() => {  });
-
+                System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    if(transimiso!=null)
+                    { transimiso.Close(); transimiso = null; }
+                    if (callto!=null)
+                    { callto.Close(); callto = null;}
+                   
+                }));
             }
 
             if (e.State == CallState.LocalHeld)
             {
+               
+
                 StopDevices();
             }
 
