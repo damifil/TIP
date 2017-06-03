@@ -160,6 +160,7 @@ namespace ClientAplication
             Settings main = new Settings();
             App.Current.MainWindow = main;
             main.Users = Users;
+            main.user = user;
             main.listUsers = listUsers;
             main.client = client;
             main.Left = this.Left;

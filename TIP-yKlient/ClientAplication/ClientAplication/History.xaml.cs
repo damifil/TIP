@@ -130,6 +130,7 @@ namespace ClientAplication
             main.Users = Users;
             main.listUsers = listUsers;
             main.client = client;
+            main.user = user;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
