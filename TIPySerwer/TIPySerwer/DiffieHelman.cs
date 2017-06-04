@@ -80,13 +80,18 @@ namespace TIPySerwer
 
             //utworzenie sekretu
             diffieHelman.s = diffieHelman.powMod((int)diffieHelman.A, (int)diffieHelman.b, (int)diffieHelman.P);
-            if(messageRecive(sReader,diffieHelman)=="TEST")
+            if(messageRecive(sReader,diffieHelman)=="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
             {
+
                 sWriter.WriteLine("OK");
+                sWriter.Flush();
+
             }
             else
             {
+
                 sWriter.WriteLine("NOK");
+                sWriter.Flush();
 
             }
 

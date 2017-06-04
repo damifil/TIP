@@ -47,7 +47,9 @@ namespace ClientAplication
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); }
+
             }
+
             string flag = client.sendMessage("LOGIN " + login + " " + password);
             if(flag == "False")
             {

@@ -26,6 +26,10 @@ namespace ClientAplication
             client.Connect(ipAddress, portNum);
 
             HandleCommunication();
+            diffieHelman = new DiffieHelman();
+            diffieHelman.CreateDH(streamReader, streamWriter);
+                        
+            Console.WriteLine("create");
             ipAddres = ipAddress;
             portnumber = portNum;
         }
@@ -44,9 +48,6 @@ namespace ClientAplication
             streamWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
 
             isConnected = true;
-            diffieHelman = new DiffieHelman();
-            diffieHelman.CreateDH(streamReader, streamWriter);
-            Console.WriteLine("create");
             /*  while (_isConnected) {
                   Console.WriteLine("create");
                   //utworzenie polacenia szyfrowanego

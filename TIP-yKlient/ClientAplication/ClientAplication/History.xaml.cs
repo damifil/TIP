@@ -186,7 +186,18 @@ namespace ClientAplication
 
             }
         }
-       
+
+        private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
+        {
+
+            client.sendMessage("EXIT " + user.Name);
+            client.destroyfunction();
+            LoginRegisterWindow main = new LoginRegisterWindow();
+            main.client = null;
+            this.Close();
+            main.Show();
+        }
+
 
 
 

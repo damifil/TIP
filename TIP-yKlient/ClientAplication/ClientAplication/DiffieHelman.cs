@@ -151,39 +151,50 @@ namespace ClientAplication
         public void CreateDH(StreamReader _sReader, StreamWriter _sWriter)
         {
             String sData;
+            Boolean isCorrect = false;
             //tutaj ustalamy difiego 
             //komunikat o tworzeniu szyfrowania
-            _sWriter.WriteLine("CREATE");
-            _sWriter.Flush();
+            while (isCorrect != true)
+            {
+                _sWriter.WriteLine("CREATE");
+                _sWriter.Flush();
 
-            //utworzenie P i wysłanie
-            P = generateP();
-            sData = P.ToString();
-            _sWriter.WriteLine(sData);
+                //utworzenie P i wysłanie
+                P = generateP();
+                sData = P.ToString();
+                _sWriter.WriteLine(sData);
 
-            _sWriter.Flush();
+                _sWriter.Flush();
 
-            //utworzenie G i wyslanie
-            G = generateG(P);
- 
-            sData = G.ToString();
-            _sWriter.WriteLine(sData);
-            _sWriter.Flush();
+                //utworzenie G i wyslanie
+                G = generateG(P);
 
-            //wygenerowanie tajnego a
-            a = rnd.Next(10, 1000);
-            //wygenerowanie i wyslanie jawnego A
-            A =powMod((int)G, (int)a, (int)P);
-            sData = A.ToString();
-            _sWriter.WriteLine(sData);
-            _sWriter.Flush();
+                sData = G.ToString();
+                _sWriter.WriteLine(sData);
+                _sWriter.Flush();
 
-            //odebranie B
-            String sDataIncomming = _sReader.ReadLine();
-            double B = Convert.ToDouble(sDataIncomming);
-            //utworzenie sekretu
+                //wygenerowanie tajnego a
+                a = rnd.Next(10, 1000);
+                //wygenerowanie i wyslanie jawnego A
+                A = powMod((int)G, (int)a, (int)P);
+                sData = A.ToString();
+                _sWriter.WriteLine(sData);
+                _sWriter.Flush();
 
-            s = powMod((int)B, (int)a, (int)P);
+                //odebranie B
+                String sDataIncomming = _sReader.ReadLine();
+                double B = Convert.ToDouble(sDataIncomming);
+                //utworzenie sekretu
+
+                s = powMod((int)B, (int)a, (int)P);
+
+                sendMessage1("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", _sWriter);
+                if (_sReader.ReadLine() == "OK")
+                {
+                    Console.WriteLine("dostal okej");
+                    isCorrect = true;
+                }
+            }
         }
     }
 }
