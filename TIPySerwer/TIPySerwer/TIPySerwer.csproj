@@ -59,9 +59,9 @@
     <Reference Include="HashLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HashLib.2.0.1\lib\net40\HashLib.dll</HintPath>
     </Reference>
-    <Reference Include="OzekiSDK, Version=1.6.8.0, Culture=neutral, PublicKeyToken=4812fb35129b8487, processorArchitecture=MSIL">
+    <Reference Include="OzekiSDK, Version=1.7.0.0, Culture=neutral, PublicKeyToken=4812fb35129b8487, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Ozeki\Ozeki SDK\Examples\VoIP\06_DevelopersGuide\02_SoftphoneAdvanced\MyFirstSoftPhone_03\MyFirstSoftPhone_03\bin\Debug\OzekiSDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Ozeki\Ozeki SDK\SDK\.NET4\OzekiSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
