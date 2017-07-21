@@ -122,11 +122,11 @@ namespace ClientAplication
                 if (item.active == "True")
                 {
 
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
                 }
                 else
                 {
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
                 }
             }
             lbUsers.DataContext = Users;
