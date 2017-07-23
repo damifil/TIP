@@ -115,21 +115,28 @@ namespace ClientAplication
         private void searchClick(object sender, RoutedEventArgs e)
         {
             string value = searchInput.Text;
+
+            if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
+            {
+                lbUsers.DataContext = Users;
+                return;
+            }
             List<ListUser> listUser = SearchUsers(user.Name, value);
+            ObservableCollection<User> temp = new ObservableCollection<User>();
             foreach (ListUser item in listUser)
             {
                 if(!Users.Where(x => x.Name == item.name).Any())
                 if (item.active == "True")
                 {
 
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
+                    temp.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
                 }
                 else
                 {
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
+                    temp.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
                 }
             }
-            lbUsers.DataContext = Users;
+            lbUsers.DataContext = temp;
         }
 
         private void callToUser(object sender, MouseButtonEventArgs e)
