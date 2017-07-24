@@ -24,8 +24,8 @@ namespace ClientAplication
     {
 
 
-
-
+        
+        internal ObservableCollection<User> Friends;
         internal ObservableCollection<User> Users;
         internal User user;
         internal Client client;
@@ -69,16 +69,18 @@ namespace ClientAplication
         internal void addUSerToList()
         {
             Users = new ObservableCollection<User>();
+            Friends = new ObservableCollection<User>();
             foreach (ListUser item in listUsers)
             {
                 if (item.active == "True")
                 {
-
                     Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
+                    Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
                 }
                 else
                 {
                     Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
+                    Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
                 }
             }
             
@@ -89,10 +91,10 @@ namespace ClientAplication
              new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
              };
              Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });*/
-            lbUsers.DataContext = Users;
+            lbUsers.DataContext = Friends;
         }
 
-        //funkcja odpowiedzialna za wyswietlanie wyszukanycyh osob (wstepne testowanie wyswietlania)
+       
 
         private List<ListUser> SearchUsers(string login, string login1)              // szukanie uzytkownikow
         {
@@ -118,25 +120,26 @@ namespace ClientAplication
 
             if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
             {
-                lbUsers.DataContext = Users;
+                lbUsers.DataContext = Friends;
                 return;
             }
             List<ListUser> listUser = SearchUsers(user.Name, value);
-            ObservableCollection<User> temp = new ObservableCollection<User>();
+
+            Users = new ObservableCollection<User>(Friends);
             foreach (ListUser item in listUser)
             {
                 if(!Users.Where(x => x.Name == item.name).Any())
                 if (item.active == "True")
                 {
 
-                    temp.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
                 }
                 else
                 {
-                    temp.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
+                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
                 }
             }
-            lbUsers.DataContext = temp;
+            lbUsers.DataContext = Users;
         }
 
         private void callToUser(object sender, MouseButtonEventArgs e)
@@ -192,6 +195,7 @@ namespace ClientAplication
                 App.Current.MainWindow = main;
                 main.client = client;
                 main.user = user;
+                main.Friends = Friends; 
                 main.phoneVOIP = phoneVOIP;
                 main.listUsers = listUsers;
                 main.Left = this.Left;
@@ -230,7 +234,8 @@ namespace ClientAplication
             History main = new History(user.Name, listHistory);
             App.Current.MainWindow = main;
             main.client = client;
-            main.Users = Users;
+            main.Users = Friends;
+            main.Friends = Friends;
             main.listUsers = listUsers;
             main.phoneVOIP = phoneVOIP;
             main.user = user;
@@ -250,8 +255,9 @@ namespace ClientAplication
 
             Settings main = new Settings();
             App.Current.MainWindow = main;
-            main.Users = Users;
+            main.Users = Friends;
             main.listUsers = listUsers;
+            main.Friends = Friends;
             main.client = client;
             main.user = user;
             main.phoneVOIP = phoneVOIP;

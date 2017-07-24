@@ -23,6 +23,7 @@ namespace ClientAplication
         internal User user;
         internal Client client;
         internal ObservableCollection<User> Users;
+        internal ObservableCollection<User> Friends;
         internal List<ListUser> listUsers;
         internal PhoneVOIP phoneVOIP;
         internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
@@ -91,6 +92,7 @@ namespace ClientAplication
             main.Users = Users;
             main.phoneVOIP = phoneVOIP;
             main.user = user;
+            main.Friends = Friends;
             main.listUsers = listUsers;
             main.Left = this.Left;
             main.Top = this.Top;
@@ -131,6 +133,7 @@ namespace ClientAplication
                 App.Current.MainWindow = main;
                 main.client = client;
                 main.user = user;
+                main.Friends = Friends;
                 main.listUsers = listUsers;
                 main.phoneVOIP = phoneVOIP;
                 main.Left = this.Left;
@@ -147,11 +150,12 @@ namespace ClientAplication
 
             MainWindow main = new MainWindow();
             App.Current.MainWindow = main;
-            main.Users = Users;
+            main.Users = Friends;
             main.listUsers = listUsers;
             main.client = client;
             main.phoneVOIP = phoneVOIP;
             main.user = user;
+            main.Friends = Friends;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
@@ -163,10 +167,11 @@ namespace ClientAplication
 
             Settings main = new Settings();
             App.Current.MainWindow = main;
-            main.Users = Users;
+            main.Users = Friends;
             main.phoneVOIP = phoneVOIP;
             main.user = user;
             main.listUsers = listUsers;
+            main.Friends = Friends;
             main.client = client;
             main.Left = this.Left;
             main.Top = this.Top;
@@ -175,14 +180,49 @@ namespace ClientAplication
         }
 
 
+        private List<ListUser> SearchUsers(string login, string login1)              // szukanie uzytkownikow
+        {
+            string searchList = client.sendMessage("SRCH " + login + " " + login1);
+
+            string[] splitSearch = searchList.Split('&');
+            List<ListUser> listUsers = new List<ListUser>();
+            for (int i = 0; i < (splitSearch.Length - 1); i++)
+            {
+                ListUser user = new ListUser();
+                string[] sp = splitSearch[i].Split(' ');
+                user.name = sp[0];
+
+                user.active = sp[1];
+                listUsers.Add(user);
+            }
+            return listUsers;
+        }
+
         private void searchClick(object sender, RoutedEventArgs e)
         {
             string value = searchInput.Text;
-            Users = new ObservableCollection<User>() {
-                //uzytkownicy
-            new User() { Name = value ,IcoCall="\uf098", IcoUser="\uf2c0"},
 
-            };
+            if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
+            {
+                lbUsers.DataContext = Friends;
+                return;
+            }
+            List<ListUser> listUser = SearchUsers(user.Name, value);
+
+            Users = new ObservableCollection<User>(Friends);
+            foreach (ListUser item in listUser)
+            {
+                if (!Users.Where(x => x.Name == item.name).Any())
+                    if (item.active == "True")
+                    {
+
+                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
+                    }
+                    else
+                    {
+                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
+                    }
+            }
             lbUsers.DataContext = Users;
         }
 
