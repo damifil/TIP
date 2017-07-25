@@ -232,6 +232,34 @@ namespace TIPySerwer
             return true;
         }
 
+        public static bool DelFriend(string login, string oldFriend) // usuniecie znajomego
+        {
+            using (tipBDEntities db = new tipBDEntities())
+            {
+
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                Users oFriend = db.Users.Where(x => x.Login == oldFriend).Single();
+                bool checkHasFriend = db.Friends.Where(x => x.UserID == user.ID && x.UserID_From == oFriend.ID).Any();
+                if(checkHasFriend == true)
+                {
+                    Friends friends = db.Friends.Where(x => x.UserID == user.ID && x.UserID_From == oFriend.ID).Single();
+                    db.Friends.Remove(friends);
+                    db.SaveChanges();
+                    return true;
+                }
+                bool checkHasFriend1 = db.Friends.Where(x => x.UserID == oFriend.ID && x.UserID_From == user.ID).Any();
+                if (checkHasFriend1 == true)
+                {
+                    Friends friends = db.Friends.Where(x => x.UserID == oFriend.ID && x.UserID_From == user.ID).Single();
+                    db.Friends.Remove(friends);
+                    db.SaveChanges();
+                    return true;
+                }
+
+            }
+            return false;
+
+        }
         public static string GetFriends(string login)        // pobranie listy znajomych
         {
 
