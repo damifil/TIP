@@ -56,6 +56,8 @@ namespace ClientAplication
                 phoneVOIP.InitializeSoftPhone(user.Name, user.password, client.ipAddres, 5060);
             }
             catch (Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
+            phoneVOIP.client = client;
+            phoneVOIP.userLogged = user;
         }
 
         //inicjalizacja odpowiedzialna za wyswietlanie znajomych (wstepne testowanie wyswietlania)
@@ -129,15 +131,19 @@ namespace ClientAplication
 
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
+            User userLogged = user;
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
+               
                 User user = (User)cmd.DataContext;
                 bool call = phoneVOIP.btn_PickUp_Click(user.Name);
                 CallToWindow main = new CallToWindow();
                 if (call == true)
                 {
                     main.user = user;
+                    main.userLogged = userLogged;
+                    main.client = client;
                     main.phoneVOIP = phoneVOIP;
                     main.Show();
                 }

@@ -21,6 +21,8 @@ namespace ClientAplication
     {
         internal PhoneVOIP pv;
         internal User user;
+        internal User UserLogged;
+        internal Client client;
         public CallFrom()
         {
             InitializeComponent();
@@ -47,6 +49,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            string searchList = client.sendMessage("SAVECALL " + UserLogged.Name + " " + "Damian" + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
             pv.btn_HangUp_Click(user.Name);
             this.Close();
 

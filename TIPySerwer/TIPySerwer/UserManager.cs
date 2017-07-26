@@ -117,7 +117,7 @@ namespace TIPySerwer
             }
         }
 
-        public static bool SavaCall(string login, string login1, DateTime dateBegin)   // zapisanie rozmowy 
+        public static bool SavaCall(string login, string login1, string dateBegin, string hourBegin, string dateEnd, string hourEnd)   // zapisanie rozmowy 
         {
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -127,8 +127,8 @@ namespace TIPySerwer
                 Calls call = new Calls();
                 call.From_ID = user.ID;
                 call.To_ID = user1.ID;
-                call.Date_Begin = dateBegin;
-                call.Date_End = DateTime.Now;
+                call.Date_Begin = DateTime.Parse(dateBegin + " " + hourBegin);
+                call.Date_End = DateTime.Parse(dateEnd+ " " + hourEnd);
                 db.Calls.Add(call);
                 db.SaveChanges();
             }

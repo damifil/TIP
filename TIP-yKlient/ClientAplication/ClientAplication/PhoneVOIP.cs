@@ -25,6 +25,8 @@ namespace ClientAplication
         PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
         internal  CallToWindow callto=null;
+        internal Client client;
+        internal User userLogged;
         private bool _inComingCall;
 
         private string _reDialNumber;
@@ -148,6 +150,8 @@ namespace ClientAplication
                 main = new CallFrom();
                 main.user = new User();
                 main.pv = this;
+                main.UserLogged = userLogged;
+                main.client = client;
                 main.user.Name = e.Item.DialInfo.ToString();
                 main.Show();
             }));
