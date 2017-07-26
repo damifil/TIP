@@ -186,7 +186,6 @@ namespace TIPySerwer
             threadServer.Start();
             Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
             threadOzeki.Start();
-            
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
         public static void runServer()

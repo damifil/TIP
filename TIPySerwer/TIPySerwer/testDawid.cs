@@ -10,10 +10,10 @@ namespace TIPySerwer
     {
         public static void drugiMejn()
         {
-            /*
-            UserManager.AddUser("Dawid", "haslo").Wait();
-            UserManager.Logging("Damian", "haslo", "192.168.122.123").Wait();
-            UserManager.SavaCall("Dawid", "Damian", DateTime.Now).Wait();*/
+            
+            //UserManager.AddUser("Dawid", "haslo");
+           // UserManager.Logging("Damian", "haslo");
+           // UserManager.SavaCall("Dawid", "Damian", DateTime.Now);
             /*List<CallsHistoryModel> listCalls = UserManager.GetCalls("Andrzej");
             foreach(CallsHistoryModel item in listCalls)
             {

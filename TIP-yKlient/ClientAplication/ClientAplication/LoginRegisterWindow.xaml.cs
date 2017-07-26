@@ -50,6 +50,10 @@ namespace ClientAplication
 
             }
 
+            if(client == null)
+            {
+                return;
+            }
             string flag = client.sendMessage("LOGIN " + login + " " + password);
             if(flag == "False")
             {
