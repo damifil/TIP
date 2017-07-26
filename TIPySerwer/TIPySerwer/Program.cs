@@ -71,7 +71,7 @@ namespace TIPySerwer
                 switch (fragmentCommunication[0])
                 {
                     case "CREATE":
-                        diffieHelman.createDH(diffieHelman, sReader, sWriter);
+                        diffieHelman.createDH( sReader, sWriter);
                         break;
                     case "SEND":
                         sData = diffieHelman.messageRecive(sReader, diffieHelman);
