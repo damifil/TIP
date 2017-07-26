@@ -22,9 +22,6 @@ namespace ClientAplication
 
     public partial class MainWindow : Window
     {
-
-
-        
         internal ObservableCollection<User> Friends;
         internal ObservableCollection<User> Users;
         internal User user;
@@ -38,7 +35,6 @@ namespace ClientAplication
             InitializeComponent();
         }
 
-
         bool _shown;
         protected override void OnContentRendered(EventArgs e)
         {
@@ -46,7 +42,6 @@ namespace ClientAplication
 
             if (_shown)
                 return;
-
             userNameTB.Text = user.Name;
             _shown = true;
             if (Users != null)
@@ -56,7 +51,6 @@ namespace ClientAplication
             phoneVOIP = new PhoneVOIP();
             lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
             welcomeString.Text = "Witaj nazwa_Użytkownika";
-
             try
             {
                 phoneVOIP.InitializeSoftPhone(user.Name, user.password, client.ipAddres, 5060);
@@ -70,36 +64,28 @@ namespace ClientAplication
         {
             Users = new ObservableCollection<User>();
             Friends = new ObservableCollection<User>();
-            foreach (ListUser item in listUsers)
+            if (listUsers != null)
             {
-                if (item.active == "True")
+                foreach (ListUser item in listUsers)
                 {
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
-                    Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
-                }
-                else
-                {
-                    Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
-                    Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                    if (item.active == "True")
+                    {
+                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
+                        Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
+                    }
+                    else
+                    {
+                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
+                        Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                    }
                 }
             }
-            
-            /* Users = new ObservableCollection<User>() {
-                 //użytkownicy
-             new User() { Name = "Adam" ,IcoCall="\uf098", IcoUser="\uf2c0"},
-             new User() { Name = "do dodania", IcoCall="\uf098" ,IcoUser="\uf234"},
-             new User() { Name = "online", IcoCall="\uf098" ,IcoUser="\uf007"}
-             };
-             Users.Add(new User() { Name = "testowanie dodawania", IcoCall = "\uf098", IcoUser = "\uf007" });*/
             lbUsers.DataContext = Friends;
         }
-
-       
-
+           
         private List<ListUser> SearchUsers(string login, string login1)              // szukanie uzytkownikow
         {
             string searchList = client.sendMessage("SRCH " + login + " " + login1);
-
             string[] splitSearch = searchList.Split('&');
             List<ListUser> listUsers = new List<ListUser>();
             for (int i = 0; i < (splitSearch.Length - 1); i++)
@@ -107,7 +93,6 @@ namespace ClientAplication
                 ListUser user = new ListUser();
                 string[] sp = splitSearch[i].Split(' ');
                 user.name = sp[0];
-
                 user.active = sp[1];
                 listUsers.Add(user);
             }
@@ -149,7 +134,6 @@ namespace ClientAplication
             {
                 User user = (User)cmd.DataContext;
                 bool call = phoneVOIP.btn_PickUp_Click(user.Name);
-
                 CallToWindow main = new CallToWindow();
                 if (call == true)
                 {
@@ -186,10 +170,8 @@ namespace ClientAplication
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
-                User userFriend = (User)cmd.DataContext;
-                
+                User userFriend = (User)cmd.DataContext; 
                 List<ListHistory> listHistory = GetConcreteHistory(user.Name, userFriend.Name);
-     
                 UserWindow main = new UserWindow(listHistory);
                 main.Users = Users;
                 App.Current.MainWindow = main;
