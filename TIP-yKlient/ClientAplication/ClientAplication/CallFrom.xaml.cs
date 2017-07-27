@@ -42,7 +42,7 @@ namespace ClientAplication
                 return;
 
 
-            stringWithName.Text = "połączenia z " + user.Name;
+            stringWithName.Text = "Połączenie " + user.Name;
             _shown = true;
 
 
@@ -55,7 +55,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            string searchList = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
+            string saveCall = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
             pv.btn_HangUp_Click(user.Name);
             this.Close();
 

@@ -48,8 +48,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine("call to window");
-            string searchList = client.sendMessage("SAVECALL " + user.Name + " " + userLogged.Name + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
+            string searchList = client.sendMessage("SAVECALL " + userLogged.Name + " " +  user.Name + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
             phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
             

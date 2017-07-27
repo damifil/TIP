@@ -29,6 +29,7 @@ namespace ClientAplication
         internal User userLogged;
         public string nameCallToUser;
         
+        
         private bool _inComingCall;
 
         private string _reDialNumber;
@@ -155,6 +156,7 @@ namespace ClientAplication
                 main.UserLogged = userLogged;
                 main.client = client;
                 main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                nameCallToUser= e.Item.DialInfo.CallerDisplay; 
                 main.user.Name = e.Item.DialInfo.CallerDisplay;
                 main.Show();
             }));
@@ -209,6 +211,9 @@ namespace ClientAplication
                     { callto.Close(); callto = null; }
                     transimiso = new CallTransmision();
                     transimiso.phoneVOIP = this;
+                    transimiso.userLogged = userLogged;
+                    transimiso.nameCallToUser = nameCallToUser;
+                    transimiso.client = client;
                     transimiso.user = new User();
                     transimiso.Show();
                 }));

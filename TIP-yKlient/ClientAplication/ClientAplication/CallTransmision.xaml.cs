@@ -21,6 +21,9 @@ namespace ClientAplication
     {
         internal PhoneVOIP phoneVOIP;
         internal User user;
+        internal Client client;
+        internal User userLogged;
+        internal string nameCallToUser;
         public CallTransmision()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace ClientAplication
                 return;
 
 
-            stringWithName.Text = "połączenia z " + user.Name;
+            stringWithName.Text = "Połączenie z " + nameCallToUser;
             _shown = true;
 
         }
@@ -43,6 +46,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            string saveCall = client.sendMessage("SAVECALL " + userLogged.Name + " " + nameCallToUser + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
             phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
 
