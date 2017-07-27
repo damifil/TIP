@@ -155,6 +155,7 @@ namespace ClientAplication
                 main.pv = this;
                 main.UserLogged = userLogged;
                 main.client = client;
+                main.dateBegin = DateTime.Now;
                 main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
                 nameCallToUser= e.Item.DialInfo.CallerDisplay; 
                 main.user.Name = e.Item.DialInfo.CallerDisplay;
@@ -213,6 +214,7 @@ namespace ClientAplication
                     transimiso.phoneVOIP = this;
                     transimiso.userLogged = userLogged;
                     transimiso.nameCallToUser = nameCallToUser;
+                    transimiso.dateBegin = DateTime.Now;
                     transimiso.client = client;
                     transimiso.user = new User();
                     transimiso.Show();

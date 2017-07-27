@@ -24,6 +24,7 @@ namespace ClientAplication
         internal User UserLogged;
         internal Client client;
         internal string nameCallToUser;
+        internal DateTime dateBegin;
         public CallFrom()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            string saveCall = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
+            string saveCall = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + dateBegin + " " + DateTime.Now.ToString());
             pv.btn_HangUp_Click(user.Name);
             this.Close();
 

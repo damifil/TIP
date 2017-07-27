@@ -145,7 +145,7 @@ namespace ClientAplication
                     main.user = user;
                     main.userLogged = userLogged;
                     main.client = client;
-                    Console.WriteLine("calltouser w mainwindow " + phoneVOIP.nameCallToUser);
+                    main.dateBegin = DateTime.Now;
                     main.phoneVOIP = phoneVOIP;
                     main.Show();
                 }
