@@ -23,6 +23,7 @@ namespace ClientAplication
         internal User user;
         internal User UserLogged;
         internal Client client;
+        internal string nameCallToUser;
         public CallFrom()
         {
             InitializeComponent();
@@ -44,12 +45,17 @@ namespace ClientAplication
             stringWithName.Text = "połączenia z " + user.Name;
             _shown = true;
 
+
+
+
+
+
         }
 
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            string searchList = client.sendMessage("SAVECALL " + UserLogged.Name + " " + "Damian" + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
+            string searchList = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + DateTime.Now.ToString() + " " + DateTime.Now.ToString());
             pv.btn_HangUp_Click(user.Name);
             this.Close();
 

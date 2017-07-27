@@ -137,6 +137,7 @@ namespace ClientAplication
             {
                
                 User user = (User)cmd.DataContext;
+                phoneVOIP.nameCallToUser = user.Name;
                 bool call = phoneVOIP.btn_PickUp_Click(user.Name);
                 CallToWindow main = new CallToWindow();
                 if (call == true)
@@ -144,6 +145,7 @@ namespace ClientAplication
                     main.user = user;
                     main.userLogged = userLogged;
                     main.client = client;
+                    Console.WriteLine("calltouser w mainwindow " + phoneVOIP.nameCallToUser);
                     main.phoneVOIP = phoneVOIP;
                     main.Show();
                 }

@@ -27,6 +27,8 @@ namespace ClientAplication
         internal  CallToWindow callto=null;
         internal Client client;
         internal User userLogged;
+        public string nameCallToUser;
+        
         private bool _inComingCall;
 
         private string _reDialNumber;
@@ -152,7 +154,8 @@ namespace ClientAplication
                 main.pv = this;
                 main.UserLogged = userLogged;
                 main.client = client;
-                main.user.Name = e.Item.DialInfo.ToString();
+                main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                main.user.Name = e.Item.DialInfo.CallerDisplay;
                 main.Show();
             }));
 
