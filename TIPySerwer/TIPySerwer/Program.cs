@@ -125,7 +125,10 @@ namespace TIPySerwer
                         sData = UserManager.GetFriends(fragmentCommunication[1]);
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
-                    
+                    case "SAVECALL":
+                        sData = UserManager.SavaCall(fragmentCommunication[1], fragmentCommunication[2], fragmentCommunication[3], fragmentCommunication[4],fragmentCommunication[5], fragmentCommunication[6]).ToString();
+                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        break;
                     default:
                         sData = "Nieprawidłowe żądanie";
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
@@ -182,7 +185,6 @@ namespace TIPySerwer
             threadServer.Start();
             Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
             threadOzeki.Start();
-            
             //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
         public static void runServer()

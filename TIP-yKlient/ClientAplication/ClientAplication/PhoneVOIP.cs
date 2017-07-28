@@ -25,6 +25,11 @@ namespace ClientAplication
         PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
         internal  CallToWindow callto=null;
+        internal Client client;
+        internal User userLogged;
+        public string nameCallToUser;
+        
+        
         private bool _inComingCall;
 
         private string _reDialNumber;
@@ -148,7 +153,12 @@ namespace ClientAplication
                 main = new CallFrom();
                 main.user = new User();
                 main.pv = this;
-                main.user.Name = e.Item.DialInfo.ToString();
+                main.UserLogged = userLogged;
+                main.client = client;
+                main.dateBegin = DateTime.Now;
+                main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                nameCallToUser= e.Item.DialInfo.CallerDisplay; 
+                main.user.Name = e.Item.DialInfo.CallerDisplay;
                 main.Show();
             }));
 
@@ -202,6 +212,10 @@ namespace ClientAplication
                     { callto.Close(); callto = null; }
                     transimiso = new CallTransmision();
                     transimiso.phoneVOIP = this;
+                    transimiso.userLogged = userLogged;
+                    transimiso.nameCallToUser = nameCallToUser;
+                    transimiso.dateBegin = DateTime.Now;
+                    transimiso.client = client;
                     transimiso.user = new User();
                     transimiso.Show();
                 }));
