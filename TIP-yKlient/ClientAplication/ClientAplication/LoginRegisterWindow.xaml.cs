@@ -50,17 +50,13 @@ namespace ClientAplication
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); }
 
-<<<<<<< HEAD
-            }       
-=======
+
             }
 
             if(client == null)
             {
                 return;
             }
-            string flag = client.sendMessage("LOGIN " + login + " " + password);
->>>>>>> origin/master
             if(flag == "False")
             {
                 MessageBox.Show("Login lub hasło jest błędne");
