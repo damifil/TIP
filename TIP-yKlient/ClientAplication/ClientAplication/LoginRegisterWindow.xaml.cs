@@ -40,35 +40,40 @@ namespace ClientAplication
         {
             string login = loginInput.Text;
             string password = passwordInput.Password;
+            string flag=null;
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
             if (client == null) {
                 try
                 {
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
+                    flag = client.sendMessage("LOGIN " + login + " " + password);
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); }
 
-            }
-
-            string flag = client.sendMessage("LOGIN " + login + " " + password);
+            }       
             if(flag == "False")
             {
                 MessageBox.Show("Login lub hasło jest błędne");
                 return;
             }
-
-           
-
-           
-            MainWindow main = new MainWindow();
-            User userToSend = new User();
-            userToSend.Name = loginInput.Text;
-            userToSend.password = password;
-            main.user = userToSend;
-            main.listUsers = GetFriends(loginInput.Text);
-            main.client = client;
-            this.Close();
-            main.Show();
+            else if(flag ==null)
+            {
+                MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");
+            }
+            else
+            {
+                MainWindow main = new MainWindow();
+                User userToSend = new User();
+                userToSend.Name = loginInput.Text;
+                userToSend.password = password;
+                main.user = userToSend;
+                Console.WriteLine(login);
+                main.listUsers = GetFriends(login);
+                main.client = client;
+                this.Close();
+                main.Show();
+            }
+          
         }       
 
         private List<ListUser> GetFriends(string login)
@@ -82,7 +87,6 @@ namespace ClientAplication
                 ListUser user = new ListUser();
                 string[] sp = splitFriends[i].Split(' ');
                 user.name = sp[0];
-
                 user.active = sp[1];
                 listUsers.Add(user);
             }

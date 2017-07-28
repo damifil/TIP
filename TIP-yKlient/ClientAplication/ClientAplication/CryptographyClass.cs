@@ -12,13 +12,12 @@ namespace ClientAplication
 
     public static class Cryptography
     {
+
         private static int iterations = 2;
         private static int keySize = 256;
         private static string hash = "SHA1";
-        private static string salt = "Itg4EdEeUy8v1c2J"; // Random
-        private static string vector = "syk3CiUaBs4KdmuZ"; // Random
-        private static byte[] vectorBytes = Encoding.ASCII.GetBytes(vector);
-        private static byte[] saltBytes = Encoding.ASCII.GetBytes(salt);
+        private static byte[] vectorBytes = Encoding.ASCII.GetBytes("syk3CiUaBs4KdmuZ");
+        private static byte[] saltBytes = Encoding.ASCII.GetBytes("Itg4EdEeUy8v1c2J");
 
         public static string Encrypt(string value, byte[] password)
         {
@@ -27,16 +26,15 @@ namespace ClientAplication
         public static string Encrypt<T>(string value, byte[] password)
                 where T : SymmetricAlgorithm, new()
         {
-           
             byte[] valueBytes = Encoding.UTF8.GetBytes(value);
-
             byte[] encrypted;
             using (T cipher = new T())
             {
-                PasswordDeriveBytes passwordBytes =
-                    new PasswordDeriveBytes(password, saltBytes, hash, iterations);
+                PasswordDeriveBytes passwordBytes = new PasswordDeriveBytes(password, saltBytes, hash, iterations);
                 byte[] keyBytes = passwordBytes.GetBytes(keySize / 8);
-                cipher.Mode = CipherMode.CBC;
+                cipher.Clear();
+                cipher.Padding = PaddingMode.Zeros;
+                cipher.Mode = CipherMode.ECB;
                 using (ICryptoTransform encryptor = cipher.CreateEncryptor(keyBytes, vectorBytes))
                 {
                     using (MemoryStream to = new MemoryStream())
@@ -53,7 +51,6 @@ namespace ClientAplication
             }
             return Convert.ToBase64String(encrypted);
         }
-
         public static string Decrypt(string value, byte[] password)
         {
             return Decrypt<AesManaged>(value, password);
@@ -67,8 +64,9 @@ namespace ClientAplication
             {
                 PasswordDeriveBytes passwordBytes = new PasswordDeriveBytes(password, saltBytes, hash, iterations);
                 byte[] keyBytes = passwordBytes.GetBytes(keySize / 8);
-                cipher.Mode = CipherMode.CBC;
-
+                cipher.Clear();
+                cipher.Padding = PaddingMode.Zeros;
+                cipher.Mode = CipherMode.ECB;
                 try
                 {
                     using (ICryptoTransform decryptor = cipher.CreateDecryptor(keyBytes, vectorBytes))
@@ -87,7 +85,6 @@ namespace ClientAplication
                 {
                     return String.Empty;
                 }
-
                 cipher.Clear();
             }
             return Encoding.UTF8.GetString(decrypted, 0, decryptedByteCount);
@@ -95,10 +92,10 @@ namespace ClientAplication
 
     }
 
-
     class DiffieHelman
     {
         public double G, a, A, s, P;
+        byte[] secretByteArray = null;
         Random rnd = new Random();
         public double generateP()
         {
@@ -124,7 +121,6 @@ namespace ClientAplication
             }
             return true;
         }
-
         public int powMod(int a, int w, int n)
         {
             int pot, wyn;
@@ -137,7 +133,6 @@ namespace ClientAplication
             }
             return wyn;
         }
-
         public double generateG(double x)
         {
             double px = x;
@@ -160,7 +155,6 @@ namespace ClientAplication
             int index = rnd.Next(1, al.Count);
             return Convert.ToDouble(al[index]);
         }
-
         public double[] generateDoubleArrayFromStrin(string message)
         {
             double[] returnmesage = new double[message.Length];
@@ -170,40 +164,32 @@ namespace ClientAplication
             }
             return returnmesage;
         }
-
-
-
-        public void sendMessage(string sData,  StreamWriter sWriter, string comunique)
+        public void sendMessage(string sData, StreamWriter sWriter, string comunique)
         {
             sWriter.WriteLine(comunique);
             sWriter.Flush();
-            String messageSend = Cryptography.Encrypt(sData, BitConverter.GetBytes(s));
+            String messageSend = Cryptography.Encrypt(sData, secretByteArray);
             sWriter.WriteLine(messageSend);
             sWriter.Flush();
         }
-
-
         public void sendMessage1(string sData, StreamWriter sWriter)
         {
-            String messageSend = Cryptography.Encrypt(sData, BitConverter.GetBytes(s));
+            String messageSend = Cryptography.Encrypt(sData, secretByteArray);
             sWriter.WriteLine(messageSend);
             sWriter.Flush();
         }
-
         public string reciveMessage(StreamReader sReader)
         {
             string sData = sReader.ReadLine();
             string messageDecrypt = "";
-            messageDecrypt = Cryptography.Decrypt(sData, BitConverter.GetBytes(s));
-            return messageDecrypt;
+            messageDecrypt = Cryptography.Decrypt(sData, secretByteArray);
+            return messageDecrypt.TrimEnd('\0');
         }
-
         public void CreateDH(StreamReader _sReader, StreamWriter sWriter)
         {
             String sData;
             Boolean isCorrect = false;
-            //tutaj ustalamy difiego 
-            //komunikat o tworzeniu szyfrowania
+         
             while (isCorrect != true)
             {
                 sWriter.WriteLine("CREATE");
@@ -235,7 +221,7 @@ namespace ClientAplication
                 //utworzenie sekretu
 
                 s = powMod((int)B, (int)a, (int)P);
-
+                secretByteArray = BitConverter.GetBytes(s);
                 sendMessage1("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", sWriter);
                 if (_sReader.ReadLine() == "OK")
                 {

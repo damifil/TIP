@@ -72,7 +72,7 @@
       <DependentUpon>CallTransmision.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
-    <Compile Include="DiffieHelman.cs" />
+    <Compile Include="CryptographyClass.cs" />
     <Compile Include="ListHistory.cs" />
     <Compile Include="ListUser.cs" />
     <Compile Include="LoginRegisterWindow.xaml.cs">

@@ -65,7 +65,7 @@ namespace TIPySerwer
         {            
             if (!IsLoginExists(login))
             {
-                Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                Console.WriteLine("Błędny login lub hasło (akcja z loginem: "+login+" )");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                 return false;
             }
             using (tipBDEntities db = new tipBDEntities())
@@ -75,11 +75,11 @@ namespace TIPySerwer
                 byte[] pass =  HashPassword(password);
                 if (!userPass.SequenceEqual(pass))
                 {
-                    Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                    Console.WriteLine("Błędny login lub hasło (akcja z loginem: " + login + " )");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                     return false;
                 }
                 UpdateActivityUser(login);
-                Console.WriteLine("Zostałeś zalogowany");
+                Console.WriteLine("klient "+ login+" zalogowal sie");
                 return true;
             }
         }
@@ -89,7 +89,7 @@ namespace TIPySerwer
         {
             if (!IsLoginExists(login))
             {
-                Console.WriteLine("Błędny login lub hasło");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
+                Console.WriteLine("Błędny login lub hasło(akcja z loginem: " + login + ")");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                 return false;
             }
             using (tipBDEntities db = new tipBDEntities())

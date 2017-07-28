@@ -22,12 +22,11 @@ namespace TIPySerwer
     {
         private TcpListener server;
         private Boolean isRunning;
-        private DiffieHelman diffieHelman;
+       
         public TcpServer(int port)
         {
             server = new TcpListener(IPAddress.Any, port);
             server.Start();
-
             isRunning = true;
 
             LoopClients();
@@ -39,8 +38,6 @@ namespace TIPySerwer
             {
                 
                 TcpClient newClient = server.AcceptTcpClient();
-
-               
                 Thread t = new Thread(new ParameterizedThreadStart(HandleClient));
                 try
                 {
@@ -54,19 +51,18 @@ namespace TIPySerwer
         {
             Random rnd = new Random();
             TcpClient client = (TcpClient)obj;
-            diffieHelman = new DiffieHelman();
+            DiffieHelman diffieHelman = new DiffieHelman();
             StreamWriter sWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
             StreamReader sReader = new StreamReader(client.GetStream(), Encoding.ASCII);
             Boolean bClientConnected = true;
             String sData = null;
 
-              //interesujaca nas obecnie klasa tutaj cala logika wspolpracy serwera z klientem bedzie umiesczona
+            //interesujaca nas obecnie klasa tutaj cala logika wspolpracy serwera z klientem bedzie umiesczona
             while (bClientConnected)
             {
                 //nasluchiwanie komunikatu
                 sData = diffieHelman.messageRecive(sReader, diffieHelman);
-                Console.WriteLine("otrzymano " + sData);
-                
+                Console.WriteLine("otrzymano " + sData); 
                 string[] fragmentCommunication = sData.Split(' ');
                 switch (fragmentCommunication[0])
                 {

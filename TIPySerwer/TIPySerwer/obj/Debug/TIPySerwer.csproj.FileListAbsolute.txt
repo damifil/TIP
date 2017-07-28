@@ -55,6 +55,7 @@ C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramew
 C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
 C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
+C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\OzekiSDK.dll
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe.config
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.exe
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\TIPySerwer.pdb
@@ -66,7 +67,5 @@ D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\System.Data.SqlServerCe.dll
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.xml
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServer.xml
 D:\GIT\TIP\TIPySerwer\TIPySerwer\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.csprojResolveAssemblyReference.cache
 D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.exe
 D:\GIT\TIP\TIPySerwer\TIPySerwer\obj\Debug\TIPySerwer.pdb
-C:\Users\Dawid\Documents\GitHub\TIP\TIPySerwer\TIPySerwer\bin\Debug\OzekiSDK.dll
