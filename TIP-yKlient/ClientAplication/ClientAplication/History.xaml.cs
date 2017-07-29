@@ -117,12 +117,12 @@ namespace ClientAplication
 
             MainWindow main = new MainWindow();
             App.Current.MainWindow = main;
-            main.Users = Friends;
-            main.Friends = Friends;
-            main.listUsers = listUsers;
-            main.phoneVOIP = phoneVOIP;
-            main.client = client;
-            main.user = user;
+           // main.Users = Friends;
+          //  main.Friends = Friends;
+          //  main.listUsers = listUsers;
+          //  main.phoneVOIP = phoneVOIP;
+          //  main.client = client;
+          //  main.user = user;
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();

@@ -24,7 +24,6 @@ namespace ClientAplication
         public LoginRegisterWindow()
         {
             InitializeComponent();
-            
         }
         private static byte[] HashPassword(string password)          // haszowanie hasla
         {
@@ -68,14 +67,24 @@ namespace ClientAplication
             }
             else
             {
-                MainWindow main = new MainWindow();
+                SingletoneObject singletone = SingletoneObject.Instance;
                 User userToSend = new User();
                 userToSend.Name = loginInput.Text;
                 userToSend.password = password;
-                main.user = userToSend;
-                Console.WriteLine(login);
-                main.listUsers = GetFriends(login);
-                main.client = client;
+                singletone.user = userToSend;
+                singletone.listUsers = GetFriends(login);
+                singletone.client = client;
+                singletone.phoneVOIP = new PhoneVOIP();
+
+                try
+                {
+                    singletone.phoneVOIP.InitializeSoftPhone(singletone.user.Name, singletone.user.password, client.ipAddres, 5060);
+                }
+                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
+                singletone.phoneVOIP.client = client;
+                singletone.phoneVOIP.userLogged = singletone.user;
+
+                MainWindow main = new MainWindow();
                 this.Close();
                 main.Show();
             }
@@ -127,8 +136,8 @@ namespace ClientAplication
             userToSend.Name = login;
             userToSend.password = password1;
             MainWindow main = new MainWindow();
-            main.user = userToSend;
-            main.client = client;
+            //main.user = userToSend;
+            //main.client = client;
             this.Close();
             main.Show();
            

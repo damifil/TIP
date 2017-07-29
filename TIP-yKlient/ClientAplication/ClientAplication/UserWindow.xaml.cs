@@ -150,12 +150,12 @@ namespace ClientAplication
 
             MainWindow main = new MainWindow();
             App.Current.MainWindow = main;
-            main.Users = Friends;
+           /* main.Users = Friends;
             main.listUsers = listUsers;
             main.client = client;
             main.phoneVOIP = phoneVOIP;
             main.user = user;
-            main.Friends = Friends;
+            main.Friends = Friends;*/
             main.Left = this.Left;
             main.Top = this.Top;
             this.Close();
