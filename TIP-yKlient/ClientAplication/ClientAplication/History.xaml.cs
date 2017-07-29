@@ -21,16 +21,13 @@ namespace ClientAplication
     public partial class History : Window
     {
         internal ObservableCollection<itemTB> items;
-        internal User user;
-        internal ObservableCollection<User> Users;
-        internal ObservableCollection<User> Friends;
-        internal List<ListUser> listUsers;
-        internal Client client;
-        internal PhoneVOIP phoneVOIP;
+        SingletoneObject singletoneOBj;
+
 
         public History(string login, List<ListHistory> listHistory)
         {
             items = new ObservableCollection<itemTB>();
+            singletoneOBj = SingletoneObject.GetInstance;
             foreach (ListHistory item in listHistory)
             {
                 items.Add(new itemTB() { Name = item.userName,
@@ -55,14 +52,13 @@ namespace ClientAplication
                 return;
 
             _shown = true;
-            lbUsers.DataContext = Users;
         }
 
 
 
         private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
         {
-            string historyListString = client.sendMessage("USERHISTORY " + login + " " + login1);
+            string historyListString = singletoneOBj.client.sendMessage("USERHISTORY " + login + " " + login1);
             string[] historySplit = historyListString.Split('&');
             List<ListHistory> historyList = new List<ListHistory>();
             for (int i = 0; i < (historySplit.Length - 1); i++)
@@ -79,118 +75,6 @@ namespace ClientAplication
             return historyList;
         }
 
-        
-
-
-        private void goToUser(object sender, MouseButtonEventArgs e)
-        {
-            TextBlock cmd = (TextBlock)sender;
-            if (cmd.DataContext is User)
-            {
-                User userFriend = (User)cmd.DataContext;
-
-                List<ListHistory> listHistory = GetConcreteHistory(user.Name, userFriend.Name);
-
-                UserWindow main = new UserWindow(listHistory);
-                main.Users = Users;
-                App.Current.MainWindow = main;
-                main.client = client;
-                main.user = user;
-                main.phoneVOIP = phoneVOIP;
-                main.listUsers = listUsers;
-                main.Left = this.Left;
-                main.Top = this.Top;
-                this.Close();
-                main.Show();
-            }
-        }
-
-
-        private void historyTextboxaction(object sender, MouseButtonEventArgs e)
-        {
-
-
-        }
-
-        private void homeTextboxaction(object sender, MouseButtonEventArgs e)
-        {
-
-            MainWindow main = new MainWindow();
-            App.Current.MainWindow = main;
-           // main.Users = Friends;
-          //  main.Friends = Friends;
-          //  main.listUsers = listUsers;
-          //  main.phoneVOIP = phoneVOIP;
-          //  main.client = client;
-          //  main.user = user;
-            main.Left = this.Left;
-            main.Top = this.Top;
-            this.Close();
-            main.Show();
-        }
-
-        private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
-        {
-
-            Settings main = new Settings();
-            App.Current.MainWindow = main;
-            main.Users = Friends;
-            main.listUsers = listUsers;
-            main.phoneVOIP = phoneVOIP;
-            main.client = client;
-            main.Friends = Friends;
-            main.user = user;
-            main.Left = this.Left;
-            main.Top = this.Top;
-            this.Close();
-            main.Show();
-        }
-
-        private List<ListUser> SearchUsers(string login, string login1)              // szukanie uzytkownikow
-        {
-            string searchList = client.sendMessage("SRCH " + login + " " + login1);
-
-            string[] splitSearch = searchList.Split('&');
-            List<ListUser> listUsers = new List<ListUser>();
-            for (int i = 0; i < (splitSearch.Length - 1); i++)
-            {
-                ListUser user = new ListUser();
-                string[] sp = splitSearch[i].Split(' ');
-                user.name = sp[0];
-
-                user.active = sp[1];
-                listUsers.Add(user);
-            }
-            return listUsers;
-        }
-
-        private void searchClick(object sender, RoutedEventArgs e)
-        {
-            string value = searchInput.Text;
-
-            if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
-            {
-                lbUsers.DataContext = Friends;
-                return;
-            }
-            List<ListUser> listUser = SearchUsers(user.Name, value);
-
-            Users = new ObservableCollection<User>(Friends);
-            foreach (ListUser item in listUser)
-            {
-                if (!Users.Where(x => x.Name == item.name).Any())
-                    if (item.active == "True")
-                    {
-
-                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
-                    }
-                    else
-                    {
-                        Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
-                    }
-            }
-            lbUsers.DataContext = Users;
-        }
         private void searchClickHistory(object sender, RoutedEventArgs e)
         {
             string value = historysearchinput.Text;
@@ -212,29 +96,20 @@ namespace ClientAplication
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
+                bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
 
                 CallToWindow main = new CallToWindow();
                 if (call == true)
                 {
                     main.user = user;
-                    main.phoneVOIP = phoneVOIP;
+                    main.phoneVOIP = singletoneOBj.phoneVOIP;
                     main.Show();
                 }
 
             }
         }
 
-        private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
-        {
-
-            client.sendMessage("EXIT " + user.Name);
-            client.destroyfunction();
-            LoginRegisterWindow main = new LoginRegisterWindow();
-            main.client = null;
-            this.Close();
-            main.Show();
-        }
+    
 
 
 

@@ -41,9 +41,6 @@ namespace ClientAplication
             welcomeString.Text = "Witaj nazwa_Użytkownika";
             
         }
-
-        //inicjalizacja odpowiedzialna za wyswietlanie znajomych (wstepne testowanie wyswietlania)
-
   /*
         private void callToUser(object sender, MouseButtonEventArgs e)
         {
@@ -70,12 +67,8 @@ namespace ClientAplication
         }
         */
 
-    
-       
-
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
       

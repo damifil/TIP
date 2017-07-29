@@ -67,7 +67,7 @@ namespace ClientAplication
             }
             else
             {
-                SingletoneObject singletone = SingletoneObject.Instance;
+                SingletoneObject singletone = SingletoneObject.GetInstance;
                 User userToSend = new User();
                 userToSend.Name = loginInput.Text;
                 userToSend.password = password;

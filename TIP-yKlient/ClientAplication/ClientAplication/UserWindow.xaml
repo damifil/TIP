@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserWindow" Height="500" Width="600">
     <Grid>
-        <TextBox x:Name="searchInput" TextWrapping="Wrap" Margin="25,130,377.664,309.784" Height="25"  Text="wyszukaj..." IsEnabled="True" SpellCheck.IsEnabled="True" ToolTip="" />
+        <local:UserControl1/>
         <StackPanel Orientation="Horizontal" Margin="0,0,-0.336,-0.216">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
 
@@ -30,36 +30,9 @@
         <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="usuń z listy znajomych" Margin="428,165,58.664,242.784" RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
 
         <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="279,18,33.664,305.784" FontSize="24"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,31,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <TextBlock x:Name="home" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="25,83,462.168,355.784" VerticalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="history" MouseLeftButtonDown="historyTextboxaction" Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="78,83,409.168,355.784" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-        <TextBlock x:Name="settings" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="129,83,358.168,355.784" VerticalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="search" Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="21.333" Margin="221,133,342.664,305.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
 
         <TextBlock x:Name="callToFriendIco" Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21.333" Margin="373,170,190.664,268.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
         <TextBlock x:Name="deleteFriendIco" Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21.333" Margin="535,170,28.664,268.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
-
-        <ListBox IsSynchronizedWithCurrentItem="True"
-        Name="lbUsers" ItemsSource="{Binding}"
-         Margin="15,182,345.664,3.784" RenderTransformOrigin="0.5,0.5" >
-            <ListBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.242"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0.764"/>
-                </TransformGroup>
-            </ListBox.RenderTransform>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Path=IcoUser}" FontFamily="{StaticResource FontAwesome}" Width="20"/>
-                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" Width="100" />
-                        <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
 
 
         <ListBox IsSynchronizedWithCurrentItem="True"

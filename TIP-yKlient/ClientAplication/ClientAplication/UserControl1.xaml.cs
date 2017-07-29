@@ -18,76 +18,22 @@ namespace ClientAplication
 {
 
 
-    public sealed class SingletoneObject
-    {
-        private static SingletoneObject instance=null;
-        private static readonly object PadLock = new object();
-
-        internal User user;
-        internal Client client;
-        internal ObservableCollection<User> Users;
-        internal ObservableCollection<User> Friends;
-        internal List<ListUser> listUsers;
-        internal PhoneVOIP phoneVOIP;
-        internal ObservableCollection<itemTB> items;
-        public static SingletoneObject Instance
-        {
-            get
-            {
-                lock (PadLock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new SingletoneObject();
-                    }
-                    return instance;
-                }
-            }
-        }
-
-        internal User User
-        {
-            get
-            {
-                return user;
-            }
-
-            set
-            {
-                user = value;
-            }
-        }
-    }
-
+   
     public partial class UserControl1 : UserControl
     {
         SingletoneObject singletoneOBj;
-        private bool run = true;
 
-
-       private void UserControl1_Paint(Object sender, EventArgs e)
-        {
-            //if (!run) return;
-            
-            
-        }
-        
         public UserControl1()
         {
-            singletoneOBj =  SingletoneObject.Instance;
+            singletoneOBj =  SingletoneObject.GetInstance;
             InitializeComponent();
-            userNameTB.Text = "as";
-
-            run = false;
+            userNameTB.Text = singletoneOBj.user.Name;
             if (singletoneOBj.Users != null)
             { lbUsers.DataContext = singletoneOBj.Users; }
             else
             { addUSerToList(); }
         }
 
-
-
-        
         internal void addUSerToList()
         {
             singletoneOBj.Users = new ObservableCollection<User>();
@@ -179,7 +125,6 @@ namespace ClientAplication
             }
         }
 
-
         private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
         {
             string historyListString = singletoneOBj.client.sendMessage("USERHISTORY " + login + " " + login1);
@@ -207,13 +152,7 @@ namespace ClientAplication
                 User userFriend = (User)cmd.DataContext;
                 List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
                 UserWindow main = new UserWindow(listHistory);
-                main.Users = singletoneOBj.Users;
                 App.Current.MainWindow = main;
-                main.client = singletoneOBj.client;
-                main.user = singletoneOBj.user;
-                main.Friends = singletoneOBj.Friends;
-                main.phoneVOIP = singletoneOBj.phoneVOIP;
-                main.listUsers = singletoneOBj.listUsers;
                 main.Left = Window.GetWindow(this).Left;
                 main.Top = Window.GetWindow(this).Top;
                 Window.GetWindow(this).Close();
@@ -249,12 +188,6 @@ namespace ClientAplication
             List<ListHistory> listHistory = GetAllHistory(singletoneOBj.user.Name);
             History main = new History(singletoneOBj.user.Name, listHistory);
             App.Current.MainWindow = main;
-            main.client = singletoneOBj.client;
-            main.Users = singletoneOBj.Friends;
-            main.Friends = singletoneOBj.Friends;
-            main.listUsers = singletoneOBj.listUsers;
-            main.phoneVOIP = singletoneOBj.phoneVOIP;
-            main.user = singletoneOBj.user;
             main.Left = Window.GetWindow(this).Left;
             main.Top = Window.GetWindow(this).Top;
             Window.GetWindow(this).Close();
@@ -263,7 +196,12 @@ namespace ClientAplication
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
-
+            MainWindow main = new MainWindow();
+            App.Current.MainWindow = main;
+            main.Left = Window.GetWindow(this).Left;
+            main.Top = Window.GetWindow(this).Top;
+            Window.GetWindow(this).Close();
+            main.Show();
         }
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
@@ -271,12 +209,6 @@ namespace ClientAplication
 
             Settings main = new Settings();
             App.Current.MainWindow = main;
-            main.Users = singletoneOBj.Friends;
-            main.listUsers = singletoneOBj.listUsers;
-            main.Friends = singletoneOBj.Friends;
-            main.client = singletoneOBj.client;
-            main.user = singletoneOBj.user;
-            main.phoneVOIP = singletoneOBj.phoneVOIP;
             main.Left = Window.GetWindow(this).Left;
             main.Top = Window.GetWindow(this).Top;
             Window.GetWindow(this).Close();
@@ -292,11 +224,7 @@ namespace ClientAplication
             Window.GetWindow(this).Close();
             main.Show();
         }
-       
-
-
-
-
+      
     }
 
 
