@@ -22,7 +22,7 @@ namespace ClientAplication
     public partial class UserControl1 : UserControl
     {
         SingletoneObject singletoneOBj;
-
+        List<ListUser> listUser;
         public UserControl1()
         {
             singletoneOBj =  SingletoneObject.GetInstance;
@@ -44,13 +44,13 @@ namespace ClientAplication
                 {
                     if (item.active == "True")
                     {
-                        singletoneOBj.Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
-                        singletoneOBj.Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
+                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
                     }
                     else
                     {
-                        singletoneOBj.Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
-                        singletoneOBj.Friends.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
+                        singletoneOBj.Friends.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
                     }
                 }
             }
@@ -82,46 +82,72 @@ namespace ClientAplication
                 lbUsers.DataContext = singletoneOBj.Friends;
                 return;
             }
-            List<ListUser> listUser = SearchUsers(singletoneOBj.user.Name, value);
+            listUser = SearchUsers(singletoneOBj.user.Name, value);
 
-            singletoneOBj.Users = new ObservableCollection<User>(singletoneOBj.Friends);
+            searchupdate();
+        }
+
+        private void searchupdate()
+        {
+            singletoneOBj.Users = new ObservableCollection<User>();
             foreach (ListUser item in listUser)
             {
-                if (!singletoneOBj.Users.Where(x => x.Name == item.name).Any())
-                    if (item.active == "True")
-                    {
 
-                        singletoneOBj.Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // aktywny
-                    }
+                if (item.active == "True")
+                {
+                    if (singletoneOBj.Friends.Any(x => x.Name == item.name))
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny przyjaciel
                     else
-                    {
-                        singletoneOBj.Users.Add(new User() { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf234" }); // nieaktywny
-                    }
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234" }); // nieznajomy
+                }
+                else
+                {
+                    if (singletoneOBj.Friends.Any(x => x.Name == item.name))
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny przyjaciel
+                    else
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234" }); // nieznajomy
+
+                }
             }
             lbUsers.DataContext = singletoneOBj.Users;
         }
-
-        private void callToUser(object sender, MouseButtonEventArgs e)
+        private void userAction(object sender, MouseButtonEventArgs e)
         {
             User userLogged = singletoneOBj.user;
             TextBlock cmd = (TextBlock)sender;
+            MessageBox.Show("wlazleeem tuu");
             if (cmd.DataContext is User)
             {
-
+                MessageBox.Show("wlazleeem tuu2");
                 User user = (User)cmd.DataContext;
-                singletoneOBj.phoneVOIP.nameCallToUser = user.Name;
-                bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
-                CallToWindow main = new CallToWindow();
-                if (call == true)
+                if (user.isFriend == true)
                 {
-                    main.user = user;
-                    main.userLogged = userLogged;
-                    main.client = singletoneOBj.client;
-                    main.dateBegin = DateTime.Now;
-                    main.phoneVOIP = singletoneOBj.phoneVOIP;
-                    main.Show();
+                    MessageBox.Show("wlazleeem tuu3");
+                    singletoneOBj.phoneVOIP.nameCallToUser = user.Name;
+                    bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
+                    CallToWindow main = new CallToWindow();
+                    if (call == true)
+                    {
+                        main.user = user;
+                        main.userLogged = userLogged;
+                        main.client = singletoneOBj.client;
+                        main.dateBegin = DateTime.Now;
+                        main.phoneVOIP = singletoneOBj.phoneVOIP;
+                        main.Show();
+                    }
                 }
+                else //akca dodawnia przyjaciela
+                {
+                    MessageBox.Show("wlazleeem tuu4");
+                    //wyslanie komunikatu do serwera
+                    singletoneOBj.client.sendMessage("ADDFRIEND " + singletoneOBj.user.Name+ " "+ user.Name);
+                    //dodanie przyjaciela do listy 
+                    singletoneOBj.Friends.Add(user);
+                    MessageBox.Show("dodano użytkowniak do znajomych");
+                    //zmiana ikonki przy użytkowniku
+                    searchupdate();
 
+                }
             }
         }
 
@@ -218,9 +244,8 @@ namespace ClientAplication
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBj.client.sendMessage("EXIT " + singletoneOBj.user.Name);
-            singletoneOBj.client.destroyfunction();
+            singletoneOBj.setdefaultvalue();
             LoginRegisterWindow main = new LoginRegisterWindow();
-            main.client = null;
             Window.GetWindow(this).Close();
             main.Show();
         }

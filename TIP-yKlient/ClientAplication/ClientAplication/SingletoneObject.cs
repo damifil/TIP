@@ -35,6 +35,19 @@ namespace ClientAplication
                 }
             }
         }
+
+
+        public void setdefaultvalue()
+        {
+            client.destroyfunction();
+            user = null;
+            client = null;
+            Users = null;
+            Friends = null;
+            listUsers = null;
+            phoneVOIP = null;
+            items = null;
+        }
     }
 
 }

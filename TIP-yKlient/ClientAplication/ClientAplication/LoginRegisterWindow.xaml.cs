@@ -68,7 +68,7 @@ namespace ClientAplication
             else
             {
                 SingletoneObject singletone = SingletoneObject.GetInstance;
-                User userToSend = new User();
+                User userToSend = new User(true);
                 userToSend.Name = loginInput.Text;
                 userToSend.password = password;
                 singletone.user = userToSend;
@@ -132,7 +132,7 @@ namespace ClientAplication
             }
 
             //nalezy sie zastanowic tutaj czy po rejestracji jestesmy juz zalogowani
-            User userToSend = new User();
+            User userToSend = new User(true);
             userToSend.Name = login;
             userToSend.password = password1;
             MainWindow main = new MainWindow();

@@ -31,7 +31,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=IcoUser}" FontFamily="{StaticResource FontAwesome}" Width="20"/>
                         <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" Width="100" />
-                        <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
+                        <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
