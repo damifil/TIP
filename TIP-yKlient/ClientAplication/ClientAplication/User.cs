@@ -15,6 +15,7 @@ namespace ClientAplication
         public string Name { get; set; }
         public string IcoUser { get; set; }
         public string IcoCall { get; set; }
+        public string IcoColor { get; set; }
         public string password  { get; set; }
         public bool isFriend { get; set; }
 

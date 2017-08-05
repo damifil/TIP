@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ClientAplication
@@ -17,7 +18,7 @@ namespace ClientAplication
         internal List<ListUser> listUsers;
         internal PhoneVOIP phoneVOIP;
         internal ObservableCollection<itemTB> items;
-
+        internal Thread isOnlineThread;
 
         private static SingletoneObject instance = null;
         private static readonly object PadLock = new object();
@@ -47,6 +48,7 @@ namespace ClientAplication
             listUsers = null;
             phoneVOIP = null;
             items = null;
+            isOnlineThread=null;
         }
     }
 

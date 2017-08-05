@@ -27,7 +27,7 @@ namespace ClientAplication
         {
             InitializeComponent();
         }
-
+        
         bool _shown;
         protected override void OnContentRendered(EventArgs e)
         {

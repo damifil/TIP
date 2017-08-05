@@ -28,6 +28,8 @@ namespace ClientAplication
         {
             items = new ObservableCollection<itemTB>();
             singletoneOBj = SingletoneObject.GetInstance;
+
+            singletoneOBj.isOnlineThread.Abort();
             foreach (ListHistory item in listHistory)
             {
                 items.Add(new itemTB() { Name = item.userName,
@@ -40,6 +42,7 @@ namespace ClientAplication
     
             InitializeComponent();
             lbHistoryAll.DataContext = items;
+            singletoneOBj.isOnlineThread.Abort();
         }
 
         bool _shown;

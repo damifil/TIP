@@ -21,6 +21,7 @@ namespace ClientAplication
     public partial class LoginRegisterWindow : Window
     {
         internal Client client;
+        SingletoneObject singletoneOBj;
         public LoginRegisterWindow()
         {
             InitializeComponent();
@@ -34,6 +35,27 @@ namespace ClientAplication
             return output;
         }
 
+
+        private void isOnlineloop()
+        {
+            while (true)
+            {
+                string friendsList = singletoneOBj.client.sendMessage("ISONLINE " + singletoneOBj.user.Name);
+                string[] splitFriends = friendsList.Split('&');
+
+                singletoneOBj.listUsers = new List<ListUser>();
+                for (int i = 0; i < (splitFriends.Length - 1); i++)
+                {
+                    ListUser user = new ListUser();
+                    string[] sp = splitFriends[i].Split(' ');
+                    user.name = sp[0];
+                    user.active = sp[1];
+                    singletoneOBj.listUsers.Add(user);
+                }
+              
+                Thread.Sleep(3000);
+            }
+        }
 
         private void Button_login(object sender, RoutedEventArgs e)
         {
@@ -67,22 +89,26 @@ namespace ClientAplication
             }
             else
             {
-                SingletoneObject singletone = SingletoneObject.GetInstance;
+                singletoneOBj = SingletoneObject.GetInstance;
                 User userToSend = new User(true);
                 userToSend.Name = loginInput.Text;
                 userToSend.password = password;
-                singletone.user = userToSend;
-                singletone.listUsers = GetFriends(login);
-                singletone.client = client;
-                singletone.phoneVOIP = new PhoneVOIP();
+                singletoneOBj.user = userToSend;
+                singletoneOBj.listUsers = GetFriends(login);
+                singletoneOBj.client = client;
+                singletoneOBj.phoneVOIP = new PhoneVOIP();
 
                 try
                 {
-                    singletone.phoneVOIP.InitializeSoftPhone(singletone.user.Name, singletone.user.password, client.ipAddres, 5060);
+                    singletoneOBj.phoneVOIP.InitializeSoftPhone(singletoneOBj.user.Name, singletoneOBj.user.password, client.ipAddres, 5060);
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
-                singletone.phoneVOIP.client = client;
-                singletone.phoneVOIP.userLogged = singletone.user;
+                singletoneOBj.phoneVOIP.client = client;
+                singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
+
+                singletoneOBj.isOnlineThread = new Thread(isOnlineloop);
+                singletoneOBj.isOnlineThread.IsBackground = true;
+                singletoneOBj.isOnlineThread.Start();
 
                 MainWindow main = new MainWindow();
                 this.Close();

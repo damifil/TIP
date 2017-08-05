@@ -11,7 +11,7 @@
         <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
         </StackPanel>
-        <local:UserControl1/>
+        <local:UserControl1 />
 
         <TextBlock x:Name="welcomeString" Height="110" Margin="273,34,9.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="32"/>
         <TextBlock x:Name="lastActivity" Height="32" Margin="273,158,39.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>

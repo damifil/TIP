@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,21 +18,37 @@ using System.Windows.Shapes;
 namespace ClientAplication
 {
 
-
-   
     public partial class UserControl1 : UserControl
     {
         SingletoneObject singletoneOBj;
         List<ListUser> listUser;
+        Thread refreshListThread;
+        string value2 = null;
+        bool observeSearchClick = false;
         public UserControl1()
         {
-            singletoneOBj =  SingletoneObject.GetInstance;
+            try
+            {
+                singletoneOBj = SingletoneObject.GetInstance;
+                InitializeComponent();
+                userNameTB.Text = singletoneOBj.user.Name;
+                if (singletoneOBj.Users != null)
+                { lbUsers.DataContext = singletoneOBj.Users; }
+                else
+                { addUSerToList(); }
+
+
+
+
+               
+
+                refreshListThread = new Thread(ListRefreshloop);
+                refreshListThread.IsBackground = true;
+                refreshListThread.Start();
+
+            }
+            catch (Exception e) { }
             InitializeComponent();
-            userNameTB.Text = singletoneOBj.user.Name;
-            if (singletoneOBj.Users != null)
-            { lbUsers.DataContext = singletoneOBj.Users; }
-            else
-            { addUSerToList(); }
         }
 
         internal void addUSerToList()
@@ -44,13 +61,13 @@ namespace ClientAplication
                 {
                     if (item.active == "True")
                     {
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny
-                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" });
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" ,IcoColor = "green" }); // aktywny
+                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007", IcoColor = "green" });
                     }
                     else
                     {
-                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny
-                        singletoneOBj.Friends.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" });
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" ,IcoColor = "green" }); // nieaktywny
+                        singletoneOBj.Friends.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" });
                     }
                 }
             }
@@ -79,14 +96,25 @@ namespace ClientAplication
 
             if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
             {
-                lbUsers.DataContext = singletoneOBj.Friends;
+                observeSearchClick = false;
+                setFriendtoList();
                 return;
             }
+            observeSearchClick = true;
             listUser = SearchUsers(singletoneOBj.user.Name, value);
 
             searchupdate();
         }
+        private void setFriendtoList()
+        {
+            string value = searchInput.Text;
+            if (observeSearchClick == false || string.IsNullOrWhiteSpace(value))
+            {
+                lbUsers.DataContext = singletoneOBj.Friends;
+            }
+        }
 
+    
         private void searchupdate()
         {
             singletoneOBj.Users = new ObservableCollection<User>();
@@ -96,16 +124,16 @@ namespace ClientAplication
                 if (item.active == "True")
                 {
                     if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" }); // aktywny przyjaciel
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
                     else
-                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234" }); // nieznajomy
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
                 }
                 else
                 {
                     if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" }); // nieaktywny przyjaciel
+                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" ,IcoColor = "green" }); // nieaktywny przyjaciel
                     else
-                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234" }); // nieznajomy
+                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
 
                 }
             }
@@ -115,19 +143,18 @@ namespace ClientAplication
         {
             User userLogged = singletoneOBj.user;
             TextBlock cmd = (TextBlock)sender;
-            MessageBox.Show("wlazleeem tuu");
             if (cmd.DataContext is User)
             {
-                MessageBox.Show("wlazleeem tuu2");
                 User user = (User)cmd.DataContext;
                 if (user.isFriend == true)
                 {
-                    MessageBox.Show("wlazleeem tuu3");
                     singletoneOBj.phoneVOIP.nameCallToUser = user.Name;
                     bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
                     CallToWindow main = new CallToWindow();
                     if (call == true)
                     {
+                       
+                        refreshListThread.Abort();
                         main.user = user;
                         main.userLogged = userLogged;
                         main.client = singletoneOBj.client;
@@ -138,7 +165,6 @@ namespace ClientAplication
                 }
                 else //akca dodawnia przyjaciela
                 {
-                    MessageBox.Show("wlazleeem tuu4");
                     //wyslanie komunikatu do serwera
                     singletoneOBj.client.sendMessage("ADDFRIEND " + singletoneOBj.user.Name+ " "+ user.Name);
                     //dodanie przyjaciela do listy 
@@ -146,7 +172,6 @@ namespace ClientAplication
                     MessageBox.Show("dodano użytkowniak do znajomych");
                     //zmiana ikonki przy użytkowniku
                     searchupdate();
-
                 }
             }
         }
@@ -175,6 +200,8 @@ namespace ClientAplication
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
+
+                refreshListThread.Abort();
                 User userFriend = (User)cmd.DataContext;
                 List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
                 UserWindow main = new UserWindow(listHistory);
@@ -211,6 +238,7 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            refreshListThread.Abort();
             List<ListHistory> listHistory = GetAllHistory(singletoneOBj.user.Name);
             History main = new History(singletoneOBj.user.Name, listHistory);
             App.Current.MainWindow = main;
@@ -222,6 +250,7 @@ namespace ClientAplication
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            refreshListThread.Abort();
             MainWindow main = new MainWindow();
             App.Current.MainWindow = main;
             main.Left = Window.GetWindow(this).Left;
@@ -232,7 +261,7 @@ namespace ClientAplication
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
-
+            refreshListThread.Abort();
             Settings main = new Settings();
             App.Current.MainWindow = main;
             main.Left = Window.GetWindow(this).Left;
@@ -243,6 +272,8 @@ namespace ClientAplication
 
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            singletoneOBj.isOnlineThread.Abort();
+            refreshListThread.Abort();
             singletoneOBj.client.sendMessage("EXIT " + singletoneOBj.user.Name);
             singletoneOBj.setdefaultvalue();
             LoginRegisterWindow main = new LoginRegisterWindow();
@@ -250,6 +281,17 @@ namespace ClientAplication
             main.Show();
         }
       
+        private void ListRefreshloop()
+        {
+            while (true) { 
+            RoutedEventArgs e = new RoutedEventArgs();
+            this.Dispatcher.Invoke(() => setFriendtoList());
+            Thread.Sleep(500);
+            }
+        }
+        
+        
+
     }
 
 
