@@ -22,7 +22,8 @@ namespace ClientAplication
 
     public partial class MainWindow : Window
     {
-       
+        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace ClientAplication
            
             _shown = true;
             lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
-            welcomeString.Text = "Witaj nazwa_Użytkownika";
+            welcomeString.Text = "Witaj " + singletoneOBJ.user.Name; 
             
         }
   /*

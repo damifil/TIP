@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace ClientAplication
 {
     /// <summary>
-    /// Interaction logic for History.xaml
+    /// Interaction logic for History.xaml1
     /// </summary>
     public partial class History : Window
     {
@@ -35,7 +35,7 @@ namespace ClientAplication
                 items.Add(new itemTB() { Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
                     Describe2 = "rozpoczęła się dnia " + item.dayBegin,
-                    Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
+                    Describe3 = "i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd ,
                     Date = "dzinen"
                 });
             }

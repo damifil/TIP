@@ -23,12 +23,14 @@ namespace ClientAplication
   
         internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
+        private string userFriend;
 
-        public UserWindow(List<ListHistory> listHistory)
+        public UserWindow(List<ListHistory> listHistory, string userFriend)
         {
             InitializeComponent();
-            stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem Nazwa uzytkownika";
-
+            this.userFriend = userFriend;
+            stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem " + userFriend;
+            
             items = new ObservableCollection<itemTB>();
             foreach (ListHistory item in listHistory)
             {
@@ -62,7 +64,16 @@ namespace ClientAplication
         }
         private void deleteFriend(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("usuwamy " + singletoneOBJ.user.Name);
+            string historyListString = singletoneOBJ.client.sendMessage("DELFRIEND " + singletoneOBJ.user.Name + " " + userFriend);
+            if(historyListString == "True")
+            {
+                MessageBox.Show("Użytkownik " + userFriend + " został usunięty");
+            }
+            else
+            {
+                MessageBox.Show("Użytkownik " + userFriend + " nie został usunięty");
+            }
+            
         }
         private void searchClickHistoryuser(object sender, RoutedEventArgs e)
         {

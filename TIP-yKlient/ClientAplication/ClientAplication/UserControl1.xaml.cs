@@ -204,7 +204,7 @@ namespace ClientAplication
                 refreshListThread.Abort();
                 User userFriend = (User)cmd.DataContext;
                 List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
-                UserWindow main = new UserWindow(listHistory);
+                UserWindow main = new UserWindow(listHistory, userFriend.Name);
                 App.Current.MainWindow = main;
                 main.Left = Window.GetWindow(this).Left;
                 main.Top = Window.GetWindow(this).Top;

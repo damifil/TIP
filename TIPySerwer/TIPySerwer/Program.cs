@@ -102,6 +102,7 @@ namespace TIPySerwer
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "DELFRIEND":  // usuniecie znajomego
+                        sData = UserManager.DelFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "SRCH":       // szukanie uzytkowika
