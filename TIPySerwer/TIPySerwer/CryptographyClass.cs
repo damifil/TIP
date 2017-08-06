@@ -167,11 +167,15 @@ namespace TIPySerwer
         }
         public string messageRecive(StreamReader sReader, DiffieHelman diffieHelman)
         {
-            string sData = sReader.ReadLine(); 
-            if (sData == "CREATE") { return sData; }
-            if(sData == null) { return null; }
-            string messageDecrypt = Cryptography.Decrypt(sData, secretByteArray);
-            return messageDecrypt.TrimEnd('\0');
+            try
+            {
+                string sData = sReader.ReadLine();
+                if (sData == "CREATE") { return sData; }
+                if (sData == null) { return null; }
+                string messageDecrypt = Cryptography.Decrypt(sData, secretByteArray);
+                return messageDecrypt.TrimEnd('\0');
+            }
+            catch (Exception e) { return "ERROR"; }
         }
         public bool sendMessage(string sData, DiffieHelman diffieHelman, StreamWriter sWriter)
         {
