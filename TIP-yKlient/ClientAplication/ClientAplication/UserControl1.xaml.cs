@@ -107,13 +107,17 @@ namespace ClientAplication
                 singletoneOBj.searchvalue = "";
             }
 
-            else if (value!=singletoneOBj.searchvalue)    // gdy nic nie wpisano w polu wyszukiwania
+            else if (value != singletoneOBj.searchvalue)
             {
                 listUser = SearchUsers(singletoneOBj.user.Name, value);
                 searchupdate();
                 singletoneOBj.searchvalue = value;
             }
-           
+            else
+            {
+                addUSerToList();
+                searchupdate();           
+ }
         }
 
     
@@ -123,21 +127,13 @@ namespace ClientAplication
             foreach (ListUser item in listUser)
             {
 
-                if (item.active == "True")
-                {
-                    if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
+                    if (singletoneOBj.Friends.Any(x => x.Name == item.name && singletoneOBj.listUsers.Where(y=> y.name==item.name && y.active=="True").Any()  ) )
+                          singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
+                     else  if (singletoneOBj.Friends.Any(x => x.Name == item.name))
+                         singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
                     else
-                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
-                }
-                else
-                {
-                    if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" ,IcoColor = "green" }); // nieaktywny przyjaciel
-                    else
-                        singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
-
-                }
+                         singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
+            
             }
             lbUsers.DataContext = singletoneOBj.Users;
         }
@@ -154,8 +150,7 @@ namespace ClientAplication
                     bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
                     CallToWindow main = new CallToWindow();
                     if (call == true)
-                    {
-                       
+                    {                       
                         refreshListThread.Abort();
                         main.user = user;
                         main.userLogged = userLogged;

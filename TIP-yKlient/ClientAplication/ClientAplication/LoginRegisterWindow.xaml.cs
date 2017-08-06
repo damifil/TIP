@@ -42,7 +42,6 @@ namespace ClientAplication
             {
                 string friendsList = singletoneOBj.client.sendMessage("ISONLINE " + singletoneOBj.user.Name);
                 string[] splitFriends = friendsList.Split('&');
-
                 singletoneOBj.listUsers = new List<ListUser>();
                 for (int i = 0; i < (splitFriends.Length - 1); i++)
                 {
@@ -68,11 +67,8 @@ namespace ClientAplication
                 {
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
                     flag = client.sendMessage("LOGIN " + login + " " + password);
-
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); disable_enableButton(true); }
-
-
             }
 
             if(client == null)
