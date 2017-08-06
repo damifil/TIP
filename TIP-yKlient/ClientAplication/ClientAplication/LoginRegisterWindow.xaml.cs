@@ -52,7 +52,6 @@ namespace ClientAplication
                     user.active = sp[1];
                     singletoneOBj.listUsers.Add(user);
                 }
-              
                 Thread.Sleep(3000);
             }
         }

@@ -102,6 +102,7 @@ namespace ClientAplication
             string value = searchInput.Text;
             if (string.IsNullOrWhiteSpace(value))
             {
+                addUSerToList();
                 lbUsers.DataContext = singletoneOBj.Friends;
                 singletoneOBj.searchvalue = "";
             }
