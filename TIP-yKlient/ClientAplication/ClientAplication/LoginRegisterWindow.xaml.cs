@@ -59,6 +59,7 @@ namespace ClientAplication
 
         private void Button_login(object sender, RoutedEventArgs e)
         {
+            disable_enableButton(false);
             string login = loginInput.Text;
             string password = passwordInput.Password;
             string flag=null;
@@ -69,47 +70,30 @@ namespace ClientAplication
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
                     flag = client.sendMessage("LOGIN " + login + " " + password);
                 }
-                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); }
+                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); disable_enableButton(true); }
 
 
             }
 
             if(client == null)
             {
+                disable_enableButton(true);
                 return;
             }
             if(flag == "False")
             {
                 MessageBox.Show("Login lub hasło jest błędne");
+                disable_enableButton(true);
                 return;
             }
             else if(flag ==null)
             {
                 MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");
+                disable_enableButton(true);
             }
             else
             {
-                singletoneOBj = SingletoneObject.GetInstance;
-                User userToSend = new User(true);
-                userToSend.Name = loginInput.Text;
-                userToSend.password = password;
-                singletoneOBj.user = userToSend;
-                singletoneOBj.listUsers = GetFriends(login);
-                singletoneOBj.client = client;
-                singletoneOBj.phoneVOIP = new PhoneVOIP();
-
-                try
-                {
-                    singletoneOBj.phoneVOIP.InitializeSoftPhone(singletoneOBj.user.Name, singletoneOBj.user.password, client.ipAddres, 5060);
-                }
-                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa "); }
-                singletoneOBj.phoneVOIP.client = client;
-                singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
-
-                singletoneOBj.isOnlineThread = new Thread(isOnlineloop);
-                singletoneOBj.isOnlineThread.IsBackground = true;
-                singletoneOBj.isOnlineThread.Start();
-
+                loginfunction(login, password);
                 MainWindow main = new MainWindow();
                 this.Close();
                 main.Show();
@@ -122,9 +106,11 @@ namespace ClientAplication
             string friendsList = client.sendMessage("GETFRIENDS " + login);
 
             string[] splitFriends = friendsList.Split('&');
+
             List<ListUser> listUsers = new List<ListUser>();
             for (int i = 0; i < (splitFriends.Length - 1); i++)
             {
+                MessageBox.Show(splitFriends[i]);
                 ListUser user = new ListUser();
                 string[] sp = splitFriends[i].Split(' ');
                 user.name = sp[0];
@@ -134,8 +120,20 @@ namespace ClientAplication
             return listUsers;
         }
 
+        private void disable_enableButton(bool isenabled)
+        {
+            loginButton.IsEnabled = isenabled;
+            registerButton.IsEnabled = isenabled;
+            loginInput.IsEnabled = isenabled;
+            password1InputRegister.IsEnabled = isenabled;
+            passwordInput.IsEnabled = isenabled;
+            password2InputRegister.IsEnabled = isenabled;
+            adresIPinput.IsEnabled = isenabled;
+            numberPortInput.IsEnabled = isenabled;  
+        }
         private void Button_register(object sender, RoutedEventArgs e)
         {
+            disable_enableButton(false);
             string login = loginInputRegister.Text;
             string password1 = password1InputRegister.Password;
             string password2 = password2InputRegister.Password;
@@ -154,20 +152,41 @@ namespace ClientAplication
             if(flag == "False")
             {
                 MessageBox.Show("Login jest zajęty");
+                disable_enableButton(true);
                 return;
             }
 
-            //nalezy sie zastanowic tutaj czy po rejestracji jestesmy juz zalogowani
-            User userToSend = new User(true);
-            userToSend.Name = login;
-            userToSend.password = password1;
+            Thread loginthread = new Thread(()=>loginfunction(login,password1));
+            loginthread.IsBackground = true;
+            loginthread.Start();
+            loginfunction(login, password1);
             MainWindow main = new MainWindow();
-            //main.user = userToSend;
-            //main.client = client;
             this.Close();
             main.Show();
-           
-
+        }
+        private void loginfunction(string login, string password)
+        {
+            singletoneOBj = SingletoneObject.GetInstance;
+            User userToSend = new User(true);
+            userToSend.Name = login;
+            userToSend.password = password;
+            singletoneOBj.user = userToSend;
+            singletoneOBj.listUsers = GetFriends(login);
+            singletoneOBj.client = client;
+            singletoneOBj.phoneVOIP = new PhoneVOIP();
+            try
+            {
+                singletoneOBj.phoneVOIP.InitializeSoftPhone(singletoneOBj.user.Name, singletoneOBj.user.password, client.ipAddres, 5060);
+            }
+            catch (Exception ex) {MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa ");}
+            singletoneOBj.phoneVOIP.client = client;
+            singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
+            singletoneOBj.isOnlineThread = new Thread(isOnlineloop);
+            singletoneOBj.isOnlineThread.IsBackground = true;
+            singletoneOBj.isOnlineThread.Start();
         }
     }
+
+
+ 
 }
