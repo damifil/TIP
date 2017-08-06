@@ -12,11 +12,31 @@
         <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="131,78,420,393" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="logOut"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="191,78,361,393" VerticalAlignment="Center" RenderTransformOrigin="0.396,1.207"></TextBlock>
         <TextBlock x:Name="history"  MouseLeftButtonDown="historyTextboxaction"  Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="76,78,474,393" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-
-
-        <TextBox x:Name="searchInput"  TextWrapping="Wrap" Margin="20,148,382,317" FontSize="15" Height="35" TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True" ToolTip="" Padding="5,5,5,6" />
+        <TextBox x:Name="searchInput"  TextWrapping="Wrap" Margin="20,148,382,317" FontSize="15" Height="35" TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" >
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="wyszukaj" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
         <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black"  Margin="232,159,327,317" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
-
         <ListBox IsSynchronizedWithCurrentItem="True" BorderThickness="0"  
         Name="lbUsers" ItemsSource="{Binding}"
          Margin="19,204,357,57" RenderTransformOrigin="0.5,0.5" >
@@ -32,12 +52,11 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal"  >
                         <TextBlock Text="{Binding Path=IcoUser}" Width="20" MinWidth="20" MaxWidth="20" FontFamily="{StaticResource FontAwesome}" FontSize="20" Margin="5,10,5,10" />
-                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}" Width="140" MinWidth="140" MaxWidth="140" FontSize="20" Margin="5,5,5,10"/>
+                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}" Width="130" MinWidth="130" MaxWidth="140" FontSize="20" Margin="5,5,5,10"/>
                         <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource FontAwesome}"  Margin="5,10,0,10"  />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
     </Grid>
 </UserControl>

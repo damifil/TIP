@@ -38,7 +38,7 @@ namespace ClientAplication
                 return;
            
             _shown = true;
-            lastActivity.Text = "twoja ostatnia aktywność: !2 kwietnia o godzinie 14:30";
+            lastActivity.Text = singletoneOBJ.user.lastActivity;
             welcomeString.Text = "Witaj " + singletoneOBJ.user.Name; 
             
         }

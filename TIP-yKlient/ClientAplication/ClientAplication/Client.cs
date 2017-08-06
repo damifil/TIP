@@ -46,38 +46,19 @@ namespace ClientAplication
         {
             streamReader = new StreamReader(client.GetStream(), Encoding.ASCII);
             streamWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
-
             isConnected = true;
-            /*  while (_isConnected) {
-                  Console.WriteLine("create");
-                  //utworzenie polacenia szyfrowanego
-
-
-              //komunikacja z serwerem szyfrowana
-              Console.WriteLine("po create");
-                  //wysylanie wiadomosci sData to string ktory ma zostac wyslany (komunikat SEND)
-                  diffieHelman.sendMessage(sData, diffieHelman, _sWriter, "SEND");
-
-                  // nasluchiwanie otrzymywania danych z serwera (po otrzymaniu paczki zwraca stringa
-                  String sDataIncomming = diffieHelman.reciveMessage(_sReader, diffieHelman);
-                  Console.WriteLine("Otrzymane dane z serwera: " + sDataIncomming);
-
-                  //w przypadku gdy klient wysyla exit zamykamy polaczenie (wylaczamy watek
-                  if (sData == "EXIT")
-                  {
-                      _isConnected = false;
-                  }
-              }*/
         }
-
+        private object m_SyncObject = new object();
         public string sendMessage(string content)
         {
-           
-            isConnected = true;
-            
-            diffieHelman.sendMessage1(content,  streamWriter);
-            String sDataIncomming = diffieHelman.reciveMessage(streamReader);
-            return sDataIncomming;
+            lock (m_SyncObject)
+            {
+                isConnected = true;
+
+                diffieHelman.sendMessage1(content, streamWriter);
+                String sDataIncomming = diffieHelman.reciveMessage(streamReader);
+                return sDataIncomming;
+            }
         }
     }
 }

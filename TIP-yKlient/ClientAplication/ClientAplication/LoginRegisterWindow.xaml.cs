@@ -68,6 +68,7 @@ namespace ClientAplication
                 {
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
                     flag = client.sendMessage("LOGIN " + login + " " + password);
+
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); disable_enableButton(true); }
 
@@ -92,7 +93,8 @@ namespace ClientAplication
             }
             else
             {
-                loginfunction(login, password);
+
+                loginRegisterfunction(login, password,true);
                 MainWindow main = new MainWindow();
                 this.Close();
                 main.Show();
@@ -109,7 +111,6 @@ namespace ClientAplication
             List<ListUser> listUsers = new List<ListUser>();
             for (int i = 0; i < (splitFriends.Length - 1); i++)
             {
-                MessageBox.Show(splitFriends[i]);
                 ListUser user = new ListUser();
                 string[] sp = splitFriends[i].Split(' ');
                 user.name = sp[0];
@@ -155,15 +156,13 @@ namespace ClientAplication
                 return;
             }
 
-            Thread loginthread = new Thread(()=>loginfunction(login,password1));
-            loginthread.IsBackground = true;
-            loginthread.Start();
-            loginfunction(login, password1);
+
+            loginRegisterfunction(login, password1,false);
             MainWindow main = new MainWindow();
             this.Close();
             main.Show();
         }
-        private void loginfunction(string login, string password)
+        private void loginRegisterfunction(string login, string password,bool islogin)
         {
             singletoneOBj = SingletoneObject.GetInstance;
             User userToSend = new User(true);
@@ -180,6 +179,14 @@ namespace ClientAplication
             catch (Exception ex) {MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa ");}
             singletoneOBj.phoneVOIP.client = client;
             singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
+            if (islogin == true)
+            {
+                singletoneOBj.user.lastActivity = "Twoja ostatnia aktywnośći była :\n"+client.sendMessage("LASTACTIVITY " + login + " " + password);
+            }
+            else
+            {
+                singletoneOBj.user.lastActivity = "Cieszymy się że dołączyłeś do  społecznośći aplikacji :D";
+            }
             singletoneOBj.isOnlineThread = new Thread(isOnlineloop);
             singletoneOBj.isOnlineThread.IsBackground = true;
             singletoneOBj.isOnlineThread.Start();

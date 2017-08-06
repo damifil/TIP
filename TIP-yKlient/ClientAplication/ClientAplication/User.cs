@@ -8,7 +8,7 @@ namespace ClientAplication
 {
     class User
     {
-        public User (bool isfriend)
+        public User(bool isfriend)
         {
             isFriend = isfriend;
         }
@@ -16,8 +16,9 @@ namespace ClientAplication
         public string IcoUser { get; set; }
         public string IcoCall { get; set; }
         public string IcoColor { get; set; }
-        public string password  { get; set; }
+        public string password { get; set; }
         public bool isFriend { get; set; }
+        public string lastActivity {get; set;}
 
     }
 }

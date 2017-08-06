@@ -221,19 +221,24 @@ namespace ClientAplication
 
         private List<ListHistory> GetAllHistory(string login)                       // uzyskanie calej hisorii rozmow
         {
+
             string historyListString = singletoneOBj.client.sendMessage("ALLHISTORY " + login);
             string[] historySplit = historyListString.Split('&');
             List<ListHistory> historyList = new List<ListHistory>();
             for (int i = 0; i < (historySplit.Length - 1); i++)
             {
-                ListHistory history = new ListHistory();
-                string[] sp = historySplit[i].Split(' ');
-                history.userName = sp[0];
-                history.dayBegin = sp[1];
-                history.hourBegin = sp[2];
-                history.dayEnd = sp[3];
-                history.hourEnd = sp[4];
-                historyList.Add(history);
+                try
+                {
+                    ListHistory history = new ListHistory();
+                    string[] sp = historySplit[i].Split(' ');
+                    history.userName = sp[0];
+                    history.dayBegin = sp[1];
+                    history.hourBegin = sp[2];
+                    history.dayEnd = sp[3];
+                    history.hourEnd = sp[4];
+                    historyList.Add(history);
+                }
+                catch (Exception e) { MessageBox.Show(historySplit[i]); }
             }
             return historyList;
         }
