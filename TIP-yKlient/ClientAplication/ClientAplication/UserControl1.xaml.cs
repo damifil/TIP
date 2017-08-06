@@ -29,19 +29,22 @@ namespace ClientAplication
         {
             try
             {
+
                 singletoneOBj = SingletoneObject.GetInstance;
                 InitializeComponent();
                 userNameTB.Text = singletoneOBj.user.Name;
-                if (singletoneOBj.Users != null)
-                { lbUsers.DataContext = singletoneOBj.Users; }
+                searchInput.Text = singletoneOBj.searchvalue;
+                if (singletoneOBj.searchvalue == null)
+                {
+                    if (singletoneOBj.Users != null)
+                    { lbUsers.DataContext = singletoneOBj.Users; }
+                    else
+                    { addUSerToList(); }
+                }
                 else
-                { addUSerToList(); }
+                {
 
-
-
-
-               
-
+                }
                 refreshListThread = new Thread(ListRefreshloop);
                 refreshListThread.IsBackground = true;
                 refreshListThread.Start();
@@ -92,26 +95,24 @@ namespace ClientAplication
 
         private void searchClick(object sender, RoutedEventArgs e)
         {
-            string value = searchInput.Text;
-
-            if (string.IsNullOrWhiteSpace(value))    // gdy nic nie wpisano w polu wyszukiwania
-            {
-                observeSearchClick = false;
-                setFriendtoList();
-                return;
-            }
-            observeSearchClick = true;
-            listUser = SearchUsers(singletoneOBj.user.Name, value);
-
-            searchupdate();
+           
         }
         private void setFriendtoList()
         {
             string value = searchInput.Text;
-            if (observeSearchClick == false || string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 lbUsers.DataContext = singletoneOBj.Friends;
+                singletoneOBj.searchvalue = "";
             }
+
+            else if (value!=singletoneOBj.searchvalue)    // gdy nic nie wpisano w polu wyszukiwania
+            {
+                listUser = SearchUsers(singletoneOBj.user.Name, value);
+                searchupdate();
+                singletoneOBj.searchvalue = value;
+            }
+           
         }
 
     

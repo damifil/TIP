@@ -36,7 +36,7 @@ namespace ClientAplication
                 }
             }
         }
-
+        internal string searchvalue;
 
         public void setdefaultvalue()
         {
@@ -49,6 +49,7 @@ namespace ClientAplication
             phoneVOIP = null;
             items = null;
             isOnlineThread=null;
+            searchvalue = "";
         }
     }
 
