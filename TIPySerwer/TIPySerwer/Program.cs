@@ -70,7 +70,9 @@ namespace TIPySerwer
                 }catch(Exception e)
                 {
                     Console.WriteLine("błędne dane");
+                    fragmentCommunication = new string[1];
                     fragmentCommunication[0] = "ERROR";
+
                 }
                 
                 switch (fragmentCommunication[0])
@@ -86,7 +88,7 @@ namespace TIPySerwer
 
                         //funnkcja odpowiedzialna za wysylanie do klieenta chwilowo nie przewidzialem by klient wiadomosci odroznial podlug komunikatow
                         //tylko po prostu je odbiera
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "EXIT":
                         bClientConnected = false;
@@ -96,54 +98,59 @@ namespace TIPySerwer
                         break;
                     case "LOGIN":       // logowanie użytkownika
                         sData = UserManager.Logging(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "REGISTER":  // dodanie uzytkownika do bazy danych
                         sData = UserManager.AddUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "CHPASS":    // zmiana hasla
                         sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ADDFRIEND":  // dodanie znajomego
                         sData = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "DELFRIEND":  // usuniecie znajomego
                         sData = UserManager.DelFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "SRCH":       // szukanie uzytkowika
                         sData = UserManager.SearchUser(fragmentCommunication[1], fragmentCommunication[2]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ISONLINE":   // aktualizacja statniej aktywnosci 
                         UserManager.UpdateActivityUser(fragmentCommunication[1]).ToString();
                         sData = UserManager.GetFriends(fragmentCommunication[1]);
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ALLHISTORY":  // uzyskanie calej hisorii rozmow danego uzytkownika
                         sData = UserManager.GetAllHistory(fragmentCommunication[1]);
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "USERHISTORY":  // uzyskanie hisorii rozmow z konkretnym uzytkownikiem
                         sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "GETFRIENDS":
                         sData = UserManager.GetFriends(fragmentCommunication[1]);
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "SAVECALL":
                         sData = UserManager.SavaCall(fragmentCommunication[1], fragmentCommunication[2], fragmentCommunication[3], fragmentCommunication[4],fragmentCommunication[5], fragmentCommunication[6]).ToString();
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ERROR":
+                        bClientConnected = false;
+                        break;
+                    case "LASTACTIVITY":
+                       sData= UserManager.UserLastActivity(fragmentCommunication[1]);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     default:
                         sData = "Nieprawidłowe żądanie";
-                        diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
 
                 }

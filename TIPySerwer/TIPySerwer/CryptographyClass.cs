@@ -173,11 +173,17 @@ namespace TIPySerwer
             string messageDecrypt = Cryptography.Decrypt(sData, secretByteArray);
             return messageDecrypt.TrimEnd('\0');
         }
-        public void sendMessage(string sData, DiffieHelman diffieHelman, StreamWriter sWriter)
+        public bool sendMessage(string sData, DiffieHelman diffieHelman, StreamWriter sWriter)
         {
-            String messageSend = Cryptography.Encrypt(sData, secretByteArray);
-            sWriter.WriteLine(messageSend);
-            sWriter.Flush();
+            try
+            {
+                String messageSend = Cryptography.Encrypt(sData, secretByteArray);
+                sWriter.WriteLine(messageSend);
+                sWriter.Flush();
+                return true;
+            }
+
+            catch (Exception e) { return false; }
         }
     }
 
