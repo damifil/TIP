@@ -21,28 +21,38 @@ namespace ClientAplication
     public partial class History : Window
     {
         internal ObservableCollection<itemTB> items;
+        internal ObservableCollection<itemTB> copyitems;
         SingletoneObject singletoneOBj;
 
 
         public History(string login, List<ListHistory> listHistory)
         {
             items = new ObservableCollection<itemTB>();
+            copyitems = new ObservableCollection<itemTB>();
             singletoneOBj = SingletoneObject.GetInstance;
 
-            singletoneOBj.isOnlineThread.Abort();
+     
             foreach (ListHistory item in listHistory)
             {
                 items.Add(new itemTB() { Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
                     Describe2 = "rozpoczęła się dnia " + item.dayBegin,
                     Describe3 = "i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd ,
-                    Date = "dzinen"
+                });
+
+
+                copyitems.Add(new itemTB()
+                {
+                    Name = item.userName,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
+                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
+                    Describe3 = "i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd,
                 });
             }
     
             InitializeComponent();
             lbHistoryAll.DataContext = items;
-            singletoneOBj.isOnlineThread.Abort();
+            //singletoneOBj.isOnlineThread.Start();
         }
 
         bool _shown;
@@ -80,15 +90,7 @@ namespace ClientAplication
 
         private void searchClickHistory(object sender, RoutedEventArgs e)
         {
-            string value = historysearchinput.Text;
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (value != items[i].Date)
-                {
-                    items.RemoveAt(i);
-                    i--;
-                }
-            }
+           
 
         }
 
@@ -112,11 +114,26 @@ namespace ClientAplication
             }
         }
 
-    
-
-
-
-
+        private void historysearchinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string value = historysearchinput.Text;
+            if (value != "")
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if ( !items[i].Describe.Contains(value) && !items[i].Describe2.Contains(value) && !items[i].Describe3.Contains(value))
+                    {
+                        items.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+            else
+            {
+                items = new ObservableCollection<itemTB>(copyitems);
+                lbHistoryAll.DataContext = items;
+            }
+        }
     }
 
 

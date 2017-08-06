@@ -5,18 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="History" Height="500" Width="600">
+        Title="History" Height="500" Width="650" 
+       ResizeMode="NoResize">
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
-            
+
 
         </StackPanel>
 
-        <local:UserControl1/>
-        <TextBlock x:Name="tbSearchIco" Text="&#xf002;" MouseLeftButtonDown="searchClickHistory" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap"  Margin="425,145,118.664,297.784" Width="50"/>
-        <TextBox x:Name="historysearchinput" TextWrapping="Wrap" Text="wpisz date..." Width="120" Margin="288,144,185.664,301.784"/>
-        
+        <local:UserControl1 Margin="0,6,42,-37"/>
+        <TextBlock x:Name="tbSearchIco" Text="&#xf002;" MouseLeftButtonDown="searchClickHistory" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap"  Margin="528,140,86,298" FontSize="20"/>
+
+
+        <TextBox x:Name="historysearchinput"  TextWrapping="Wrap" Margin="283,131,119,298" FontSize="15"   IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" TextChanged="historysearchinput_TextChanged" >
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="wyszukaj" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
+
+
+
+
         <ListBox IsSynchronizedWithCurrentItem="True"
         Name="lbHistoryAll" ItemsSource="{Binding}"
          Margin="270,183,3.664,10.784" RenderTransformOrigin="0.5,0.5" >
@@ -30,19 +61,20 @@
             </ListBox.RenderTransform>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Path=Describe}" Width="300" />
-                        <TextBlock Text="{Binding Path=Describe2}" Width="300" />
-                        <TextBlock Text="{Binding Path=Describe3}" Width="300" />
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="oddzwoń    "  />
-                            <TextBlock Text="&#xf098;" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        
+                        <TextBlock Text="{Binding Path=Describe}" Width="300" Padding="2" />
+                        <TextBlock Text="{Binding Path=Describe2}" Width="300" Padding="2"/>
+                        <TextBlock Text="{Binding Path=Describe3}" Width="300" Padding="2" />
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBlock Text="oddzwoń    " Padding="2" />
+                            <TextBlock Text="&#xf098;" Padding="5" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource FontAwesome}" Width="20"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="296,49,0,0" TextWrapping="Wrap" Text="Historia ostatnich połączeń" VerticalAlignment="Top" FontSize="32" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="296,34,0,0" TextWrapping="Wrap" Text="Historia ostatnich połączeń" VerticalAlignment="Top" FontSize="32" FontWeight="Bold"/>
 
 
     </Grid>

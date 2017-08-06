@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="Settings" Height="500" Width="600">
+        Title="Settings" Height="500" Width="650"
+         ResizeMode="NoResize">
     <Grid>
-        <local:UserControl1/>
-        <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
+        <local:UserControl1 Margin="-6,0,50,-29"/>
+        <StackPanel Orientation="Horizontal" Margin="0,-10,0,10">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
         </StackPanel>
         

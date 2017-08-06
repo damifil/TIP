@@ -42,37 +42,9 @@ namespace ClientAplication
             welcomeString.Text = "Witaj " + singletoneOBJ.user.Name; 
             
         }
-  /*
-        private void callToUser(object sender, MouseButtonEventArgs e)
-        {
-            User userLogged = user;
-            TextBlock cmd = (TextBlock)sender;
-            if (cmd.DataContext is User)
-            {
-               
-                User user = (User)cmd.DataContext;
-                phoneVOIP.nameCallToUser = user.Name;
-                bool call = phoneVOIP.btn_PickUp_Click(user.Name);
-                CallToWindow main = new CallToWindow();
-                if (call == true)
-                {
-                    main.user = user;
-                    main.userLogged = userLogged;
-                    main.client = client;
-                    main.dateBegin = DateTime.Now;
-                    main.phoneVOIP = phoneVOIP;
-                    main.Show();
-                }
-
-            }
-        }
-        */
-
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
-
-      
     }
 }
 

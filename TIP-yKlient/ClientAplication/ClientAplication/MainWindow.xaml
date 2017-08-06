@@ -6,15 +6,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
+        Title="MainWindow" Height="500" Width="650"
+         ResizeMode="NoResize">
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="10,-10,-10.336,9.784">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
         </StackPanel>
-        <local:UserControl1 />
+        <local:UserControl1 Margin="0,0,42,-31" />
 
-        <TextBlock x:Name="welcomeString" Height="110" Margin="273,34,9.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="32"/>
-        <TextBlock x:Name="lastActivity" Height="32" Margin="273,158,39.664,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock x:Name="welcomeString" Height="110" Margin="289,30,42,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="32"/>
+        <TextBlock x:Name="lastActivity" Height="32" Margin="289,154,23,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
 
 

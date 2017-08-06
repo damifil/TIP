@@ -22,6 +22,7 @@ namespace ClientAplication
     {
   
         internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
+        internal ObservableCollection<itemTB> copyitems;
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         private string userFriend;
 
@@ -32,6 +33,8 @@ namespace ClientAplication
             stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem " + userFriend;
             
             items = new ObservableCollection<itemTB>();
+            copyitems = new ObservableCollection<itemTB>();
+
             foreach (ListHistory item in listHistory)
             {
                 items.Add(new itemTB()
@@ -40,7 +43,14 @@ namespace ClientAplication
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
                     Describe2 = "rozpoczęła się dnia " + item.dayBegin,
                     Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
-                    Date = "dzinen"
+                });
+
+                copyitems.Add(new itemTB()
+                {
+                    Name = item.userName,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
+                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
+                    Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
                 });
             }
             lbHistoryAll.DataContext = items;
@@ -77,18 +87,32 @@ namespace ClientAplication
         }
         private void searchClickHistoryuser(object sender, RoutedEventArgs e)
         {
-            string value = userhistorysearchinput.Text;
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (value != items[i].Date)
-                {
-                    items.RemoveAt(i);
-                    i--;
-                }
-            }
+           
 
         }
 
+        private void historysearchinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string value = userhistorysearchinput.Text;
+          
+            if (value != "")
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (!items[i].Describe.Contains(value) && !items[i].Describe2.Contains(value) && !items[i].Describe3.Contains(value))
+                    {
+                        items.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+            else
+            {
+                items = new ObservableCollection<itemTB>(copyitems);
+                lbHistoryAll.DataContext = items;
+            }
 
+
+        }
     }
 }

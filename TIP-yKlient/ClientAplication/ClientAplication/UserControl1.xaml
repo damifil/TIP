@@ -12,7 +12,7 @@
         <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="131,78,420,393" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="logOut"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="191,78,361,393" VerticalAlignment="Center" RenderTransformOrigin="0.396,1.207"></TextBlock>
         <TextBlock x:Name="history"  MouseLeftButtonDown="historyTextboxaction"  Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="76,78,474,393" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-        <TextBox x:Name="searchInput"  TextWrapping="Wrap" Margin="20,148,382,317" FontSize="15" Height="35" TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" >
+             <TextBox x:Name="searchInput"  TextWrapping="Wrap" Margin="20,148,382,317" FontSize="15" Height="35" TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -36,7 +36,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black"  Margin="232,159,327,317" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
+   <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black"  Margin="228,154,332,322" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
         <ListBox IsSynchronizedWithCurrentItem="True" BorderThickness="0"  
         Name="lbUsers" ItemsSource="{Binding}"
          Margin="19,204,357,57" RenderTransformOrigin="0.5,0.5" >

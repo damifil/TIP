@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="UserWindow" Height="500" Width="600">
+        Title="UserWindow" Height="500" Width="650"
+         ResizeMode="NoResize">
     <Grid>
-        <local:UserControl1/>
-        <StackPanel Orientation="Horizontal" Margin="0,0,-0.336,-0.216">
+        <local:UserControl1 Margin="-6,0,50,-29"/>
+        <StackPanel Orientation="Horizontal">
             <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
 
 
 
 
         </StackPanel>
-        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Oddzwoń" Margin="266,171,237.664,258.784" RenderTransformOrigin="0.5,0.5" FontSize="18.667">
+        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Oddzwoń" Margin="263,102,288,327" RenderTransformOrigin="0.5,0.5" FontSize="18.667">
 
 
             <TextBlock.RenderTransform>
@@ -27,17 +28,17 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="usuń z listy znajomych" Margin="428,165,58.664,242.784" RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
+        <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="usuń z listy znajomych" Margin="420,101,114,306" RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
 
-        <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="279,18,33.664,305.784" FontSize="24"/>
+        <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="279,18,34,379" FontSize="24"/>
 
-        <TextBlock x:Name="callToFriendIco" Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21.333" Margin="373,170,190.664,268.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
-        <TextBlock x:Name="deleteFriendIco" Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21.333" Margin="535,170,28.664,268.784" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="32" Focusable="True" Width="30" AllowDrop="True"></TextBlock>
+        <TextBlock x:Name="callToFriendIco" Padding="5"  Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21" Margin="364,106,240,322" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="43" Focusable="True"  AllowDrop="True"></TextBlock>
+        <TextBlock x:Name="deleteFriendIco" Padding="5"  Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21" Margin="535,106,69,319" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="46" Focusable="True"  AllowDrop="True"></TextBlock>
 
 
         <ListBox IsSynchronizedWithCurrentItem="True"
         Name="lbHistoryAll" ItemsSource="{Binding}"
-         Margin="259,298,14.664,11.784" RenderTransformOrigin="0.5,0.5" >
+         Margin="260,249,14,15" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -48,17 +49,54 @@
             </ListBox.RenderTransform>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Path=Describe}" Width="300" />
-                        <TextBlock Text="{Binding Path=Describe2}" Width="300" />
-                        <TextBlock Text="{Binding Path=Describe3}" Width="300" />
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                        <TextBlock Text="{Binding Path=Describe}" Width="300" Padding="2"/>
+                        <TextBlock Text="{Binding Path=Describe2}" Width="300" Padding="2"/>
+                        <TextBlock Text="{Binding Path=Describe3}" Width="300" Padding="2"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBlock x:Name="searchicouser" Text="&#xf002;" MouseLeftButtonDown="searchClickHistoryuser" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap"  Margin="428,246,140.664,203.784"/>
-        <TextBox x:Name="userhistorysearchinput" TextWrapping="Wrap" Text="wpisz date..." Margin="277,242,190.664,203.784"/>
+        <TextBlock x:Name="searchicouser" Text="&#xf002;" MouseLeftButtonDown="searchClickHistoryuser" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap" FontSize="20" Margin="524,191,86,243" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.735"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.487"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+
+
+        <TextBox x:Name="userhistorysearchinput"  TextWrapping="Wrap" Margin="264,186,138,243" FontSize="15"   IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" TextChanged="historysearchinput_TextChanged" >
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="wyszukaj" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
 
 
     </Grid>

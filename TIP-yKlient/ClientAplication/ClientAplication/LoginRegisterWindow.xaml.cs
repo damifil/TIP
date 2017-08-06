@@ -22,6 +22,7 @@ namespace ClientAplication
     {
         internal Client client;
         SingletoneObject singletoneOBj;
+        int timeThreadloop = 30000;
         public LoginRegisterWindow()
         {
             InitializeComponent();
@@ -34,7 +35,6 @@ namespace ClientAplication
             byte[] output = hashAlgo.ComputeHash(input);
             return output;
         }
-
 
         private void isOnlineloop()
         {
@@ -51,7 +51,7 @@ namespace ClientAplication
                     user.active = sp[1];
                     singletoneOBj.listUsers.Add(user);
                 }
-                Thread.Sleep(3000);
+                Thread.Sleep(timeThreadloop);
             }
         }
 
@@ -89,21 +89,17 @@ namespace ClientAplication
             }
             else
             {
-
                 loginRegisterfunction(login, password,true);
                 MainWindow main = new MainWindow();
                 this.Close();
                 main.Show();
             }
-          
         }       
 
         private List<ListUser> GetFriends(string login)
         {
             string friendsList = client.sendMessage("GETFRIENDS " + login);
-
             string[] splitFriends = friendsList.Split('&');
-
             List<ListUser> listUsers = new List<ListUser>();
             for (int i = 0; i < (splitFriends.Length - 1); i++)
             {
@@ -133,13 +129,11 @@ namespace ClientAplication
             string login = loginInputRegister.Text;
             string password1 = password1InputRegister.Password;
             string password2 = password2InputRegister.Password;
-
             if(password1 != password2)
             {
                 MessageBox.Show("Hasła nie są takie same");
                 return;
             }
-
             if (client == null)
             {
                 client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
@@ -151,8 +145,6 @@ namespace ClientAplication
                 disable_enableButton(true);
                 return;
             }
-
-
             loginRegisterfunction(login, password1,false);
             MainWindow main = new MainWindow();
             this.Close();
@@ -188,7 +180,4 @@ namespace ClientAplication
             singletoneOBj.isOnlineThread.Start();
         }
     }
-
-
- 
 }

@@ -20,16 +20,14 @@ namespace ClientAplication
 
     public partial class UserControl1 : UserControl
     {
+        int timeThreadloop = 500;
         SingletoneObject singletoneOBj;
         List<ListUser> listUser;
         Thread refreshListThread;
-        string value2 = null;
-        bool observeSearchClick = false;
         public UserControl1()
         {
             try
             {
-
                 singletoneOBj = SingletoneObject.GetInstance;
                 InitializeComponent();
                 userNameTB.Text = singletoneOBj.user.Name;
@@ -48,7 +46,6 @@ namespace ClientAplication
                 refreshListThread = new Thread(ListRefreshloop);
                 refreshListThread.IsBackground = true;
                 refreshListThread.Start();
-
             }
             catch (Exception e) { }
             InitializeComponent();
@@ -95,7 +92,7 @@ namespace ClientAplication
 
         private void searchClick(object sender, RoutedEventArgs e)
         {
-           
+
         }
         private void setFriendtoList()
         {
@@ -117,23 +114,20 @@ namespace ClientAplication
             {
                 addUSerToList();
                 searchupdate();           
- }
+            }
         }
 
-    
         private void searchupdate()
         {
             singletoneOBj.Users = new ObservableCollection<User>();
             foreach (ListUser item in listUser)
             {
-
-                    if (singletoneOBj.Friends.Any(x => x.Name == item.name && singletoneOBj.listUsers.Where(y=> y.name==item.name && y.active=="True").Any()  ) )
-                          singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
-                     else  if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                         singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
-                    else
-                         singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
-            
+                if (singletoneOBj.Friends.Any(x => x.Name == item.name && singletoneOBj.listUsers.Where(y=> y.name==item.name && y.active=="True").Any()  ) )
+                    singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
+                else  if (singletoneOBj.Friends.Any(x => x.Name == item.name))
+                    singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
+                else
+                    singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
             }
             lbUsers.DataContext = singletoneOBj.Users;
         }
@@ -197,7 +191,6 @@ namespace ClientAplication
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
-
                 refreshListThread.Abort();
                 User userFriend = (User)cmd.DataContext;
                 List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
@@ -216,7 +209,6 @@ namespace ClientAplication
 
         private List<ListHistory> GetAllHistory(string login)                       // uzyskanie calej hisorii rozmow
         {
-
             string historyListString = singletoneOBj.client.sendMessage("ALLHISTORY " + login);
             string[] historySplit = historyListString.Split('&');
             List<ListHistory> historyList = new List<ListHistory>();
@@ -288,11 +280,9 @@ namespace ClientAplication
             while (true) { 
             RoutedEventArgs e = new RoutedEventArgs();
             this.Dispatcher.Invoke(() => setFriendtoList());
-            Thread.Sleep(500);
+            Thread.Sleep(timeThreadloop);
             }
         }
-        
-        
 
     }
 
