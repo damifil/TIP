@@ -62,8 +62,17 @@ namespace TIPySerwer
             {
                 //nasluchiwanie komunikatu
                 sData = diffieHelman.messageRecive(sReader, diffieHelman);
-                Console.WriteLine("otrzymano " + sData); 
-                string[] fragmentCommunication = sData.Split(' ');
+                Console.WriteLine("otrzymano " + sData);
+                string[] fragmentCommunication=null;
+                try
+                {
+                    fragmentCommunication = sData.Split(' ');
+                }catch(Exception e)
+                {
+                    Console.WriteLine("błędne dane");
+                    fragmentCommunication[0] = "ERROR";
+                }
+                
                 switch (fragmentCommunication[0])
                 {
                     case "CREATE":
@@ -129,6 +138,8 @@ namespace TIPySerwer
                     case "SAVECALL":
                         sData = UserManager.SavaCall(fragmentCommunication[1], fragmentCommunication[2], fragmentCommunication[3], fragmentCommunication[4],fragmentCommunication[5], fragmentCommunication[6]).ToString();
                         diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        break;
+                    case "ERROR":
                         break;
                     default:
                         sData = "Nieprawidłowe żądanie";
