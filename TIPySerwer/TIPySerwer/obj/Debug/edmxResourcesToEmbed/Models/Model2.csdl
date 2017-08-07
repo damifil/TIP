@@ -57,6 +57,7 @@
     <NavigationProperty Name="Friends" Relationship="tipBDModel.FK_Friends_User" FromRole="Users" ToRole="Friends" />
     <NavigationProperty Name="Friends1" Relationship="tipBDModel.FK_Friends_User1" FromRole="Users" ToRole="Friends" />
     <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="Is_Exists" Type="Boolean" />
   </EntityType>
   <Association Name="FK_Calls_Users">
     <End Type="tipBDModel.Users" Role="Users" Multiplicity="1" />

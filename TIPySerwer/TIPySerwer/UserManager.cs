@@ -46,9 +46,21 @@ namespace TIPySerwer
             }
         }
 
-        public static bool DeleteUser(string login)
+        public static bool DeleteUser(string login) // usuniecie konta
         {
-            return true;
+            if (!IsLoginExists(login))
+            {
+                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+            }
+
+            using (tipBDEntities db = new tipBDEntities())
+            {
+
+                Users user = db.Users.Where(x => x.Login == login).Single();
+                user.Is_Exists = false;
+                db.SaveChanges();
+                return true;
+            }
         }
 
         public static bool UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
@@ -67,25 +79,30 @@ namespace TIPySerwer
             return true;
         }
 
-        public  static bool Logging(string login, string password)  // proces logowania
+        public  static string Logging(string login, string password)  // proces logowania
         {            
             if (!IsLoginExists(login))
             {
-                Console.WriteLine("Błędny login lub hasło (akcja z loginem: "+login+" )");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
-                return false;
+                Console.WriteLine("Błędny login lub hasło (akcja z loginem: "+login+" )");  
+                return "Błędny login lub hasło";
             }
             using (tipBDEntities db = new tipBDEntities())
             {
-
-                byte[] userPass = db.Users.Where(x => x.Login == login).Select(x => x.Password).SingleOrDefault();
+                Users user = db.Users.Where(x => x.Login == login).SingleOrDefault();
+                if(!(bool)user.Is_Exists)
+                {
+                    Console.WriteLine("Błędny login lub hasło (akcja z loginem: " + login + " )");  
+                    return "Błędny login lub hasło";
+                }
+                byte[] userPass = user.Password;
                 byte[] pass =  HashPassword(password);
                 if (!userPass.SequenceEqual(pass))
                 {
-                    Console.WriteLine("Błędny login lub hasło (akcja z loginem: " + login + " )");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
-                    return false;
+                    Console.WriteLine("Błędny login lub hasło (akcja z loginem: " + login + " )");  
+                    return "Błędny login lub hasło";
                 }
-                Console.WriteLine("klient "+ login+" zalogowal sie");
-                return true;
+                Console.WriteLine("Klient "+ login+" zalogował się");
+                return "True";
             }
         }
 

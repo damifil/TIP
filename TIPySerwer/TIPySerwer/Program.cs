@@ -108,6 +108,10 @@ namespace TIPySerwer
                         sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
+                    case "DELACCOUNT": // usuniecie konta
+                        sData = UserManager.DeleteUser(fragmentCommunication[1]).ToString();
+                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
+                        break;
                     case "ADDFRIEND":  // dodanie znajomego
                         sData = UserManager.AddFriend(fragmentCommunication[1], fragmentCommunication[2]).ToString();
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
@@ -145,7 +149,7 @@ namespace TIPySerwer
                         bClientConnected = false;
                         break;
                     case "LASTACTIVITY":  // uzyskanie ostatniej aktywnosci
-                       sData= UserManager.UserLastActivity(fragmentCommunication[1]);
+                        sData= UserManager.UserLastActivity(fragmentCommunication[1]);
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     default:

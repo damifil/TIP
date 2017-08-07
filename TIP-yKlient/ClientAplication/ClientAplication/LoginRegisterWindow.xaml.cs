@@ -60,13 +60,13 @@ namespace ClientAplication
             disable_enableButton(false);
             string login = loginInput.Text;
             string password = passwordInput.Password;
-            string flag=null;
+            string receiveCommunicate= null;
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
             if (client == null) {
                 try
                 {
                     client = new Client(adresIPinput.Text, Convert.ToInt32(numberPortInput.Text));
-                    flag = client.sendMessage("LOGIN " + login + " " + password);
+                    receiveCommunicate = client.sendMessage("LOGIN " + login + " " + password);
                 }
                 catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm"); disable_enableButton(true); }
             }
@@ -76,13 +76,13 @@ namespace ClientAplication
                 disable_enableButton(true);
                 return;
             }
-            if(flag == "False")
+            if(receiveCommunicate != "True")
             {
-                MessageBox.Show("Login lub hasło jest błędne");
+                MessageBox.Show(receiveCommunicate);
                 disable_enableButton(true);
                 return;
             }
-            else if(flag ==null)
+            else if(receiveCommunicate == null)
             {
                 MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");
                 disable_enableButton(true);

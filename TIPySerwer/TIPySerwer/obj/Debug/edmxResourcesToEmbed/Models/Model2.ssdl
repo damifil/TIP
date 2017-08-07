@@ -28,6 +28,7 @@
     <Property Name="IP_Address" Type="varchar" MaxLength="15" />
     <Property Name="DateLastActiv" Type="datetime" />
     <Property Name="Is_Active" Type="bit" />
+    <Property Name="Is_Exists" Type="bit" />
   </EntityType>
   <Association Name="FK_Calls_Users">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
