@@ -78,7 +78,6 @@ namespace TIPySerwer
                     Console.WriteLine("Błędny login lub hasło (akcja z loginem: " + login + " )");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
                     return false;
                 }
-                UpdateActivityUser(login);
                 Console.WriteLine("klient "+ login+" zalogowal sie");
                 return true;
             }
