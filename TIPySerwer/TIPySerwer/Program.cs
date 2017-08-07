@@ -92,7 +92,7 @@ namespace TIPySerwer
                         break;
                     case "EXIT":
                         bClientConnected = false;
-                        Console.WriteLine("klient "+ fragmentCommunication[1]+" zostal wylogowany");
+                        Console.WriteLine("Klient "+ fragmentCommunication[1]+" został wylogowany");
                         UserManager.LogOff(fragmentCommunication[1]);
                         diffieHelman.sendMessage("Logut", diffieHelman, sWriter);
                         break;

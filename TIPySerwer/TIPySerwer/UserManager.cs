@@ -293,13 +293,12 @@ namespace TIPySerwer
         }
         public static string GetFriends(string login)        // pobranie listy znajomych
         {
-
+            List<FriendsListModel> friendsList = new List<FriendsListModel>();
             string listFriends = "";
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
                 bool checkHasFriends = db.Friends.Where(x => x.UserID == user.ID).Any();
-                int friendsCount = 0;
                 if(!checkHasFriends)
                 {
                                        // brak znajomych
@@ -309,12 +308,15 @@ namespace TIPySerwer
                     var friends = db.Friends.Where(x => x.UserID == user.ID);
                     foreach (Friends item in friends)
                     {
-                        Users friend = db.Users.Where(x => x.ID == item.UserID_From).Single();
-                        listFriends = listFriends + friend.Login + " " + friend.Is_Active + "&"; // znak & oddziela jeden login od drugiego 
-                        friendsCount++;
+                
+                        Users friend = db.Users.Where(x => x.ID == item.UserID_From).SingleOrDefault();
+                        friendsList.Add(new FriendsListModel()
+                        {
+                            login = friend.Login,
+                            isActive = (bool)friend.Is_Active
+                        });
                     }
                 }
-                
 
                 checkHasFriends = db.Friends.Where(x => x.UserID_From == user.ID).Any();
                 if(!checkHasFriends)
@@ -326,11 +328,20 @@ namespace TIPySerwer
                     var friends1 = db.Friends.Where(x => x.UserID_From == user.ID);
                     foreach (Friends item in friends1)
                     {
-                        Users friend = db.Users.Where(x => x.ID == item.UserID).Single();
-                        listFriends = listFriends + friend.Login + " " + friend.Is_Active + "&";
-                        friendsCount++;
+                        Users friend = db.Users.Where(x => x.ID == item.UserID && x.Is_Exists == true).SingleOrDefault();
+                        friendsList.Add(new FriendsListModel()
+                        {
+                            login = friend.Login,
+                            isActive = (bool)friend.Is_Active
+                        });
                     }
                 }
+            }
+
+            friendsList = friendsList.OrderByDescending(user => user.isActive).ThenBy(user => user.login).ToList();
+            foreach (FriendsListModel item in friendsList)
+            {
+                listFriends = listFriends + item.login + " " + item.isActive + "&";  
             }
             return listFriends;
         }
@@ -340,17 +351,12 @@ namespace TIPySerwer
         {
             using (tipBDEntities db = new tipBDEntities())
             {               
-               /* bool isExists = db.Users.Contains(x => x.Login == loginSearch);
-                if(!isExists)
-                {
-                    return String.Empty; // brak uzytkownikow o podanej nazwie
-                }*/
-
                 var users = from us in db.Users
-                            where us.Login.Contains(loginSearch)
+                            where us.Login.Contains(loginSearch) && us.Is_Exists == true
                             select us;
 
                 string listUsers = "";
+                users = users.OrderByDescending(user => user.Is_Active).ThenBy(user => user.Login);
                 foreach(Users item in users)
                 {
                     if(item.Login != loginUser)
