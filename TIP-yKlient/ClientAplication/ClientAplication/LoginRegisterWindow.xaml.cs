@@ -164,16 +164,16 @@ namespace ClientAplication
             {
                 singletoneOBj.phoneVOIP.InitializeSoftPhone(singletoneOBj.user.Name, singletoneOBj.user.password, client.ipAddres, 5060);
             }
-            catch (Exception ex) {MessageBox.Show("Wystapil problem podczas podpiecia do serwera odpowiedzialnego za transmisje glosowa ");}
+            catch (Exception ex) {MessageBox.Show("Wystapił problem podczas podpięcia do serwera odpowiedzialnego za transmisje głosową ");}
             singletoneOBj.phoneVOIP.client = client;
             singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
             if (islogin == true)
             {
-                singletoneOBj.user.lastActivity = "Twoja ostatnia aktywnośći była :\n"+client.sendMessage("LASTACTIVITY " + login + " " + password);
+                singletoneOBj.user.lastActivity = "Twoja ostatnia aktywność była: \n"+client.sendMessage("LASTACTIVITY " + login);
             }
             else
             {
-                singletoneOBj.user.lastActivity = "Cieszymy się że dołączyłeś do  społecznośći aplikacji :D";
+                singletoneOBj.user.lastActivity = "Cieszymy się, że dołączyłeś do społeczności aplikacji :D";
             }
             singletoneOBj.isOnlineThread = new Thread(isOnlineloop);
             singletoneOBj.isOnlineThread.IsBackground = true;

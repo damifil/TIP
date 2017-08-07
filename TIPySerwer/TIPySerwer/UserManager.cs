@@ -39,10 +39,16 @@ namespace TIPySerwer
                 Users newUser = new Users();
                 newUser.Login = login;
                 newUser.Password =  HashPassword(password);
+                newUser.Is_Exists = true;
                 db.Users.Add(newUser);
                 db.SaveChanges();
                 return true;
             }
+        }
+
+        public static bool DeleteUser(string login)
+        {
+            return true;
         }
 
         public static bool UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
@@ -115,6 +121,8 @@ namespace TIPySerwer
                 return true;
             }
         }
+
+        
 
         public static bool SavaCall(string login, string login1, string dateBegin, string hourBegin, string dateEnd, string hourEnd)   // zapisanie rozmowy 
         {

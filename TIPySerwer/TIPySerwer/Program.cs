@@ -133,18 +133,18 @@ namespace TIPySerwer
                         sData = UserManager.GetCallsConcreteUser(fragmentCommunication[1], fragmentCommunication[2]);
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
-                    case "GETFRIENDS":
+                    case "GETFRIENDS":   // uzysaknie listy znajomych
                         sData = UserManager.GetFriends(fragmentCommunication[1]);
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
-                    case "SAVECALL":
+                    case "SAVECALL":     // zapisanie rozmowy
                         sData = UserManager.SavaCall(fragmentCommunication[1], fragmentCommunication[2], fragmentCommunication[3], fragmentCommunication[4],fragmentCommunication[5], fragmentCommunication[6]).ToString();
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "ERROR":
                         bClientConnected = false;
                         break;
-                    case "LASTACTIVITY":
+                    case "LASTACTIVITY":  // uzyskanie ostatniej aktywnosci
                        sData= UserManager.UserLastActivity(fragmentCommunication[1]);
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;

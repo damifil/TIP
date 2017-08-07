@@ -29,6 +29,7 @@ namespace TIPySerwer.Models
         public string IP_Address { get; set; }
         public Nullable<System.DateTime> DateLastActiv { get; set; }
         public Nullable<bool> Is_Active { get; set; }
+        public Nullable<bool> Is_Exists { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Calls> Calls { get; set; }

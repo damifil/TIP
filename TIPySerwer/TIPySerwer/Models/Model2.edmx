@@ -33,6 +33,7 @@
           <Property Name="IP_Address" Type="varchar" MaxLength="15" />
           <Property Name="DateLastActiv" Type="datetime" />
           <Property Name="Is_Active" Type="bit" />
+          <Property Name="Is_Exists" Type="bit" />
         </EntityType>
         <Association Name="FK_Calls_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
@@ -164,6 +165,7 @@
           <NavigationProperty Name="Friends" Relationship="tipBDModel.FK_Friends_User" FromRole="Users" ToRole="Friends" />
           <NavigationProperty Name="Friends1" Relationship="tipBDModel.FK_Friends_User1" FromRole="Users" ToRole="Friends" />
           <Property Name="Is_Active" Type="Boolean" />
+          <Property Name="Is_Exists" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Calls_Users">
           <End Type="tipBDModel.Users" Role="Users" Multiplicity="1" />
@@ -242,6 +244,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="tipBDModel.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Is_Exists" ColumnName="Is_Exists" />
                 <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
                 <ScalarProperty Name="DateLastActiv" ColumnName="DateLastActiv" />
                 <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
