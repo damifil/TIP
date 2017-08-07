@@ -42,7 +42,7 @@ namespace ClientAplication
                     Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
                     Describe2 = "rozpoczęła się dnia " + item.dayBegin,
-                    Describe3 = "i zakonczyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
+                    Describe3 = "i zakończyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
                 });
 
                 copyitems.Add(new itemTB()

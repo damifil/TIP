@@ -67,7 +67,7 @@ namespace ClientAplication
                     else
                     {
                         singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" ,IcoColor = "green" }); // nieaktywny
-                        singletoneOBj.Friends.Add(new User(false) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" });
+                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" });
                     }
                 }
             }
@@ -104,6 +104,7 @@ namespace ClientAplication
                 singletoneOBj.searchvalue = "";
             }
 
+            
             else if (value != singletoneOBj.searchvalue)
             {
                 listUser = SearchUsers(singletoneOBj.user.Name, value);
@@ -160,7 +161,7 @@ namespace ClientAplication
                     singletoneOBj.client.sendMessage("ADDFRIEND " + singletoneOBj.user.Name+ " "+ user.Name);
                     //dodanie przyjaciela do listy 
                     singletoneOBj.Friends.Add(user);
-                    MessageBox.Show("dodano użytkowniak do znajomych");
+                    MessageBox.Show("Dodano" + user.Name + " do znajomych");
                     //zmiana ikonki przy użytkowniku
                     searchupdate();
                 }

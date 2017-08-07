@@ -253,7 +253,6 @@ namespace TIPySerwer
                 {
                     return false;    // uzytkownik ma juz takiego znajomego
                 }
-
                 Friends friend = new Friends();
                 friend.UserID = nFriend.ID;
                 friend.UserID_From = user.ID;
@@ -309,12 +308,14 @@ namespace TIPySerwer
                     foreach (Friends item in friends)
                     {
                 
-                        Users friend = db.Users.Where(x => x.ID == item.UserID_From).SingleOrDefault();
-                        friendsList.Add(new FriendsListModel()
-                        {
-                            login = friend.Login,
-                            isActive = (bool)friend.Is_Active
-                        });
+                        Users friend = db.Users.Where(x => x.ID == item.UserID_From && x.Is_Exists == true).SingleOrDefault();
+                        if (friend != null) {
+                            friendsList.Add(new FriendsListModel()
+                            {
+                                login = friend.Login,
+                                isActive = (bool)friend.Is_Active
+                            });
+                        }
                     }
                 }
 
@@ -329,11 +330,14 @@ namespace TIPySerwer
                     foreach (Friends item in friends1)
                     {
                         Users friend = db.Users.Where(x => x.ID == item.UserID && x.Is_Exists == true).SingleOrDefault();
-                        friendsList.Add(new FriendsListModel()
+                        if (friend != null)
                         {
-                            login = friend.Login,
-                            isActive = (bool)friend.Is_Active
-                        });
+                            friendsList.Add(new FriendsListModel()
+                            {
+                                login = friend.Login,
+                                isActive = (bool)friend.Is_Active
+                            });
+                        }
                     }
                 }
             }
@@ -356,7 +360,7 @@ namespace TIPySerwer
                             select us;
 
                 string listUsers = "";
-                users = users.OrderByDescending(user => user.Is_Active).ThenBy(user => user.Login);
+                users = users.OrderBy(user => user.Login);
                 foreach(Users item in users)
                 {
                     if(item.Login != loginUser)
