@@ -153,7 +153,7 @@ namespace ClientAplication
         private void loginRegisterfunction(string login, string password,bool islogin)
         {
             singletoneOBj = SingletoneObject.GetInstance;
-            User userToSend = new User(true);
+            AplicationUser userToSend = new AplicationUser();
             userToSend.Name = login;
             userToSend.password = password;
             singletoneOBj.user = userToSend;

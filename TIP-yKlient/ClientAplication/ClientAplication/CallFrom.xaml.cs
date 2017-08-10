@@ -21,7 +21,7 @@ namespace ClientAplication
     {
         internal PhoneVOIP pv;
         internal User user;
-        internal User UserLogged;
+        internal AplicationUser UserLogged;
         internal Client client;
         internal string nameCallToUser;
         internal DateTime dateBegin;

@@ -22,7 +22,7 @@ namespace ClientAplication
         internal PhoneVOIP phoneVOIP;
         internal User user;
         internal Client client;
-        internal User userLogged;
+        internal AplicationUser userLogged;
         internal string nameCallToUser;
         internal DateTime dateBegin;
         public CallTransmision()

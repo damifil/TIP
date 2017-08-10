@@ -26,7 +26,7 @@ namespace ClientAplication
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
         internal  CallToWindow callto=null;
         internal Client client;
-        internal User userLogged;
+        internal AplicationUser userLogged;
         public string nameCallToUser;
         
         

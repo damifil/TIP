@@ -6,19 +6,29 @@ using System.Threading.Tasks;
 
 namespace ClientAplication
 {
-    class User
+    class UserBase
     {
+       
+        public string Name { get; set; }
+    }
+
+    class User:UserBase {
         public User(bool isfriend)
         {
             isFriend = isfriend;
         }
-        public string Name { get; set; }
         public string IcoUser { get; set; }
         public string IcoCall { get; set; }
         public string IcoColor { get; set; }
-        public string password { get; set; }
         public bool isFriend { get; set; }
-        public string lastActivity {get; set;}
+    }
+
+
+    class AplicationUser : UserBase
+    {
+        public AplicationUser() { }
+        public string lastActivity { get; set; }
+        public string password { get; set; }
 
     }
 }

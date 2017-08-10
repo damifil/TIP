@@ -129,7 +129,7 @@ namespace ClientAplication
         }
         private void userAction(object sender, MouseButtonEventArgs e)
         {
-            User userLogged = singletoneOBj.user;
+         AplicationUser userLogged = singletoneOBj.user;
             TextBlock cmd = (TextBlock)sender;
             if (cmd.DataContext is User)
             {
