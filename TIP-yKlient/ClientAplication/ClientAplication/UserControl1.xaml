@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientAplication"
              Width="600" Height="500" 
-              >
+             Unloaded="UserControl1_Unloaded" >
     <Grid>
         <TextBlock x:Name="userNameTB" HorizontalAlignment="Left" Margin="20,34,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
         <TextBlock x:Name="home"  MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="20,78,524,393" VerticalAlignment="Center"></TextBlock>

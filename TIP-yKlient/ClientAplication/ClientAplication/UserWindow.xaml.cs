@@ -75,9 +75,26 @@ namespace ClientAplication
         private void deleteFriend(object sender, RoutedEventArgs e)
         {
             string historyListString = singletoneOBJ.client.sendMessage("DELFRIEND " + singletoneOBJ.user.Name + " " + userFriend);
+            
             if(historyListString == "True")
             {
+                var itemToRemove = singletoneOBJ.listUsers.Single(r => r.name == userFriend);
+                singletoneOBJ.listUsers.Remove(itemToRemove);
+                try
+                {
+                    itemToRemove = singletoneOBJ.listUserSearch.Single(r => r.name == userFriend);
+
+                    singletoneOBJ.listUserSearch.Remove(itemToRemove);
+                }
+                catch (Exception ex) { }
                 MessageBox.Show("Użytkownik " + userFriend + " został usunięty");
+                MainWindow main = new MainWindow();
+                App.Current.MainWindow = main;
+                main.Left = Window.GetWindow(this).Left;
+                main.Top = Window.GetWindow(this).Top;
+                Window.GetWindow(this).Close();
+                main.Show();
+
             }
             else
             {

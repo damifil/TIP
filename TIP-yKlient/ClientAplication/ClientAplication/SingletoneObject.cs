@@ -16,6 +16,7 @@ namespace ClientAplication
         internal ObservableCollection<User> Users;
         internal ObservableCollection<User> Friends;
         internal List<ListUser> listUsers;
+        internal List<ListUser> listUserSearch;
         internal PhoneVOIP phoneVOIP;
         internal ObservableCollection<itemTB> items;
         internal Thread isOnlineThread;
