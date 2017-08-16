@@ -24,19 +24,19 @@ namespace ClientAplication
         MediaConnector _connector = new MediaConnector();
         PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
-        internal  CallToWindow callto=null;
+        internal CallToWindow callto = null;
         internal Client client;
         internal AplicationUser userLogged;
         public string nameCallToUser;
-        
-        
+
+
         private bool _inComingCall;
 
         private string _reDialNumber;
 
         private bool _localHeld;
         CallFrom main;
-        internal CallTransmision transimiso=null;
+        internal CallTransmision transimiso = null;
 
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
@@ -47,36 +47,36 @@ namespace ClientAplication
             return output;
         }
 
-       public void InitializeSoftPhone(string login,string password,string adresIP, int port)
+        public void InitializeSoftPhone(string login, string password, string adresIP, int port)
         {
-          //  try
+            //  try
             {
                 _softPhone = SoftPhoneFactory.CreateSoftPhone(SoftPhoneFactory.GetLocalIP(), 5700, 5750);
-                InvokeGUIThread(() => {  });
+                InvokeGUIThread(() => { });
 
                 _softPhone.IncomingCall += softPhone_inComingCall;
                 byte[] userPass = HashPassword(password);
                 string pass = System.Text.Encoding.UTF8.GetString(userPass, 0, userPass.Length);
                 SIPAccount sa = new SIPAccount(true, login, login, login, pass, adresIP, port);
-                InvokeGUIThread(() => {  });
+                InvokeGUIThread(() => { });
 
                 _phoneLine = _softPhone.CreatePhoneLine(sa);
                 _phoneLine.RegistrationStateChanged += phoneLine_PhoneLineInformation;
                 InvokeGUIThread(() => { });
                 _softPhone.RegisterPhoneLine(_phoneLine);
 
-     
-            
+
+
                 _inComingCall = false;
                 _reDialNumber = string.Empty;
                 _localHeld = false;
 
                 ConnectMedia();
             }
-           /* catch (Exception ex)
-            {
-                InvokeGUIThread(() => { MessageBox.Show("Problem z polaczeniem do OZEKI"); });
-            }*/
+            /* catch (Exception ex)
+             {
+                 InvokeGUIThread(() => { MessageBox.Show("Problem z polaczeniem do OZEKI"); });
+             }*/
         }
 
 
@@ -85,13 +85,13 @@ namespace ClientAplication
             if (_microphone != null)
             {
                 _microphone.Start();
-                InvokeGUIThread(() => {  });
+                InvokeGUIThread(() => { });
             }
 
             if (_speaker != null)
             {
                 _speaker.Start();
-                InvokeGUIThread(() => {  });
+                InvokeGUIThread(() => { });
             }
         }
 
@@ -101,7 +101,7 @@ namespace ClientAplication
             if (_microphone != null)
             {
                 _microphone.Stop();
-                InvokeGUIThread(() => {  });
+                InvokeGUIThread(() => { });
             }
 
             if (_speaker != null)
@@ -147,7 +147,7 @@ namespace ClientAplication
 
         private void softPhone_inComingCall(object sender, VoIPEventArgs<IPhoneCall> e)
         {
-          
+
             System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
                 main = new CallFrom();
@@ -157,13 +157,13 @@ namespace ClientAplication
                 main.client = client;
                 main.dateBegin = DateTime.Now;
                 main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
-                nameCallToUser= e.Item.DialInfo.CallerDisplay; 
+                nameCallToUser = e.Item.DialInfo.CallerDisplay;
                 main.user.Name = e.Item.DialInfo.CallerDisplay;
                 main.Show();
             }));
 
 
-           
+
 
             _reDialNumber = e.Item.DialInfo.Dialed;
             _call = e.Item;
@@ -172,7 +172,7 @@ namespace ClientAplication
         }
 
 
-        
+
         private void phoneLine_PhoneLineInformation(object sender, RegistrationStateChangedArgs e)
         {
             _phoneLineInformation = e.State;
@@ -181,11 +181,11 @@ namespace ClientAplication
             {
                 if (_phoneLineInformation == RegState.RegistrationSucceeded)
                 {
-                  
+
                 }
                 else
                 {
-                            }
+                }
 
             });
         }
@@ -196,11 +196,11 @@ namespace ClientAplication
             InvokeGUIThread(() => { });
 
             if (e.State == CallState.Answered)
-            {  
+            {
 
                 StartDevices();
                 _mediaReceiver.AttachToCall(_call);
-                _mediaSender.AttachToCall(_call); 
+                _mediaSender.AttachToCall(_call);
             }
 
             if (e.State == CallState.InCall)
@@ -233,21 +233,22 @@ namespace ClientAplication
                 WireDownCallEvents();
 
                 _call = null;
-           
-                InvokeGUIThread(() => {  });
+                _inComingCall = false;
+                InvokeGUIThread(() => { });
                 System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    if(transimiso!=null)
+                    Console.WriteLine("close winodw");
+                    if (transimiso != null)
                     { transimiso.Close(); transimiso = null; }
-                    if (callto!=null)
-                    { callto.Close(); callto = null;}
-                   
+                    if (callto != null)
+                    { callto.Close(); callto = null; }
+
                 }));
             }
 
             if (e.State == CallState.LocalHeld)
             {
-               
+
 
                 StopDevices();
             }
@@ -266,21 +267,21 @@ namespace ClientAplication
         }
 
 
-      
 
 
-       
+
+
 
 
         public bool btn_PickUp_Click(string Name)
         {
             if (_inComingCall)
             {
-                
+
                 _inComingCall = false;
                 _call.Answer();
 
-              
+
                 return false;
             }
 
@@ -303,10 +304,11 @@ namespace ClientAplication
 
 
 
-       
+
 
         public void btn_HangUp_Click(string Name)
         {
+
             if (_call != null)
             {
                 if (_inComingCall && _call.CallState == CallState.Ringing)
@@ -318,20 +320,20 @@ namespace ClientAplication
                 {
                     _call.HangUp();
                     _inComingCall = false;
-                    InvokeGUIThread(() => {  });
+                    InvokeGUIThread(() => { });
                 }
-
+                _inComingCall = false;
                 _call = null;
 
             }
 
         }
 
-       
 
-       
 
-       
+
+
+
 
     }
 }

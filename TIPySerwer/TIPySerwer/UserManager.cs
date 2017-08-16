@@ -252,7 +252,7 @@ namespace TIPySerwer
                 if (checkHasFriend == true || checkHasFriend1 == true)
                 {
                     return false;    // uzytkownik ma juz takiego znajomego
-                }
+                }   
                 Friends friend = new Friends();
                 friend.UserID = nFriend.ID;
                 friend.UserID_From = user.ID;
