@@ -73,19 +73,43 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="CryptographyClass.cs" />
+    <Compile Include="itemTB.cs" />
     <Compile Include="ListHistory.cs" />
     <Compile Include="ListUser.cs" />
+    <Compile Include="LoginRegisterManagment.cs" />
+    <Compile Include="PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginRegisterWindow.xaml.cs">
       <DependentUpon>LoginRegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageHistory.xaml.cs">
+      <DependentUpon>PageHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain.xaml.cs">
+      <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PhoneVOIP.cs" />
+    <Compile Include="PagerRgister.xaml.cs">
+      <DependentUpon>PagerRgister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReadSettings.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSettings.xaml.cs">
+      <DependentUpon>PageSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="SingletoneObject.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUser.xaml.cs">
+      <DependentUpon>PageUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSettingLoginRegister.xaml.cs">
+      <DependentUpon>UserControlSettingLoginRegister.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
@@ -102,7 +126,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="History.xaml">
+    <Page Include="PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,18 +142,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="History.xaml.cs">
-      <DependentUpon>History.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagerRgister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSettingLoginRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

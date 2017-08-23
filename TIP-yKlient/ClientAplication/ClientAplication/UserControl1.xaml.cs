@@ -208,12 +208,8 @@ namespace ClientAplication
                 if (userFriend.isFriend == true)
                 {
                     List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
-                    UserWindow main = new UserWindow(listHistory, userFriend.Name);
-                    App.Current.MainWindow = main;
-                    main.Left = Window.GetWindow(this).Left;
-                    main.Top = Window.GetWindow(this).Top;
-                    Window.GetWindow(this).Close();
-                    main.Show();
+                    var page = new UserPage(listHistory, userFriend.Name);
+                    singletoneOBj.mainwindow.Content = page;
                 }
             }
         }
@@ -251,33 +247,43 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            List<ListHistory> listHistory = GetAllHistory(singletoneOBj.user.Name);
-            History main = new History(singletoneOBj.user.Name, listHistory);
-            App.Current.MainWindow = main;
-            main.Left = Window.GetWindow(this).Left;
-            main.Top = Window.GetWindow(this).Top;
-            Window.GetWindow(this).Close();
-            main.Show();
+            /*  List<ListHistory> listHistory = GetAllHistory(singletoneOBj.user.Name);
+              History main = new History(singletoneOBj.user.Name, listHistory);
+              App.Current.MainWindow = main;
+              main.Left = Window.GetWindow(this).Left;
+              main.Top = Window.GetWindow(this).Top;
+              Window.GetWindow(this).Close();
+              main.Show();
+              */
+            var page = new Page1();
+            singletoneOBj.mainwindow.Content = page;
+           
         }
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            App.Current.MainWindow = main;
-            main.Left = Window.GetWindow(this).Left;
-            main.Top = Window.GetWindow(this).Top;
-            Window.GetWindow(this).Close();
-            main.Show();
+            /*  MainWindow main = new MainWindow();
+              App.Current.MainWindow = main;
+              main.Left = Window.GetWindow(this).Left;
+              main.Top = Window.GetWindow(this).Top;
+              Window.GetWindow(this).Close();
+              main.Show();
+              */
+            var page = new Page2();
+            singletoneOBj.mainwindow.Content = page;
+
         }
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            Settings main = new Settings();
+            /*Settings main = new Settings();
             App.Current.MainWindow = main;
             main.Left = Window.GetWindow(this).Left;
             main.Top = Window.GetWindow(this).Top;
             Window.GetWindow(this).Close();
-            main.Show();
+            main.Show();*/
+            var page = new SettingsPage();
+            singletoneOBj.mainwindow.Content = page;
         }
 
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)

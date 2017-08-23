@@ -39,6 +39,9 @@ namespace ClientAplication
             client.GetStream().Close();
             client.Close();
             client.Dispose();
+
+
+
         }
 
 

@@ -22,29 +22,24 @@ namespace ClientAplication
 
     public partial class MainWindow : Window
     {
-        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
 
+        SingletoneObject singletoneOBj;
         public MainWindow()
         {
+            singletoneOBj = SingletoneObject.GetInstance;
             InitializeComponent();
+            var page = new Page2();
+            this.Content = page;
+            singletoneOBj.mainwindow = this;
         }
         
         bool _shown;
-        protected override void OnContentRendered(EventArgs e)
-        {
-            base.OnContentRendered(e);
-
-            if (_shown)
-                return;
-           
-            _shown = true;
-            lastActivity.Text = singletoneOBJ.user.lastActivity;
-            welcomeString.Text = "Witaj " + singletoneOBJ.user.Name; 
-            
-        }
+    
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
+
+       
     }
 }
 

@@ -38,7 +38,7 @@ namespace ClientAplication
             }
         }
         internal string searchvalue;
-
+        internal MainWindow mainwindow; 
         public void setdefaultvalue()
         {
             client.destroyfunction();
