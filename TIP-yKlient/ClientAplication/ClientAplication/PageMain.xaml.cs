@@ -24,13 +24,6 @@ namespace ClientAplication
         public Page2()
         {
             InitializeComponent();
-            try
-            {
-                lastActivity.Text = singletoneOBJ.user.lastActivity;
-                welcomeString.Text = "Witaj " + singletoneOBJ.user.Name;
-            }
-            catch (Exception e) { }
-           
         }
 
      

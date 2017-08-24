@@ -4,59 +4,72 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientAplication"
-             Width="600" Height="500" 
+             Width="230" Height="470" 
              Unloaded="UserControl1_Unloaded" >
     <Grid>
-        <TextBlock x:Name="userNameTB" HorizontalAlignment="Left" Margin="20,34,0,0" TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <TextBlock x:Name="home"  MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="20,78,524,393" VerticalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="131,78,420,393" VerticalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="logOut"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="191,78,361,393" VerticalAlignment="Center" RenderTransformOrigin="0.396,1.207"></TextBlock>
-        <TextBlock x:Name="history"  MouseLeftButtonDown="historyTextboxaction"  Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="76,78,474,393" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-             <TextBox x:Name="searchInput"  TextWrapping="Wrap" Margin="20,148,382,317" FontSize="15" Height="35" TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" >
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="wyszukaj" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-   <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black"  Margin="228,154,332,322" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
-        <ListBox IsSynchronizedWithCurrentItem="True" BorderThickness="0"  
-        Name="lbUsers" ItemsSource="{Binding}"
-         Margin="19,204,357,57" RenderTransformOrigin="0.5,0.5" >
-            <ListBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.242" AngleX="-0.628"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0.757" X="-1.55"/>
-                </TransformGroup>
-            </ListBox.RenderTransform>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal"  >
-                        <TextBlock Text="{Binding Path=IcoUser}" Width="20" MinWidth="20" MaxWidth="20" FontFamily="{StaticResource FontAwesome}" FontSize="20" Margin="5,10,5,10" />
-                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}" Width="130" MinWidth="130" MaxWidth="140" FontSize="20" Margin="5,5,5,10"/>
-                        <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource FontAwesome}"  Margin="5,10,0,10"  />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+      
+        <StackPanel Orientation="Vertical">
+            
+            <TextBlock x:Name="userNameTB" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" Name="menuButtonbSP"   >
+                <TextBlock x:Name="home" Margin="0,10,0,10" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="history"  Margin="20,10,0,10" MouseLeftButtonDown="historyTextboxaction"  Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
+                <TextBlock x:Name="settings"  Margin="20,10,0,10" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="logOut"   Margin="50,10,0,10" MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center" RenderTransformOrigin="0.396,1.207"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                <TextBox x:Name="searchInput" HorizontalAlignment="Left"  Margin="0,0,0,0" TextWrapping="Wrap"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"   >
+                    <TextBox.Style>
+                        <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                            <Style.Resources>
+                                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                    <VisualBrush.Visual>
+                                        <Label Content="wyszukaj" Foreground="LightGray" />
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Style.Resources>
+                            <Setter Property="FontSize" Value="15" />
+                            <Setter Property="Width" Value="150" />
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="Padding" Value="3" />
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="Text" Value="{x:Null}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="Background" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black" Margin="5,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
+            </StackPanel>
+            <ListBox IsSynchronizedWithCurrentItem="True" BorderThickness="0"  
+         Name="lbUsers" ItemsSource="{Binding}"
+         Margin="0,30,0,0" Height="260">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.242" AngleX="-0.628"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.757" X="-1.55"/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Text="{Binding Path=IcoUser}" Width="20" MinWidth="20" MaxWidth="20" FontFamily="{StaticResource FontAwesome}" FontSize="20" Margin="5,10,5,10" />
+                            <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}" Width="130" MinWidth="130" MaxWidth="140" FontSize="20" Margin="5,5,5,10"/>
+                            <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource FontAwesome}"  Margin="5,10,0,10"  />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>

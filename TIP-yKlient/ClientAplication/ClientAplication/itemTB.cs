@@ -10,9 +10,6 @@ namespace ClientAplication
     {
         public string Describe { get; set; }
 
-        public string Describe2 { get; set; }
-
-        public string Describe3 { get; set; }
 
         public string Name { get; set; }
 

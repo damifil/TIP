@@ -36,24 +36,26 @@ namespace ClientAplication
             copyitems = new ObservableCollection<itemTB>();
             singletoneOBj = SingletoneObject.GetInstance;
 
-
+       
             foreach (ListHistory item in listHistory)
             {
+           
+
                 items.Add(new itemTB()
                 {
                     Name = item.userName,
-                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
-                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
-                    Describe3 = "i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin 
+                    + " rozpoczęła się dnia " + item.dayBegin 
+                    + " i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd,
                 });
 
 
                 copyitems.Add(new itemTB()
                 {
                     Name = item.userName,
-                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin,
-                    Describe2 = "rozpoczęła się dnia " + item.dayBegin,
-                    Describe3 = "i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd,
+                    Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin+
+                    " rozpoczęła się dnia " + item.dayBegin+
+                    " i zakończyła się o godzinie " + item.hourEnd + " w dniu " + item.dayEnd,
                 });
             }
 
@@ -108,11 +110,11 @@ namespace ClientAplication
         private void historysearchinput_TextChanged(object sender, TextChangedEventArgs e)
         {
             string value = historysearchinput.Text;
-            if (value != "")
+            if (value != "" )
             {
                 for (int i = 0; i < items.Count; i++)
                 {
-                    if (!items[i].Describe.Contains(value) && !items[i].Describe2.Contains(value) && !items[i].Describe3.Contains(value))
+                    if (!items[i].Describe.Contains(value) )
                     {
                         items.RemoveAt(i);
                         i--;

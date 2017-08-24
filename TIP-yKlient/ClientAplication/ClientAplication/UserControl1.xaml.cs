@@ -49,11 +49,20 @@ namespace ClientAplication
             }
             catch (Exception e) { }
             InitializeComponent();
+
+            if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            {
+                return;
+            }
         }
 
-        private void UserControl1_Unloaded(object sender, RoutedEventArgs e)
+       private void UserControl1_Unloaded(object sender, RoutedEventArgs e)
         {
-            refreshListThread.Abort();
+            try
+            {
+                refreshListThread.Abort();
+            }
+            catch (Exception exc) { }
         }
 
         internal void updateFriendList()
@@ -208,6 +217,7 @@ namespace ClientAplication
                 if (userFriend.isFriend == true)
                 {
                     List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
+                    singletoneOBj.mainwindow.Width = 650;
                     var page = new UserPage(listHistory, userFriend.Name);
                     singletoneOBj.mainwindow.Content = page;
                 }
@@ -247,28 +257,16 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            /*  List<ListHistory> listHistory = GetAllHistory(singletoneOBj.user.Name);
-              History main = new History(singletoneOBj.user.Name, listHistory);
-              App.Current.MainWindow = main;
-              main.Left = Window.GetWindow(this).Left;
-              main.Top = Window.GetWindow(this).Top;
-              Window.GetWindow(this).Close();
-              main.Show();
-              */
-            var page = new Page1();
+           
+            singletoneOBj.mainwindow.Width = 650;
+            var page = new Page1(singletoneOBj.user.Name, GetAllHistory(singletoneOBj.user.Name));
             singletoneOBj.mainwindow.Content = page;
            
         }
 
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            /*  MainWindow main = new MainWindow();
-              App.Current.MainWindow = main;
-              main.Left = Window.GetWindow(this).Left;
-              main.Top = Window.GetWindow(this).Top;
-              Window.GetWindow(this).Close();
-              main.Show();
-              */
+            singletoneOBj.mainwindow.Width = 300;
             var page = new Page2();
             singletoneOBj.mainwindow.Content = page;
 
@@ -276,12 +274,7 @@ namespace ClientAplication
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            /*Settings main = new Settings();
-            App.Current.MainWindow = main;
-            main.Left = Window.GetWindow(this).Left;
-            main.Top = Window.GetWindow(this).Top;
-            Window.GetWindow(this).Close();
-            main.Show();*/
+            singletoneOBj.mainwindow.Width = 650;
             var page = new SettingsPage();
             singletoneOBj.mainwindow.Content = page;
         }

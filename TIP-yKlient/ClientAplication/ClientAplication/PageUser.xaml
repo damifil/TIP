@@ -5,99 +5,95 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      Height="500" Width="650"
-      Title="UserPage">
+      d:Height="500" d:Width="650"
+      Title="UserPage" >
 
     <Grid>
-        <local:UserControl1 Margin="-6,0,50,-29"/>
-        <StackPanel Orientation="Horizontal">
-            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
-
-
-
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="490"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="0" Margin="10,10,0,0">
+            <local:UserControl1  />
         </StackPanel>
-        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Oddzwoń" Margin="263,102,288,327" RenderTransformOrigin="0.5,0.5" FontSize="18.667">
 
 
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0.167"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.595"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="usuń z listy znajomych" Margin="420,101,114,306" RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
+        <StackPanel x:Name = "userSP"  Grid.Column="1" Grid.Row="0" Margin="10,10,20,0">
 
-        <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="279,18,34,379" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Right">
+                <TextBlock x:Name="textBlock2"   Padding="5" TextWrapping="Wrap" Text="usuń z listy znajomych"  RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
+                <TextBlock x:Name="deleteFriendIco"  Margin="10,0,0,0" Padding="5"   Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21"  VerticalAlignment="Center"  Height="46" Focusable="True"  AllowDrop="True"></TextBlock>
 
-        <TextBlock x:Name="callToFriendIco" Padding="5"  Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21" Margin="364,106,240,322" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="43" Focusable="True"  AllowDrop="True"></TextBlock>
-        <TextBlock x:Name="deleteFriendIco" Padding="5"  Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21" Margin="535,106,69,319" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" Height="46" Focusable="True"  AllowDrop="True"></TextBlock>
+            </StackPanel>
+            <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="0,20,0,0" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Oddzwoń"  Margin="0,0,0,0" FontSize="18.667"></TextBlock>
+                <TextBlock x:Name="callToFriendIco"   Margin="40,0,0,0"  Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21"  VerticalAlignment="Center"  Height="43" Focusable="True"  AllowDrop="True"></TextBlock>
+            </StackPanel>
 
 
-        <ListBox IsSynchronizedWithCurrentItem="True"
+            <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
+                <TextBox x:Name="userhistorysearchinput"  TextWrapping="Wrap"  FontSize="15"   IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" TextChanged="historysearchinput_TextChanged" >
+                    <TextBox.Style>
+                        <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                            <Style.Resources>
+                                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                    <VisualBrush.Visual>
+                                        <Label Content="wyszukaj" Foreground="LightGray" />
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Style.Resources>
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="Text" Value="{x:Null}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="Background" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                          
+                                <Setter Property="FontSize" Value="15" />
+                                <Setter Property="Width" Value="150" />
+                                <Setter Property="Height" Value="30" />
+                                <Setter Property="Padding" Value="3" />
+                            
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <TextBlock x:Name="searchicouser" Margin="5,0,0,0" Text="&#xf002;" MouseLeftButtonDown="searchClickHistoryuser" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap" FontSize="20"  >
+                </TextBlock>
+            </StackPanel>
+
+            <ListBox IsSynchronizedWithCurrentItem="True"
         Name="lbHistoryAll" ItemsSource="{Binding}"
-         Margin="260,249,14,15" RenderTransformOrigin="0.5,0.5" >
-            <ListBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.242"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0.764"/>
-                </TransformGroup>
-            </ListBox.RenderTransform>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" Margin="0,10,0,10">
-                        <TextBlock Text="{Binding Path=Describe}" Width="300" Padding="2"/>
-                        <TextBlock Text="{Binding Path=Describe2}" Width="300" Padding="2"/>
-                        <TextBlock Text="{Binding Path=Describe3}" Width="300" Padding="2"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+         Margin="0,30,0,0" Height="190" Width="350" HorizontalAlignment="Left" >
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.242"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.764"/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                            <TextBlock Text="{Binding Path=Describe}" TextWrapping="Wrap" Width="315" Padding="2"/>
+                           
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-        <TextBlock x:Name="searchicouser" Text="&#xf002;" MouseLeftButtonDown="searchClickHistoryuser" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap" FontSize="20" Margin="524,191,86,243" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.735"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.487"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-
-
-
-        <TextBox x:Name="userhistorysearchinput"  TextWrapping="Wrap" Margin="264,186,138,243" FontSize="15"   IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" TextChanged="historysearchinput_TextChanged" >
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="wyszukaj" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-
-
+           
+        </StackPanel>
 
 
     </Grid>

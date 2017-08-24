@@ -5,16 +5,24 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      Height="500" Width="650"
+      d:Height="500" d:Width="650"
       Title="SettingsPage">
 
     <Grid>
-        <local:UserControl1 Margin="-6,0,50,-29"/>
-        <StackPanel Orientation="Horizontal" Margin="0,-10,0,10">
-            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"   Margin="250,2,2,2.024" />
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="400" />
+            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="490"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name = "menuSP"  Grid.Column="0"  Grid.Row="0"  Margin="10,10,0,0">
+                <local:UserControl1  />
+            </StackPanel>
+
+
+        <StackPanel x:Name = "setingsSP"  Grid.Column="1" Grid.Row="0" Margin="10,10,0,0">
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Ustawienia"  FontSize="24"/>
         </StackPanel>
-
-
-        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Ustawienia" Margin="276,31,185.664,399.784" FontSize="24"/>
     </Grid>
 </Page>

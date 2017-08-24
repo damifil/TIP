@@ -5,23 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="650"
+      d:DesignHeight="500" d:DesignWidth="250"
       Title="Main">
 
     
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="350"/>
-            </Grid.ColumnDefinitions>
-        <StackPanel x:Name = "menuSP"  Grid.Column="0" Margin="10,10,0,0">
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="490"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="0"  Margin="10,10,0,0">
             <local:UserControl1  />
-            </StackPanel>
-        <StackPanel x:Name = "ContetnSP"  Grid.Column="1" Margin="10,40,0,0">
-            <TextBlock x:Name="welcomeString"   TextWrapping="Wrap" Text="" VerticalAlignment="Top"  FontSize="32"/>
-            <TextBlock x:Name="lastActivity"  Margin="0,20,0,0"   TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         </StackPanel>
-
-          </Grid>
+    </Grid>
 </Page>
