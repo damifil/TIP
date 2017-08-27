@@ -14,25 +14,29 @@
         <ColumnDefinition Width="300"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-        <RowDefinition Height = "550" />
+            <RowDefinition Height = "40" />
+            <RowDefinition Height = "550" />
     </Grid.RowDefinitions>
-    <WrapPanel x:Name = "rightSideWP" Grid.Row="0" Grid.Column="1" Margin="10,30,0,0">
+        <local:UCTitleBar Grid.Row="0" Grid.ColumnSpan="3" x:Name="titlebar"/>
+      
+
+        <WrapPanel x:Name = "rightSideWP" Grid.Row="1" Grid.Column="1" Margin="10,30,0,0">
             <local:UserControl2 />
         </WrapPanel>
 
-    
-    <StackPanel x:Name = "loginSP" Margin="30,30,20,30"  >
+
+        <StackPanel x:Name = "loginSP" Margin="30" Grid.Row="1" >
             <StackPanel Name="settingsButoon" Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logowanie" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logowanie" VerticalAlignment="Top" FontFamily="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf" FontSize="30"  />
+                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;"  FontFamily="{StaticResource MaterialIcon}" Foreground="Black" FontSize="29.333" Margin="60,0,0,0" VerticalAlignment="Center"></TextBlock>
 
             </StackPanel>
-            <TextBlock HorizontalAlignment="Left"   Margin="5,30,10,2" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left"   Margin="5,30,10,5" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
             <TextBox x:Name="loginInput"  Padding="3" HorizontalAlignment="Left"   TextWrapping="Wrap" VerticalAlignment="Top"  />
-            <TextBlock HorizontalAlignment="Left"  Margin="5,20,10,2" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left"  Margin="5,20,10,5" TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top"/>
             <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Button Content="Zaloguj się" Margin="5,20,10,2" x:Name="loginButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_login"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,30,10,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="52">Jeżeli nie masz konta zarejestruj się!</TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="0,30,10,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="20"  Height="52">Jeżeli nie masz konta zarejestruj się!</TextBlock>
             <Button Content="rejestracja" Margin="5,20,10,2" x:Name="gotoRegisterButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_goToRegister"/>
 
         </StackPanel>

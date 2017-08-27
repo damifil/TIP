@@ -84,12 +84,19 @@ namespace ClientAplication
 
             if (parentWindow.Width == 600)
             {
+               titlebar.closeButon.Margin= new Thickness(270, 0, 0, 0);
                 parentWindow.Width = 300;
             }
             else
             {
+                titlebar.closeButon.Margin = new Thickness(570, 0, 0, 0);
                 parentWindow.Width = 600;
             }
+
+        }
+
+        private void closeButon_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
