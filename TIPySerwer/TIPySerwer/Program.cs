@@ -25,6 +25,10 @@ namespace TIPySerwer
        
         public TcpServer(int port)
         {
+            Console.WriteLine("Inicjaca serwera...");
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            Console.WriteLine("Scieżka do bazy danych: "+path);
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
             server = new TcpListener(IPAddress.Any, port);
             server.Start();
             isRunning = true;
