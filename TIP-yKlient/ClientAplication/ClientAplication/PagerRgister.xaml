@@ -33,7 +33,7 @@
             </StackPanel>
             <TextBlock HorizontalAlignment="Left"  Margin="0,30,0,2"  TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
             <DockPanel>
-                <TextBox x:Name="loginInputRegister"       TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="loginInputRegister"        VerticalAlignment="Top"/>
             </DockPanel>
             <TextBlock HorizontalAlignment="Left" Margin="0,30,0,2"  TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" />
             <DockPanel>

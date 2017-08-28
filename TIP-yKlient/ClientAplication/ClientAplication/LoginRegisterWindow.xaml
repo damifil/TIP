@@ -13,12 +13,9 @@
     <Window.Resources>
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="15" />
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="30"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            
-
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="FontFamily" Value="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf"/>
         </Style>
 
