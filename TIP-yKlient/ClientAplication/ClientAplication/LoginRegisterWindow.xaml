@@ -16,7 +16,7 @@
             <Setter Property="Height" Value="30" />
             <Setter Property="Padding" Value="3"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
         </Style>
 
         <Style TargetType="PasswordBox" >
@@ -24,7 +24,7 @@
             <Setter Property="Height" Value="30" />
             <Setter Property="Padding" Value="3" />
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
         </Style>
 
         <Style TargetType="Button" >
@@ -32,14 +32,14 @@
             <Setter Property="Width" Value="Auto" />
             <Setter Property="Height" Value="30" />
             <Setter Property="Padding" Value="15,5" />
-            <Setter Property="FontFamily" Value="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
             <Setter Property="Background" Value="#bbdefb" />
             <Setter
                  Property="BorderThickness" Value="0" />
         </Style>
         <Style TargetType="TextBlock" >
             <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="D:\GIT_REPOSITORY\TIP\TIP-yKlient\ClientAplication\ClientAplication\Fonts\Montserrat-Regular.ttf"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
         </Style>
 
 

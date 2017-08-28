@@ -7,5 +7,6 @@
     <Application.Resources>
         <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
         <FontFamily x:Key="MaterialIcon">/Fonts/MaterialIcons-Regular.ttf#Material Icons</FontFamily>
+        <FontFamily x:Key="MonsterrateRegular">/Fonts/Montserrat-Regular.ttf#Montserrat</FontFamily>
     </Application.Resources>
 </Application>

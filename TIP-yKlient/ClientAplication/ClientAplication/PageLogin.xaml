@@ -27,7 +27,7 @@
 
         <StackPanel x:Name = "loginSP" Margin="30" Grid.Row="1" >
             <StackPanel Name="settingsButoon" Orientation="Horizontal" >
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logowanie" VerticalAlignment="Top"  FontSize="30"  />
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logowanie" VerticalAlignment="Center"  FontSize="30"  />
                 <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;"  FontFamily="{StaticResource MaterialIcon}" Foreground="Black" FontSize="30" Margin="60,0,0,0" VerticalAlignment="Center"></TextBlock>
 
             </StackPanel>
@@ -40,7 +40,7 @@
                 <PasswordBox x:Name="passwordInput"  VerticalAlignment="Top"  />
             </DockPanel>
             <Button Content="Zaloguj się" Margin="0,20,10,2" x:Name="loginButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_login"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,100,10,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="20"  Height="52">Jeżeli nie masz konta zarejestruj się!</TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="0,90,10,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="20"  Height="52">Jeżeli nie masz konta zarejestruj się!</TextBlock>
             <Button Content="rejestracja" Margin="0,20,10,2" x:Name="gotoRegisterButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_goToRegister"/>
 
         </StackPanel>
