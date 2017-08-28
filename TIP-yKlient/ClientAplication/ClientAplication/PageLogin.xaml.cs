@@ -28,6 +28,24 @@ namespace ClientAplication
             LRM = new LoginRegisterManagment();
         }
 
+        public login(Boolean setingenable)
+        {
+
+            InitializeComponent();
+            LRM = new LoginRegisterManagment();
+            var parentWindow = this.Parent as Window;
+
+            if (setingenable==true)
+            {
+                titlebar.minimalizeButon.Margin = new Thickness(520, 0, 0, 0);
+                settings.Text = "\uE5C4";
+            }
+            else
+            {
+                titlebar.minimalizeButon.Margin = new Thickness(220, 0, 0, 0);
+                settings.Text = "\uE5D2";
+            }
+        }
         private void Button_login(object sender, RoutedEventArgs e)
         {
 
@@ -73,8 +91,10 @@ namespace ClientAplication
 
         private void Button_goToRegister(object sender, RoutedEventArgs e)
         {
-            var page = new register();
             var parentWindow = this.Parent as Window;
+            Page page;
+            if (parentWindow.Width == 600) { page = new register(true); }
+            else { page = new register(false); }
             parentWindow.Content = page;
         }
 
@@ -84,13 +104,15 @@ namespace ClientAplication
 
             if (parentWindow.Width == 600)
             {
-               titlebar.closeButon.Margin= new Thickness(270, 0, 0, 0);
+               titlebar.minimalizeButon.Margin= new Thickness(220, 0, 0, 0);
                 parentWindow.Width = 300;
+                settings.Text = "\uE5D2";
             }
             else
             {
-                titlebar.closeButon.Margin = new Thickness(570, 0, 0, 0);
+                titlebar.minimalizeButon.Margin = new Thickness(520, 0, 0, 0);
                 parentWindow.Width = 600;
+                settings.Text = "\uE5C4";
             }
 
         }

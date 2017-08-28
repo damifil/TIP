@@ -27,8 +27,14 @@ namespace ClientAplication
 
         private void closeButon_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            var targetWindow = Window.GetWindow(this);
+            targetWindow.Close();
         }
-     
+
+        private void minimalizeButon_Click(object sender, RoutedEventArgs e)
+        {
+            var targetWindow = Window.GetWindow(this);
+           targetWindow.WindowState = WindowState.Minimized;
+        }
     }
 }

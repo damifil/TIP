@@ -15,26 +15,38 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height = "40" />
             <RowDefinition Height = "550" />
         </Grid.RowDefinitions>
-        <WrapPanel x:Name = "rightSideWP" Grid.Row="0" Grid.Column="1" Margin="10,30,0,0">
+
+        <local:UCTitleBar Grid.Row="0" Grid.ColumnSpan="3" x:Name="titlebar"/>
+
+        
+        <WrapPanel x:Name = "rightSideWP" Grid.Row="1" Grid.Column="1" >
             <local:UserControl2 />
         </WrapPanel>
-        <StackPanel x:Name = "registerSP" Margin="30,30,20,30"  >
+        <StackPanel x:Name = "registerSP"  Grid.Row="1" Margin="30"  >
 
             <StackPanel Name="settingsButoon" Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rejestracja" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rejestracja" VerticalAlignment="Top" FontSize="30" />
+                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;" FontFamily="{StaticResource MaterialIcon}" Foreground="Black" FontSize="30" Margin="78,0,0,0" VerticalAlignment="Center"></TextBlock>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Left"  Margin="5,20,0,2"  TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
-            <TextBox x:Name="loginInputRegister"    HorizontalAlignment="Left"   TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="5,20,0,2"  TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" />
-            <PasswordBox x:Name="password1InputRegister" HorizontalAlignment="Left"  VerticalAlignment="Top" />
-            <TextBlock HorizontalAlignment="Left" Margin="5,20,0,2" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top"/>
-            <PasswordBox x:Name="password2InputRegister" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-            <Button Content="Zarejestruj się" Margin="5,20,0,0" x:Name="registerButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_register"/>
-            <TextBlock Margin="0,20,0,0"  FontSize="20" FontWeight="Bold" TextWrapping="Wrap" >Jeśli posiadzasz konto zaloguj się</TextBlock>
-            <Button Content="logowanie" Margin="5,20,0,0" x:Name="gotoLogin" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_gotoLogin"/>
+            <TextBlock HorizontalAlignment="Left"  Margin="0,30,0,2"  TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
+            <DockPanel>
+                <TextBox x:Name="loginInputRegister"       TextWrapping="Wrap" VerticalAlignment="Top"/>
+            </DockPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="0,30,0,2"  TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" />
+            <DockPanel>
+                <PasswordBox x:Name="password1InputRegister"   VerticalAlignment="Top" />
+            </DockPanel>
+           
+            <TextBlock HorizontalAlignment="Left" Margin="0,30,0,2" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top"/>
+            <DockPanel>
+            <PasswordBox x:Name="password2InputRegister"  VerticalAlignment="Top"/>
+            </DockPanel>
+            <Button Content="Zarejestruj się" Margin="0,30,0,0" x:Name="registerButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_register"/>
+            <TextBlock Margin="0,60,0,0"  FontSize="20"  TextWrapping="Wrap" >Jeśli posiadzasz konto zaloguj się</TextBlock>
+            <Button Content="logowanie" Margin="0,20,0,0" x:Name="gotoLogin" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_gotoLogin"/>
 
         </StackPanel>
     </Grid>
