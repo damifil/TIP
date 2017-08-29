@@ -5,51 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientAplication"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="600">
+             d:DesignHeight="40" d:DesignWidth="800">
     <Grid>
         <StackPanel Orientation="Horizontal" Background="#8AACC8" >
-            <Button x:Name="minimalizeButon" Width="40" Height="40" FontFamily="{StaticResource MaterialIcon}" FontSize="25" HorizontalContentAlignment="Center" Content="&#xE15B;" Margin="220,0,0,0" HorizontalAlignment="Left"  Click="minimalizeButon_Click" >
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="#8AACC8"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#BBDEFB"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button x:Name="closeButon" Width="40" Height="40" FontFamily="{StaticResource MaterialIcon}" FontSize="25" Content="&#xE5CD;" Margin="0,0,0,0" HorizontalAlignment="Left" Click="closeButon_Click" >
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="#8AACC8"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#BBDEFB"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            </Button>
+            <Button x:Name="minimalizeButon"  Content="&#xE15B;" Margin="220,0,0,0"  Click="minimalizeButon_Click" Style="{StaticResource buttonIcoTitleBar}"/>
+            <Button x:Name="closeButon"   Content="&#xE5CD;" Click="closeButon_Click" Style="{StaticResource buttonIcoTitleBar}"/>
+
         </StackPanel>
 
     </Grid>

@@ -27,22 +27,19 @@ namespace ClientAplication
         public MainWindow()
         {
             singletoneOBj = SingletoneObject.GetInstance;
+            singletoneOBj.isloged = true;
             InitializeComponent();
             var page = new Page2();
             this.Content = page;
             singletoneOBj.mainwindow = this;
         }
         
-        bool _shown;
     
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-                singletoneOBj.isOnlineThread.Abort();
-        }
+       
     }
 }
 

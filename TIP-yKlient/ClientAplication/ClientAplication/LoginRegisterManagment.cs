@@ -32,14 +32,21 @@ namespace ClientAplication
             {
                 string friendsList = singletoneOBj.client.sendMessage("ISONLINE " + singletoneOBj.user.Name);
                 string[] splitFriends = friendsList.Split('&');
-                singletoneOBj.listUsers = new List<ListUser>();
+                List<ListUser> listUsers = new List<ListUser>();
+               
                 for (int i = 0; i < (splitFriends.Length - 1); i++)
                 {
                     ListUser user = new ListUser();
                     string[] sp = splitFriends[i].Split(' ');
                     user.name = sp[0];
                     user.active = sp[1];
-                    singletoneOBj.listUsers.Add(user);
+                    listUsers.Add(user);
+                }
+               if((listUsers.Count == singletoneOBj.listUsers.Count) && !listUsers.Except(singletoneOBj.listUsers).Any())
+                {
+                    singletoneOBj.listUsers = new List<ListUser>();
+                    singletoneOBj.listUsers = listUsers;
+                    singletoneOBj.listusercompare = true;
                 }
                 Thread.Sleep(timeThreadloop);
             }

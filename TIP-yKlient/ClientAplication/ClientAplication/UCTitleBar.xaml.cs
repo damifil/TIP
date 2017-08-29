@@ -27,13 +27,14 @@ namespace ClientAplication
 
         private void closeButon_Click(object sender, RoutedEventArgs e)
         {
-            var targetWindow = Window.GetWindow(this);
-            targetWindow.Close();
+            SingletoneObject s = SingletoneObject.GetInstance;
+            if (s.isloged == true) { s.isOnlineThread.Abort(); s.client.sendMessage("EXIT " + s.user.Name); }
+            Application.Current.Shutdown(); 
         }
 
         private void minimalizeButon_Click(object sender, RoutedEventArgs e)
         {
-            var targetWindow = Window.GetWindow(this);
+           var targetWindow = Window.GetWindow(this);
            targetWindow.WindowState = WindowState.Minimized;
         }
     }

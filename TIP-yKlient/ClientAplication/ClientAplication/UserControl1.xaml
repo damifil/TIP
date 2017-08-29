@@ -4,35 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientAplication"
-             Width="230" Height="470" 
+             Width="230" Height="550" 
              Unloaded="UserControl1_Unloaded" >
     <Grid>
-      
-        <StackPanel Orientation="Vertical">
-            
-            <TextBlock x:Name="userNameTB" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="User_name" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold" TextDecorations="{x:Null}"/>
 
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" Name="menuButtonbSP"   >
-                <TextBlock x:Name="home" Margin="0,10,0,10" MouseLeftButtonDown="homeTextboxaction" Text="&#xf015;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center"></TextBlock>
-                <TextBlock x:Name="history"  Margin="20,10,0,10" MouseLeftButtonDown="historyTextboxaction"  Text="&#xf1da;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29"></TextBlock>
-                <TextBlock x:Name="settings"  Margin="20,10,0,10" MouseLeftButtonDown="settingsTextboxaction" Text="&#xf085;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center"></TextBlock>
-                <TextBlock x:Name="logOut"   Margin="50,10,0,10" MouseLeftButtonDown="logOutTextboxaction" Text="&#xf08b;" FontFamily="{StaticResource FontAwesome}" Foreground="Black" FontSize="29.333"  VerticalAlignment="Center" RenderTransformOrigin="0.396,1.207"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                <TextBox x:Name="searchInput" HorizontalAlignment="Left"  Margin="0,0,0,0" TextWrapping="Wrap"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"   >
+        <StackPanel Orientation="Vertical">
+            <DockPanel >
+                <TextBlock x:Name="userNameTB" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource Title}"/>
+                <StackPanel Orientation="Vertical"  Name="menuButtonbSP" HorizontalAlignment="Right"  >
+                    <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;"   Style="{StaticResource IcoRight}"></TextBlock>
+                    <TextBlock x:Name="history" Margin="0,5,0,0" MouseLeftButtonDown="historyTextboxaction"  Text="&#xE889;" Style="{StaticResource IcoRight}" ></TextBlock>
+                </StackPanel>
+
+            </DockPanel>
+        
+            <DockPanel  Margin="0,30,0,0">
+                <TextBox x:Name="searchInput"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"   >
                     <TextBox.Style>
                         <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
                             <Style.Resources>
-                                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush x:Key="CueBannerBrush" Stretch="None" AlignmentX="Left"  >
                                     <VisualBrush.Visual>
-                                        <Label Content="wyszukaj" Foreground="LightGray" />
+                                        <Label Content="wyszukaj" FontSize="15" Foreground="LightGray" Padding="10" />
                                     </VisualBrush.Visual>
                                 </VisualBrush>
                             </Style.Resources>
                             <Setter Property="FontSize" Value="15" />
-                            <Setter Property="Width" Value="150" />
                             <Setter Property="Height" Value="30" />
-                            <Setter Property="Padding" Value="3" />
+                            <Setter Property="Padding" Value="5" />
                             <Style.Triggers>
                                 <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
                                     <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
@@ -47,19 +46,12 @@
                         </Style>
                     </TextBox.Style>
                 </TextBox>
-                <TextBlock x:Name="search"   Text="&#xf002;" MouseLeftButtonDown="searchClick" FontFamily="{StaticResource FontAwesome}" Foreground="Black" Margin="5,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.63,3.647" FontSize="20" Focusable="True"  AllowDrop="True" Height="24"></TextBlock>
-            </StackPanel>
-            <ListBox IsSynchronizedWithCurrentItem="True" BorderThickness="0"  
-         Name="lbUsers" ItemsSource="{Binding}"
-         Margin="0,30,0,0" Height="260">
-                <ListBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="0.242" AngleX="-0.628"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0.757" X="-1.55"/>
-                    </TransformGroup>
-                </ListBox.RenderTransform>
+            </DockPanel>
+            <ListBox  IsSynchronizedWithCurrentItem="True" Style="{StaticResource lbstyle}"  
+                        Name="lbUsers" ItemsSource="{Binding}"
+                        Margin="0,30,0,0" Height="320" 
+                      ItemContainerStyle="{StaticResource as}"
+                        >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal"  >
@@ -70,6 +62,8 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <TextBlock x:Name="logOut" Margin="0,45,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE8AC;" Style="{StaticResource IcoRight}"></TextBlock>
         </StackPanel>
+
     </Grid>
 </UserControl>

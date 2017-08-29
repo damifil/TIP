@@ -20,7 +20,7 @@ namespace ClientAplication
 
     public partial class UserControl1 : UserControl
     {
-        int timeThreadloop = 500;
+        int timeThreadloop = 5000;
         SingletoneObject singletoneOBj;
         
         Thread refreshListThread;
@@ -110,15 +110,20 @@ namespace ClientAplication
         }
         private void updateList()
         {
-            if (string.IsNullOrWhiteSpace(singletoneOBj.searchvalue))
+            if (singletoneOBj.listusercompare == true)
             {
-                updateFriendList();
-                lbUsers.DataContext = singletoneOBj.Friends;
+                if (string.IsNullOrWhiteSpace(singletoneOBj.searchvalue))
+                {
+                    updateFriendList();
+                    lbUsers.DataContext = singletoneOBj.Friends;
+                    singletoneOBj.listusercompare = false;
+                }
+                else
+                {
+                    searchupdate();
+                }
             }
-            else
-            {
-                searchupdate();           
-            }
+            return;
         }
 
         private void searchupdate()
@@ -293,7 +298,6 @@ namespace ClientAplication
         private void ListRefreshloop()
         {
             while (true) { 
-            RoutedEventArgs e = new RoutedEventArgs();
             this.Dispatcher.Invoke(() => updateList());
             Thread.Sleep(timeThreadloop);
             }

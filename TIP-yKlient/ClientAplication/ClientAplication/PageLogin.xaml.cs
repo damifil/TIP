@@ -67,7 +67,6 @@ namespace ClientAplication
 
             if (LRM.client == null)
             {
-               
                 return;
             }
             if (receiveCommunicate != "True")
@@ -116,7 +115,6 @@ namespace ClientAplication
             }
 
         }
-
         private void closeButon_Click(object sender, RoutedEventArgs e)
         {
 

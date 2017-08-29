@@ -5,8 +5,137 @@
              StartupUri="LoginRegisterWindow.xaml"
              Exit="Application_Exit">
     <Application.Resources>
+        <!-- czcionki -->
         <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
         <FontFamily x:Key="MaterialIcon">/Fonts/MaterialIcons-Regular.ttf#Material Icons</FontFamily>
         <FontFamily x:Key="MonsterrateRegular">/Fonts/Montserrat-Regular.ttf#Montserrat</FontFamily>
+        <FontFamily x:Key="MonsterrateLight">/FontsMontserrat-Light.ttf#Montserrat Light</FontFamily>
+        <FontFamily x:Key="MontserratMedium">FontsMontserrat-Medium.ttf#Montserrat Medium</FontFamily>
+        <FontFamily x:Key="MosterreteThin">Fonts/Montserrat-Thin.ttf#Montserrat Thin</FontFamily>
+        <FontFamily x:Key="MonsterreteExtLight">Fonts/Montserrat-ExtraLight.ttf#Montserrat ExtraLight</FontFamily>
+        
+        <!-- style -->
+     
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Padding" Value="10,10,3,10"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
+            </Style>
+
+            <Style TargetType="PasswordBox" >
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Padding" Value="10,10,3,10"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
+            </Style>
+        <Style TargetType="Control"  >
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
+        </Style>
+
+        <Style TargetType="Button" >
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="Padding" Value="15,10" />
+                <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
+                <Setter Property="Background" Value="#bbdefb" />
+                <Setter
+                 Property="BorderThickness" Value="0" />
+            </Style> 
+        
+        <Style TargetType="Button" x:Key="buttonIcoTitleBar" >
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="40" /> 
+            <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/> 
+            
+            <Setter Property="Background" Value="#8AACC8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#BBDEFB"/>
+                </Trigger>
+            </Style.Triggers> 
+        </Style>
+        
+        <Style TargetType="TextBlock" x:Key="TextBlockBase">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
+        </Style>
+
+
+        <Style TargetType="TextBlock" x:Key="Title"  BasedOn="{StaticResource TextBlockBase}">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontFamily" Value="{StaticResource MonsterreteExtLight}"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SubTitle"  BasedOn="{StaticResource TextBlockBase}">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="{StaticResource MonsterreteExtLight}"/>
+        </Style>
+       
+        <Style TargetType="TextBlock" x:Key="IcoRight">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+
+        <Style TargetType="ListBoxItem" x:Key="as">
+                    <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                                            Value="False" />
+                                    <Condition Property="IsSelected"
+                                            Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="#F5F5F6" />
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                                            Value="True" />
+                                    <Condition Property="IsSelected"
+                                            Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="Red" />
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>  
+        </Style>
+
+        <Style TargetType="ListBox" x:Key="lbstyle" >
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#F5F5F6"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

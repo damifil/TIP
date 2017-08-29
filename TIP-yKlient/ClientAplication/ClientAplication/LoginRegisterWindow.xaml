@@ -5,48 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="Logowanie" Height="600" Width="300" Background="#F5F5F6" AllowsTransparency="True" WindowStyle="None"  >
-
-
-
-
-    <Window.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="3"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
-        </Style>
-
-        <Style TargetType="PasswordBox" >
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="3" />
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
-        </Style>
-
-        <Style TargetType="Button" >
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Width" Value="Auto" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="15,5" />
-            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
-            <Setter Property="Background" Value="#bbdefb" />
-            <Setter
-                 Property="BorderThickness" Value="0" />
-        </Style>
-        <Style TargetType="TextBlock" >
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}"/>
-        </Style>
-
-
-    </Window.Resources>
-
-
-
+        Title="Logowanie" Height="650" Width="300" Background="#F5F5F6" AllowsTransparency="True" WindowStyle="None"  ResizeMode="NoResize"  >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -57,11 +16,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height = "550" />
-       
         </Grid.RowDefinitions>
-        
-        <WrapPanel x:Name = "rightSideWP" Grid.Row="0" Grid.Column="2" Margin="10,30,0,0">
+        <WrapPanel x:Name = "rightSideWP" Grid.Row="1" Grid.Column="2" Margin="10,30,0,0">
         </WrapPanel>
-
     </Grid>
 </Window>

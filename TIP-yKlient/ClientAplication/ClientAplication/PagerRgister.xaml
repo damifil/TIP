@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height = "40" />
-            <RowDefinition Height = "550" />
+            <RowDefinition Height = "600" />
         </Grid.RowDefinitions>
 
         <local:UCTitleBar Grid.Row="0" Grid.ColumnSpan="3" x:Name="titlebar"/>
@@ -27,26 +27,26 @@
         </WrapPanel>
         <StackPanel x:Name = "registerSP"  Grid.Row="1" Margin="30"  >
 
-            <StackPanel Name="settingsButoon" Orientation="Horizontal">
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rejestracja" VerticalAlignment="Center" FontSize="30" />
-                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;" VerticalAlignment="Center" FontFamily="{StaticResource MaterialIcon}" Foreground="Black" FontSize="30" Margin="60,0,0,0"/>
-            </StackPanel>
-            <TextBlock HorizontalAlignment="Left"  Margin="0,30,0,2"  TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
-            <DockPanel>
-                <TextBox x:Name="loginInputRegister"        VerticalAlignment="Top"/>
+            <DockPanel Name="settingsButoon" >
+                <TextBlock  Text="Rejestracja" Style="{StaticResource Title}" />
+                <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;"  Style="{StaticResource IcoRight}"/>
             </DockPanel>
-            <TextBlock HorizontalAlignment="Left" Margin="0,30,0,2"  TextWrapping="Wrap" Text="Hasło" VerticalAlignment="Top" />
+            <TextBlock  Margin="0,30,0,5"   Text="Login" />
             <DockPanel>
-                <PasswordBox x:Name="password1InputRegister"   VerticalAlignment="Top" />
+                <TextBox x:Name="loginInputRegister" />
+            </DockPanel>
+            <TextBlock Margin="0,30,0,5" Text="Hasło"  />
+            <DockPanel>
+                <PasswordBox x:Name="password1InputRegister"   />
             </DockPanel>
            
-            <TextBlock HorizontalAlignment="Left" Margin="0,30,0,2" TextWrapping="Wrap" Text="Powtórz hasło" VerticalAlignment="Top"/>
+            <TextBlock Margin="0,30,0,5"  Text="Powtórz hasło" />
             <DockPanel>
-            <PasswordBox x:Name="password2InputRegister"  VerticalAlignment="Top"/>
+            <PasswordBox x:Name="password2InputRegister"  />
             </DockPanel>
-            <Button Content="Zarejestruj się" Margin="0,30,0,0" x:Name="registerButton" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_register"/>
-            <TextBlock Margin="0,55,0,0"  FontSize="20"  TextWrapping="Wrap" >Jeśli posiadzasz konto zaloguj się</TextBlock>
-            <Button Content="logowanie" Margin="0,20,0,0" x:Name="gotoLogin" HorizontalAlignment="Left"  VerticalAlignment="Top"  Click="Button_gotoLogin"/>
+            <Button Content="Zarejestruj się" Margin="0,30,0,0" x:Name="registerButton"    Click="Button_register"/>
+            <TextBlock Margin="0,40,0,0"  Style="{StaticResource SubTitle}" >Jeśli posiadzasz konto zaloguj się</TextBlock>
+            <Button Content="logowanie" Margin="0,20,0,0" x:Name="gotoLogin"  Click="Button_gotoLogin"/>
 
         </StackPanel>
     </Grid>

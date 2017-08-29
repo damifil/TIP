@@ -6,37 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="300"
-         ResizeMode="NoResize">
+        Title="MainWindow" Height="650" Width="300"
+         ResizeMode="NoResize" Background="#F5F5F6" AllowsTransparency="True" WindowStyle="None">
     <Grid/>
 
-    <Window.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Width" Value="150" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="3" />
-        </Style>
-
-        <Style TargetType="PasswordBox" >
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Width" Value="150" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="3" />
-        </Style>
-
-        <Style TargetType="Button" >
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="Width" Value="Auto" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="Padding" Value="3" />
-        </Style>
-        <Style TargetType="TextBlock" >
-            <Setter Property="FontSize" Value="15" />
-        </Style>
-
-
-    </Window.Resources>
-
+ 
 
 </Window>

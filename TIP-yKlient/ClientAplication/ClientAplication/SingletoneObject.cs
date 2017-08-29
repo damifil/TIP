@@ -20,7 +20,8 @@ namespace ClientAplication
         internal PhoneVOIP phoneVOIP;
         internal ObservableCollection<itemTB> items;
         internal Thread isOnlineThread;
-
+        internal bool isloged=false;
+        internal bool listusercompare=false;
         private static SingletoneObject instance = null;
         private static readonly object PadLock = new object();
         public static SingletoneObject GetInstance
