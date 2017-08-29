@@ -151,7 +151,7 @@ namespace ClientAplication
             System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
                 main = new CallFrom();
-                main.user = new User(true);
+                main.user = new User(true,true);
                 main.pv = this;
                 main.UserLogged = userLogged;
                 main.client = client;
@@ -216,7 +216,7 @@ namespace ClientAplication
                     transimiso.nameCallToUser = nameCallToUser;
                     transimiso.dateBegin = DateTime.Now;
                     transimiso.client = client;
-                    transimiso.user = new User(true);
+                    transimiso.user = new User(true,true);
                     transimiso.Show();
                 }));
             }

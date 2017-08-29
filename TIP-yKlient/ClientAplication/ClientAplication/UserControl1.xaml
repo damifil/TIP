@@ -19,33 +19,9 @@
             </DockPanel>
         
             <DockPanel  Margin="0,30,0,0">
-                <TextBox x:Name="searchInput"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True"   >
-                    <TextBox.Style>
-                        <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
-                            <Style.Resources>
-                                <VisualBrush x:Key="CueBannerBrush" Stretch="None" AlignmentX="Left"  >
-                                    <VisualBrush.Visual>
-                                        <Label Content="wyszukaj" FontSize="15" Foreground="LightGray" Padding="10" />
-                                    </VisualBrush.Visual>
-                                </VisualBrush>
-                            </Style.Resources>
-                            <Setter Property="FontSize" Value="15" />
-                            <Setter Property="Height" Value="30" />
-                            <Setter Property="Padding" Value="5" />
-                            <Style.Triggers>
-                                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                                </Trigger>
-                                <Trigger Property="Text" Value="{x:Null}">
-                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter Property="Background" Value="White" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>
+                <TextBox x:Name="searchInput"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True" Style="{StaticResource SeearchInput}" />
+
+
             </DockPanel>
             <ListBox  IsSynchronizedWithCurrentItem="True" Style="{StaticResource lbstyle}"  
                         Name="lbUsers" ItemsSource="{Binding}"
@@ -54,15 +30,14 @@
                         >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal"  >
-                            <TextBlock Text="{Binding Path=IcoUser}" Width="20" MinWidth="20" MaxWidth="20" FontFamily="{StaticResource FontAwesome}" FontSize="20" Margin="5,10,5,10" />
-                            <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}" Width="130" MinWidth="130" MaxWidth="140" FontSize="20" Margin="5,5,5,10"/>
-                            <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource FontAwesome}"  Margin="5,10,0,10"  />
-                        </StackPanel>
+                        <DockPanel Margin="10">
+                            <TextBlock Text="{Binding Path=Name}" Style="{StaticResource listItem}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}"  Width="170" />
+                            <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource MaterialIcon}"  HorizontalAlignment="Right"  />
+                        </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock x:Name="logOut" Margin="0,45,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE8AC;" Style="{StaticResource IcoRight}"></TextBlock>
+            <TextBlock x:Name="logOut" Margin="0,30,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE8AC;" Style="{StaticResource IcoRight}"></TextBlock>
         </StackPanel>
 
     </Grid>

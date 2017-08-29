@@ -13,14 +13,17 @@ namespace ClientAplication
     }
 
     class User:UserBase {
-        public User(bool isfriend)
+        public User(bool isfriend , bool isActive)
         {
             isFriend = isfriend;
+            this.isActive = isActive;
         }
         public string IcoUser { get; set; }
         public string IcoCall { get; set; }
         public string IcoColor { get; set; }
         public bool isFriend { get; set; }
+        public bool isActive { get; set; }
+
     }
 
 

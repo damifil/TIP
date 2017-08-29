@@ -32,11 +32,12 @@ namespace ClientAplication
 
         public Page1(string login, List<ListHistory> listHistory)
         {
+            InitializeComponent();
+           
             items = new ObservableCollection<itemTB>();
             copyitems = new ObservableCollection<itemTB>();
             singletoneOBj = SingletoneObject.GetInstance;
-
-       
+            singletoneOBj.mainwindow.Width = 750;
             foreach (ListHistory item in listHistory)
             {
            
@@ -63,7 +64,12 @@ namespace ClientAplication
             lbHistoryAll.DataContext = items;
         }
 
-
+        private void backAction(object sender, MouseButtonEventArgs e)
+        {
+            singletoneOBj.mainwindow.Width = 300;
+            var page = new Page2();
+            singletoneOBj.mainwindow.Content = page;
+        }
         private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
         {
             string historyListString = singletoneOBj.client.sendMessage("USERHISTORY " + login + " " + login1);

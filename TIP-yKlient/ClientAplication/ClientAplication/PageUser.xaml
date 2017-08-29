@@ -5,19 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      d:Height="500" d:Width="650"
+      d:Height="500" d:Width="700"
       Title="UserPage" >
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="490"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="0" Margin="10,10,0,0">
-            <local:UserControl1  />
+        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="0" Margin="30">
+            <local:UserControl1  x:Name="userControlLeftSide"/>
         </StackPanel>
 
 

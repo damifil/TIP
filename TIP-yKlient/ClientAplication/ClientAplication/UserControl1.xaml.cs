@@ -22,7 +22,8 @@ namespace ClientAplication
     {
         int timeThreadloop = 5000;
         SingletoneObject singletoneOBj;
-        
+        int numberSelectedItem = -1;
+       public  string SelectedItem = "";
         Thread refreshListThread;
         public UserControl1()
         {
@@ -34,15 +35,9 @@ namespace ClientAplication
                 searchInput.Text = singletoneOBj.searchvalue;
                 if (singletoneOBj.searchvalue == null)
                 {
-                    if (singletoneOBj.Users != null)
-                    { lbUsers.DataContext = singletoneOBj.Users; }
-                    else
-                    { updateFriendList(); }
+                        updateFriendList(); 
                 }
-                else
-                {
-
-                }
+               
                 refreshListThread = new Thread(ListRefreshloop);
                 refreshListThread.IsBackground = true;
                 refreshListThread.Start();
@@ -56,7 +51,8 @@ namespace ClientAplication
             }
         }
 
-       private void UserControl1_Unloaded(object sender, RoutedEventArgs e)
+
+        private void UserControl1_Unloaded(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -69,23 +65,34 @@ namespace ClientAplication
         {
             singletoneOBj.Users = new ObservableCollection<User>();
             singletoneOBj.Friends = new ObservableCollection<User>();
+            numberSelectedItem = -1;
+            int i = 0;
             if (singletoneOBj.listUsers != null)
             {
                 foreach (ListUser item in singletoneOBj.listUsers)
                 {
+                 
                     if (item.active == "True")
                     {
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" ,IcoColor = "green" }); // aktywny
-                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007", IcoColor = "green" });
+                        singletoneOBj.Users.Add(new User(true,true) { Name = item.name, IcoCall = "\uE0CD",  IcoColor = "green" }); // aktywny
+                        singletoneOBj.Friends.Add(new User(true,true) { Name = item.name, IcoCall = "\uE0CD", IcoColor = "green" });
                     }
                     else
                     {
-                        singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0" ,IcoColor = "green" }); // nieaktywny
-                        singletoneOBj.Friends.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" });
+                        singletoneOBj.Users.Add(new User(true,false) { Name = item.name, IcoCall = "\uE0CD",  IcoColor = "gray" }); // nieaktywny
+                        singletoneOBj.Friends.Add(new User(true,false) { Name = item.name, IcoCall = "\uE0CD", IcoColor = "gray" });
                     }
+                 
+                if (item.name == SelectedItem) { numberSelectedItem = i;  }
+                    i++;
                 }
             }
+
+
             lbUsers.DataContext = singletoneOBj.Friends;
+            lbUsers.SelectedIndex = numberSelectedItem;
+
+
         }
 
         private List<ListUser> SearchUsers(string login, string login1)              // szukanie uzytkownikow
@@ -132,13 +139,15 @@ namespace ClientAplication
             foreach (ListUser item in singletoneOBj.listUserSearch)
             {
                 if (singletoneOBj.Friends.Any(x => x.Name == item.name && singletoneOBj.listUsers.Where(y=> y.name==item.name && y.active=="True").Any()  ) )
-                    singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf007" , IcoColor = "green"}); // aktywny przyjaciel
+                    singletoneOBj.Users.Add(new User(true,true) { Name = item.name, IcoCall = "\uE0CD", IcoColor = "green"}); // aktywny przyjaciel
                 else  if (singletoneOBj.Friends.Any(x => x.Name == item.name))
-                    singletoneOBj.Users.Add(new User(true) { Name = item.name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
+                    singletoneOBj.Users.Add(new User(true,false) { Name = item.name, IcoCall = "\uE0CD", IcoColor = "green" }); // nieaktywny przyjaciel
                 else
-                    singletoneOBj.Users.Add(new User(false) { Name = item.name, IcoCall = "\uf0fe", IcoUser = "\uf234", IcoColor = "DarkOrange" }); // nieznajomy
+                    singletoneOBj.Users.Add(new User(false,false) { Name = item.name, IcoCall = "\uE7FE;", IcoColor = "DarkOrange" }); // nieznajomy
+             
             }
             lbUsers.DataContext = singletoneOBj.Users;
+            lbUsers.SelectedIndex = -1;
 
         }
         private void userAction(object sender, MouseButtonEventArgs e)
@@ -148,8 +157,9 @@ namespace ClientAplication
             if (cmd.DataContext is User)
             {
                 User user = (User)cmd.DataContext;
-                if (user.isFriend == true)
+                if (user.isFriend == true && user.isActive==true )
                 {
+                    MessageBox.Show("tutaj");
                     singletoneOBj.phoneVOIP.nameCallToUser = user.Name;
                     bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
                     CallToWindow main = new CallToWindow();
@@ -167,7 +177,7 @@ namespace ClientAplication
                         MessageBox.Show("problem z ozeki");
                     }
                 }
-                else //akca dodawnia przyjaciela
+                else if(user.isFriend==false)
                 {
                     //wyslanie komunikatu do serwera
                     singletoneOBj.client.sendMessage("ADDFRIEND " + singletoneOBj.user.Name+ " "+ user.Name);
@@ -179,18 +189,19 @@ namespace ClientAplication
                     us.name = user.Name;
                     if (singletoneOBj.listUserSearch.Any(x=> x.name==user.Name && x.active=="True"))
                     {
-                        singletoneOBj.Friends.Add(new User(true) { Name = user.Name, IcoCall = "\uf098", IcoUser = "\uf007", IcoColor = "green" }); // nieaktywny przyjaciel
+                        singletoneOBj.Friends.Add(new User(true,true) { Name = user.Name, IcoCall = "\uf098", IcoUser = "\uf007", IcoColor = "green" }); // nieaktywny przyjaciel
                         us.active = "True";
                         singletoneOBj.listUsers.Add(us);
                     }
                     else
                     {
-                        singletoneOBj.Friends.Add(new User(true) { Name = user.Name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
+                        singletoneOBj.Friends.Add(new User(true,false) { Name = user.Name, IcoCall = "\uf098", IcoUser = "\uf2c0", IcoColor = "green" }); // nieaktywny przyjaciel
                         us.active = "False";
                         singletoneOBj.listUsers.Add(us);
                     }
 
                 }
+                MessageBox.Show("tutaj2");
             }
         }
 
@@ -233,8 +244,13 @@ namespace ClientAplication
         {
             string value = searchInput.Text;
             if (value != null && value !="")
-            { singletoneOBj.listUserSearch = SearchUsers(singletoneOBj.user.Name, value); }
+            { singletoneOBj.listUserSearch = SearchUsers(singletoneOBj.user.Name, value); searchupdate(); }
+            else
+            {
+                updateFriendList();
+            }
             singletoneOBj.searchvalue = value;
+            
         }
 
         private List<ListHistory> GetAllHistory(string login)                       // uzyskanie calej hisorii rozmow
@@ -262,8 +278,8 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-           
-            singletoneOBj.mainwindow.Width = 650;
+
+            
             var page = new Page1(singletoneOBj.user.Name, GetAllHistory(singletoneOBj.user.Name));
             singletoneOBj.mainwindow.Content = page;
            
@@ -279,7 +295,7 @@ namespace ClientAplication
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            singletoneOBj.mainwindow.Width = 650;
+            singletoneOBj.mainwindow.Width = 750;
             var page = new SettingsPage();
             singletoneOBj.mainwindow.Content = page;
         }

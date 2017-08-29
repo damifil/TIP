@@ -55,22 +55,19 @@ namespace ClientAplication
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
             readSettings = ReadSettings.GetInstance;
 
-            if (LRM.client == null)
-            {
+          
                 try
                 {
                     LRM.client = new Client(readSettings.IP , Convert.ToInt32(readSettings.PORT));
                     receiveCommunicate = LRM.client.sendMessage("LOGIN " + login + " " + password);
                 }
-                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");  }
-            }
+                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");  return; }
+         
 
-            if (LRM.client == null)
-            {
-                return;
-            }
+
             if (receiveCommunicate != "True")
             {
+                MessageBox.Show("tutja");
                 MessageBox.Show(receiveCommunicate);
                 return;
             }

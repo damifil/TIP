@@ -32,9 +32,10 @@ namespace ClientAplication
         }
         public UserPage(List<ListHistory> listHistory, string userFriend)
         {
+
             InitializeComponent();
-
-
+            userControlLeftSide.SelectedItem = userFriend;
+            userControlLeftSide.updateFriendList();
             this.userFriend = userFriend;
             stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem " + userFriend;
 

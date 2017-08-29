@@ -38,8 +38,12 @@ namespace ClientAplication
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            this.DragMove();
+        }
 
-       
     }
 }
 

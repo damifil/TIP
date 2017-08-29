@@ -42,12 +42,11 @@ namespace ClientAplication
                     user.active = sp[1];
                     listUsers.Add(user);
                 }
-               if((listUsers.Count == singletoneOBj.listUsers.Count) && !listUsers.Except(singletoneOBj.listUsers).Any())
-                {
+              
                     singletoneOBj.listUsers = new List<ListUser>();
                     singletoneOBj.listUsers = listUsers;
                     singletoneOBj.listusercompare = true;
-                }
+               
                 Thread.Sleep(timeThreadloop);
             }
         }
@@ -85,10 +84,11 @@ namespace ClientAplication
             try
             {
                 singletoneOBj.phoneVOIP.InitializeSoftPhone(singletoneOBj.user.Name, singletoneOBj.user.password, client.ipAddres, 5060);
+                singletoneOBj.phoneVOIP.client = client;
+                singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
             }
             catch (Exception ex) { MessageBox.Show("Wystapił problem podczas podpięcia do serwera odpowiedzialnego za transmisje głosową "); }
-            singletoneOBj.phoneVOIP.client = client;
-            singletoneOBj.phoneVOIP.userLogged = singletoneOBj.user;
+           
             if (islogin == true)
             {
                 singletoneOBj.user.lastActivity = "Twoja ostatnia aktywność była: \n" + client.sendMessage("LASTACTIVITY " + login);

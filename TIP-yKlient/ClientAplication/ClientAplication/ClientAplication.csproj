@@ -112,6 +112,9 @@
     <Compile Include="UCTitleBar.xaml.cs">
       <DependentUpon>UCTitleBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UCTitleBar2.xaml.cs">
+      <DependentUpon>UCTitleBar2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UCTitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCTitleBar2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

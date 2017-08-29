@@ -52,6 +52,8 @@ namespace ClientAplication
             items = null;
             isOnlineThread=null;
             searchvalue = "";
+            isloged = false;
+            
         }
     }
 
