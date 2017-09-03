@@ -141,29 +141,33 @@ namespace TIPySerwer
         }
         public void createDH( StreamReader sReader, StreamWriter sWriter)
         {
-            P = Convert.ToDouble(sReader.ReadLine());
-            G = Convert.ToDouble(sReader.ReadLine());
-            A = Convert.ToDouble(sReader.ReadLine());
-            b = rnd.Next(10, 10000);
-            B = powMod((int)G, (int)b, (int)P);
-            string sData = B.ToString();
-            sWriter.WriteLine(sData);
-            sWriter.Flush();
-            //utworzenie sekretu
-            s =powMod((int)A, (int)b, (int)P);
-            secretByteArray = BitConverter.GetBytes(s);
-            string reciveMessage = messageRecive(sReader, this);
-            if (reciveMessage == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") 
+            try
             {
-                sWriter.WriteLine("OK");
+                P = Convert.ToDouble(sReader.ReadLine());
+                G = Convert.ToDouble(sReader.ReadLine());
+                A = Convert.ToDouble(sReader.ReadLine());
+                b = rnd.Next(10, 10000);
+                B = powMod((int)G, (int)b, (int)P);
+                string sData = B.ToString();
+                sWriter.WriteLine(sData);
                 sWriter.Flush();
+                //utworzenie sekretu
+                s = powMod((int)A, (int)b, (int)P);
+                secretByteArray = BitConverter.GetBytes(s);
+                string reciveMessage = messageRecive(sReader, this);
+                if (reciveMessage == "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                {
+                    sWriter.WriteLine("OK");
+                    sWriter.Flush();
+                }
+                else
+                {
+                    sWriter.WriteLine("NOK");
+                    sWriter.Flush();
+                }
             }
-            else
-            {
-                sWriter.WriteLine("NOK");
-                sWriter.Flush();
-            }
-
+            catch (Exception e) { }
+            
         }
         public string messageRecive(StreamReader sReader, DiffieHelman diffieHelman)
         {

@@ -100,7 +100,10 @@ namespace ClientAplication
         public double generateP()
         {
             int p = rnd.Next(200, 500);
-            string line = File.ReadLines("10000.prm").Skip(p).Take(1).First();
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            path=path+"\\file\\10000.prm";
+            MessageBox.Show(path);
+            string line = File.ReadLines(path).Skip(p).Take(1).First();
             p = Int32.Parse(line);
             return p;
         }
