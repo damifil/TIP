@@ -19,8 +19,8 @@ namespace ClientAplication
         private IPhoneLine _phoneLine;
         private RegState _phoneLineInformation;
         private IPhoneCall _call;
-        private Microphone _microphone = Microphone.GetDefaultDevice();
-        private Speaker _speaker = Speaker.GetDefaultDevice();
+        internal Microphone _microphone = Microphone.GetDefaultDevice();
+        internal Speaker _speaker = Speaker.GetDefaultDevice();
         MediaConnector _connector = new MediaConnector();
         PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
         PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();

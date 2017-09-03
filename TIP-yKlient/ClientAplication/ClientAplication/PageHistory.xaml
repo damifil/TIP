@@ -22,19 +22,18 @@
         <local:UCTitleBar2 Grid.Row="0" Grid.ColumnSpan="2" x:Name="titlebar" />
 
         <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1" Margin="30">
-                <local:UserControl1  />
+                <local:UserControl1 x:Name="UC" />
             </StackPanel>
 
         <StackPanel x:Name = "rightside"  Grid.Column="1" Grid.Row="1" Margin="30">
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="textBlock7" Text="&#xE15E;" MouseLeftButtonDown="backAction" Style="{StaticResource IcoRight}" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                <TextBlock x:Name="textBlock7" Text="&#xE5C4;" MouseLeftButtonDown="backAction" Style="{StaticResource IcoRight}" HorizontalAlignment="Left" Margin="0,0,10,0"/>
                 <TextBlock x:Name="textBlock1" Text="Historia ostatnich połączeń" Style="{StaticResource SubTitle}" />
             </StackPanel>
              <DockPanel Margin="0,65,0,0">
                    <TextBox x:Name="historysearchinput"    IsEnabled="True" SpellCheck.IsEnabled="True"   TextChanged="historysearchinput_TextChanged" Style="{StaticResource SeearchInput}" />
-                <!--
-                <TextBox x:Name="loginInput"  />-->
+   
             </DockPanel>
 
 

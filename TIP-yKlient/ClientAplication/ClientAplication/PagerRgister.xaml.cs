@@ -20,16 +20,20 @@ namespace ClientAplication
     /// </summary>
     public partial class register : Page
     {
+
         LoginRegisterManagment LRM;
         ReadSettings readSettings;
         public register()
         {
             InitializeComponent();
+            LRM = new LoginRegisterManagment();
         }
 
         public register(Boolean setingenable)
         {
             InitializeComponent();
+            LRM = new LoginRegisterManagment();
+
             var parentWindow = this.Parent as Window;
 
             if (setingenable == true)

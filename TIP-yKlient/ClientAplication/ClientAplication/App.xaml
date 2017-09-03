@@ -170,6 +170,18 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="#F5F5F6"/>
         </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="#F5F5F6"/>
+            <Setter Property="FontFamily" Value="{StaticResource MonsterrateRegular}" />
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
         
+        
+
+
+      
+
+
     </Application.Resources>
 </Application>

@@ -37,7 +37,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock x:Name="logOut" Margin="0,30,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE8AC;" Style="{StaticResource IcoRight}"></TextBlock>
+            <TextBlock x:Name="logOut" Margin="0,30,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE879;" Style="{StaticResource IcoRight}"></TextBlock>
         </StackPanel>
 
     </Grid>

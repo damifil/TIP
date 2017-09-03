@@ -166,7 +166,9 @@ namespace TIPySerwer
                     sWriter.Flush();
                 }
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+               
+            }
             
         }
         public string messageRecive(StreamReader sReader, DiffieHelman diffieHelman)

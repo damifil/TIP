@@ -23,8 +23,8 @@ namespace ClientAplication
         int timeThreadloop = 5000;
         SingletoneObject singletoneOBj;
         int numberSelectedItem = -1;
-       public  string SelectedItem = "";
-        Thread refreshListThread;
+        public  string SelectedItem = "";
+        public Thread refreshListThread;
         public UserControl1()
         {
             try

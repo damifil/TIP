@@ -40,8 +40,12 @@ namespace ClientAplication
         }
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            base.OnMouseLeftButtonDown(e);
-            this.DragMove();
+            try
+            {
+                base.OnMouseLeftButtonDown(e);
+                this.DragMove();
+            }
+            catch (Exception exc) { }
         }
 
     }

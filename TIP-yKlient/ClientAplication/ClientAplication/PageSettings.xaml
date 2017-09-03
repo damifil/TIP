@@ -5,24 +5,75 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      d:Height="500" d:Width="650"
+      d:DesignHeight="650" d:DesignWidth="750"
       Title="SettingsPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250" />
-                <ColumnDefinition Width="400" />
-            </Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="450" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="490"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="610"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name = "menuSP"  Grid.Column="0"  Grid.Row="0"  Margin="10,10,0,0">
-                <local:UserControl1  />
+
+        <local:UCTitleBar2 Grid.Row="0" Grid.ColumnSpan="2" x:Name="titlebar" />
+
+        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1" Margin="30">
+            <local:UserControl1 x:Name="UC" />
+        </StackPanel>
+
+        <StackPanel x:Name = "rightside"  Grid.Column="1" Grid.Row="1" Margin="30">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Text="&#xE5C4;" MouseLeftButtonDown="backAction" Style="{StaticResource IcoRight}" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                <TextBlock  Text="Ustawienia" Style="{StaticResource Title}" />
             </StackPanel>
+            <ScrollViewer CanContentScroll="True" Height="510"  >
+                
+                <StackPanel Margin="0,0,20,0"  >
 
+                    <StackPanel Orientation="Horizontal" Margin="0,40,0,10">
+            <TextBlock Text="Mikrofon"  Style="{StaticResource SubTitle}"/>
+                        <TextBlock Text="&#xE8C8;" Margin="20,0,0,0" Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <ComboBox x:Name="CBMicrophone">
+                <ComboBox.ItemContainerStyle>
+                    <Style>
+                        <EventSetter Event="ComboBoxItem.PreviewMouseDown"
+                    Handler="CBMicrophoneHandler"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,10">
+            <TextBlock Text="Głośnik"  Style="{StaticResource SubTitle}" />
+                        <TextBlock Text="&#xE023;" Margin="35,0,0,0" Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
 
-        <StackPanel x:Name = "setingsSP"  Grid.Column="1" Grid.Row="0" Margin="10,10,0,0">
-            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Ustawienia"  FontSize="24"/>
+                    </StackPanel>
+                    <ComboBox x:Name="CBSound" >
+                <ComboBox.ItemContainerStyle>
+                    <Style>
+                        <EventSetter Event="ComboBoxItem.PreviewMouseDown"
+                    Handler="CBSoundHandler"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+
+            <TextBlock Text="Zmiana hasła" Margin="0,40,0,20" Style="{StaticResource SubTitle}" />
+            <TextBlock Text="stare hasło" Margin="0,20,0,10"/>
+            <PasswordBox x:Name="OldPassword" />
+            <TextBlock Text="nowe hasło" Margin="0,20,0,10"/>
+            <PasswordBox x:Name="newPassword"/>
+
+            <TextBlock Text="powtórz nowe hasło" Margin="20,0,0,10"/>
+            <PasswordBox x:Name="newPassword2"/>
+            <Button  Margin="0,10,0,0" Content="Zmień hasło" Click="Button_Click"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,60,0,0">
+                <TextBlock Text="usuń konto " Style="{StaticResource SubTitle}" />
+                        <TextBlock Text="&#xE5CD;"  Foreground="Red" MouseLeftButtonDown="deleteAcount"  Style="{StaticResource IcoRight}" Margin="40,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </Page>

@@ -62,6 +62,8 @@ namespace ClientAplication
 
             InitializeComponent();
             lbHistoryAll.DataContext = items;
+            UC.history.Visibility = System.Windows.Visibility.Hidden;
+
         }
 
         private void backAction(object sender, MouseButtonEventArgs e)
