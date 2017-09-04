@@ -65,7 +65,7 @@ namespace ClientAplication
          
 
 
-            if (receiveCommunicate != "True")
+            if (receiveCommunicate != "OK")
             {
                 MessageBox.Show("tutja");
                 MessageBox.Show(receiveCommunicate);

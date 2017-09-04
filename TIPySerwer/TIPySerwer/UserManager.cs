@@ -27,12 +27,12 @@ namespace TIPySerwer
             return output;
         }
         
-        public static bool AddUser(string login, string password)  // dodanie uzytkownika do bazy danych
+        public static string AddUser(string login, string password)  // dodanie uzytkownika do bazy danych
         {
             if (IsLoginExists(login))
             {
                 Console.WriteLine("Login jest zajety");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
-                return false;
+                return "ERROR";
             }
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -42,15 +42,15 @@ namespace TIPySerwer
                 newUser.Is_Exists = true;
                 db.Users.Add(newUser);
                 db.SaveChanges();
-                return true;
+                return "OK";
             }
         }
 
-        public static bool DeleteUser(string login) // usuniecie konta
+        public static string DeleteUser(string login) // usuniecie konta
         {
             if (!IsLoginExists(login))
             {
-                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+                return "ERROR";  // uzytkownik nie istnieje, np. usunal juz konto
             }
 
             using (tipBDEntities db = new tipBDEntities())
@@ -59,15 +59,15 @@ namespace TIPySerwer
                 Users user = db.Users.Where(x => x.Login == login).Single();
                 user.Is_Exists = false;
                 db.SaveChanges();
-                return true;
+                return "OK";
             }
         }
 
-        public static bool UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
+        public static string UpdateActivityUser(string login)   // aktualizacja ostatniej aktywnosci uzytkownika
         {
             if (!IsLoginExists(login))
             {
-                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+                return "ERROR";  // uzytkownik nie istnieje, np. usunal juz konto
             }
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -76,7 +76,7 @@ namespace TIPySerwer
                 user.Is_Active = true;
                 db.SaveChanges();
             }
-            return true;
+            return "OK";
         }
 
         public  static string Logging(string login, string password)  // proces logowania
@@ -102,17 +102,17 @@ namespace TIPySerwer
                     return "Błędny login lub hasło";
                 }
                 Console.WriteLine("Klient "+ login+" zalogował się");
-                return "True";
+                return "OK";
             }
         }
 
 
-        public static bool LogOff(string login)  // proces wylogowania
+        public static string LogOff(string login)  // proces wylogowania
         {
             if (!IsLoginExists(login))
             {
                 Console.WriteLine("Błędny login lub hasło(akcja z loginem: " + login + ")");  // tutaj wyslemy do aplikacji klienckiej wiadomosc
-                return false;
+                return "ERROR";
             }
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -120,14 +120,14 @@ namespace TIPySerwer
                 Users user = db.Users.Where(x => x.Login == login).Single();
                 user.Is_Active = false;
                 db.SaveChanges();
-                return true;
+                return "OK";
             }
         }
-        public static bool ChangePassword(string login, string password)  // zmiana hasla
+        public static string ChangePassword(string login, string password)  // zmiana hasla
         {
             if (!IsLoginExists(login))
             {
-                return false;  // uzytkownik nie istnieje, np. usunal juz konto
+                return "ERROR";  // uzytkownik nie istnieje, np. usunal juz konto
             }
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -135,13 +135,13 @@ namespace TIPySerwer
                 byte[] pass = Encoding.UTF8.GetBytes(password);
                 user.Password = pass;
                 db.SaveChanges();
-                return true;
+                return "OK";
             }
         }
 
         
 
-        public static bool SavaCall(string login, string login1, string dateBegin, string hourBegin, string dateEnd, string hourEnd)   // zapisanie rozmowy 
+        public static string SavaCall(string login, string login1, string dateBegin, string hourBegin, string dateEnd, string hourEnd)   // zapisanie rozmowy 
         {
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -156,7 +156,7 @@ namespace TIPySerwer
                 db.Calls.Add(call);
                 db.SaveChanges();
             }
-            return true;
+            return "OK";
         }
         public static string UserLastActivity(string login)
         {
@@ -240,7 +240,7 @@ namespace TIPySerwer
             }
         }
 
-        public static bool AddFriend(string login, string newFriend)  // dodanie znajomego
+        public static string AddFriend(string login, string newFriend)  // dodanie znajomego
         {
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -251,7 +251,7 @@ namespace TIPySerwer
                 
                 if (checkHasFriend == true || checkHasFriend1 == true)
                 {
-                    return false;    // uzytkownik ma juz takiego znajomego
+                    return "ERROR";    // uzytkownik ma juz takiego znajomego
                 }   
                 Friends friend = new Friends();
                 friend.UserID = nFriend.ID;
@@ -259,10 +259,10 @@ namespace TIPySerwer
                 db.Friends.Add(friend);
                 db.SaveChanges();
             }
-            return true;
+            return "OK";
         }
 
-        public static bool DelFriend(string login, string oldFriend) // usuniecie znajomego
+        public static string DelFriend(string login, string oldFriend) // usuniecie znajomego
         {
             using (tipBDEntities db = new tipBDEntities())
             {
@@ -275,7 +275,7 @@ namespace TIPySerwer
                     Friends friends = db.Friends.Where(x => x.UserID == user.ID && x.UserID_From == oFriend.ID).Single();
                     db.Friends.Remove(friends);
                     db.SaveChanges();
-                    return true;
+                    return "OK";
                 }
                 bool checkHasFriend1 = db.Friends.Where(x => x.UserID == oFriend.ID && x.UserID_From == user.ID).Any();
                 if (checkHasFriend1 == true)
@@ -283,11 +283,11 @@ namespace TIPySerwer
                     Friends friends = db.Friends.Where(x => x.UserID == oFriend.ID && x.UserID_From == user.ID).Single();
                     db.Friends.Remove(friends);
                     db.SaveChanges();
-                    return true;
+                    return "OK";
                 }
 
             }
-            return false;
+            return "ERROR";
 
         }
         public static string GetFriends(string login)        // pobranie listy znajomych

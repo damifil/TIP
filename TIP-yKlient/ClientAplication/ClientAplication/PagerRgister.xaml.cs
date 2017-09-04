@@ -65,7 +65,7 @@ private void Button_register(object sender, RoutedEventArgs e)
                 LRM.client = new Client(readSettings.IP, Convert.ToInt32(readSettings.PORT));
             }
             string flag = LRM.client.sendMessage("REGISTER " + login + " " + password1);
-            if(flag == "False")
+            if(flag == "ERROR")
             {
                 MessageBox.Show("Login jest zajęty");
                

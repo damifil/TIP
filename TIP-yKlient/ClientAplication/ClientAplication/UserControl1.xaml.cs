@@ -327,7 +327,7 @@ namespace ClientAplication
                 string historyListString = singletoneOBj.client.sendMessage("DELFRIEND " + singletoneOBj.user.Name + " " 
                 + singletoneOBj.listUsers.ElementAt(index).name);
 
-                if (historyListString == "True")
+                if (historyListString == "OK")
                 {
                     singletoneOBj.listusercompare = true;
                     singletoneOBj.listUsers.RemoveAt(index);

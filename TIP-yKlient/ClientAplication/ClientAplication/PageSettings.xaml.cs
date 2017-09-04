@@ -100,7 +100,7 @@ namespace ClientAplication
             if (result == MessageBoxResult.Yes)
             {
                 string message = singletoneOBj.client.sendMessage("DELACCOUNT " + singletoneOBj.user.Name);
-                if (message == "True") 
+                if (message == "OK") 
                 {
                     MessageBox.Show("pomyślnie usunięto konto");
                     singletoneOBj.isOnlineThread.Abort();

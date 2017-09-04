@@ -70,7 +70,7 @@ namespace ClientAplication
         {
             string historyListString = singletoneOBJ.client.sendMessage("DELFRIEND " + singletoneOBJ.user.Name + " " + userFriend);
 
-            if (historyListString == "True")
+            if (historyListString == "OK")
             {
                 var itemToRemove = singletoneOBJ.listUsers.Single(r => r.name == userFriend);
                 singletoneOBJ.listUsers.Remove(itemToRemove);

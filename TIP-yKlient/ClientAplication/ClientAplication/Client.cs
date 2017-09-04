@@ -29,7 +29,6 @@ namespace ClientAplication
             diffieHelman = new DiffieHelman();
             diffieHelman.CreateDH(streamReader, streamWriter);
                         
-            Console.WriteLine("create");
             ipAddres = ipAddress;
             portnumber = portNum;
         }
