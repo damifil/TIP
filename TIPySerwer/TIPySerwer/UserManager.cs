@@ -123,7 +123,7 @@ namespace TIPySerwer
                 return "OK";
             }
         }
-        public static string ChangePassword(string login, string password)  // zmiana hasla
+        public static string ChangePassword(string login, string oldPassword, string newPassword)  // zmiana hasla
         {
             if (!IsLoginExists(login))
             {
@@ -132,8 +132,19 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                byte[] pass = Encoding.UTF8.GetBytes(password);
-                user.Password = pass;
+                byte[] oPass = HashPassword(oldPassword);
+                byte[] userPass = user.Password;
+                if (!userPass.SequenceEqual(oPass))
+                {
+                    Console.WriteLine("Błędne hasło stare");
+                    
+                }
+
+
+
+                
+                byte[] nPass = HashPassword(newPassword);
+                user.Password = nPass;
                 db.SaveChanges();
                 return "OK";
             }

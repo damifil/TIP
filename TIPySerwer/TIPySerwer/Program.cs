@@ -108,7 +108,7 @@ namespace TIPySerwer
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "CHPASS":    // zmiana hasla
-                        sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2]).ToString();
+                        sData = UserManager.ChangePassword(fragmentCommunication[1], fragmentCommunication[2], fragmentCommunication[3]).ToString();
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
                         break;
                     case "DELACCOUNT": // usuniecie konta
