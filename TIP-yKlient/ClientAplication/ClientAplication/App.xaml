@@ -108,6 +108,7 @@
         <Style TargetType="TextBlock" x:Key="Title"  BasedOn="{StaticResource TextBlockBase}">
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="FontFamily" Value="{StaticResource MonsterreteExtLight}"/>
+            
         </Style>
 
         <Style TargetType="TextBlock" x:Key="SubTitle"  BasedOn="{StaticResource TextBlockBase}">

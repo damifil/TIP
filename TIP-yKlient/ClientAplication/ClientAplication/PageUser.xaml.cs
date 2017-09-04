@@ -37,7 +37,7 @@ namespace ClientAplication
             userControlLeftSide.SelectedItem = userFriend;
             userControlLeftSide.updateFriendList();
             this.userFriend = userFriend;
-            stringInUserWindow.Text = "Historia ostatnich połączeń z użytkownikem " + userFriend;
+            stringInUserWindow.Text =  userFriend;
 
             items = new ObservableCollection<itemTB>();
             copyitems = new ObservableCollection<itemTB>();
@@ -124,6 +124,13 @@ namespace ClientAplication
             }
 
 
+
+        }
+        private void backAction(object sender, MouseButtonEventArgs e)
+        {
+            singletoneOBJ.mainwindow.Width = 300;
+            var page = new Page2();
+            singletoneOBJ.mainwindow.Content = page;
         }
     }
 }

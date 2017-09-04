@@ -131,5 +131,12 @@ namespace ClientAplication
 
 
         }
+
+        private void backAction(object sender, MouseButtonEventArgs e)
+        {
+            singletoneOBJ.mainwindow.Width = 300;
+            var page = new Page2();
+            singletoneOBJ.mainwindow.Content = page;
+        }
     }
 }

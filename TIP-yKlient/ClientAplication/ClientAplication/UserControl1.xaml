@@ -20,14 +20,33 @@
         
             <DockPanel  Margin="0,30,0,0">
                 <TextBox x:Name="searchInput"   TextChanged="textBox_TextChanged"  IsEnabled="True" SpellCheck.IsEnabled="True" Style="{StaticResource SeearchInput}" />
-
-
             </DockPanel>
             <ListBox  IsSynchronizedWithCurrentItem="True" Style="{StaticResource lbstyle}"  
                         Name="lbUsers" ItemsSource="{Binding}"
                         Margin="0,30,0,0" Height="320" 
                       ItemContainerStyle="{StaticResource as}"
                         >
+                <ListBox.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Header="Delete" Click="MenuItemDelete_Click" x:Name="contextmenu">
+                            <MenuItem.Style>
+                                <Style TargetType="MenuItem">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IcoColor}" Value="green">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </MenuItem.Style>
+                            <MenuItem.Icon>
+                                <TextBlock Text="&#xE5CD;" Style="{StaticResource IcoRight}" Foreground="Red" FontSize="15" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                  
+                </ListBox.ContextMenu>
+                
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel Margin="10">

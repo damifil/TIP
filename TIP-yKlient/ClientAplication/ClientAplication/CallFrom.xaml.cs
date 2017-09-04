@@ -44,11 +44,6 @@ namespace ClientAplication
             stringWithName.Text = "Połączenie " + user.Name;
             _shown = true;
 
-
-
-
-
-
         }
 
 

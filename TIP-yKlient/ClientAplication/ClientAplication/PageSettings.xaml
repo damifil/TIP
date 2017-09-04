@@ -27,7 +27,7 @@
         <StackPanel x:Name = "rightside"  Grid.Column="1" Grid.Row="1" Margin="30">
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Text="&#xE5C4;" MouseLeftButtonDown="backAction" Style="{StaticResource IcoRight}" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-                <TextBlock  Text="Ustawienia" Style="{StaticResource Title}" />
+                <TextBlock  Text="Ustawienia" Style="{StaticResource SubTitle}" />
             </StackPanel>
             <ScrollViewer CanContentScroll="True" Height="510"  >
                 

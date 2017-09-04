@@ -111,10 +111,6 @@ namespace ClientAplication
             return listUsers;
         }
 
-        private void searchClick(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void updateList()
         {
             if (singletoneOBj.listusercompare == true)
@@ -230,7 +226,7 @@ namespace ClientAplication
                 if (userFriend.isFriend == true)
                 {
                     List<ListHistory> listHistory = GetConcreteHistory(singletoneOBj.user.Name, userFriend.Name);
-                    singletoneOBj.mainwindow.Width = 650;
+                    singletoneOBj.mainwindow.Width = 750;
                     var page = new UserPage(listHistory, userFriend.Name);
                     singletoneOBj.mainwindow.Content = page;
                 }
@@ -316,12 +312,32 @@ namespace ClientAplication
             }
         }
 
-       
+        private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbUsers.SelectedIndex == -1)
+            {
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć znajomego", "Usunięcie znajomego", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            int index = lbUsers.SelectedIndex;
+            
+            if (result == MessageBoxResult.Yes)
+            {
+                string historyListString = singletoneOBj.client.sendMessage("DELFRIEND " + singletoneOBj.user.Name + " " 
+                + singletoneOBj.listUsers.ElementAt(index).name);
 
+                if (historyListString == "True")
+                {
+                    singletoneOBj.listusercompare = true;
+                    singletoneOBj.listUsers.RemoveAt(index);
+                    updateList();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem podczas usuwania znajomgeo");
+                }
+            }
+        }
     }
-
-
-
-
 }

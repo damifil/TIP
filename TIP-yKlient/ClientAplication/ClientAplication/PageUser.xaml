@@ -5,83 +5,54 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClientAplication"
       mc:Ignorable="d" 
-      d:Height="500" d:Width="700"
+      d:DesignHeight="650" d:DesignWidth="750"
       Title="UserPage" >
 
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="450" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="490"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="610"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="0" Margin="30">
-            <local:UserControl1  x:Name="userControlLeftSide"/>
+
+        <local:UCTitleBar2 Grid.Row="0" Grid.ColumnSpan="2" x:Name="titlebar" />
+
+        <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1" Margin="30">
+            <local:UserControl1 x:Name="userControlLeftSide" />
         </StackPanel>
 
+        <StackPanel x:Name = "userSP"  Grid.Column="1" Grid.Row="1" Margin="30">
 
-        <StackPanel x:Name = "userSP"  Grid.Column="1" Grid.Row="0" Margin="10,10,20,0">
-
-            <StackPanel Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Right">
-                <TextBlock x:Name="textBlock2"   Padding="5" TextWrapping="Wrap" Text="usuń z listy znajomych"  RenderTransformOrigin="0.5,0.5" FontSize="18.667"/>
-                <TextBlock x:Name="deleteFriendIco"  Margin="10,0,0,0" Padding="5"   Text="&#xf056;" Foreground="Red"  MouseLeftButtonDown="deleteFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21"  VerticalAlignment="Center"  Height="46" Focusable="True"  AllowDrop="True"></TextBlock>
-
-            </StackPanel>
-            <TextBlock x:Name="stringInUserWindow" TextWrapping="Wrap" Text="" Margin="0,20,0,0" FontSize="24"/>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Oddzwoń"  Margin="0,0,0,0" FontSize="18.667"></TextBlock>
-                <TextBlock x:Name="callToFriendIco"   Margin="40,0,0,0"  Text="&#xf098;" Foreground="Green" MouseLeftButtonDown="callToFriend" FontFamily="{StaticResource FontAwesome}"  FontSize="21"  VerticalAlignment="Center"  Height="43" Focusable="True"  AllowDrop="True"></TextBlock>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock x:Name="textBlock7" Text="&#xE5C4;" MouseLeftButtonDown="backAction" Style="{StaticResource IcoRight}" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                <TextBlock x:Name="textBlock1" Text="Historia ostatnich połączeń"  Style="{StaticResource SubTitle}"  />
             </StackPanel>
 
-
-            <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
-                <TextBox x:Name="userhistorysearchinput"  TextWrapping="Wrap"  FontSize="15"   IsEnabled="True" SpellCheck.IsEnabled="True"  Padding="5,5,5,6" TextChanged="historysearchinput_TextChanged" >
-                    <TextBox.Style>
-                        <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                            <Style.Resources>
-                                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                                    <VisualBrush.Visual>
-                                        <Label Content="wyszukaj" Foreground="LightGray" />
-                                    </VisualBrush.Visual>
-                                </VisualBrush>
-                            </Style.Resources>
-                            <Style.Triggers>
-                                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                                </Trigger>
-                                <Trigger Property="Text" Value="{x:Null}">
-                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter Property="Background" Value="White" />
-                                </Trigger>
-                            </Style.Triggers>
-                          
-                                <Setter Property="FontSize" Value="15" />
-                                <Setter Property="Width" Value="150" />
-                                <Setter Property="Height" Value="30" />
-                                <Setter Property="Padding" Value="3" />
-                            
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>
-
-                <TextBlock x:Name="searchicouser" Margin="5,0,0,0" Text="&#xf002;" MouseLeftButtonDown="searchClickHistoryuser" FontFamily="{StaticResource FontAwesome}" TextWrapping="Wrap" FontSize="20"  >
-                </TextBlock>
+            
+            <TextBlock x:Name="stringInUserWindow" Style="{StaticResource SubTitle}" Margin="0,30,0,0" />
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,30">
+                <TextBlock x:Name="textBlock10" Text="Oddzwoń"  Style="{StaticResource SubTitle}" ></TextBlock>
+                <TextBlock x:Name="callToFriendIco"   Margin="40,0,0,0"  Text="&#xE0B0;" Foreground="Green" MouseLeftButtonDown="callToFriend"   Style="{StaticResource IcoRight}"></TextBlock>
             </StackPanel>
+
+
+            <TextBox x:Name="userhistorysearchinput" IsEnabled="True" SpellCheck.IsEnabled="True" Style="{StaticResource SeearchInput}" TextChanged="historysearchinput_TextChanged" />
+
+
+
+
 
             <ListBox IsSynchronizedWithCurrentItem="True"
         Name="lbHistoryAll" ItemsSource="{Binding}"
-         Margin="0,30,0,0" Height="190" Width="350" HorizontalAlignment="Left" >
-                <ListBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="0.242"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0.764"/>
-                    </TransformGroup>
-                </ListBox.RenderTransform>
+                     Style="{StaticResource lbstyle}"
+                      ItemContainerStyle="{StaticResource as}"
+                     Height="340"
+         >
+               
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" Margin="0,10,0,10">
@@ -92,7 +63,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
 
-           
+          
         </StackPanel>
 
 
