@@ -152,9 +152,6 @@ namespace ClientAplication
             {
                 main = new CallFrom();
                 main.user = new User(true,true);
-                main.pv = this;
-                main.UserLogged = userLogged;
-                main.client = client;
                 main.dateBegin = DateTime.Now;
                 main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
                 nameCallToUser = e.Item.DialInfo.CallerDisplay;
@@ -211,8 +208,6 @@ namespace ClientAplication
                     if (callto != null)
                     { callto.Close(); callto = null; }
                     transimiso = new CallTransmision();
-                    transimiso.phoneVOIP = this;
-                    transimiso.userLogged = userLogged;
                     transimiso.nameCallToUser = nameCallToUser;
                     transimiso.dateBegin = DateTime.Now;
                     transimiso.client = client;

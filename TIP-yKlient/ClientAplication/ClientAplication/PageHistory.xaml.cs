@@ -108,7 +108,6 @@ namespace ClientAplication
                 if (call == true)
                 {
                     main.user = user;
-                    main.phoneVOIP = singletoneOBj.phoneVOIP;
                     main.Show();
                 }
 

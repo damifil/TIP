@@ -166,10 +166,7 @@ namespace ClientAplication
                     if (call == true)
                     {
                         main.user = user;
-                        main.userLogged = userLogged;
-                        main.client = singletoneOBj.client;
                         main.dateBegin = DateTime.Now;
-                        main.phoneVOIP = singletoneOBj.phoneVOIP;
                         main.Show();
                     }
                     else

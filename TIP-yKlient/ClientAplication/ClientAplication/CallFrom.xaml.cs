@@ -19,10 +19,8 @@ namespace ClientAplication
     /// </summary>
     public partial class CallFrom : Window
     {
-        internal PhoneVOIP pv;
+        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         internal User user;
-        internal AplicationUser UserLogged;
-        internal Client client;
         internal string nameCallToUser;
         internal DateTime dateBegin;
         public CallFrom()
@@ -56,8 +54,8 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            string saveCall = client.sendMessage("SAVECALL " + UserLogged.Name + " " + nameCallToUser + " " + dateBegin + " " + DateTime.Now.ToString());
-            pv.btn_HangUp_Click(user.Name);
+            string saveCall = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " + nameCallToUser + " " + dateBegin + " " + DateTime.Now.ToString());
+            singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
 
         }
@@ -65,7 +63,7 @@ namespace ClientAplication
         private void callAceptTextboxaction(object sender, MouseButtonEventArgs e)
         {
             
-            pv.btn_PickUp_Click(user.Name);
+            singletoneOBJ.phoneVOIP.btn_PickUp_Click(user.Name);
             this.Close();
 
         }

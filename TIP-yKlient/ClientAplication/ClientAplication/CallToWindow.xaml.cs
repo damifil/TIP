@@ -20,11 +20,9 @@ namespace ClientAplication
     /// 
     public partial class CallToWindow : Window
     {
-        internal PhoneVOIP phoneVOIP;
+        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         internal User user;
-        internal AplicationUser userLogged;
         internal DateTime dateBegin;
-        internal Client client;
         public CallToWindow()
         {
             InitializeComponent();
@@ -40,7 +38,7 @@ namespace ClientAplication
             if (_shown)
                 return;
 
-            phoneVOIP.callto = this;
+            singletoneOBJ.phoneVOIP.callto = this;
             stringWithName.Text = "Nawiązywanie połączenia z " + user.Name;
             _shown = true;
             
@@ -49,8 +47,8 @@ namespace ClientAplication
 
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            string searchList = client.sendMessage("SAVECALL " + userLogged.Name + " " +  user.Name + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
-            phoneVOIP.btn_HangUp_Click(user.Name);
+            string searchList = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " +  user.Name + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
+            singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
             
         }
