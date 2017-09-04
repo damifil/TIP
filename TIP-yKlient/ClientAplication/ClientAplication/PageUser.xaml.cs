@@ -28,7 +28,6 @@ namespace ClientAplication
 
         public UserPage()
         {
-            singletoneOBJ.listusercompare = true;
             InitializeComponent();
         }
         public UserPage(List<ListHistory> listHistory, string userFriend)
@@ -42,7 +41,12 @@ namespace ClientAplication
 
             items = new ObservableCollection<itemTB>();
             copyitems = new ObservableCollection<itemTB>();
-
+           if(singletoneOBJ.listUsers.Find(X=> X.name == userFriend).active == "True")
+            {
+               
+                callToFriendIco.Foreground = Brushes.Green;
+            }
+           
             foreach (ListHistory item in listHistory)
             {
                 items.Add(new itemTB()
@@ -65,7 +69,26 @@ namespace ClientAplication
         }
         private void callToFriend(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Dzwonimy do " + singletoneOBJ.user.Name);
+            MessageBox.Show("Tutaj2");
+            if (callToFriendIco.Foreground ==  Brushes.Green)
+            {
+                MessageBox.Show("Tutaj");
+                singletoneOBJ.phoneVOIP.nameCallToUser = userFriend;
+                bool call = singletoneOBJ.phoneVOIP.btn_PickUp_Click(userFriend);
+                CallToWindow main = new CallToWindow();
+                if (call == true)
+                {
+                    User a = new User(true, true);
+                    a.Name = userFriend;
+                    main.user = a;
+                    main.dateBegin = DateTime.Now;
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("problem z ozeki");
+                }
+            }
         }
         private void deleteFriend(object sender, RoutedEventArgs e)
         {

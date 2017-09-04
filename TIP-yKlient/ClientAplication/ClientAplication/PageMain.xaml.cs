@@ -20,10 +20,8 @@ namespace ClientAplication
     /// </summary>
     public partial class Page2 : Page
     {
-        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         public Page2()
         {
-            singletoneOBJ.listusercompare = true;
             InitializeComponent();
 
         }

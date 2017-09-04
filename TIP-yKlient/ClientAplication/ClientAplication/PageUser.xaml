@@ -36,7 +36,7 @@
             <TextBlock x:Name="stringInUserWindow" Style="{StaticResource SubTitle}" Margin="0,30,0,0" />
             <StackPanel Orientation="Horizontal" Margin="0,20,0,30">
                 <TextBlock x:Name="textBlock10" Text="Oddzwoń"  Style="{StaticResource SubTitle}" ></TextBlock>
-                <TextBlock x:Name="callToFriendIco"   Margin="40,0,0,0"  Text="&#xE0B0;" Foreground="Green" MouseLeftButtonDown="callToFriend"   Style="{StaticResource IcoRight}"></TextBlock>
+                <TextBlock x:Name="callToFriendIco"   Margin="40,0,0,0"  Text="&#xE0B0;" Foreground="Gray" MouseLeftButtonDown="callToFriend"   Style="{StaticResource IcoRight}"></TextBlock>
             </StackPanel>
 
 

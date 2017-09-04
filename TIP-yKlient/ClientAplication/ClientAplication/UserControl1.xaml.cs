@@ -44,7 +44,7 @@ namespace ClientAplication
             }
             catch (Exception e) { }
             InitializeComponent();
-
+            singletoneOBj.listusercompare = true;
             if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
                 return;

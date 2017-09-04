@@ -32,7 +32,6 @@ namespace ClientAplication
 
         public Page1(string login, List<ListHistory> listHistory)
         {
-            singletoneOBj.listusercompare = true;
 
             InitializeComponent();
            

@@ -28,7 +28,6 @@ namespace ClientAplication
         SingletoneObject singletoneOBj = SingletoneObject.GetInstance;
         public SettingsPage()
         {
-            singletoneOBj.listusercompare = true;
             InitializeComponent();
             //lista mikrofonów
             MIcrophoneDevices = Microphone.GetDevices();
