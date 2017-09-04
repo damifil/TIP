@@ -79,7 +79,15 @@ namespace ClientAplication
              }*/
         }
 
-
+        public void LogOff()
+        {
+            if (_softPhone != null && _phoneLine != null)
+            {
+                _softPhone.UnregisterPhoneLine(_phoneLine);
+                _phoneLine.Dispose();
+                _softPhone.Close();
+            }
+        }
         private void StartDevices()
         {
             if (_microphone != null)

@@ -298,6 +298,7 @@ namespace ClientAplication
             singletoneOBj.isOnlineThread.Abort();
             refreshListThread.Abort();
             singletoneOBj.client.sendMessage("EXIT " + singletoneOBj.user.Name);
+            singletoneOBj.phoneVOIP.LogOff();
             singletoneOBj.setdefaultvalue();
             LoginRegisterWindow main = new LoginRegisterWindow();
             Window.GetWindow(this).Close();
