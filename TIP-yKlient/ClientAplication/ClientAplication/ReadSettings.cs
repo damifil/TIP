@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ClientAplication
 {
@@ -55,13 +56,16 @@ namespace ClientAplication
 
         }
 
-        public void saveSettings(string ip, string port)
+        public void saveSettings(string ipk, string portk)
         {
             using (System.IO.StreamWriter file = new System.IO.StreamWriter("settings"))
             {
-                file.WriteLine(ip);
-                file.WriteLine(port);
+                file.WriteLine(ipk);
+                file.WriteLine(portk);
                 file.Close();
+                IP = ipk;
+                PORT = portk;  
+                MessageBox.Show("nastąpiłą pomyślna zmiana adresu ip");
             }
         }
     }

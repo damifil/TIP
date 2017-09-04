@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,10 +21,10 @@ namespace ClientAplication
     /// </summary>
     public partial class UserControl2 : UserControl
     {
-        ReadSettings rs;
+        ReadSettings rs=ReadSettings.GetInstance;
         public UserControl2()
         {
-            rs = new ReadSettings();
+            
             InitializeComponent();
             adresIPinput.Text = rs.IP;
             numberPortInput.Text = rs.PORT;
@@ -31,7 +32,15 @@ namespace ClientAplication
 
         private void change_click(object sender, RoutedEventArgs e)
         {
-            rs.saveSettings(adresIPinput.Text, numberPortInput.Text);
+            IPAddress address;
+            if (adresIPinput.Text.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Length == 4) {
+                if (IPAddress.TryParse(adresIPinput.Text, out address))
+                {
+                    rs.saveSettings(adresIPinput.Text, numberPortInput.Text);
+                    return;
+                }
+            }
+                MessageBox.Show("niepoprawny adres IP");
         }
     }
 }

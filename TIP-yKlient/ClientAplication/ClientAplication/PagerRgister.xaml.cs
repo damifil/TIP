@@ -23,6 +23,7 @@ namespace ClientAplication
 
         LoginRegisterManagment LRM;
         ReadSettings readSettings;
+        SingletoneObject singletone = SingletoneObject.GetInstance;
         public register()
         {
             InitializeComponent();
@@ -59,12 +60,12 @@ private void Button_register(object sender, RoutedEventArgs e)
                 MessageBox.Show("Hasła nie są takie same");
                 return;
             }
-            if (LRM.client == null)
+            if (singletone.client == null)
             {
                 readSettings = ReadSettings.GetInstance;
-                LRM.client = new Client(readSettings.IP, Convert.ToInt32(readSettings.PORT));
+                singletone.client = new Client(readSettings.IP, Convert.ToInt32(readSettings.PORT));
             }
-            string flag = LRM.client.sendMessage("REGISTER " + login + " " + password1);
+            string flag = singletone.client.sendMessage("REGISTER " + login + " " + password1);
             if(flag == "ERROR")
             {
                 MessageBox.Show("Login jest zajęty");

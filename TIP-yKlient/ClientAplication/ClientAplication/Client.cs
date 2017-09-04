@@ -23,8 +23,11 @@ namespace ClientAplication
         public Client(string ipAddress, int portNum)
         {
             client = new TcpClient();
-            client.Connect(ipAddress, portNum);
-
+            try
+            {
+                client.Connect(ipAddress, portNum);
+            }
+            catch (Exception e) { client.Dispose(); throw; }
             HandleCommunication();
             diffieHelman = new DiffieHelman();
             diffieHelman.CreateDH(streamReader, streamWriter);

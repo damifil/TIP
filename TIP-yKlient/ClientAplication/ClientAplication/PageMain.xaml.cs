@@ -23,7 +23,9 @@ namespace ClientAplication
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         public Page2()
         {
+            singletoneOBJ.listusercompare = true;
             InitializeComponent();
+
         }
 
      

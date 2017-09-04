@@ -28,6 +28,7 @@ namespace ClientAplication
         SingletoneObject singletoneOBj = SingletoneObject.GetInstance;
         public SettingsPage()
         {
+            singletoneOBj.listusercompare = true;
             InitializeComponent();
             //lista mikrofonów
             MIcrophoneDevices = Microphone.GetDevices();
@@ -40,6 +41,7 @@ namespace ClientAplication
             CBSound.ItemsSource = SpeakerDevices;
             CBSound.SelectedIndex = 0;
             UC.settings.Visibility = System.Windows.Visibility.Hidden;
+
         }
 
 

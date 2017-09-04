@@ -23,7 +23,7 @@ namespace ClientAplication
     {
         internal ObservableCollection<itemTB> items;
         internal ObservableCollection<itemTB> copyitems;
-        SingletoneObject singletoneOBj;
+        SingletoneObject singletoneOBj=SingletoneObject.GetInstance;
 
         public Page1()
         {
@@ -32,6 +32,8 @@ namespace ClientAplication
 
         public Page1(string login, List<ListHistory> listHistory)
         {
+            singletoneOBj.listusercompare = true;
+
             InitializeComponent();
            
             items = new ObservableCollection<itemTB>();

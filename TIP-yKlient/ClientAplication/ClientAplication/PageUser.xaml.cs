@@ -28,6 +28,7 @@ namespace ClientAplication
 
         public UserPage()
         {
+            singletoneOBJ.listusercompare = true;
             InitializeComponent();
         }
         public UserPage(List<ListHistory> listHistory, string userFriend)

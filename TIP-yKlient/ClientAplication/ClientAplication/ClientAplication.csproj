@@ -102,9 +102,6 @@
       <DependentUpon>PagerRgister.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReadSettings.cs" />
-    <Compile Include="Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PageSettings.xaml.cs">
       <DependentUpon>PageSettings.xaml</DependentUpon>
     </Compile>
@@ -124,9 +121,6 @@
     </Compile>
     <Compile Include="UserControlSettingLoginRegister.xaml.cs">
       <DependentUpon>UserControlSettingLoginRegister.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserWindow.xaml.cs">
-      <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ValidationClass.cs" />
     <Page Include="CallFrom.xaml">
@@ -173,10 +167,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,10 +188,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlSettingLoginRegister.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

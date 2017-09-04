@@ -21,7 +21,8 @@ namespace ClientAplication
     public partial class login : Page 
     {
         LoginRegisterManagment LRM;
-        ReadSettings readSettings;
+        ReadSettings readSettings=ReadSettings.GetInstance;
+        SingletoneObject singletone = SingletoneObject.GetInstance;
         public login()
         {
             InitializeComponent();
@@ -53,21 +54,21 @@ namespace ClientAplication
             string password = passwordInput.Password;
             string receiveCommunicate = null;
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
-            readSettings = ReadSettings.GetInstance;
+           
 
-          
                 try
                 {
-                    LRM.client = new Client(readSettings.IP , Convert.ToInt32(readSettings.PORT));
-                    receiveCommunicate = LRM.client.sendMessage("LOGIN " + login + " " + password);
+                    singletone.client = new Client(readSettings.IP , Convert.ToInt32(readSettings.PORT));
+                    receiveCommunicate = singletone.client.sendMessage("LOGIN " + login + " " + password);
                 }
-                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm");  return; }
+                catch (Exception ex) { MessageBox.Show("Wystapil problem podczas polaczenia z serwererm2");
+              
+                return; }
          
 
 
             if (receiveCommunicate != "OK")
             {
-                MessageBox.Show("tutja");
                 MessageBox.Show(receiveCommunicate);
                 return;
             }
