@@ -136,12 +136,9 @@ namespace TIPySerwer
                 byte[] userPass = user.Password;
                 if (!userPass.SequenceEqual(oPass))
                 {
-                    Console.WriteLine("Błędne hasło stare");
+                    return "Wpisane stare hasło nie jest takie samo jak aktualne hasło.";
                     
                 }
-
-
-
                 
                 byte[] nPass = HashPassword(newPassword);
                 user.Password = nPass;

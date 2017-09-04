@@ -34,7 +34,6 @@ namespace ClientAplication
             bool hasUpperCaseLetter = false;
             bool hasLowerCaseLetter = false;
             bool hasDecimalDigit = false;
-            Console.WriteLine("haslo " + password + " flaga " + meetsLengthRequirements);
             if (meetsLengthRequirements)
             {
                 foreach (char c in password)
@@ -44,7 +43,6 @@ namespace ClientAplication
                     else if (char.IsDigit(c)) hasDecimalDigit = true;
                 }
             }
-            Console.WriteLine("isupp " + hasUpperCaseLetter + " down " + hasLowerCaseLetter + " dec " + hasDecimalDigit);
 
             bool isValid = meetsLengthRequirements
                         && hasUpperCaseLetter

@@ -66,6 +66,46 @@ namespace ClientAplication
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (!ValidationClass.isValidPassword(OldPassword.Password.ToString()))
+            {
+                MessageBox.Show("Stare hasło ma zły format. Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
+                return;
+            }
+            if (!ValidationClass.isValidPassword(newPassword.Password.ToString()))
+            {
+                MessageBox.Show("Nowe hasło ma zły format. Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
+                return;
+            }
+
+            if (OldPassword.Password.ToString() != newPassword.Password.ToString())
+            {
+                if (newPassword.Password.ToString() == newPassword2.Password.ToString())
+                {
+                    //akcja wysyłania nowego adresu email.
+                    string message = singletoneOBj.client.sendMessage("CHPASS " + singletoneOBj.user.Name + " " + OldPassword.Password.ToString() + " " + newPassword.Password.ToString());
+                    switch(message)
+                    {
+                        case "OK":
+                            MessageBox.Show("Hasło zostało zmienione");
+                            return;
+                        case "ERROR":
+                            MessageBox.Show("Hasło nie zostało zmienione");
+                            return;
+                        default:
+                            MessageBox.Show(message);
+                            return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wpisane hasła nie są takie same w polach \"Nowe hasło\" i \"Powtórz hasło\" ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nowe hasło musi być inne niż stare");
+            }
+            /*
             if (ValidationClass.isValidPassword(OldPassword.Password.ToString())
                 && ValidationClass.isValidPassword(newPassword.Password.ToString()))
             {
@@ -83,13 +123,13 @@ namespace ClientAplication
                 }
                 else
                 {
-                    MessageBox.Show("Nowe hasło musi być inne niż stare ");
+                    MessageBox.Show("Nowe hasło musi być inne niż stare");
                 }
             }
             else
             {
-                MessageBox.Show("Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n*jedną małą literę\n*jedną dużą literę\n*jedną cyfrę");
-            }
+                MessageBox.Show("Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
+            }*/
         }
 
         private void deleteAcount(object sender, MouseButtonEventArgs e)
