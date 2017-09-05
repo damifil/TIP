@@ -67,6 +67,7 @@ namespace TIPySerwer
         protected override void OnUnregisterReceived(ISIPExtension extension)
         {
             Console.WriteLine("Otrzymano żadanie wyrejestrowania od: " + extension.ExtensionID);
+
             base.OnUnregisterReceived(extension);
         }
 

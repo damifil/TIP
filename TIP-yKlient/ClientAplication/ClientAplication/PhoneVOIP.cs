@@ -37,7 +37,7 @@ namespace ClientAplication
         private bool _localHeld;
         CallFrom main=null;
         internal CallTransmision transimiso = null;
-
+        SIPAccount sa;
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
             IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
@@ -57,7 +57,7 @@ namespace ClientAplication
                 _softPhone.IncomingCall += softPhone_inComingCall;
                 byte[] userPass = HashPassword(password);
                 string pass = System.Text.Encoding.UTF8.GetString(userPass, 0, userPass.Length);
-                SIPAccount sa = new SIPAccount(true, login, login, login, pass, adresIP, port);
+                sa = new SIPAccount(true, login, login, login, pass, adresIP, port);
                 InvokeGUIThread(() => { });
 
                 _phoneLine = _softPhone.CreatePhoneLine(sa);
@@ -65,7 +65,7 @@ namespace ClientAplication
                 InvokeGUIThread(() => { });
                 _softPhone.RegisterPhoneLine(_phoneLine);
 
-
+                
 
                 _inComingCall = false;
                 _reDialNumber = string.Empty;
@@ -85,8 +85,10 @@ namespace ClientAplication
             {
                 _softPhone.IncomingCall -= softPhone_inComingCall;
                 _softPhone.UnregisterPhoneLine(_phoneLine);
+                _phoneLine.RegistrationStateChanged -= phoneLine_PhoneLineInformation;
                 _phoneLine.Dispose();
                 _softPhone.Close();
+                sa = null;
             }
         }
         private void StartDevices()
@@ -243,6 +245,8 @@ namespace ClientAplication
                 WireDownCallEvents();
 
                 _call = null;
+                _softPhone.IncomingCall -= softPhone_inComingCall;
+
                 _inComingCall = false;
                 InvokeGUIThread(() => { });
                 System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
