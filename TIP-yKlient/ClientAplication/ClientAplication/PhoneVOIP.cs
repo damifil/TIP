@@ -82,10 +82,12 @@ namespace ClientAplication
         {
             if (_softPhone != null && _phoneLine != null)
             {
-               
-                _softPhone.UnregisterPhoneLine(_phoneLine);
-                _softPhone.IncomingCall -= softPhone_inComingCall;
                 _phoneLine.RegistrationStateChanged -= phoneLine_PhoneLineInformation;
+
+                _softPhone.IncomingCall -= softPhone_inComingCall;
+
+
+                _softPhone.UnregisterPhoneLine(_phoneLine);
                 _phoneLine.Dispose();
                 _softPhone.Close();
                 sa = null;

@@ -34,8 +34,9 @@
                 <StackPanel Margin="0,0,20,0"  >
 
                     <StackPanel Orientation="Horizontal" Margin="0,40,0,10">
-            <TextBlock Text="Mikrofon"  Style="{StaticResource SubTitle}"/>
-                        <TextBlock Text="&#xE8C8;" Margin="20,0,0,0" Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="&#xE8C8;"  Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Mikrofon" Margin="10,0,0,0" Style="{StaticResource SubTitle}"/>
+
                     </StackPanel>
                     <ComboBox x:Name="CBMicrophone">
                 <ComboBox.ItemContainerStyle>
@@ -46,8 +47,8 @@
                 </ComboBox.ItemContainerStyle>
             </ComboBox>
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,10">
-            <TextBlock Text="Głośnik"  Style="{StaticResource SubTitle}" />
-                        <TextBlock Text="&#xE023;" Margin="35,0,0,0" Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="&#xE023;"  Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="Głośnik" Margin="10,0,0,0" Style="{StaticResource SubTitle}" />
 
                     </StackPanel>
                     <ComboBox x:Name="CBSound" >
@@ -65,7 +66,7 @@
             <TextBlock Text="nowe hasło" Margin="0,20,0,10"/>
             <PasswordBox x:Name="newPassword"/>
 
-            <TextBlock Text="powtórz nowe hasło" Margin="20,0,0,10"/>
+            <TextBlock Text="powtórz nowe hasło" Margin="0,20,0,10"/>
             <PasswordBox x:Name="newPassword2"/>
             <Button  Margin="0,10,0,0" Content="Zmień hasło" Click="Button_Click"/>
                   

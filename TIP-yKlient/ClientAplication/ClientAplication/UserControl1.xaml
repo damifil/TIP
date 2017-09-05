@@ -10,7 +10,10 @@
 
         <StackPanel Orientation="Vertical">
             <DockPanel >
-                <TextBlock x:Name="userNameTB" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource Title}"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="userNameTB" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource Title}"/>
+                    <TextBlock x:Name="logOut" Margin="0,0,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE879;" Style="{StaticResource IcoRight}" HorizontalAlignment="Left"></TextBlock>
+                </StackPanel>
                 <StackPanel Orientation="Vertical"  Name="menuButtonbSP" HorizontalAlignment="Right"  >
                     <TextBlock x:Name="settings"  MouseLeftButtonDown="settingsTextboxaction" Text="&#xE5D2;"   Style="{StaticResource IcoRight}"></TextBlock>
                     <TextBlock x:Name="history" Margin="0,5,0,0" MouseLeftButtonDown="historyTextboxaction"  Text="&#xE889;" Style="{StaticResource IcoRight}" ></TextBlock>
@@ -33,7 +36,7 @@
                                 <Style TargetType="MenuItem">
                                     <Setter Property="Visibility" Value="Hidden"/>
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Path=IcoColor}" Value="green">
+                                        <DataTrigger Binding="{Binding Path=IcoColor}" Value="DarkOrange">
                                             <Setter Property="Visibility" Value="Visible"/>
                                         </DataTrigger>
                                     </Style.Triggers>
@@ -56,7 +59,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock x:Name="logOut" Margin="0,30,0,0"  MouseLeftButtonDown="logOutTextboxaction" Text="&#xE879;" Style="{StaticResource IcoRight}"></TextBlock>
         </StackPanel>
 
     </Grid>

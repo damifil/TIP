@@ -55,10 +55,10 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical" Margin="20" >
-                                <TextBlock Text="{Binding Path=Describe}" Style="{StaticResource listItem}"  Width="300"   />
-                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                                    <TextBlock Text="oddzwoń    "  Style="{StaticResource listItem}"  />
-                                    <TextBlock Text="&#xE0CD;" Padding="5" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource MaterialIcon}" FontSize="20"/>
+                                <TextBlock Text="{Binding Path=Describe}"   Width="300" TextWrapping="Wrap"   />
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                                    <TextBlock Text="oddzwoń    "  VerticalAlignment="Center" />
+                                    <TextBlock Text="&#xE0CD;" VerticalAlignment="Center" Padding="5" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource MaterialIcon}" FontSize="20"/>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
