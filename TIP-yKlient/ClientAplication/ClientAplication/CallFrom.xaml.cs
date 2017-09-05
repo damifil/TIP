@@ -26,20 +26,15 @@ namespace ClientAplication
         public CallFrom()
         {
             InitializeComponent();
-
         }
 
-
-      
 
         bool _shown;
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
-
             if (_shown)
                 return;
-
 
             stringWithName.Text = "Połączenie " + user.Name;
             _shown = true;
@@ -52,17 +47,22 @@ namespace ClientAplication
             string saveCall = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " + nameCallToUser + " " + dateBegin + " " + DateTime.Now.ToString());
             singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
-
         }
 
         private void callAceptTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            
             singletoneOBJ.phoneVOIP.btn_PickUp_Click(user.Name);
             this.Close();
-
         }
 
-
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            try
+            {
+                base.OnMouseLeftButtonDown(e);
+                this.DragMove();
+            }
+            catch (Exception exc) { }
+        }
     }
 }

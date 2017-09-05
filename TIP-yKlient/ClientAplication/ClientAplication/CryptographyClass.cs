@@ -168,24 +168,35 @@ namespace ClientAplication
         }
         public void sendMessage(string sData, StreamWriter sWriter, string comunique)
         {
-            sWriter.WriteLine(comunique);
-            sWriter.Flush();
-            String messageSend = Cryptography.Encrypt(sData, secretByteArray);
-            sWriter.WriteLine(messageSend);
-            sWriter.Flush();
+            try
+            {
+                sWriter.WriteLine(comunique);
+                sWriter.Flush();
+                String messageSend = Cryptography.Encrypt(sData, secretByteArray);
+                sWriter.WriteLine(messageSend);
+                sWriter.Flush();
+            }
+            catch (Exception ex) { return; }
         }
         public void sendMessage1(string sData, StreamWriter sWriter)
         {
-            String messageSend = Cryptography.Encrypt(sData, secretByteArray);
+            try
+            {
+                String messageSend = Cryptography.Encrypt(sData, secretByteArray);
             sWriter.WriteLine(messageSend);
             sWriter.Flush();
+            }
+            catch (Exception ex) { return; }
         }
         public string reciveMessage(StreamReader sReader)
         {
+            try { 
             string sData = sReader.ReadLine();
             string messageDecrypt = "";
             messageDecrypt = Cryptography.Decrypt(sData, secretByteArray);
             return messageDecrypt.TrimEnd('\0');
+            }
+            catch (Exception ex) { return "error"; }
         }
         public void CreateDH(StreamReader _sReader, StreamWriter sWriter)
         {

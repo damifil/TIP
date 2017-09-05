@@ -240,12 +240,15 @@ namespace ClientAplication
                 InvokeGUIThread(() => { });
                 System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    Console.WriteLine("close winodw");
+                    
                     if (transimiso != null)
-                    { transimiso.Close(); transimiso = null; }
+                    {transimiso = null; }
                     if (callto != null)
                     { callto.Close(); callto = null; }
-
+                    if(main!=null)
+                    {
+                        main.Close(); main = null;
+                    }
                 }));
             }
 

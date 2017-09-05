@@ -26,7 +26,6 @@ namespace ClientAplication
         public CallToWindow()
         {
             InitializeComponent();
-            
         }
 
 
@@ -37,7 +36,6 @@ namespace ClientAplication
 
             if (_shown)
                 return;
-
             singletoneOBJ.phoneVOIP.callto = this;
             stringWithName.Text = "Nawiązywanie połączenia z " + user.Name;
             _shown = true;
@@ -50,8 +48,16 @@ namespace ClientAplication
             string searchList = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " +  user.Name + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
             singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
-            
         }
 
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            try
+            {
+                base.OnMouseLeftButtonDown(e);
+                this.DragMove();
+            }
+            catch (Exception exc) { }
+        }
     }
 }

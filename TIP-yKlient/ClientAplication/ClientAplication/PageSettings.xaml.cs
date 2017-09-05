@@ -62,7 +62,6 @@ namespace ClientAplication
         {
             singletoneOBj.phoneVOIP._speaker.Dispose();
             singletoneOBj.phoneVOIP._speaker = Speaker.GetDevice(SpeakerDevices[CBSound.SelectedIndex]);
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -106,58 +105,8 @@ namespace ClientAplication
             {
                 MessageBox.Show("Nowe hasło musi być inne niż stare");
             }
-            /*
-            if (ValidationClass.isValidPassword(OldPassword.Password.ToString())
-                && ValidationClass.isValidPassword(newPassword.Password.ToString()))
-            {
-                if (OldPassword.Password.ToString() != newPassword.Password.ToString())
-                {
-                    if (newPassword.Password.ToString() == newPassword2.Password.ToString())
-                    {
-                        //akcja wysyłania nowego adresu email.
-                        string message = singletoneOBj.client.sendMessage("CHPASS " + singletoneOBj.user.Name+" "+ OldPassword.Password.ToString() + " " + newPassword.Password.ToString());
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisane hasła nie są takie same w polach \"Nowe hasło\" i \"Powtórz hasło\" ");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Nowe hasło musi być inne niż stare");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
-            }*/
         }
 
-        private void deleteAcount(object sender, MouseButtonEventArgs e)
-        {
-
-            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć konto", "Usunięcie konta", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                string message = singletoneOBj.client.sendMessage("DELACCOUNT " + singletoneOBj.user.Name);
-                if (message == "OK") 
-                {
-                    MessageBox.Show("Pomyślnie usunięto konto");
-                    singletoneOBj.isOnlineThread.Abort();
-                    UC.refreshListThread.Abort();
-                    singletoneOBj.setdefaultvalue();
-                    LoginRegisterWindow main = new LoginRegisterWindow();
-                    Window.GetWindow(this).Close();
-                    main.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Wystąpił problem podczas usuwania konta");
-                }
-
-            }
-
-        }
+   
     }
 }

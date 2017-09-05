@@ -69,10 +69,8 @@ namespace ClientAplication
         }
         private void callToFriend(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Tutaj2");
             if (callToFriendIco.Foreground ==  Brushes.Green)
             {
-                MessageBox.Show("Tutaj");
                 singletoneOBJ.phoneVOIP.nameCallToUser = userFriend;
                 bool call = singletoneOBJ.phoneVOIP.btn_PickUp_Click(userFriend);
                 CallToWindow main = new CallToWindow();

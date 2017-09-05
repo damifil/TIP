@@ -155,7 +155,6 @@ namespace ClientAplication
                 User user = (User)cmd.DataContext;
                 if (user.isFriend == true && user.isActive==true )
                 {
-                    MessageBox.Show("tutaj");
                     singletoneOBj.phoneVOIP.nameCallToUser = user.Name;
                     bool call = singletoneOBj.phoneVOIP.btn_PickUp_Click(user.Name);
                     CallToWindow main = new CallToWindow();
@@ -194,7 +193,6 @@ namespace ClientAplication
                     }
 
                 }
-                MessageBox.Show("tutaj2");
             }
         }
 
@@ -271,8 +269,6 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-
-            
             var page = new Page1(singletoneOBj.user.Name, GetAllHistory(singletoneOBj.user.Name));
             singletoneOBj.mainwindow.Content = page;
            
@@ -283,7 +279,6 @@ namespace ClientAplication
             singletoneOBj.mainwindow.Width = 300;
             var page = new Page2();
             singletoneOBj.mainwindow.Content = page;
-
         }
 
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)
@@ -296,7 +291,6 @@ namespace ClientAplication
         private void logOutTextboxaction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBj.isOnlineThread.Abort();
-            refreshListThread.Abort();
             singletoneOBj.client.sendMessage("EXIT " + singletoneOBj.user.Name);
             singletoneOBj.phoneVOIP.LogOff();
             singletoneOBj.setdefaultvalue();

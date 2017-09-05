@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientAplication"
         mc:Ignorable="d"
-        Title="CallFrom" Height="300" Width="300">
+        Title="CallFrom" Height="200" Width="300"
+         ResizeMode="NoResize" Background="#F5F5F6" AllowsTransparency="True" WindowStyle="None"
+        >
     <Grid>
-        <TextBlock x:Name="stringWithName" HorizontalAlignment="Left" Margin="61,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBlock x:Name="callIco" Foreground="Red" MouseLeftButtonDown="callDisconectTextboxaction" Text="&#xf098;" FontFamily="{StaticResource FontAwesome}"  FontSize="29.333" Margin="198,130,63,105" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29" Height="35"></TextBlock>
-        <TextBlock x:Name="callIco2" Foreground="Green" PreviewMouseLeftButtonDown="callAceptTextboxaction" Text="&#xf098;" FontFamily="{StaticResource FontAwesome}"  FontSize="29.333" Margin="61,130,200,105" VerticalAlignment="Center" RenderTransformOrigin="0.839,1.29" Height="35"></TextBlock>
-
+        <StackPanel Orientation="Vertical" Margin="30">
+        <TextBlock x:Name="stringWithName"  Style="{StaticResource SubTitle}" HorizontalAlignment="Center"/>
+        <DockPanel  Margin="0,50,0,0">
+                <TextBlock x:Name="callIco2" Foreground="Green" PreviewMouseLeftButtonDown="callAceptTextboxaction" Text="&#xE0CD;" Style="{StaticResource IcoRight}" />
+                <TextBlock x:Name="callIco" Foreground="Red" MouseLeftButtonDown="callDisconectTextboxaction" Text="&#xE0B1;" Style="{StaticResource IcoRight}"  />
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </Window>
