@@ -151,10 +151,6 @@ namespace TIPySerwer
                     case "ERROR":
                         bClientConnected = false;
                         break;
-                    case "LASTACTIVITY":  // uzyskanie ostatniej aktywnosci
-                        sData= UserManager.UserLastActivity(fragmentCommunication[1]);
-                        bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);
-                        break;
                     default:
                         sData = "Nieprawidłowe żądanie";
                         bClientConnected = diffieHelman.sendMessage(sData, diffieHelman, sWriter);

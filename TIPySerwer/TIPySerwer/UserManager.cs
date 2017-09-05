@@ -72,7 +72,6 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                user.DateLastActiv = DateTime.Now;
                 user.Is_Active = true;
                 db.SaveChanges();
             }
@@ -166,14 +165,7 @@ namespace TIPySerwer
             }
             return "OK";
         }
-        public static string UserLastActivity(string login)
-        {
-            using (tipBDEntities db = new tipBDEntities())
-            {
-                Users user = db.Users.Where(x => x.Login == login).Single();
-                return user.DateLastActiv.ToString();
-            }
-        }
+      
         public static string GetAllHistory(string login)   // pobranie wszystkich rozmow danego uzytkownika
         {
             string history = "";
