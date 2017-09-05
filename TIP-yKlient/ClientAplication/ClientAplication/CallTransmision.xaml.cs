@@ -28,14 +28,14 @@ namespace ClientAplication
         internal Client client;
         internal string nameCallToUser;
         internal DateTime dateBegin;
-        
-       public int timesek = 0;
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        public int timesek = 0;
         public CallTransmision()
         {
             InitializeComponent();
            
             Application.Current.MainWindow.Closing += new CancelEventHandler(Window_Closing);
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+           
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
@@ -58,9 +58,7 @@ namespace ClientAplication
 
         void Window_Closing(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("zamknelo");
-            
-
+            dispatcherTimer.Stop();
         }
 
         

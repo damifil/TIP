@@ -242,13 +242,14 @@ namespace ClientAplication
                 {
                     
                     if (transimiso != null)
-                    {transimiso = null; }
-                    if (callto != null)
-                    { callto.Close(); callto = null; }
-                    if(main!=null)
+                    { transimiso.Close(); transimiso = null; }
+                    else if (main != null)
                     {
                         main.Close(); main = null;
                     }
+                    if (callto != null)
+                    { callto.Close(); callto = null; }
+                    
                 }));
             }
 

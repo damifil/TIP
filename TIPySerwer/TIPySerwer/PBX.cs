@@ -19,6 +19,8 @@ namespace TIPySerwer
             Console.WriteLine("Adres serwera: " + localAddress);
         }
 
+
+
         protected override void OnStart()
         {
             SetListenPort(localAddress, 5060, TransportType.Udp);
@@ -74,5 +76,8 @@ namespace TIPySerwer
             base.OnCallRequestReceived(call);
         }
 
+        
+
+       
     }
 }
