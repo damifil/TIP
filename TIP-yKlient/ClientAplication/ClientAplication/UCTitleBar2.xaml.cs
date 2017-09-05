@@ -27,6 +27,10 @@ namespace ClientAplication
         private void closeButon_Click(object sender, RoutedEventArgs e)
         {
             SingletoneObject s = SingletoneObject.GetInstance;
+            if (s.phoneVOIP != null)
+            {
+                s.phoneVOIP.LogOff();
+            }
             if (s.isloged == true) { s.isOnlineThread.Abort(); s.client.sendMessage("EXIT " + s.user.Name); }
             Application.Current.Shutdown();
         }

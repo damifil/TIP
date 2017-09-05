@@ -35,7 +35,7 @@ namespace ClientAplication
         private string _reDialNumber;
 
         private bool _localHeld;
-        CallFrom main;
+        CallFrom main=null;
         internal CallTransmision transimiso = null;
 
         public static byte[] HashPassword(string password)          // haszowanie hasla
@@ -83,6 +83,7 @@ namespace ClientAplication
         {
             if (_softPhone != null && _phoneLine != null)
             {
+                _softPhone.IncomingCall -= softPhone_inComingCall;
                 _softPhone.UnregisterPhoneLine(_phoneLine);
                 _phoneLine.Dispose();
                 _softPhone.Close();
@@ -158,13 +159,16 @@ namespace ClientAplication
 
             System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
             {
-                main = new CallFrom();
-                main.user = new User(true,true);
-                main.dateBegin = DateTime.Now;
-                main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
-                nameCallToUser = e.Item.DialInfo.CallerDisplay;
-                main.user.Name = e.Item.DialInfo.CallerDisplay;
-                main.Show();
+                if (main == null)
+                {
+                    main = new CallFrom();
+                    main.user = new User(true, true);
+                    main.dateBegin = DateTime.Now;
+                    main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                    nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                    main.user.Name = e.Item.DialInfo.CallerDisplay;
+                    main.Show();
+                }
             }));
 
 
@@ -198,7 +202,7 @@ namespace ClientAplication
 
         private void call_CallStateChanged(object sender, CallStateChangedArgs e)
         {
-            InvokeGUIThread(() => { });
+            InvokeGUIThread(() => {  });
 
             if (e.State == CallState.Answered)
             {
@@ -215,12 +219,15 @@ namespace ClientAplication
                 {
                     if (callto != null)
                     { callto.Close(); callto = null; }
-                    transimiso = new CallTransmision();
-                    transimiso.nameCallToUser = nameCallToUser;
-                    transimiso.dateBegin = DateTime.Now;
-                    transimiso.client = client;
-                    transimiso.user = new User(true,true);
-                    transimiso.Show();
+                    if (transimiso == null)
+                    {
+                        transimiso = new CallTransmision();
+                        transimiso.nameCallToUser = nameCallToUser;
+                        transimiso.dateBegin = DateTime.Now;
+                        transimiso.client = client;
+                        transimiso.user = new User(true, true);
+                        transimiso.Show();
+                    }
                 }));
             }
 
@@ -240,10 +247,9 @@ namespace ClientAplication
                 InvokeGUIThread(() => { });
                 System.Windows.Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    
                     if (transimiso != null)
                     { transimiso.Close(); transimiso = null; }
-                    else if (main != null)
+                    if (main != null)
                     {
                         main.Close(); main = null;
                     }
@@ -321,7 +327,6 @@ namespace ClientAplication
                 if (_inComingCall && _call.CallState == CallState.Ringing)
                 {
                     _call.Reject();
-                    InvokeGUIThread(() => { MessageBox.Show("polaczenie odrzucone przz uzytkownika"); });
                 }
                 else
                 {
