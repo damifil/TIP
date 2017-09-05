@@ -62,7 +62,6 @@ namespace ClientAplication
 
                 _phoneLine = _softPhone.CreatePhoneLine(sa);
                 _phoneLine.RegistrationStateChanged += phoneLine_PhoneLineInformation;
-                InvokeGUIThread(() => { });
                 _softPhone.RegisterPhoneLine(_phoneLine);
 
                 
@@ -83,8 +82,9 @@ namespace ClientAplication
         {
             if (_softPhone != null && _phoneLine != null)
             {
-                _softPhone.IncomingCall -= softPhone_inComingCall;
+               
                 _softPhone.UnregisterPhoneLine(_phoneLine);
+                _softPhone.IncomingCall -= softPhone_inComingCall;
                 _phoneLine.RegistrationStateChanged -= phoneLine_PhoneLineInformation;
                 _phoneLine.Dispose();
                 _softPhone.Close();
@@ -245,7 +245,6 @@ namespace ClientAplication
                 WireDownCallEvents();
 
                 _call = null;
-                _softPhone.IncomingCall -= softPhone_inComingCall;
 
                 _inComingCall = false;
                 InvokeGUIThread(() => { });
