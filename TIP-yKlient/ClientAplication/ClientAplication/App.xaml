@@ -124,7 +124,7 @@
             <Setter Property="FontSize" Value="30"/>
             <Style.Triggers>
                     <Trigger Property ="IsMouseOver" Value="True">
-                    <Setter Property= "Foreground" Value="#BAE2F9"/>
+                    <Setter Property= "Foreground" Value="#8AACC8"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -139,7 +139,7 @@
             <Setter Property="Foreground" Value="{Binding Path=IcoColor}" />
             <Style.Triggers>
                 <Trigger Property ="IsMouseOver" Value="True">
-                    <Setter Property= "Foreground" Value="#BAE2F9"/>
+                    <Setter Property= "Foreground" Value="#8AACC8"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -153,7 +153,7 @@
             <Setter Property="Foreground" Value="Green" />
             <Style.Triggers>
                 <Trigger Property ="IsMouseOver" Value="True">
-                    <Setter Property= "Foreground" Value="#BAE2F9"/>
+                    <Setter Property= "Foreground" Value="#8AACC8"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
