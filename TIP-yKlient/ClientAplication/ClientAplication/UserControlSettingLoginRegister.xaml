@@ -12,11 +12,11 @@
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"  Text="Ustawienia " FontSize="30"/>
                 <TextBlock  VerticalAlignment="Center" TextWrapping="Wrap" Margin="120,0,0,0" FontFamily="{StaticResource MaterialIcon}" Text="&#xE8B8;" FontSize="30"/>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,5"  TextWrapping="Wrap" Text="adres ip serwera" VerticalAlignment="Top" />
+            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,5"  TextWrapping="Wrap" Text="Adres IP serwera" VerticalAlignment="Top" />
             <DockPanel>
                 <TextBox x:Name="adresIPinput"  TextWrapping="Wrap" Text="192.168.8.102" VerticalAlignment="Top" />
             </DockPanel>
-            <TextBlock HorizontalAlignment="Left" Margin="0,20,0,5" TextWrapping="Wrap" Text="numer portu serwera" VerticalAlignment="Top" />
+            <TextBlock HorizontalAlignment="Left" Margin="0,20,0,5" TextWrapping="Wrap" Text="Numer portu serwera" VerticalAlignment="Top" />
             <DockPanel>
             <TextBox x:Name="numberPortInput"    TextWrapping="Wrap" Text="5555" VerticalAlignment="Top"  />
             </DockPanel>

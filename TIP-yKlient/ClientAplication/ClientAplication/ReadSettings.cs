@@ -65,7 +65,7 @@ namespace ClientAplication
                 file.Close();
                 IP = ipk;
                 PORT = portk;  
-                MessageBox.Show("nastąpiłą pomyślna zmiana adresu ip");
+                MessageBox.Show("Pomyślnie zmieniono adres IP oraz port serwera");
             }
         }
     }

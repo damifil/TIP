@@ -27,7 +27,6 @@ namespace TIPySerwer.Models
         public string Login { get; set; }
         public byte[] Password { get; set; }
         public string IP_Address { get; set; }
-        public Nullable<System.DateTime> DateLastActiv { get; set; }
         public Nullable<bool> Is_Active { get; set; }
         public Nullable<bool> Is_Exists { get; set; }
     

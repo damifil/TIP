@@ -26,7 +26,6 @@
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Is_Exists" ColumnName="Is_Exists" />
           <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
-          <ScalarProperty Name="DateLastActiv" ColumnName="DateLastActiv" />
           <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Login" ColumnName="Login" />

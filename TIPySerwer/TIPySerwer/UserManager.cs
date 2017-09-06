@@ -72,7 +72,6 @@ namespace TIPySerwer
             using (tipBDEntities db = new tipBDEntities())
             {
                 Users user = db.Users.Where(x => x.Login == login).Single();
-                user.DateLastActiv = DateTime.Now;
                 user.Is_Active = true;
                 db.SaveChanges();
             }
@@ -166,14 +165,7 @@ namespace TIPySerwer
             }
             return "OK";
         }
-        public static string UserLastActivity(string login)
-        {
-            using (tipBDEntities db = new tipBDEntities())
-            {
-                Users user = db.Users.Where(x => x.Login == login).Single();
-                return user.DateLastActiv.ToString();
-            }
-        }
+      
         public static string GetAllHistory(string login)   // pobranie wszystkich rozmow danego uzytkownika
         {
             string history = "";
@@ -203,7 +195,7 @@ namespace TIPySerwer
                 }                
             }
 
-            callsHistory = callsHistory.OrderBy(x => x.dateBegin).ToList();
+            callsHistory = callsHistory.OrderByDescending(x => x.dateBegin).ToList();
             foreach (CallsHistoryModel item in callsHistory)
             {
                 history = history + item.login + " " + item.dateBegin + " " + item.dateEnd + "&";
@@ -239,7 +231,7 @@ namespace TIPySerwer
                     call.dateEnd = item.Date_End;
                     callsHistory.Add(call);
                 }
-                callsHistory = callsHistory.OrderBy(x => x.dateBegin).ToList();
+                callsHistory = callsHistory.OrderByDescending(x => x.dateBegin).ToList();
                 foreach(CallsHistoryModel item in callsHistory)
                 {
                     listCallsHistory = listCallsHistory + item.login + " " + item.dateBegin + " " + item.dateEnd + "&";
