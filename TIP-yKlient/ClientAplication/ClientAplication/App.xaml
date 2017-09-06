@@ -122,11 +122,38 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
             <Setter Property="FontSize" Value="30"/>
+            <Style.Triggers>
+                    <Trigger Property ="IsMouseOver" Value="True">
+                    <Setter Property= "Foreground" Value="#BAE2F9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
+
+        <Style TargetType="TextBlock" x:Key="IcoRightLBI">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="{Binding Path=IcoColor}" />
             <Style.Triggers>
                 <Trigger Property ="IsMouseOver" Value="True">
                     <Setter Property= "Foreground" Value="#BAE2F9"/>
-                    <Setter Property="{Binding Path=IcoCal }"  Value="Red"  />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="IcoRightLBIG">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="Green" />
+            <Style.Triggers>
+                <Trigger Property ="IsMouseOver" Value="True">
+                    <Setter Property= "Foreground" Value="#BAE2F9"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
