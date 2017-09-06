@@ -47,7 +47,6 @@
             <Button Content="Zarejestruj się" Margin="0,30,0,0" x:Name="registerButton"    Click="Button_register"/>
             <TextBlock Margin="0,40,0,0"  Style="{StaticResource SubTitle}" >Jeśli posiadzasz konto zaloguj się</TextBlock>
             <Button Content="logowanie" Margin="0,20,0,0" x:Name="gotoLogin"  Click="Button_gotoLogin"/>
-            <Button Content="Logowanie" Margin="0,20,0,0" x:Name="gotoLogin"  Click="Button_gotoLogin"/>
 
         </StackPanel>
     </Grid>

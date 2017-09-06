@@ -49,7 +49,7 @@ namespace ClientAplication
             }
         }
 
-private void Button_register(object sender, RoutedEventArgs e)
+        private void Button_register(object sender, RoutedEventArgs e)
         {
 
             string login = loginInputRegister.Text;
@@ -60,6 +60,11 @@ private void Button_register(object sender, RoutedEventArgs e)
                 MessageBox.Show("Hasła nie są takie same");
                 return;
             }
+
+            if (!ValidationClass.isValidPassword(password1))
+            {
+                MessageBox.Show("Nowe hasło ma zły format. Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
+                return; }
             if (singletone.client == null)
             {
                 readSettings = ReadSettings.GetInstance;
