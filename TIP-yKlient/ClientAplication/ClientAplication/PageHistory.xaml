@@ -58,7 +58,7 @@
                                 <TextBlock Text="{Binding Path=Describe}"   Width="300" TextWrapping="Wrap"   />
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
                                     <TextBlock Text="oddzwoń    "  VerticalAlignment="Center" />
-                                    <TextBlock Text="&#xE0CD;" VerticalAlignment="Center" Padding="5" MouseLeftButtonDown="callToUser" Foreground="Green" FontFamily="{StaticResource MaterialIcon}" FontSize="20"/>
+                                    <TextBlock Text="&#xE0CD;"  MouseLeftButtonDown="callToUser" Foreground="Green" Style="{StaticResource IcoRight}"/>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>

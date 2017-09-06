@@ -54,10 +54,18 @@ namespace ClientAplication
             string password = passwordInput.Password;
             string receiveCommunicate = null;
             //utworzenie klienta http odpowiedzialnego za transmisje z serwerem
-           
-
+            if (!ValidationClass.isValidLogin(login))
+            {
+                MessageBox.Show("Login nie może zawierać spacji oraz znaku '&'");
+                return;
+            }
+            if (!ValidationClass.isValidPassword(password))
+            {
+                MessageBox.Show("Nowe hasło ma zły format. Hasło musi mieć od 8 do 16 znaków oraz posiadać conajmniej:\n - jedną małą literę\n - jedną dużą literę\n - jedną cyfrę");
+                return;
+            }
                 try
-                {
+            {
                     singletone.client = new Client(readSettings.IP , Convert.ToInt32(readSettings.PORT));
                     receiveCommunicate = singletone.client.sendMessage("LOGIN " + login + " " + password);
                 }

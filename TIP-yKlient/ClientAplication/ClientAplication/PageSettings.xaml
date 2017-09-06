@@ -34,7 +34,7 @@
                 <StackPanel Margin="0,0,20,0"  >
 
                     <StackPanel Orientation="Horizontal" Margin="0,40,0,10">
-                        <TextBlock Text="&#xE8C8;"  Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="&#xE8C8;"  Style="{StaticResource IcoRightWithoutMouseOver}" HorizontalAlignment="Left"/>
                         <TextBlock Text="Mikrofon" Margin="10,0,0,0" Style="{StaticResource SubTitle}"/>
 
                     </StackPanel>
@@ -47,7 +47,7 @@
                 </ComboBox.ItemContainerStyle>
             </ComboBox>
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,10">
-                        <TextBlock Text="&#xE023;"  Style="{StaticResource IcoRight}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="&#xE023;"  Style="{StaticResource IcoRightWithoutMouseOver}" HorizontalAlignment="Left"/>
                         <TextBlock Text="Głośnik" Margin="10,0,0,0" Style="{StaticResource SubTitle}" />
 
                     </StackPanel>

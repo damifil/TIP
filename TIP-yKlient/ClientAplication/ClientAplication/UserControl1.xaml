@@ -53,8 +53,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel Margin="10">
-                            <TextBlock Text="{Binding Path=Name}" Style="{StaticResource listItem}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}"  Width="170" />
-                            <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Width="20" MinWidth="20" MaxWidth="20" FontSize="20" Foreground="{Binding Path=IcoColor}" FontFamily="{StaticResource MaterialIcon}"  HorizontalAlignment="Right"  />
+                            <TextBlock Text="{Binding Path=Name}" Style="{StaticResource listItem}" MouseLeftButtonDown="goToUser" ToolTip="{Binding Path=Name}"  Width="160" />
+                            <TextBlock Text="{Binding Path=IcoCall}" MouseLeftButtonDown="userAction" Style="{StaticResource IcoRight}" Foreground="{Binding Path=IcoColor}"   />
                         </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

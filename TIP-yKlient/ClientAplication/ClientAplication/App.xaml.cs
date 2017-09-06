@@ -17,5 +17,7 @@ namespace ClientAplication
         {
             Console.WriteLine("exit a app.xaml.cs");
         }
+
+        
     }
 }

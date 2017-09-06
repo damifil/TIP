@@ -53,6 +53,12 @@ namespace ClientAplication
         {
 
             string login = loginInputRegister.Text;
+
+            if (!ValidationClass.isValidLogin(login))
+            {
+                MessageBox.Show("Login nie może zawierać spacji oraz znaku '&'");
+                return;
+            }
             string password1 = password1InputRegister.Password;
             string password2 = password2InputRegister.Password;
             if(password1 != password2)

@@ -8,6 +8,15 @@ namespace ClientAplication
 {
       public static class ValidationClass
     {
+        public static bool isValidLogin(string login)
+        {
+            if(login.Contains(" "))
+            { return false; }
+            if(login.Contains("&"))
+            { return false; }
+            return true;
+        }
+      
 
        public static bool IsValidEmail(string email)
         {

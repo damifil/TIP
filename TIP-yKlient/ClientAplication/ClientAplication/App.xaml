@@ -122,8 +122,23 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
             <Setter Property="FontSize" Value="30"/>
+
+            <Style.Triggers>
+                <Trigger Property ="IsMouseOver" Value="True">
+                    <Setter Property= "Background" Value="#BAE2F9"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
+        <Style TargetType="TextBlock" x:Key="IcoRightWithoutMouseOver">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource MaterialIcon}"/>
+            <Setter Property="FontSize" Value="30"/>
+
+           
+        </Style>
         <Style TargetType="ListBoxItem" x:Key="as">
                     <Setter Property="Template">
                 <Setter.Value>
