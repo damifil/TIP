@@ -23,13 +23,13 @@ namespace ClientAplication
     public partial class MainWindow : Window
     {
 
-        SingletoneObject singletoneOBj;
         public MainWindow()
         {
+            SingletoneObject singletoneOBj;
             singletoneOBj = SingletoneObject.GetInstance;
             singletoneOBj.isloged = true;
             InitializeComponent();
-            var page = new Page2();
+            var page = new PageMain();
             this.Content = page;
             singletoneOBj.mainwindow = this;
         }

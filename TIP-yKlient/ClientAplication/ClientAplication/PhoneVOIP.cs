@@ -19,24 +19,32 @@ namespace ClientAplication
         private IPhoneLine _phoneLine;
         private RegState _phoneLineInformation;
         private IPhoneCall _call;
-        internal Microphone _microphone = Microphone.GetDefaultDevice();
-        internal Speaker _speaker = Speaker.GetDefaultDevice();
-        MediaConnector _connector = new MediaConnector();
-        PhoneCallAudioSender _mediaSender = new PhoneCallAudioSender();
-        PhoneCallAudioReceiver _mediaReceiver = new PhoneCallAudioReceiver();
-        internal CallToWindow callto = null;
-        internal Client client;
-        internal AplicationUser userLogged;
-        public string nameCallToUser;
 
+        public PhoneVOIP ()
+        {
+            _microphone = Microphone.GetDefaultDevice();
+            Speaker _speaker = Speaker.GetDefaultDevice();
+            _connector = new MediaConnector();
+            _mediaSender = new PhoneCallAudioSender();
+            _mediaReceiver = new PhoneCallAudioReceiver();
+            callto = null;
+            transimiso = null;
+        }
 
+        internal Microphone _microphone   { get; set; }
+        internal Speaker _speaker   { get; set; }
+        MediaConnector _connector;
+        PhoneCallAudioSender _mediaSender;
+        PhoneCallAudioReceiver _mediaReceiver;
+        internal CallToWindow callto   { get; set; }
+        internal Client client { get; set; }
+        internal AplicationUser userLogged { get; set; }
+        public string nameCallToUser { get; set; }
         private bool _inComingCall;
-
         private string _reDialNumber;
-
         private bool _localHeld;
-        CallFrom main=null;
-        internal CallTransmision transimiso = null;
+        CallFromWindow main=null;
+        internal CallTransmisionWindow transimiso { get; set; }
         SIPAccount sa;
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
@@ -66,6 +74,11 @@ namespace ClientAplication
 
                 
 
+
+
+               
+                
+
                 _inComingCall = false;
                 _reDialNumber = string.Empty;
                 _localHeld = false;
@@ -82,14 +95,13 @@ namespace ClientAplication
         {
             if (_softPhone != null && _phoneLine != null)
             {
+                
                 _phoneLine.RegistrationStateChanged -= phoneLine_PhoneLineInformation;
-
                 _softPhone.IncomingCall -= softPhone_inComingCall;
-
-
                 _softPhone.UnregisterPhoneLine(_phoneLine);
                 _phoneLine.Dispose();
                 _softPhone.Close();
+               
                 sa = null;
             }
         }
@@ -165,7 +177,7 @@ namespace ClientAplication
             {
                 if (main == null)
                 {
-                    main = new CallFrom();
+                    main = new CallFromWindow();
                     main.user = new User(true, true);
                     main.dateBegin = DateTime.Now;
                     main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
@@ -198,6 +210,7 @@ namespace ClientAplication
                 }
                 else
                 {
+
                 }
 
             });
@@ -225,7 +238,7 @@ namespace ClientAplication
                     { callto.Close(); callto = null; }
                     if (transimiso == null)
                     {
-                        transimiso = new CallTransmision();
+                        transimiso = new CallTransmisionWindow();
                         transimiso.nameCallToUser = nameCallToUser;
                         transimiso.dateBegin = DateTime.Now;
                         transimiso.client = client;

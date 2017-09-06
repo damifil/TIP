@@ -1,4 +1,4 @@
-﻿<Page x:Class="ClientAplication.Page2"
+﻿<Page x:Class="ClientAplication.PageMain"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <local:UCTitleBar Grid.Row="0"  x:Name="titlebar"/>
         <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1"  Margin="30">
-            <local:UserControl1  />
+            <local:UCMainLeftSide  />
         </StackPanel>
     </Grid>
 </Page>

@@ -217,6 +217,7 @@
     <Resource Include="Fonts\Montserrat-Light.ttf" />
     <Resource Include="Fonts\Montserrat-ExtraLight.ttf" />
     <Resource Include="Fonts\Montserrat-Thin.ttf" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="file\10000.prm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

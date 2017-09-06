@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClientAplication
 {
-    class itemTB
+    class ItemTB
     {
         public string Describe { get; set; }
-
 
         public string Name { get; set; }
 

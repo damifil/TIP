@@ -18,9 +18,9 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for Page2.xaml
     /// </summary>
-    public partial class Page2 : Page
+    public partial class PageMain : Page
     {
-        public Page2()
+        public PageMain()
         {
             InitializeComponent();
 

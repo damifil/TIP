@@ -47,7 +47,7 @@ namespace ClientAplication
         private void backAction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBj.mainwindow.Width = 300;
-            var page = new Page2();
+            var page = new PageMain();
             singletoneOBj.mainwindow.Content = page;
         }
 

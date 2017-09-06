@@ -1,4 +1,4 @@
-﻿<Page x:Class="ClientAplication.Page1"
+﻿<Page x:Class="ClientAplication.PageHistory"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,7 +22,7 @@
         <local:UCTitleBar2 Grid.Row="0" Grid.ColumnSpan="2" x:Name="titlebar" />
 
         <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1" Margin="30">
-                <local:UserControl1 x:Name="UC" />
+                <local:UCMainLeftSide x:Name="UC" />
             </StackPanel>
 
         <StackPanel x:Name = "rightside"  Grid.Column="1" Grid.Row="1" Margin="30">

@@ -19,31 +19,31 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class PageHistory : Page
     {
-        internal ObservableCollection<itemTB> items;
-        internal ObservableCollection<itemTB> copyitems;
+        internal ObservableCollection<ItemTB> items { get; set; }
+        internal ObservableCollection<ItemTB> copyitems { get; set; }
         SingletoneObject singletoneOBj=SingletoneObject.GetInstance;
 
-        public Page1()
+        public PageHistory()
         {
             InitializeComponent();
         }
 
-        public Page1(string login, List<ListHistory> listHistory)
+        public PageHistory(string login, List<ListHistory> listHistory)
         {
 
             InitializeComponent();
            
-            items = new ObservableCollection<itemTB>();
-            copyitems = new ObservableCollection<itemTB>();
+            items = new ObservableCollection<ItemTB>();
+            copyitems = new ObservableCollection<ItemTB>();
             singletoneOBj = SingletoneObject.GetInstance;
             singletoneOBj.mainwindow.Width = 750;
             foreach (ListHistory item in listHistory)
             {
            
 
-                items.Add(new itemTB()
+                items.Add(new ItemTB()
                 {
                     Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin 
@@ -52,7 +52,7 @@ namespace ClientAplication
                 });
 
 
-                copyitems.Add(new itemTB()
+                copyitems.Add(new ItemTB()
                 {
                     Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin+
@@ -70,7 +70,7 @@ namespace ClientAplication
         private void backAction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBj.mainwindow.Width = 300;
-            var page = new Page2();
+            var page = new PageMain();
             singletoneOBj.mainwindow.Content = page;
         }
         private List<ListHistory> GetConcreteHistory(string login, string login1)               // uzyskanie hisorii rozmow od konkretnego uzytkownika
@@ -131,7 +131,7 @@ namespace ClientAplication
             }
             else
             {
-                items = new ObservableCollection<itemTB>(copyitems);
+                items = new ObservableCollection<ItemTB>(copyitems);
                 lbHistoryAll.DataContext = items;
             }
         }

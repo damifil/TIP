@@ -10,8 +10,8 @@ namespace ClientAplication
 {
     public sealed class ReadSettings
     {
-        public string IP;
-        public string PORT;
+        public string IP { get; set; }
+        public string PORT { get; set; }
         private static ReadSettings instance = null;
         private static readonly object PadLock = new object();
         public static ReadSettings GetInstance

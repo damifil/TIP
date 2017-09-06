@@ -24,7 +24,7 @@ namespace ClientAplication
         public LoginRegisterWindow()
         {
             InitializeComponent();
-            var page = new login();
+            var page = new PageLogin();
             this.Content = page;
         }
 

@@ -21,8 +21,8 @@ namespace ClientAplication
     public partial class CallToWindow : Window
     {
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
-        internal User user;
-        internal DateTime dateBegin;
+        internal User user { get; set; }
+        internal DateTime dateBegin { get; set; }
         public CallToWindow()
         {
             InitializeComponent();

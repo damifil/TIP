@@ -20,8 +20,8 @@ namespace ClientAplication
 
     public partial class UserPage : Page
     {
-        internal ObservableCollection<itemTB> items;   //  historia rozmow z uzytkownikiem
-        internal ObservableCollection<itemTB> copyitems;
+        internal ObservableCollection<ItemTB> items { get; set; }  //  historia rozmow z uzytkownikiem
+        internal ObservableCollection<ItemTB> copyitems { get; set; }
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         private string userFriend;
 
@@ -39,8 +39,8 @@ namespace ClientAplication
             this.userFriend = userFriend;
             stringInUserWindow.Text =  userFriend;
 
-            items = new ObservableCollection<itemTB>();
-            copyitems = new ObservableCollection<itemTB>();
+            items = new ObservableCollection<ItemTB>();
+            copyitems = new ObservableCollection<ItemTB>();
            if(singletoneOBJ.listUsers.Find(X=> X.name == userFriend).active == "True")
             {
                
@@ -49,7 +49,7 @@ namespace ClientAplication
            
             foreach (ListHistory item in listHistory)
             {
-                items.Add(new itemTB()
+                items.Add(new ItemTB()
                 {
                     Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin
@@ -57,7 +57,7 @@ namespace ClientAplication
                     +" i zakończyła się dnia " + item.dayEnd + " o godzinie " + item.hourEnd,
                 });
 
-                copyitems.Add(new itemTB()
+                copyitems.Add(new ItemTB()
                 {
                     Name = item.userName,
                     Describe = "Rozmowa z użytkownikiem " + item.userName + " o godzinie " + item.hourBegin
@@ -141,7 +141,7 @@ namespace ClientAplication
             }
             else
             {
-                items = new ObservableCollection<itemTB>(copyitems);
+                items = new ObservableCollection<ItemTB>(copyitems);
                 lbHistoryAll.DataContext = items;
             }
 
@@ -151,7 +151,7 @@ namespace ClientAplication
         private void backAction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBJ.mainwindow.Width = 300;
-            var page = new Page2();
+            var page = new PageMain();
             singletoneOBJ.mainwindow.Content = page;
         }
     }

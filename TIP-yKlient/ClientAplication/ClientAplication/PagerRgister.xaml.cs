@@ -18,19 +18,19 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for register.xaml
     /// </summary>
-    public partial class register : Page
+    public partial class PageRegister : Page
     {
 
         LoginRegisterManagment LRM;
         ReadSettings readSettings;
         SingletoneObject singletone = SingletoneObject.GetInstance;
-        public register()
+        public PageRegister()
         {
             InitializeComponent();
             LRM = new LoginRegisterManagment();
         }
 
-        public register(Boolean setingenable)
+        public PageRegister(Boolean setingenable)
         {
             InitializeComponent();
             LRM = new LoginRegisterManagment();
@@ -84,8 +84,8 @@ private void Button_register(object sender, RoutedEventArgs e)
         {
             var parentWindow = this.Parent as Window;
             Page page;
-            if (parentWindow.Width == 600) { page = new login(true); }
-            else { page = new login(false); }
+            if (parentWindow.Width == 600) { page = new PageLogin(true); }
+            else { page = new PageLogin(false); }
             parentWindow.Content = page;
         }
         private void settingsTextboxaction(object sender, MouseButtonEventArgs e)

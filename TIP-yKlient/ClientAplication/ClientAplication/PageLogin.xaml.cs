@@ -18,18 +18,18 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for login.xaml
     /// </summary>
-    public partial class login : Page 
+    public partial class PageLogin : Page 
     {
         LoginRegisterManagment LRM;
         ReadSettings readSettings=ReadSettings.GetInstance;
         SingletoneObject singletone = SingletoneObject.GetInstance;
-        public login()
+        public PageLogin()
         {
             InitializeComponent();
             LRM = new LoginRegisterManagment();
         }
 
-        public login(Boolean setingenable)
+        public PageLogin(Boolean setingenable)
         {
 
             InitializeComponent();
@@ -90,8 +90,8 @@ namespace ClientAplication
         {
             var parentWindow = this.Parent as Window;
             Page page;
-            if (parentWindow.Width == 600) { page = new register(true); }
-            else { page = new register(false); }
+            if (parentWindow.Width == 600) { page = new PageRegister(true); }
+            else { page = new PageRegister(false); }
             parentWindow.Content = page;
         }
 

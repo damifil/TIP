@@ -17,13 +17,13 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for CallFrom.xaml
     /// </summary>
-    public partial class CallFrom : Window
+    public partial class CallFromWindow : Window
     {
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
-        internal User user;
-        internal string nameCallToUser;
-        internal DateTime dateBegin;
-        public CallFrom()
+        internal User user { get; set; }
+        internal string nameCallToUser { get; set; }
+        internal DateTime dateBegin { get; set; }
+        public CallFromWindow()
         {
             InitializeComponent();
         }

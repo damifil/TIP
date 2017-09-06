@@ -18,15 +18,18 @@ using System.Windows.Shapes;
 namespace ClientAplication
 {
 
-    public partial class UserControl1 : UserControl
+    public partial class UCMainLeftSide : UserControl
     {
-        int timeThreadloop = 5000;
+        int timeThreadloop;
         SingletoneObject singletoneOBj;
-        int numberSelectedItem = -1;
-        public  string SelectedItem = "";
-        public Thread refreshListThread;
-        public UserControl1()
+        int numberSelectedItem ;
+        public  string SelectedItem { get; set; }
+        public Thread refreshListThread { get; set; }
+        public UCMainLeftSide()
         {
+            SelectedItem = "";
+            numberSelectedItem = -1;
+            timeThreadloop = 5000;
             try
             {
                 singletoneOBj = SingletoneObject.GetInstance;
@@ -269,7 +272,7 @@ namespace ClientAplication
 
         private void historyTextboxaction(object sender, MouseButtonEventArgs e)
         {
-            var page = new Page1(singletoneOBj.user.Name, GetAllHistory(singletoneOBj.user.Name));
+            var page = new PageHistory(singletoneOBj.user.Name, GetAllHistory(singletoneOBj.user.Name));
             singletoneOBj.mainwindow.Content = page;
            
         }
@@ -277,7 +280,7 @@ namespace ClientAplication
         private void homeTextboxaction(object sender, MouseButtonEventArgs e)
         {
             singletoneOBj.mainwindow.Width = 300;
-            var page = new Page2();
+            var page = new PageMain();
             singletoneOBj.mainwindow.Content = page;
         }
 

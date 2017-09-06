@@ -11,15 +11,13 @@ namespace ClientAplication
     class Client
     {
         private TcpClient client;
-
         private static StreamReader streamReader;
         private static StreamWriter streamWriter;
-
         private Boolean isConnected;
         private DiffieHelman diffieHelman;
         Random rnd = new Random();
-        internal string ipAddres;
-        internal int portnumber;
+        internal string ipAddres { get; set; }
+        internal int portnumber { get; set; }
         public Client(string ipAddress, int portNum)
         {
             client = new TcpClient();

@@ -21,16 +21,16 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for CallTransmision.xaml
     /// </summary>
-    public partial class CallTransmision : Window
+    public partial class CallTransmisionWindow : Window
     {
-        SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
-        internal User user;
-        internal Client client;
-        internal string nameCallToUser;
-        internal DateTime dateBegin;
+        
+        internal User user { get; set; }
+        internal Client client { get; set; }
+        internal string nameCallToUser { get; set; }
+        internal DateTime dateBegin { get; set; }
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
-        public int timesek = 0;
-        public CallTransmision()
+       
+        public CallTransmisionWindow()
         {
             InitializeComponent();
            
@@ -64,10 +64,10 @@ namespace ClientAplication
         
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
+            SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
             string saveCall = client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " + nameCallToUser + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
             singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
-
         }
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {

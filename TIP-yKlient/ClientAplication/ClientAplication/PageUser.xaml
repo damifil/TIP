@@ -22,7 +22,7 @@
         <local:UCTitleBar2 Grid.Row="0" Grid.ColumnSpan="2" x:Name="titlebar" />
 
         <StackPanel x:Name = "menuSP"  Grid.Column="0" Grid.Row="1" Margin="30">
-            <local:UserControl1 x:Name="userControlLeftSide" />
+            <local:UCMainLeftSide x:Name="userControlLeftSide" />
         </StackPanel>
 
         <StackPanel x:Name = "userSP"  Grid.Column="1" Grid.Row="1" Margin="30">

@@ -11,18 +11,21 @@ namespace ClientAplication
     public sealed class SingletoneObject
     {
 
-        internal AplicationUser user;
-        internal Client client;
-        internal ObservableCollection<User> Users;
-        internal ObservableCollection<User> Friends;
-        internal List<ListUser> listUsers;
-        internal List<ListUser> listUserSearch;
-        internal PhoneVOIP phoneVOIP;
-        internal ObservableCollection<itemTB> items;
-        internal Thread isOnlineThread;
-        internal bool isloged=false;
-        internal bool listusercompare=false;
+        internal AplicationUser user { get; set; }
+        internal Client client { get; set; }
+        internal ObservableCollection<User> Users { get; set; }
+        internal ObservableCollection<User> Friends { get; set; }
+        internal List<ListUser> listUsers { get; set; }
+        internal List<ListUser> listUserSearch { get; set; }
+        internal PhoneVOIP phoneVOIP { get; set; }
+        internal ObservableCollection<ItemTB> items { get; set; }
+        internal Thread isOnlineThread { get; set; }
+        internal string searchvalue { get; set; }
+        internal MainWindow mainwindow { get; set; }
+        internal bool isloged { get; set; }
+        internal bool listusercompare { get; set; }
         private static SingletoneObject instance = null;
+
         private static readonly object PadLock = new object();
         public static SingletoneObject GetInstance
         {
@@ -38,8 +41,12 @@ namespace ClientAplication
                 }
             }
         }
-        internal string searchvalue;
-        internal MainWindow mainwindow; 
+        public SingletoneObject()
+        {
+            isloged = false;
+            listusercompare = false;
+        }
+
         public void setdefaultvalue()
         {
             client.destroyfunction();

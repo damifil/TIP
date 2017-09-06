@@ -1,4 +1,4 @@
-﻿<Page x:Class="ClientAplication.register"
+﻿<Page x:Class="ClientAplication.PageRegister"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,7 +23,7 @@
 
         
         <WrapPanel x:Name = "rightSideWP" Grid.Row="1" Grid.Column="1" >
-            <local:UserControl2 />
+            <local:UCLoginRegisterSetings />
         </WrapPanel>
         <StackPanel x:Name = "registerSP"  Grid.Row="1" Margin="30"  >
 

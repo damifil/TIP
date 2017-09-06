@@ -94,10 +94,10 @@ namespace ClientAplication
 
     class DiffieHelman
     {
-        public double G, a, A, s, P;
+        private double G, a, A, s, P;
         byte[] secretByteArray = null;
         Random rnd = new Random();
-        public double generateP()
+        private double generateP()
         {
             int p = rnd.Next(200, 500);
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -106,7 +106,7 @@ namespace ClientAplication
             p = Int32.Parse(line);
             return p;
         }
-        public Boolean isPrimeNumber(long n)
+        private Boolean isPrimeNumber(long n)
         {
             long p = 1;
 
@@ -123,7 +123,7 @@ namespace ClientAplication
             }
             return true;
         }
-        public int powMod(int a, int w, int n)
+        private int powMod(int a, int w, int n)
         {
             int pot, wyn;
             int q;
@@ -135,7 +135,7 @@ namespace ClientAplication
             }
             return wyn;
         }
-        public double generateG(double x)
+        private double generateG(double x)
         {
             double px = x;
             double k;
@@ -157,7 +157,7 @@ namespace ClientAplication
             int index = rnd.Next(1, al.Count);
             return Convert.ToDouble(al[index]);
         }
-        public double[] generateDoubleArrayFromStrin(string message)
+        private double[] generateDoubleArrayFromStrin(string message)
         {
             double[] returnmesage = new double[message.Length];
             for (int i = 0; i < message.Length; i++)

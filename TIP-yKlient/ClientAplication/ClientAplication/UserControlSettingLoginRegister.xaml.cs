@@ -19,10 +19,10 @@ namespace ClientAplication
     /// <summary>
     /// Interaction logic for UserControl2.xaml
     /// </summary>
-    public partial class UserControl2 : UserControl
+    public partial class UCLoginRegisterSetings : UserControl
     {
         ReadSettings rs=ReadSettings.GetInstance;
-        public UserControl2()
+        public UCLoginRegisterSetings()
         {
             
             InitializeComponent();

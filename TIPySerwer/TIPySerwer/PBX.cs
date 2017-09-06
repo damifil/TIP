@@ -33,13 +33,14 @@ namespace TIPySerwer
             Console.WriteLine("Żądanie uwierzytelnienia od: " + extension.ExtensionID);
 
             AuthenticationResult result = new AuthenticationResult();
-            
             if (UserManager.IsLoginExists(extension.ExtensionID))   // sprawdzenie czy uzytkownik istnieje w bazie danych
             {
                 tipBDEntities db = new tipBDEntities();
                 byte[] userPass = db.Users.Where(x => x.Login == extension.ExtensionID).Select(x => x.Password).SingleOrDefault(); // uzyskanie hasla z bazy danych
                 string pass=  System.Text.Encoding.UTF8.GetString(userPass, 0, userPass.Length);                  
-                result = extension.CheckPassword(extension.ExtensionID, pass, authInfo);               // sprawdzenie czy wpisane dane zgadzaja sie z danymi w bazie danych
+                result = extension.CheckPassword(extension.ExtensionID, pass, authInfo);
+                Console.WriteLine(result.AuthenticationAccepted);
+                // sprawdzenie czy wpisane dane zgadzaja sie z danymi w bazie danych
             }
             else
             {
@@ -69,6 +70,7 @@ namespace TIPySerwer
             Console.WriteLine("Otrzymano żadanie wyrejestrowania od: " + extension.ExtensionID);
 
             base.OnUnregisterReceived(extension);
+           
         }
 
         protected override void OnCallRequestReceived(ISessionCall call)
