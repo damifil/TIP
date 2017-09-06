@@ -240,9 +240,6 @@ namespace ClientAplication
                 {
                     Console.WriteLine("dostal okej");
                     isCorrect = true;
-
-                    MessageBox.Show(Cryptography.vectorBytes.Length.ToString());
-                    MessageBox.Show(secretByteArray.Length.ToString());
                     Cryptography.vectorBytes= new byte[secretByteArray.Length + secretByteArray.Length];
                     secretByteArray.CopyTo(Cryptography.vectorBytes, 0);
                     secretByteArray.CopyTo(Cryptography.vectorBytes, secretByteArray.Length);
