@@ -157,31 +157,6 @@ namespace TIPySerwer
                         break;
 
                 }
-                //ify dotyczace komunikatow
-               /* if (sData == "CREATE")
-                {
-                    //utworzenie DH
-                    diffieHelman.createDH(diffieHelman, sReader, sWriter);
-                }*/
-                //if(sData =="LOGIN")
-                //if(sData== "REGISTER")
-                //itd. w zaleznosci od potrzeb
-              /*  if (sData == "send")
-                {
-                    sData = diffieHelman.messageRecive(sReader, diffieHelman);
-                    Console.WriteLine("Otrzymana wiadomosc: " + sData);
-                    Console.WriteLine("Wiadomosc zwrotna: ");
-                    sData = Console.ReadLine();
-
-                    //funnkcja odpowiedzialna za wysylanie do klieenta chwilowo nie przewidzialem by klient wiadomosci odroznial podlug komunikatow
-                    //tylko po prostu je odbiera
-                    diffieHelman.sendMessage(sData, diffieHelman, sWriter);
-                }*/
-
-               /* if (sData == "exit")
-                {
-                    bClientConnected = false;
-                }*/
             }
 
         }
@@ -193,21 +168,10 @@ namespace TIPySerwer
     {
         static void Main(string[] args)
         {
-            //numer portu na ktorym bedzie nasluchiwac i uruchomienie serwera wielowatkowego
-            //  TcpServer server = new TcpServer(5555);
-
-            /*   var myPBX = new PBX(NetworkAddressHelper.GetLocalIP().ToString(), 20000, 20500);
-               myPBX.Start();
-
-               Console.ReadLine();
-               myPBX.Stop();
-            */
-
             Thread threadServer = new Thread(new ThreadStart(runServer));
             threadServer.Start();
             Thread threadOzeki = new Thread(new ThreadStart(runOzeki));
             threadOzeki.Start();
-            //testDawid.drugiMejn(); // by nie zasmiecac tutaj swoimi testami :) 
         }
         public static void runServer()
         {

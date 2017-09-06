@@ -39,7 +39,6 @@ namespace TIPySerwer
                 byte[] userPass = db.Users.Where(x => x.Login == extension.ExtensionID).Select(x => x.Password).SingleOrDefault(); // uzyskanie hasla z bazy danych
                 string pass=  System.Text.Encoding.UTF8.GetString(userPass, 0, userPass.Length);                  
                 result = extension.CheckPassword(extension.ExtensionID, pass, authInfo);
-                Console.WriteLine(result.AuthenticationAccepted);
                 // sprawdzenie czy wpisane dane zgadzaja sie z danymi w bazie danych
             }
             else
