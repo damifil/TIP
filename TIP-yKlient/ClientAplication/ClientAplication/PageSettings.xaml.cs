@@ -64,7 +64,8 @@ namespace ClientAplication
         void CBSoundHandler(object sender, MouseButtonEventArgs e)
         {
             if(singletoneOBj.phoneVOIP._speaker!=null)
-            { singletoneOBj.phoneVOIP._speaker.Dispose(); MessageBox.Show("aa"); }
+            { singletoneOBj.phoneVOIP._speaker.Dispose();
+            }
            
             singletoneOBj.phoneVOIP._speaker = Speaker.GetDevice(SpeakerDevices[CBSound.SelectedIndex]);
         }
