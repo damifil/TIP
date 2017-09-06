@@ -106,7 +106,32 @@ namespace ClientAplication
                 MessageBox.Show("Nowe hasło musi być inne niż stare");
             }
         }
+        private void deleteAcount(object sender, MouseButtonEventArgs e)
+        {
 
-   
+            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz usunąć konto", "Usunięcie konta", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                string message = singletoneOBj.client.sendMessage("DELACCOUNT " + singletoneOBj.user.Name);
+                if (message == "OK")
+                {
+                    MessageBox.Show("Pomyślnie usunięto konto");
+                    singletoneOBj.isOnlineThread.Abort();
+                    UC.refreshListThread.Abort();
+                    singletoneOBj.setdefaultvalue();
+                    LoginRegisterWindow main = new LoginRegisterWindow();
+                    Window.GetWindow(this).Close();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił problem podczas usuwania konta");
+                }
+
+            }
+
+        }
+
     }
 }
