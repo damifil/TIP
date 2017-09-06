@@ -53,7 +53,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClientAplication.Cryptography">
-    <Position X="10.25" Y="12.25" Width="2.5" />
+    <Position X="9.75" Y="11.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAgAAAASAgAAAAAAAAAgAAAAAAAAAIAAAAA=</HashCode>
       <FileName>CryptographyClass.cs</FileName>
@@ -174,7 +174,7 @@
   <Class Name="ClientAplication.SettingsPage" BaseTypeListCollapsed="true">
     <Position X="18" Y="15" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AARAAABAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQBAAAAA=</HashCode>
+      <HashCode>AARAAABAAAAAAAgAAAAAQAEAAAAAAAAAAAAAQBAAAAA=</HashCode>
       <FileName>PageSettings.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -217,7 +217,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClientAplication.UCTitleBar" BaseTypeListCollapsed="true">
-    <Position X="7.25" Y="12.25" Width="2.25" />
+    <Position X="7" Y="11.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UCTitleBar.xaml.cs</FileName>
@@ -264,7 +264,7 @@
   <Class Name="ClientAplication.ValidationClass">
     <Position X="13" Y="11.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAADAAAAAAAA=</HashCode>
       <FileName>ValidationClass.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -276,7 +276,7 @@
     <Position X="17.5" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Windows.Controls.UserControl">
+  <Class Name="System.Windows.Controls.UserControl" Collapsed="true">
     <Position X="8" Y="10" Width="1.5" />
     <TypeIdentifier />
   </Class>

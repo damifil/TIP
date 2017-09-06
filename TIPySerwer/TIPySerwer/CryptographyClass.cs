@@ -16,7 +16,7 @@ namespace TIPySerwer
         private static int iterations = 2;
         private static int keySize = 256;
         private static string hash = "SHA1";
-        private static byte[] vectorBytes= Encoding.ASCII.GetBytes("syk3CiUaBs4KdmuZ");
+        public static byte[] vectorBytes= Encoding.ASCII.GetBytes("syk3CiUaBs4KdmuZ");
         private static byte[] saltBytes= Encoding.ASCII.GetBytes("Itg4EdEeUy8v1c2J");
 
         public static string Encrypt(string value, byte[] password)
@@ -159,6 +159,10 @@ namespace TIPySerwer
                 {
                     sWriter.WriteLine("OK");
                     sWriter.Flush();
+                    // Cryptography.vectorBytes = secretByteArray;
+                    Cryptography.vectorBytes = new byte[secretByteArray.Length + secretByteArray.Length];
+                    secretByteArray.CopyTo(Cryptography.vectorBytes, 0);
+                    secretByteArray.CopyTo(Cryptography.vectorBytes, secretByteArray.Length);
                 }
                 else
                 {
