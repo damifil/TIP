@@ -34,10 +34,10 @@
                         <MenuItem Header="Delete" Click="MenuItemDelete_Click" x:Name="contextmenu">
                             <MenuItem.Style>
                                 <Style TargetType="MenuItem">
-                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Setter Property="Visibility" Value="Visible"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Path=IcoColor}" Value="DarkOrange">
-                                            <Setter Property="Visibility" Value="Visible"/>
+                                            <Setter Property="Visibility" Value="Hidden"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
