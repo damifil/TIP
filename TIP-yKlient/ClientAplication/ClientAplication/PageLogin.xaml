@@ -41,7 +41,7 @@
             </DockPanel>
             <Button Content="Zaloguj się" Margin="0,20,10,2" x:Name="loginButton"  Click="Button_login"/>
             <TextBlock HorizontalAlignment="Left"  Margin="0,90,10,0"  Style="{StaticResource SubTitle}" >Jeżeli nie masz konta zarejestruj się!</TextBlock>
-            <Button Content="rejestracja" Margin="0,20,10,2" x:Name="gotoRegisterButton"  Click="Button_goToRegister"/>
+            <Button Content="Rejestracja" Margin="0,20,10,2" x:Name="gotoRegisterButton"  Click="Button_goToRegister"/>
 
         </StackPanel>
     </Grid>
