@@ -19,20 +19,11 @@ namespace ClientAplication
         private IPhoneLine _phoneLine;
         private RegState _phoneLineInformation;
         private IPhoneCall _call;
+        internal Microphone _microphone = Microphone.GetDefaultDevice();
+        internal Speaker _speaker= Speaker.GetDefaultDevice();
 
-        public PhoneVOIP ()
-        {
-            _microphone = Microphone.GetDefaultDevice();
-            Speaker _speaker = Speaker.GetDefaultDevice();
-            _connector = new MediaConnector();
-            _mediaSender = new PhoneCallAudioSender();
-            _mediaReceiver = new PhoneCallAudioReceiver();
-            callto = null;
-            transimiso = null;
-        }
 
-        internal Microphone _microphone   { get; set; }
-        internal Speaker _speaker   { get; set; }
+
         MediaConnector _connector;
         PhoneCallAudioSender _mediaSender;
         PhoneCallAudioReceiver _mediaReceiver;
@@ -46,6 +37,17 @@ namespace ClientAplication
         CallFromWindow main=null;
         internal CallTransmisionWindow transimiso { get; set; }
         SIPAccount sa;
+
+
+
+        public PhoneVOIP()
+        {
+            _connector = new MediaConnector();
+            _mediaSender = new PhoneCallAudioSender();
+            _mediaReceiver = new PhoneCallAudioReceiver();
+            callto = null;
+            transimiso = null;
+        }
         public static byte[] HashPassword(string password)          // haszowanie hasla
         {
             IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
@@ -71,13 +73,6 @@ namespace ClientAplication
                 _phoneLine = _softPhone.CreatePhoneLine(sa);
                 _phoneLine.RegistrationStateChanged += phoneLine_PhoneLineInformation;
                 _softPhone.RegisterPhoneLine(_phoneLine);
-
-                
-
-
-
-               
-                
 
                 _inComingCall = false;
                 _reDialNumber = string.Empty;

@@ -53,14 +53,19 @@ namespace ClientAplication
 
         void CBMicrophoneHandler(object sender, MouseButtonEventArgs e)
         {
-            singletoneOBj.phoneVOIP._speaker.Dispose();
+            if(singletoneOBj.phoneVOIP._speaker!=null)
+            { singletoneOBj.phoneVOIP._speaker.Dispose();
+               
+            }
             singletoneOBj.phoneVOIP._microphone = Microphone.GetDevice(MIcrophoneDevices[CBMicrophone.SelectedIndex]);
         }
 
 
         void CBSoundHandler(object sender, MouseButtonEventArgs e)
         {
-            singletoneOBj.phoneVOIP._speaker.Dispose();
+            if(singletoneOBj.phoneVOIP._speaker!=null)
+            { singletoneOBj.phoneVOIP._speaker.Dispose(); MessageBox.Show("aa"); }
+           
             singletoneOBj.phoneVOIP._speaker = Speaker.GetDevice(SpeakerDevices[CBSound.SelectedIndex]);
         }
 

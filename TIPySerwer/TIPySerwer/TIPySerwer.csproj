@@ -120,6 +120,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model2.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Models\Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
     </None>

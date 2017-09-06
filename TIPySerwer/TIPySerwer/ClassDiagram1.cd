@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="TIPySerwer.Cryptography">
+    <Position X="1.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAgAAAASAgAAAAAAAAAgAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>CryptographyClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.DiffieHelman">
+    <Position X="9.25" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAAAAAAAAAEAAAAAAAgACAAAAAEAYAAKAHEAAA=</HashCode>
+      <FileName>CryptographyClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.CallsHistoryModel">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\CallsHistoryModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.PBX">
+    <Position X="10.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAQAAAAAAAAAAAECAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PBX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.TcpServer">
+    <Position X="8.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Program">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAEA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.UserManager">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABAAEgABEAAAAAAAhAAAAAQQgAAAABEQAAAQ=</HashCode>
+      <FileName>UserManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Models.FriendsListModel" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\FriendsListModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Models.tipBDEntities">
+    <Position X="14.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABAAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model2.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Models.Calls">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAIEAACAAAAAA=</HashCode>
+      <FileName>Models\Calls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Models.Friends">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Models\Friends.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TIPySerwer.Models.Users">
+    <Position X="12.25" Y="1.75" Width="1.75" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="1.062" />
+        <Point X="8.25" Y="1.249" />
+        <Point X="13.125" Y="1.249" />
+        <Point X="13.125" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADBAAgAEAAAAAAAgAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Ozeki.VoIP.PBXBase" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.Entity.DbContext" Collapsed="true">
+    <Position X="14" Y="6" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

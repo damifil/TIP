@@ -78,7 +78,6 @@ namespace ClientAplication
             userToSend.password = password;
             singletoneOBj.user = userToSend;
             singletoneOBj.listUsers = GetFriends(login);
- 
             singletoneOBj.phoneVOIP = new PhoneVOIP();
             try
             {
