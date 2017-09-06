@@ -125,7 +125,8 @@
 
             <Style.Triggers>
                 <Trigger Property ="IsMouseOver" Value="True">
-                    <Setter Property= "Background" Value="#BAE2F9"/>
+                    <Setter Property= "Foreground" Value="#BAE2F9"/>
+                    <Setter Property="{Binding Path=IcoCal }"  Value="Red"  />
                 </Trigger>
             </Style.Triggers>
         </Style>
