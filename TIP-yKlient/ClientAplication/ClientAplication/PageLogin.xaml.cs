@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace ClientAplication
 {
-    /// <summary>
-    /// Interaction logic for login.xaml
-    /// </summary>
     public partial class PageLogin : Page 
     {
         LoginRegisterManagment LRM;

@@ -19,6 +19,7 @@ namespace ClientAplication
     /// </summary>
     public partial class CallFromWindow : Window
     {
+     
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
         internal User user { get; set; }
         internal string nameCallToUser { get; set; }

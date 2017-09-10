@@ -10,7 +10,6 @@ namespace ClientAplication
 {
     public sealed class SingletoneObject
     {
-
         internal AplicationUser user { get; set; }
         internal Client client { get; set; }
         internal ObservableCollection<User> Users { get; set; }

@@ -90,7 +90,25 @@ namespace ClientAplication
         {
             if (_softPhone != null && _phoneLine != null)
             {
-                
+
+
+                if (_call != null)
+                {
+                    if (_inComingCall && _call.CallState == CallState.Ringing)
+                    {
+                        _call.Reject();
+                    }
+                    else
+                    {
+                        _call.HangUp();
+                        _inComingCall = false;
+                        InvokeGUIThread(() => { });
+                    }
+                    _inComingCall = false;
+                    _call = null;
+
+                }
+
                 _phoneLine.RegistrationStateChanged -= phoneLine_PhoneLineInformation;
                 _softPhone.IncomingCall -= softPhone_inComingCall;
                 _softPhone.UnregisterPhoneLine(_phoneLine);
@@ -274,8 +292,6 @@ namespace ClientAplication
 
             if (e.State == CallState.LocalHeld)
             {
-
-
                 StopDevices();
             }
 
