@@ -20,9 +20,14 @@ namespace ClientAplication
 {
 
 
+    /// <summary>
+    /// klasa przechowująca strony histori, ustawień,znajomego oraz główną z listą znajomych
+    /// </summary>
     public partial class MainWindow : Window
     {
-
+        /// <summary>
+        /// Konstruktor klasy przypisujący na wstępie do zawartośći okna stronę głóówną zawierajaća listę znajomych.
+        /// </summary>
         public MainWindow()
         {
             SingletoneObject singletoneOBj;
@@ -35,9 +40,12 @@ namespace ClientAplication
         }
         
     
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
+
+        /// <summary>
+        /// nadpisana metoda <c>OnMOuseLeftButtonDown</c> umożliwająca przesuwanie okna po całym 
+        /// ekranie za pomocą naciśnięcia myszy na pole okna w którym nie znajduje się żaden inny element
+        /// taki jak textblock itp.
+        /// </summary>
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             try

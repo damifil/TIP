@@ -18,18 +18,35 @@ using System.Windows.Threading;
 
 namespace ClientAplication
 {
+
+
     /// <summary>
-    /// Interaction logic for CallTransmision.xaml
+    /// Klasa <c>CallTransmisionWindow</c> przechowywująća logikę okna któe wyświetla
+    /// się w momkencie kiedy trwa rozmowa z użytkownikiem
     /// </summary>
     public partial class CallTransmisionWindow : Window
     {
-        
+        /// <summary>
+        /// Obiekt klasy <c>User</c> którzy przechowuje informacje na temat osoby
+        /// z którą prowadzona jest rozmowa
+        /// </summary>
         internal User user { get; set; }
-        internal Client client { get; set; }
-        internal string nameCallToUser { get; set; }
+        /// <summary>
+        /// zmienna przechowywujaca czas rozpoczecia rozmowy
+        /// wykorzystywany podczas wysylania do serwera informacji o czasie wykonywania rozmowy
+        /// </summary>
         internal DateTime dateBegin { get; set; }
+
+
+        /// <summary>
+        /// Obiekt klasy <c>DispatcherTimer</c> wykorzystywany do wyświetlania czasu rozmowy w oknie
+        /// </summary>
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
        
+        /// <summary>
+        /// Konstruktor klasy
+        /// inicjuje Event dla obiektu dispatcherTime 
+        /// </summary>
         public CallTransmisionWindow()
         {
             InitializeComponent();
@@ -43,6 +60,10 @@ namespace ClientAplication
         }
 
         bool _shown;
+        /// <summary>
+        /// nadpisana metoda <c>OnContentRendered</c> uruchaiająca się podczas 
+        /// wygenerowania wyglądu podaje tekst z kim trwa rozmowa.
+        /// </summary>
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
@@ -51,24 +72,38 @@ namespace ClientAplication
                 return;
 
 
-            stringWithName.Text = "Połączenie z " + nameCallToUser;
+            stringWithName.Text = "Połączenie z " + user.Name;
             _shown = true;
 
         }
 
+        /// <summary>
+        /// metoda wywołująca się podczas zamykania okna
+        /// zatrzymuje odliczanie czasu dla obiektu dispatchetTimer
+        /// </summary>
         void Window_Closing(object sender, CancelEventArgs e)
         {
             dispatcherTimer.Stop();
         }
 
         
+        /// <summary>
+        /// metoda wywołująca się podczas naciśnięcia czerwonej słuchawki
+        /// wysyła informacje do serwerów o zakończeniu rozmowy
+        /// </summary>
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
             SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
-            string saveCall = client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " + nameCallToUser + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
+            string saveCall = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " + user.Name + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
             singletoneOBJ.phoneVOIP.btn_HangUp_Click(user.Name);
             this.Close();
         }
+
+        /// <summary>
+        /// nadpisana metoda <c>OnMOuseLeftButtonDown</c> umożliwająca przesuwanie okna po całym 
+        /// ekranie za pomocą naciśnięcia myszy na pole okna w którym nie znajduje się żaden inny element
+        /// taki jak textblock itp.
+        /// </summary>
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             try
@@ -78,7 +113,11 @@ namespace ClientAplication
             }
             catch (Exception exc) { }
         }
-
+        /// <summary>
+        /// ?????
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -87,6 +126,11 @@ namespace ClientAplication
             dispatcherTimer.Start();
         }
 
+
+        /// <summary>
+        /// metoda wywołująca się podczas zdarzenia ustalonego w konstruktorze
+        /// odpowiedzialna jest za wyświetlanie czasu rozmowy w oknie 
+        /// </summary>
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             TimeSpan t = DateTime.Now - dateBegin;

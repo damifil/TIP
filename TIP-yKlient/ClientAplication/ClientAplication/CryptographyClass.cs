@@ -10,6 +10,9 @@ using System.Security.Cryptography;
 namespace ClientAplication
 {
 
+    /// <summary>
+    /// Klasa służąca do szyfrowania połączenia
+    /// </summary>
     public static class Cryptography
     {
 

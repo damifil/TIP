@@ -193,9 +193,8 @@ namespace ClientAplication
                     main = new CallFromWindow();
                     main.user = new User(true, true);
                     main.dateBegin = DateTime.Now;
-                    main.nameCallToUser = e.Item.DialInfo.CallerDisplay;
+                    main.user.Name= e.Item.DialInfo.CallerDisplay;
                     nameCallToUser = e.Item.DialInfo.CallerDisplay;
-                    main.user.Name = e.Item.DialInfo.CallerDisplay;
                     main.Show();
                 }
             }));
@@ -252,9 +251,9 @@ namespace ClientAplication
                     if (transimiso == null)
                     {
                         transimiso = new CallTransmisionWindow();
-                        transimiso.nameCallToUser = nameCallToUser;
+                        transimiso.user.Name = nameCallToUser;
                         transimiso.dateBegin = DateTime.Now;
-                        transimiso.client = client;
+                  
                         transimiso.user = new User(true, true);
                         transimiso.Show();
                     }

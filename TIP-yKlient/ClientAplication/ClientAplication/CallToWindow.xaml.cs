@@ -14,15 +14,34 @@ using System.Windows.Shapes;
 
 namespace ClientAplication
 {
+
     /// <summary>
-    /// Interaction logic for CallToWindow.xaml
+    /// Klasa <c>CallToWindow</c> przechowywująca logikę okna które wyświetla się w momencie
+    /// kiedy ktoś próbuje się dodzwonić do użytkownika
     /// </summary>
-    /// 
     public partial class CallToWindow : Window
     {
+        /// <summary>
+        /// Obiekt klasy <c>SingletoneObject</c> przechowywująćy informacje któe w całym programie są potrzebne
+        /// </summary>
         SingletoneObject singletoneOBJ = SingletoneObject.GetInstance;
+
+        /// <summary>
+        /// Obiekt klasy <c>User</c> którzy przechowuje informacje na temat osoby
+        /// do której wykonuje połączenie użytkownik
+        /// </summary>
         internal User user { get; set; }
+
+        /// <summary>
+        /// zmienna przechowywujaca czas rozpoczecia dzwonienia
+        /// wykorzystywany podczas wysylania do serwera informacji o czasie wykonywania połązenia
+        /// które zostało odrzucone
+        /// </summary>
         internal DateTime dateBegin { get; set; }
+
+        /// <summary>
+        /// Konstruktor klasy
+        /// </summary>
         public CallToWindow()
         {
             InitializeComponent();
@@ -30,6 +49,9 @@ namespace ClientAplication
 
 
         bool _shown;
+        /// <summary>
+        /// nadpisana metoda <c>OnContentRendered</c> uruchaiająca się podczas wygenerowania wyglądu podaje tekst z kim nawiązywuje się rozmowę.
+        /// </summary>
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
@@ -42,7 +64,10 @@ namespace ClientAplication
             
         }
 
-
+        /// <summary>
+        /// Metoda uruchamiająća się podczas naciśnięcia przycisku czerwonej słuchawki, 
+        /// podczas któej wysyłane są wiadomości do serwera oraz do serwera OZEKi o odrzuceniu rozmowy
+        /// </summary>
         private void callDisconectTextboxaction(object sender, MouseButtonEventArgs e)
         {
             string searchList = singletoneOBJ.client.sendMessage("SAVECALL " + singletoneOBJ.user.Name + " " +  user.Name + " " + dateBegin.ToString() + " " + DateTime.Now.ToString());
@@ -50,6 +75,11 @@ namespace ClientAplication
             this.Close();
         }
 
+        /// <summary>
+        /// nadpisana metoda <c>OnMOuseLeftButtonDown</c> umożliwająca przesuwanie okna po całym 
+        /// ekranie za pomocą naciśnięcia myszy na pole okna w którym nie znajduje się żaden inny element
+        /// taki jak textblock itp.
+        /// </summary>
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             try

@@ -10,12 +10,31 @@ using System.Windows;
 
 namespace ClientAplication
 {
+    /// <summary>
+    /// Klasa odpowiedzialna za logowanie lub rejestracje użytkownika do serwerów
+    /// </summary>
+    /// <remarks>
+    /// Wykorzystywana jest w klasach PageLogin oraz PageRegister
+    /// </remarks>
     public class LoginRegisterManagment
     {
+        /// <summary>
+        /// obiekt klasy <c>SingletoneObject</c>
+        /// </summary>
         SingletoneObject singletoneOBj;
+
+        /// <summary>
+        /// czas w ms po którym wysyłana jest informacja do serwera o tym żę użyktonik jest aktywny
+        /// </summary>
         int timeThreadloop = 30000;
 
-        private static byte[] HashPassword(string password)          // haszowanie hasla
+
+        /// <summary>
+        /// metoda odpowiedzialna za hashowanie hasła
+        /// </summary>
+        /// <param name="password">hasło użytkownika</param>
+        /// <returns>zwraca tablice byte z shasowanym hasłem</returns>
+        private static byte[] HashPassword(string password)          
         {
             IHash hash = HashFactory.Crypto.SHA3.CreateKeccak512();
             HashAlgorithm hashAlgo = HashFactory.Wrappers.HashToHashAlgorithm(hash);
@@ -25,6 +44,10 @@ namespace ClientAplication
         }
 
 
+        /// <summary>
+        /// metoda wykorzystywana w osobnym wątku której zadaniem 
+        /// jest wysyłanie okresowo informacji do serwera o tym żę użytkownik jest aktywny
+        /// </summary>
         private void isOnlineloop()
         {
             while (true)
@@ -41,17 +64,20 @@ namespace ClientAplication
                     user.active = sp[1];
                     listUsers.Add(user);
                 }
-              
                     singletoneOBj.listUsers = new List<ListUser>();
                     singletoneOBj.listUsers = listUsers;
                     singletoneOBj.listusercompare = true;
-               
                 Thread.Sleep(timeThreadloop);
             }
         }
 
 
 
+        /// <summary>
+        /// metoda odpwoeidzialna za otrzymanie listy znajoomych z serwera
+        /// </summary>
+        /// <param name="login">Login użytkownika dla którego ma zostać zwrócona lista użytkownikó</param>
+        /// <returns>zwraca listę użytkowników</returns>
         private List<ListUser> GetFriends(string login)
         {
             string friendsList = singletoneOBj.client.sendMessage("GETFRIENDS " + login);
@@ -70,6 +96,15 @@ namespace ClientAplication
 
 
 
+        /// <summary>
+        /// Funkcja odpowiedzialna za logowanie lub rejestracje w zależnośći od podanego parametru
+        /// podczas wykonywania tej funkcji usalane jest połączenie z serwerwem OZEKi
+        /// oraz uruchamioany jest osobny wątek odpowiedzialny za informowanie serwera o aktywnośći użytkownika
+        /// </summary>
+        /// <param name="login">Login użytkownika</param>
+        /// <param name="password">Hasło użytkownika</param>
+        /// <param name="islogin">Czy jest to logowanie dla wartośći true wykonuje się akcaj dla logowaniea
+        /// natomiast dla wartośći false rejestracji</param>
         public void loginRegisterfunction(string login, string password, bool islogin)
         {
             singletoneOBj = SingletoneObject.GetInstance;

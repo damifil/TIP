@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/ce811561-cc58-42f1-bffb-a14d47ef99b8.htm" />
+  <HelpTOCNode Id="4b0c6df3-999f-48af-b861-48dd2784138b" Title="Version History" Url="html/bfd37f9d-87b1-4bbb-a463-fec084ea4d10.htm">
+    <HelpTOCNode Title="Version 1.0.0.0" Url="html/be4f8ea2-dfa0-49a1-80b5-61110782fcc9.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="a7651be0-e61e-477a-a4fc-3dc72f83e81f" Title="ClientAplication" Url="html/33780fed-2f1c-8293-4845-209ee5625916.htm">
+    <HelpTOCNode Id="d247bab9-d8ad-49d1-a8e1-e368569d54b9" Title="AplicationUser Class" Url="html/3c59e534-91aa-d274-f076-93da9b95c396.htm">
+      <HelpTOCNode Title="AplicationUser Constructor " Url="html/a5719bf5-59cb-d301-f89a-2bc1c5986000.htm" />
+      <HelpTOCNode Id="44d6afb7-0a9d-445d-a40f-7d85523e1788" Title="AplicationUser Properties" Url="html/bcd289cb-4b6c-520a-3c11-9dd42d17af12.htm">
+        <HelpTOCNode Title="lastActivity Property " Url="html/02c6e762-0587-c1ca-2900-1eb1159d8b67.htm" />
+        <HelpTOCNode Title="password Property " Url="html/ea0bcf4e-6e70-a7cb-ff33-5885e888783d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="307abbd6-c815-4b2e-85f8-8cdc145a625e" Title="CallFromWindow Class" Url="html/8562ded1-5445-81c4-ac42-557710815cd8.htm">
+      <HelpTOCNode Title="CallFromWindow Constructor " Url="html/766c6461-c0f6-5b32-0f9c-c6145b920b98.htm" />
+      <HelpTOCNode Id="0f17fc9c-26d5-48ca-a44a-ba3c54f9b484" Title="CallFromWindow Properties" Url="html/161bde5a-fb05-0616-7dac-5c27488de066.htm">
+        <HelpTOCNode Title="dateBegin Property " Url="html/ce54cac4-60aa-35a4-f5f5-8d9232ed0edc.htm" />
+        <HelpTOCNode Title="user Property " Url="html/c4095e6b-c3a8-27cd-3ef1-36a7861d70fd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e7c74d80-6d77-4c88-b036-e652b742ff8b" Title="CallFromWindow Methods" Url="html/a5728e5c-e4f8-6ded-b0f0-bdd84aacf432.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/28502c84-5edd-db9d-5c03-a9a9b05ec042.htm" />
+        <HelpTOCNode Title="callAceptTextboxaction Method " Url="html/f1ec5484-624d-27b4-7a38-b5b49b3fa305.htm" />
+        <HelpTOCNode Title="callDisconectTextboxaction Method " Url="html/038dc7d5-a027-8ac9-d3f0-d00abb782519.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/0e4d2096-fc82-553f-adab-41a9ff1fd913.htm" />
+        <HelpTOCNode Title="OnContentRendered Method " Url="html/639b1dfb-ff50-fce1-837e-e733f0a2ac32.htm" />
+        <HelpTOCNode Title="OnMouseLeftButtonDown Method " Url="html/9c903763-0c7e-90a4-d662-d156da445594.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="43e3f1fc-bcaf-41a9-a169-35afbea3053a" Title="CallFromWindow Fields" Url="html/73004b02-5e39-2370-e315-d70bd87ff2dd.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/4bbbaea3-75df-b09d-4c1f-93bb50d987f0.htm" />
+        <HelpTOCNode Title="_shown Field" Url="html/20260a8d-d942-1192-1853-5d6d3302a6b1.htm" />
+        <HelpTOCNode Title="callIco Field" Url="html/bdb07488-3a3c-fd16-5680-5873e668760e.htm" />
+        <HelpTOCNode Title="callIco2 Field" Url="html/88ad7896-70ed-15cd-b8a9-658c51061152.htm" />
+        <HelpTOCNode Title="singletoneOBJ Field" Url="html/2a607171-d241-feb2-7f96-f9540bb6f07f.htm" />
+        <HelpTOCNode Title="stringWithName Field" Url="html/a029c446-0cdd-d4ad-2253-5d40f98a153a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0e771e52-0caa-46f2-bdf0-d333ff64cb0a" Title="CallToWindow Class" Url="html/fe9cfaba-1c8d-a8e3-6028-cc1201f6afce.htm">
+      <HelpTOCNode Title="CallToWindow Constructor " Url="html/67b70e2c-4d47-a4d5-8b6e-5fc2a1213ac8.htm" />
+      <HelpTOCNode Id="413b0d32-38cd-401b-b10d-76dcb20fe54e" Title="CallToWindow Properties" Url="html/f750d202-a4d3-8661-458d-d2badddf2096.htm">
+        <HelpTOCNode Title="dateBegin Property " Url="html/b055b414-1a10-4bf6-9c38-292b4fc76001.htm" />
+        <HelpTOCNode Title="user Property " Url="html/777fb765-80f2-2eb8-666b-6c38a367d320.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="af83ea47-8b34-43c1-a557-6585e3e0a066" Title="CallToWindow Methods" Url="html/cc2c7cd3-fc91-2114-c665-d0c6f4ec5889.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/e5c4c350-daac-fe61-45f1-1c88e382af72.htm" />
+        <HelpTOCNode Title="callDisconectTextboxaction Method " Url="html/53b3899f-0ad1-368d-3e77-ef2687633741.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/b44e86a0-8ca0-dcf7-dc44-3535a441f570.htm" />
+        <HelpTOCNode Title="OnContentRendered Method " Url="html/ea8c831b-9872-94c0-c451-2904a791e0c6.htm" />
+        <HelpTOCNode Title="OnMouseLeftButtonDown Method " Url="html/43ab2779-e0c8-cfc6-8509-c680b862051e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="dc0032c4-b4ce-4925-a7bc-5f090b3163e3" Title="CallToWindow Fields" Url="html/87167bfe-02dd-be77-5724-3571e3a5df88.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/34ab005e-0765-a765-8393-04de3519face.htm" />
+        <HelpTOCNode Title="_shown Field" Url="html/a22035e6-bdc8-994a-c8ac-49087aa9c4b6.htm" />
+        <HelpTOCNode Title="callIco Field" Url="html/6ce3b373-ffda-dbb6-8eda-b96ad6cf0c0d.htm" />
+        <HelpTOCNode Title="singletoneOBJ Field" Url="html/73c9e4e2-3873-688a-5d19-3702a2dde77c.htm" />
+        <HelpTOCNode Title="stringWithName Field" Url="html/3cb36a0d-edee-a344-756f-e541c2bd8d4c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="45e6c3ef-49a1-4fb0-8584-156410815e3b" Title="CallTransmisionWindow Class" Url="html/c1b3a218-2d1c-918b-80fe-6a1021b012a0.htm">
+      <HelpTOCNode Title="CallTransmisionWindow Constructor " Url="html/070142cc-518c-b852-ab23-b4932da10226.htm" />
+      <HelpTOCNode Id="793715a3-b07e-4d36-8666-9d481ada9a9e" Title="CallTransmisionWindow Properties" Url="html/d59569ce-0973-ff8b-a73e-2a826674c611.htm">
+        <HelpTOCNode Title="dateBegin Property " Url="html/d6519ce9-ffbc-f4de-0f26-082409b35b47.htm" />
+        <HelpTOCNode Title="user Property " Url="html/804f2bfa-690f-3c68-a2b8-b74b10c99ea2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a23cdcc5-403c-4ea2-af29-233979a3c99a" Title="CallTransmisionWindow Methods" Url="html/6045d4dd-fdf8-055d-2702-6d36d2f40ccb.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/0e8c350d-7c62-1fca-62b5-25fb476094e7.htm" />
+        <HelpTOCNode Title="callDisconectTextboxaction Method " Url="html/28ef17cc-06fc-b81a-c7eb-eda5d7913d69.htm" />
+        <HelpTOCNode Title="dispatcherTimer_Tick Method " Url="html/653258b6-bd54-dde5-b954-f7004da8c872.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/847bf0ec-18ba-da7c-5137-c39a9a16514f.htm" />
+        <HelpTOCNode Title="OnContentRendered Method " Url="html/a179cc8d-51fa-10a4-3c18-335cb31f7d3b.htm" />
+        <HelpTOCNode Title="OnMouseLeftButtonDown Method " Url="html/09fbe2c3-6574-f673-20bd-256253ea5b56.htm" />
+        <HelpTOCNode Title="Window_Closing Method " Url="html/79989984-de46-53f4-d412-fcf30f2cab9f.htm" />
+        <HelpTOCNode Title="Window_Loaded Method " Url="html/6be6e4eb-4854-bce0-8d4f-4ca1881519cf.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="42d5c159-4148-4a2a-939e-a3e9879e3156" Title="CallTransmisionWindow Fields" Url="html/a33b59f2-ecfb-c7ed-ffec-e778709353e6.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/a48757ec-3de0-47e1-0eda-d826ff2644ed.htm" />
+        <HelpTOCNode Title="_shown Field" Url="html/39b59020-18c9-8a45-77d8-cc03caeee781.htm" />
+        <HelpTOCNode Title="callIco Field" Url="html/d07142ef-d03a-2186-b69b-4b9e9c6bd11e.htm" />
+        <HelpTOCNode Title="dispatcherTimer Field" Url="html/ecc4df53-4b24-5fd6-1e35-88cdf3bdbfe8.htm" />
+        <HelpTOCNode Title="stringWithName Field" Url="html/8e0818f6-d92d-4ec5-3574-0b86b074d105.htm" />
+        <HelpTOCNode Title="timeTextBlock Field" Url="html/988cdb3e-34b6-a44e-3a5d-11409d5a9048.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="da3edc2c-969e-44f3-bce2-1631a73a724f" Title="Client Class" Url="html/dc64ec22-66f5-ecd5-116b-1ed693a6d083.htm">
+      <HelpTOCNode Title="Client Constructor " Url="html/194163a4-328f-b5cd-70ce-fbcb57434a2b.htm" />
+      <HelpTOCNode Id="36573170-bb1f-49f7-8ab7-d05191074d8b" Title="Client Properties" Url="html/cad1b8e9-1949-e1ca-98da-308626a96584.htm">
+        <HelpTOCNode Title="ipAddres Property " Url="html/b154eb86-bb35-5cc3-5334-866a48db34c5.htm" />
+        <HelpTOCNode Title="portnumber Property " Url="html/5e856c75-a748-9502-7403-3f85850a2aa8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="72b1dfbf-b7b8-4e0d-a703-144f730b5c25" Title="Client Methods" Url="html/8acd3a86-ab08-19aa-512b-af8da8b08282.htm">
+        <HelpTOCNode Title="destroyfunction Method " Url="html/6bf2b131-c0b3-67f7-3c1a-bbae0ba1bf4e.htm" />
+        <HelpTOCNode Title="HandleCommunication Method " Url="html/1ed1fd0f-e207-a246-f028-f9ac27dc257f.htm" />
+        <HelpTOCNode Title="sendMessage Method " Url="html/508a821e-cac2-eeaa-db29-1f979d160198.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f9f1f011-7d5f-42fe-a3ae-7bfac4347c6a" Title="Client Fields" Url="html/68314203-e812-7a25-cd0e-1b6dfbe0b57b.htm">
+        <HelpTOCNode Title="client Field" Url="html/92d00713-9145-bb30-1bac-b0f5761ae2f1.htm" />
+        <HelpTOCNode Title="diffieHelman Field" Url="html/6ab693c8-5c68-048e-02d8-da1367380e0b.htm" />
+        <HelpTOCNode Title="isConnected Field" Url="html/8ec6a363-a80f-23fd-5099-c658403f1010.htm" />
+        <HelpTOCNode Title="m_SyncObject Field" Url="html/42b3942a-0465-b3e8-979b-249f221e7f1a.htm" />
+        <HelpTOCNode Title="streamReader Field" Url="html/81f2befb-a4f7-ccee-fd48-e7d047bcb7e6.htm" />
+        <HelpTOCNode Title="streamWriter Field" Url="html/a73ef438-ca2f-35a7-c7ab-0e4d9be2acab.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f22931bb-aed6-45ce-9ed9-9b8dcfd4704a" Title="Cryptography Class" Url="html/b4041f8e-620d-61cd-40a6-3c2051b42cd1.htm">
+      <HelpTOCNode Title="Cryptography Constructor " Url="html/34d5e917-c2f8-dffa-9c94-c4e23554861f.htm" />
+      <HelpTOCNode Id="a8671497-67a1-49d6-a5fd-ee275c5c0d7e" Title="Cryptography Methods" Url="html/052eb602-9791-7064-9f47-69ed31ce61a6.htm">
+        <HelpTOCNode Id="848c7b32-f461-4281-bcf4-671dfa61193c" Title="Decrypt Method " Url="html/f4fdb410-dc52-b25e-a938-097313cc8326.htm">
+          <HelpTOCNode Title="Decrypt Method (String, Byte[])" Url="html/841481bc-59eb-b6f5-06ba-2dba52a0e464.htm" />
+          <HelpTOCNode Title="Decrypt(T) Method (String, Byte[])" Url="html/0f909889-6fa6-a690-e62b-31d4f0b3a436.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="806e7a65-93bc-4993-96a7-ea26f77f0800" Title="Encrypt Method " Url="html/8029f8bc-7239-8011-a7a4-f1e13b0bac06.htm">
+          <HelpTOCNode Title="Encrypt Method (String, Byte[])" Url="html/b302e86d-970c-fdd8-59a5-1e9727ce36ff.htm" />
+          <HelpTOCNode Title="Encrypt(T) Method (String, Byte[])" Url="html/89ea8ace-ed88-67f6-0623-e93ddedb1b29.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5d9be363-999d-4e7b-ac1b-66c1479e4c89" Title="Cryptography Fields" Url="html/52df5051-c625-3f33-46c7-0eaec6214b71.htm">
+        <HelpTOCNode Title="hash Field" Url="html/0c6288cd-c445-b548-e418-02129323ad2c.htm" />
+        <HelpTOCNode Title="iterations Field" Url="html/a2f5a795-d467-83bd-d19d-3e784c2826fd.htm" />
+        <HelpTOCNode Title="keySize Field" Url="html/304e133d-56e5-7bd4-c64d-e40255b9d5ba.htm" />
+        <HelpTOCNode Title="saltBytes Field" Url="html/df83c4c3-89e0-cb67-9d0b-9f82291e195f.htm" />
+        <HelpTOCNode Title="vectorBytes Field" Url="html/9b5c57ae-6301-2554-e653-d8400fe39237.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="59b4b840-6652-4407-8a36-1ee0da3fffa9" Title="DiffieHelman Class" Url="html/9f1e54b6-d565-13dd-75a3-5c18a96b56af.htm">
+      <HelpTOCNode Title="DiffieHelman Constructor " Url="html/d9f24863-246e-3db8-eb9f-72021f1b1ca0.htm" />
+      <HelpTOCNode Id="5f65c267-6dfb-47fd-8947-25f99460f5b1" Title="DiffieHelman Methods" Url="html/165a4a25-092e-6f19-ab9a-9103e99b1b46.htm">
+        <HelpTOCNode Title="CreateDH Method " Url="html/84ea5c4a-9951-60a7-139b-24de1552e555.htm" />
+        <HelpTOCNode Title="generateDoubleArrayFromStrin Method " Url="html/93f7e9f8-f374-76cf-35ae-f4e4e4b2f5f2.htm" />
+        <HelpTOCNode Title="generateG Method " Url="html/71da1069-4ba4-8c5d-c91d-c55f7ce12670.htm" />
+        <HelpTOCNode Title="generateP Method " Url="html/e98a71a4-daa4-8949-d822-2ae4bc6786b5.htm" />
+        <HelpTOCNode Title="isPrimeNumber Method " Url="html/43430268-86d7-4cb4-a46f-c4dc493bc579.htm" />
+        <HelpTOCNode Title="powMod Method " Url="html/8d7f38f9-7d37-a7e5-d924-e81267985cc1.htm" />
+        <HelpTOCNode Title="reciveMessage Method " Url="html/02338085-a65f-2202-221f-4bf43a91f4a3.htm" />
+        <HelpTOCNode Title="sendMessage Method " Url="html/d10269b1-fa82-57ee-f7a6-eb92504655d5.htm" />
+        <HelpTOCNode Title="sendMessage1 Method " Url="html/5ac07bcf-7d4f-339b-4b1f-3019f25cca47.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3e4a2a8e-8a8d-4af2-bffd-fdc06f222e87" Title="DiffieHelman Fields" Url="html/bb252a4e-a1b6-fd0f-0684-d96f49b6ec88.htm">
+        <HelpTOCNode Title="a Field" Url="html/64e166dd-3893-7c88-86b1-0191bf207acb.htm" />
+        <HelpTOCNode Title="A Field" Url="html/0868aaed-c952-c06b-727c-dc059c1a06d7.htm" />
+        <HelpTOCNode Title="G Field" Url="html/538059fc-53bf-4103-1c7c-080d314878a6.htm" />
+        <HelpTOCNode Title="P Field" Url="html/a912a0c0-b3ae-69fe-af40-db8c8e7e456c.htm" />
+        <HelpTOCNode Title="rnd Field" Url="html/3d5799b6-7f59-02f2-689c-eae214b8de1a.htm" />
+        <HelpTOCNode Title="s Field" Url="html/979ae73f-3ebd-cf19-1111-058c92f07f95.htm" />
+        <HelpTOCNode Title="secretByteArray Field" Url="html/82dd1303-6603-e77b-b1f7-a5387073f9b8.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="99f23142-6389-4792-9417-404192ed389b" Title="ItemTB Class" Url="html/466fa0a2-185d-18ae-48a1-e78c41aee595.htm">
+      <HelpTOCNode Title="ItemTB Constructor " Url="html/ca1ee884-1c29-0a6c-8f8e-2fd9608dd89f.htm" />
+      <HelpTOCNode Id="5c8d5036-dc31-48c7-904e-17953b9b089f" Title="ItemTB Properties" Url="html/ff518737-ac20-04c7-1dae-817fefd7cf4a.htm">
+        <HelpTOCNode Title="Date Property " Url="html/b1f1be08-8d5e-21fd-8999-e530254d5f0d.htm" />
+        <HelpTOCNode Title="Describe Property " Url="html/aebb519a-36ec-9d4f-274a-ac9ec650ef9f.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/7081f545-43b5-514f-c594-af606ba58391.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7263fa9f-a0da-4af0-8c09-212c2664e16b" Title="ListHistory Class" Url="html/a91b91af-59a9-64cb-b934-97a1ba821b96.htm">
+      <HelpTOCNode Title="ListHistory Constructor " Url="html/90001a18-4ae8-b38e-c8a8-1b8ac8277644.htm" />
+      <HelpTOCNode Id="460ee2a7-20b6-4f67-8cca-b367a0d26952" Title="ListHistory Properties" Url="html/d4904fc7-0b1c-9c43-82f9-7eb0a77a3c0f.htm">
+        <HelpTOCNode Title="dayBegin Property " Url="html/2bcc4a49-329b-b45c-4688-932cf84f053c.htm" />
+        <HelpTOCNode Title="dayEnd Property " Url="html/4091f21e-a474-3485-a0fb-956ceb706722.htm" />
+        <HelpTOCNode Title="hourBegin Property " Url="html/fce1db70-4525-1419-8fdc-8e62cc000a1a.htm" />
+        <HelpTOCNode Title="hourEnd Property " Url="html/581efa40-7f99-3647-8ccc-7aba83753445.htm" />
+        <HelpTOCNode Title="userName Property " Url="html/a23d638c-292e-672b-c326-16bc362862d3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9d7a6673-b17a-430c-9877-d27e7a829568" Title="ListUser Class" Url="html/202c0639-8523-599a-b915-7eacd4101e2c.htm">
+      <HelpTOCNode Title="ListUser Constructor " Url="html/4bf98bb9-0621-31a3-0d09-90009edeeff0.htm" />
+      <HelpTOCNode Id="174d9941-9068-4fe8-973b-9f38362027a2" Title="ListUser Properties" Url="html/47ec9ae4-f744-dd72-3d17-3d96483acd60.htm">
+        <HelpTOCNode Title="active Property " Url="html/4ea92548-2ad7-f56f-3529-7c950ab039c7.htm" />
+        <HelpTOCNode Title="name Property " Url="html/8f85525f-e228-e1a7-6122-cf43909e1558.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e511a116-ffab-4133-b7f1-282595abecf6" Title="LoginRegisterManagment Class" Url="html/2d946f3d-5349-f223-9e77-d70ec16270b6.htm">
+      <HelpTOCNode Title="LoginRegisterManagment Constructor " Url="html/2005429c-1053-957c-addd-8401109b0cb7.htm" />
+      <HelpTOCNode Id="61761f8f-2c94-46b9-8bab-faff9fbcb64a" Title="LoginRegisterManagment Methods" Url="html/2769c1d3-7c61-6bca-51af-1710c446f975.htm">
+        <HelpTOCNode Title="GetFriends Method " Url="html/fb7a2cf1-5e33-1deb-31b1-49348833b9c2.htm" />
+        <HelpTOCNode Title="HashPassword Method " Url="html/f744fd97-d113-6a96-33ae-e81ddb418046.htm" />
+        <HelpTOCNode Title="isOnlineloop Method " Url="html/01dcb711-5acf-a375-644f-5e12edaac4c6.htm" />
+        <HelpTOCNode Title="loginRegisterfunction Method " Url="html/ba7a312f-7a01-54fc-767f-beb197e07d49.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="dc67df37-38c3-4e0a-9a3f-dfe73976f465" Title="LoginRegisterManagment Fields" Url="html/a5b60ecf-e8e4-5ead-1f75-37dd59c87e2d.htm">
+        <HelpTOCNode Title="singletoneOBj Field" Url="html/6ccf5f2f-03da-16ee-3d3d-be5d36de00a1.htm" />
+        <HelpTOCNode Title="timeThreadloop Field" Url="html/8acd8c05-7be7-80ee-7e55-04ea4a869585.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f4e7d83e-1115-41e0-9759-a66bdda2dc5f" Title="LoginRegisterWindow Class" Url="html/7c97c6ef-ade0-7289-d4d9-9c9ce9c46685.htm">
+      <HelpTOCNode Title="LoginRegisterWindow Constructor " Url="html/d65655f6-4726-02e5-90db-cfb7dd35ff97.htm" />
+      <HelpTOCNode Id="99014700-bd98-4a7e-a7a8-b9848909681e" Title="LoginRegisterWindow Methods" Url="html/9d2124bb-a5fa-30b3-281b-32e00ea86d4c.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/11203d65-1aa2-74f8-db6d-220f52104bad.htm" />
+        <HelpTOCNode Title="closeButon_Click Method " Url="html/23f78f80-963d-aa77-e7bf-f7080e7c7b8f.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/d66a870d-2610-169d-b711-ad665590e387.htm" />
+        <HelpTOCNode Title="OnMouseLeftButtonDown Method " Url="html/0ca25097-138d-35f0-fe20-a5984c5d64da.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d79b8dee-d54f-4987-9dc3-c72bfe605f71" Title="LoginRegisterWindow Fields" Url="html/1ef73c80-3db9-a8da-e551-d16efe16eb04.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/ad0b84f4-776d-d7b7-061b-aa50da075e09.htm" />
+        <HelpTOCNode Title="rightSideWP Field" Url="html/205ac1c8-0db9-f4bc-43f7-d7b20078fc23.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b4bafe16-9dc6-463b-a151-099f72f6188a" Title="MainWindow Class" Url="html/39fac6e8-5af5-2dbc-7003-8af3db91c9f7.htm">
+      <HelpTOCNode Title="MainWindow Constructor " Url="html/9f01e74e-1f0e-c7a7-9cdb-1c89c60a0c60.htm" />
+      <HelpTOCNode Id="8395fd1b-574d-40bb-83bd-373426e07a8b" Title="MainWindow Methods" Url="html/2a57ca8c-0382-4b65-c8b3-ceb548e98e68.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/a1ce7727-562b-65e7-91df-447dbdb4ead3.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/31110036-65f0-dbd5-4c06-b321f455a8b1.htm" />
+        <HelpTOCNode Title="OnMouseLeftButtonDown Method " Url="html/6ffb31a9-a63f-5d1c-8124-398bd06d69f9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f482fc06-9103-4636-857e-40bc5a6965b4" Title="MainWindow Fields" Url="html/e36becd1-bb6a-c0d5-00a2-59af2b3e4bd3.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/ccc189c3-6133-dc3e-b690-f19766ba7722.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="14e156f2-6e33-43da-a576-97640c9387e3" Title="PageHistory Class" Url="html/7d9818cf-3572-4fb6-d7fa-f5b4f0b80a46.htm">
+      <HelpTOCNode Id="7b6a9566-e933-4af1-8755-1c9d5762df0a" Title="PageHistory Constructor " Url="html/5681abfa-d676-065a-bed1-b47e43e27b24.htm">
+        <HelpTOCNode Title="PageHistory Constructor " Url="html/8df95b8a-f561-d6ee-5e1a-ed9f063b429e.htm" />
+        <HelpTOCNode Title="PageHistory Constructor (String, List(ListHistory))" Url="html/0fbb57bf-4d9f-fd86-ce71-5da67f7c6a9e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="644a4688-2357-4426-81f5-3bb21cb87d34" Title="PageHistory Properties" Url="html/5837996e-9833-7209-44c2-8b2897da5ed3.htm">
+        <HelpTOCNode Title="copyitems Property " Url="html/89cbc48f-1a28-9b14-100b-7f56d29d38b4.htm" />
+        <HelpTOCNode Title="items Property " Url="html/30659f69-2f74-1704-ad4e-c12e313c14f1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="23e54bd6-35a7-4c71-b67c-3eb602eae02f" Title="PageHistory Methods" Url="html/2c6efda3-7dd4-1c7f-270b-ceda974dee3d.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/aabe23be-b931-573c-c216-c611a0102179.htm" />
+        <HelpTOCNode Title="IStyleConnector.Connect Method " Url="html/425daa50-cdc7-cf50-ac0e-b398549f1b96.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/cc623e95-535e-f1a7-93cf-df65d02f489a.htm" />
+        <HelpTOCNode Title="backAction Method " Url="html/ac096fd7-fac8-35a4-7afa-cd76a717ba51.htm" />
+        <HelpTOCNode Title="callToUser Method " Url="html/988ede0f-f269-658b-c8eb-ac5f8fe621b7.htm" />
+        <HelpTOCNode Title="GetConcreteHistory Method " Url="html/d8821877-2597-072e-fa05-5e4582fab6ea.htm" />
+        <HelpTOCNode Title="historysearchinput_TextChanged Method " Url="html/dfe696c8-865f-4c8d-6de7-311801853329.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/2e531ea5-567b-04a3-7125-893abf55093c.htm" />
+        <HelpTOCNode Title="searchClickHistory Method " Url="html/0458439b-c40b-4f8a-43d6-2d02a625e990.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6940c982-e9a5-4b8e-8e83-2c1701504de4" Title="PageHistory Fields" Url="html/36e39487-aaf7-28eb-d4e2-972aee09cacf.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/a5123e58-6abd-698f-2fd8-adbe1a53c705.htm" />
+        <HelpTOCNode Title="historysearchinput Field" Url="html/46324816-51d3-e0e5-7f1c-a0eb9bba6852.htm" />
+        <HelpTOCNode Title="lbHistoryAll Field" Url="html/06be249f-da2f-b07e-65a2-3d7657fbbd6c.htm" />
+        <HelpTOCNode Title="menuSP Field" Url="html/82863dd8-ebba-2e5e-084a-4537ce21a387.htm" />
+        <HelpTOCNode Title="rightside Field" Url="html/2ed26ba5-46ba-6900-73ea-ac5e729c99c9.htm" />
+        <HelpTOCNode Title="singletoneOBj Field" Url="html/83fda9bb-ba27-7236-84c9-3f2177080434.htm" />
+        <HelpTOCNode Title="textBlock1 Field" Url="html/ea145c22-f62d-51da-97e3-e2b03943ea5e.htm" />
+        <HelpTOCNode Title="textBlock7 Field" Url="html/77f0815c-6edb-bfb6-d7ea-139f1bd56a7f.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/9f3fe4ed-ad20-9bc2-acb2-f374e38ff96e.htm" />
+        <HelpTOCNode Title="UC Field" Url="html/bd9a2c9e-4525-6935-24e5-30428d22428c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2679d8bd-f577-4486-924d-1f226b71b5d0" Title="PageLogin Class" Url="html/59b914d7-d99f-d5e0-eb83-428e4a223162.htm">
+      <HelpTOCNode Id="523375f5-a27a-4a5f-9f63-68590aff2b19" Title="PageLogin Constructor " Url="html/73c48b83-9dab-0af4-b809-218a29426887.htm">
+        <HelpTOCNode Title="PageLogin Constructor " Url="html/ca8f82ce-40db-af92-1634-d03e823748e8.htm" />
+        <HelpTOCNode Title="PageLogin Constructor (Boolean)" Url="html/95cec8df-9c61-9d6e-6b7d-b30c5fd043e6.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="667d62c7-e789-4fa8-a88a-bcd01b12a5ed" Title="PageLogin Methods" Url="html/4ce0e93d-4e20-fa38-c454-0cf86fb39302.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/2a873872-a9cb-d3ac-ef9b-2058049aad5f.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/f948d2b5-855f-356d-9cb0-bd741770caef.htm" />
+        <HelpTOCNode Title="Button_goToRegister Method " Url="html/992b7e63-f869-bc8f-3f86-74bf9229185b.htm" />
+        <HelpTOCNode Title="Button_login Method " Url="html/042a4397-e1b4-fb8d-8b96-196fd6d6a7c7.htm" />
+        <HelpTOCNode Title="closeButon_Click Method " Url="html/604c8df2-ccd4-5de6-1df9-68418efa0a7c.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/500bd8a2-1e4d-a4da-8041-035393ca566e.htm" />
+        <HelpTOCNode Title="settingsTextboxaction Method " Url="html/2ec847a8-17b8-7370-0c0e-f47945f2e468.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bb667dde-2afa-420f-8f3a-01aec98853f1" Title="PageLogin Fields" Url="html/93f1cb94-cfa2-f7e9-5971-454504a54631.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/8da58ce3-6844-b2a0-7c59-7ceb2e628a1c.htm" />
+        <HelpTOCNode Title="baseStyle Field" Url="html/c6e67721-b5f0-4712-cbf4-90aa674085b9.htm" />
+        <HelpTOCNode Title="gotoRegisterButton Field" Url="html/b2e69531-ec14-4b49-2a40-60a99e348227.htm" />
+        <HelpTOCNode Title="loginButton Field" Url="html/4cf1b88d-3f74-f9e0-e715-b48e71cca506.htm" />
+        <HelpTOCNode Title="loginInput Field" Url="html/05f6d00f-3989-033c-381a-68751d93af3e.htm" />
+        <HelpTOCNode Title="loginSP Field" Url="html/0649762d-e768-be9f-dad1-74f7218d542c.htm" />
+        <HelpTOCNode Title="LRM Field" Url="html/7dad4c5e-de37-bff3-fc79-f7e6502a64e9.htm" />
+        <HelpTOCNode Title="passwordInput Field" Url="html/5acd6cde-61f6-fe28-eeb1-efc6656371e0.htm" />
+        <HelpTOCNode Title="readSettings Field" Url="html/1e6fb654-306d-7958-b3c8-423d5de1ed84.htm" />
+        <HelpTOCNode Title="rightSideWP Field" Url="html/dd72b52d-ecc4-24a7-46d7-2dd1c0b38820.htm" />
+        <HelpTOCNode Title="settings Field" Url="html/0b34dc5d-247c-b29e-658b-73665b69843e.htm" />
+        <HelpTOCNode Title="settingsButoon Field" Url="html/0ba7ab61-5efe-7f71-5a3e-b2fa1e310a57.htm" />
+        <HelpTOCNode Title="singletone Field" Url="html/edab32fa-d0a9-0662-08ea-22283c1d4dc1.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/db35f47e-c2d6-77a1-3108-7c623c23ce03.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="663a607a-d391-4c9b-8304-7a2c78f7f699" Title="PageMain Class" Url="html/c90bd72f-6949-1f11-08d1-d3d013651a28.htm">
+      <HelpTOCNode Title="PageMain Constructor " Url="html/8b6e0796-318d-0118-6159-c5f195867ca1.htm" />
+      <HelpTOCNode Id="cf55d4f8-35c9-4311-a11d-c47ce24e4bd1" Title="PageMain Methods" Url="html/678a5501-8dab-1afa-7549-c411cada3b49.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/12692bb7-1b6e-2d49-c552-7a68236a2c14.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/9eadad51-3a93-fbd1-04f8-72ffd8f02a08.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/558b8079-95e7-0d66-db71-5ede2600958c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="471fd69f-4f0b-4843-8923-c87ed5c85c7f" Title="PageMain Fields" Url="html/98e131fc-60d4-e837-2578-f15e7c096318.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/a9f83776-609b-f080-b6dc-68e9e6bcfc8e.htm" />
+        <HelpTOCNode Title="menuSP Field" Url="html/50c73451-19dd-a120-1bae-757585d10bdc.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/7fc343d6-27b0-134f-b654-d40ddaec6b30.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="091f06e6-57e3-497a-a0f2-87bbade18995" Title="PageRegister Class" Url="html/d1831bd3-c559-359b-dbc7-d37b0ecf1c5b.htm">
+      <HelpTOCNode Id="79c30d60-b961-450b-8404-46a766375290" Title="PageRegister Constructor " Url="html/8821bcae-4623-84a7-53f3-59ee1855dcb1.htm">
+        <HelpTOCNode Title="PageRegister Constructor " Url="html/d435398e-93fb-be58-8e42-e9a41d66433e.htm" />
+        <HelpTOCNode Title="PageRegister Constructor (Boolean)" Url="html/44824f7b-eb58-bdac-5233-0c686a6b863f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6a34e62b-2180-41f1-92d1-a129d95e7218" Title="PageRegister Methods" Url="html/7e9f894d-a81e-9c4f-5199-ac48acd78e45.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/c0f0d261-660d-8d17-4d82-b88326906599.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/80c214da-2567-4bec-63e3-5c37894518fe.htm" />
+        <HelpTOCNode Title="Button_gotoLogin Method " Url="html/d032a068-0ea4-fff9-6e61-d9a319dd5c1f.htm" />
+        <HelpTOCNode Title="Button_register Method " Url="html/0f587964-386b-9d6a-0ecd-9651a1f19304.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/4b9ece61-a29d-6096-da3e-ef33359ef363.htm" />
+        <HelpTOCNode Title="settingsTextboxaction Method " Url="html/1e7b7740-128b-f94c-a1b0-b92b18c226b3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f0607093-b429-4780-a13b-74b1a08ba668" Title="PageRegister Fields" Url="html/3356ec45-cf29-70b4-016f-874e8938d31e.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/dbf1005a-4803-c9fe-b142-5600a591e01a.htm" />
+        <HelpTOCNode Title="gotoLogin Field" Url="html/f39f406a-ca9c-56b4-af00-95f903400934.htm" />
+        <HelpTOCNode Title="loginInputRegister Field" Url="html/a5291b60-351a-863b-434a-04c7b589b12c.htm" />
+        <HelpTOCNode Title="LRM Field" Url="html/fde5a10e-6c02-531c-abc1-5df470602a7b.htm" />
+        <HelpTOCNode Title="password1InputRegister Field" Url="html/2ce5f27f-e2df-3cbb-3124-f8573a34ca8f.htm" />
+        <HelpTOCNode Title="password2InputRegister Field" Url="html/055bda7a-d188-815a-c038-b68743abb9a1.htm" />
+        <HelpTOCNode Title="readSettings Field" Url="html/6b522c11-8392-aa6a-646a-cdc96be317cc.htm" />
+        <HelpTOCNode Title="registerButton Field" Url="html/f5ef7a99-bfcf-47dd-9a63-418c475d7850.htm" />
+        <HelpTOCNode Title="registerSP Field" Url="html/12731ba5-99a8-2508-6904-7277e18c5a9f.htm" />
+        <HelpTOCNode Title="rightSideWP Field" Url="html/ad95f842-4879-1949-7eee-a61ad90268ea.htm" />
+        <HelpTOCNode Title="settings Field" Url="html/37b4cda1-390d-839e-fb1e-65c952dc4450.htm" />
+        <HelpTOCNode Title="settingsButoon Field" Url="html/5632cca5-9140-3c0e-4213-b84c5f25fd22.htm" />
+        <HelpTOCNode Title="singletone Field" Url="html/69028f1b-4fa1-8d67-e8cf-e4d3e2c5d54f.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/e9737a14-e5fc-b632-c1ce-1599d22eba49.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="79458afd-2421-4970-8ff6-a5dcf50836be" Title="PhoneVOIP Class" Url="html/25122d87-e7fc-a676-443d-6913c847ed29.htm">
+      <HelpTOCNode Title="PhoneVOIP Constructor " Url="html/f515de0e-3eaa-713b-bce7-033df182c3b9.htm" />
+      <HelpTOCNode Id="1409ea80-78ef-4340-93c0-031a42fa49ba" Title="PhoneVOIP Properties" Url="html/2018a70a-a6e8-ace2-3eb3-305970248413.htm">
+        <HelpTOCNode Title="callto Property " Url="html/16aa014d-e7a6-77ea-606f-c393b00e90d9.htm" />
+        <HelpTOCNode Title="client Property " Url="html/14df320b-b02a-6abb-7f66-d1354fe533bb.htm" />
+        <HelpTOCNode Title="nameCallToUser Property " Url="html/373ca18a-4896-1bd3-fe66-ccd2367d6b06.htm" />
+        <HelpTOCNode Title="transimiso Property " Url="html/74ab62b5-8c12-ca8e-8351-16213d395d61.htm" />
+        <HelpTOCNode Title="userLogged Property " Url="html/d12c3349-5fab-d8cf-a4e5-6f062300c228.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cf0e5955-99d4-4064-a2b4-29cbe2a7d9a2" Title="PhoneVOIP Methods" Url="html/cb28a30d-3134-5ce2-9ef8-8998ef07481e.htm">
+        <HelpTOCNode Title="btn_HangUp_Click Method " Url="html/318327d5-2c55-11bb-c900-fd69d69d8848.htm" />
+        <HelpTOCNode Title="btn_PickUp_Click Method " Url="html/3b0859f1-2dbc-9378-ed3d-9d457880b6fe.htm" />
+        <HelpTOCNode Title="call_CallStateChanged Method " Url="html/3e42adbc-b570-25ad-6a47-ab9a59116257.htm" />
+        <HelpTOCNode Title="ConnectMedia Method " Url="html/8084f993-167b-f7a3-5aec-5b1452888443.htm" />
+        <HelpTOCNode Title="DisconnectMedia Method " Url="html/0df1cf64-0408-3606-5340-55870a39349e.htm" />
+        <HelpTOCNode Title="HashPassword Method " Url="html/b592c3d3-7e21-ef2b-6ca5-29f84f226207.htm" />
+        <HelpTOCNode Title="InitializeSoftPhone Method " Url="html/e905fbc6-d4dc-46bd-24f0-9b72bd841a61.htm" />
+        <HelpTOCNode Title="InvokeGUIThread Method " Url="html/4f78a949-03c8-3cee-fd5f-5b472602e679.htm" />
+        <HelpTOCNode Title="LogOff Method " Url="html/8f122857-5621-828a-f7b8-3c04961c9ad9.htm" />
+        <HelpTOCNode Title="phoneLine_PhoneLineInformation Method " Url="html/da27e42f-205e-1063-c95c-7c48f840cf44.htm" />
+        <HelpTOCNode Title="softPhone_inComingCall Method " Url="html/93ddf289-75a7-9f8a-b560-3ce47d19bf47.htm" />
+        <HelpTOCNode Title="StartDevices Method " Url="html/9dc78d35-3d44-80aa-91ef-c9100c91f9dc.htm" />
+        <HelpTOCNode Title="StopDevices Method " Url="html/ded2392e-b35b-eac0-3fb9-aefabb50a2f8.htm" />
+        <HelpTOCNode Title="WireDownCallEvents Method " Url="html/3876922d-6bed-9ee9-5504-34b939a44b57.htm" />
+        <HelpTOCNode Title="WireUpCallEvents Method " Url="html/a852dfb1-ae2e-5566-fd46-c8488a2d5a7b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="88762876-1cb0-4861-9860-eed536ad4e29" Title="PhoneVOIP Fields" Url="html/d0377b82-1cd5-e2d0-2915-c483a4af96a0.htm">
+        <HelpTOCNode Title="_call Field" Url="html/0c51c29c-f6cb-0c04-4784-6701786639a5.htm" />
+        <HelpTOCNode Title="_connector Field" Url="html/0cc43ee2-4ee0-686d-7686-6c02c20ced43.htm" />
+        <HelpTOCNode Title="_inComingCall Field" Url="html/f53da496-7307-3427-b5aa-db2ca5a187aa.htm" />
+        <HelpTOCNode Title="_localHeld Field" Url="html/55d7238e-fd51-8c36-0214-6b24abae70c6.htm" />
+        <HelpTOCNode Title="_mediaReceiver Field" Url="html/53b4f3e7-eb09-e647-dd2f-c9145898e5e9.htm" />
+        <HelpTOCNode Title="_mediaSender Field" Url="html/5c7c1dac-3e39-77f1-69c8-01d72d013ef1.htm" />
+        <HelpTOCNode Title="_microphone Field" Url="html/05171514-2953-27bf-fdfb-aa7d2279f9d0.htm" />
+        <HelpTOCNode Title="_phoneLine Field" Url="html/30fb964a-ee6b-e0bf-c69c-6cbafd5ac151.htm" />
+        <HelpTOCNode Title="_phoneLineInformation Field" Url="html/289463bb-3a03-beb3-967f-50bbbd42c0c8.htm" />
+        <HelpTOCNode Title="_reDialNumber Field" Url="html/4d3980d1-b0b8-1e77-8396-5510861ed669.htm" />
+        <HelpTOCNode Title="_softPhone Field" Url="html/3b715340-6aa4-dafd-400b-7e44c742d497.htm" />
+        <HelpTOCNode Title="_speaker Field" Url="html/38081d5e-405c-456a-a1a3-cac4582019bd.htm" />
+        <HelpTOCNode Title="main Field" Url="html/b4ca155f-2ab8-abf3-e22e-c84467bccfd6.htm" />
+        <HelpTOCNode Title="sa Field" Url="html/e4a36eec-56e6-45fb-6b55-742cbdd4a8e3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5c2fc49a-9f05-40bd-b36b-c273280d0c86" Title="ReadSettings Class" Url="html/ec147653-e1be-81d3-6395-67dab6fda7e4.htm">
+      <HelpTOCNode Title="ReadSettings Constructor " Url="html/22e44e5d-0fc7-84d9-f0e5-ad416b17244f.htm" />
+      <HelpTOCNode Title="ReadSettings Constructor " Url="html/5b28eb6f-f213-5434-f1fb-b45f9255aebd.htm" />
+      <HelpTOCNode Id="d981b0ba-d94d-4b30-a961-ccace4840373" Title="ReadSettings Properties" Url="html/d7a83372-fd09-8dd2-26f8-ca541fe52f9b.htm">
+        <HelpTOCNode Title="GetInstance Property " Url="html/8d48d325-d375-0127-e446-b7756381229c.htm" />
+        <HelpTOCNode Title="IP Property " Url="html/595731f7-46c8-39a1-5cf8-239def833c70.htm" />
+        <HelpTOCNode Title="PORT Property " Url="html/e7159acc-9fd3-83b1-aabd-b903c7007e19.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f4e86c84-7679-4b6b-92be-d2ae493e2d8f" Title="ReadSettings Methods" Url="html/b33dc987-5836-7905-2136-779070327f06.htm">
+        <HelpTOCNode Title="readSettings Method " Url="html/48adccb2-e78d-6917-0996-b0f43d7bbcf2.htm" />
+        <HelpTOCNode Title="saveSettings Method " Url="html/2175d740-b27b-52af-d084-8a34fd26a7a1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="17f79d2c-8a1f-48c8-898a-b30ae1da9df6" Title="ReadSettings Fields" Url="html/15536482-b1a9-a1a5-0757-5445ea696fce.htm">
+        <HelpTOCNode Title="instance Field" Url="html/7d4e7c91-a0a8-3c44-89f2-f9aa0363bb7d.htm" />
+        <HelpTOCNode Title="PadLock Field" Url="html/55d3aab7-c8b9-5283-d970-444d441a118c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a70203a9-3820-43f0-aa69-f011118755ae" Title="SettingsPage Class" Url="html/bdb10194-4167-ed9e-fa1a-90e532979e15.htm">
+      <HelpTOCNode Title="SettingsPage Constructor " Url="html/46a7b2b6-03a8-95dd-bff3-d726190f54f2.htm" />
+      <HelpTOCNode Id="1d837ff2-c4a0-4de3-bf7c-aa659a6f8d31" Title="SettingsPage Methods" Url="html/da7d2f06-e9ca-b957-dbdd-4052de162407.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/37f07c59-f308-15b2-48d7-a2527add2449.htm" />
+        <HelpTOCNode Title="IStyleConnector.Connect Method " Url="html/20442a15-1dc3-ecc2-3cbb-4e8811af46c1.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/b4f9cecd-20f1-872b-fa53-148f01eef74a.htm" />
+        <HelpTOCNode Title="backAction Method " Url="html/d7b7239b-560b-c4b5-cf1a-27c0577bcfa8.htm" />
+        <HelpTOCNode Title="Button_Click Method " Url="html/378b5167-d154-1b07-e729-eed376b8e3f9.htm" />
+        <HelpTOCNode Title="CBMicrophoneHandler Method " Url="html/99b4262b-770e-4ded-c945-25bcc0600959.htm" />
+        <HelpTOCNode Title="CBSoundHandler Method " Url="html/dcbd7a7f-fe12-f786-e674-c28758cd049c.htm" />
+        <HelpTOCNode Title="deleteAcount Method " Url="html/b68152a0-f03f-1a31-daf3-eae624cd5068.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/180b19a3-f84e-2926-82cc-938039063155.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9af614cb-9738-4bc7-b26f-b6a03cacf4e0" Title="SettingsPage Fields" Url="html/b7a5fbb8-d488-3d17-11aa-3432400ed971.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/95b3f652-f895-4500-7cb3-233e18900e02.htm" />
+        <HelpTOCNode Title="CBMicrophone Field" Url="html/70a6b864-01a1-58c1-e8bb-e6b0767adcfa.htm" />
+        <HelpTOCNode Title="CBSound Field" Url="html/fa5db634-c31a-8bd3-c51a-09f4fc69d4e9.htm" />
+        <HelpTOCNode Title="menuSP Field" Url="html/99fe9a43-cee6-e638-025f-4f9978d6355c.htm" />
+        <HelpTOCNode Title="MIcrophoneDevices Field" Url="html/7d73baf6-8ff0-ec2a-8e71-ee7cfaffe30d.htm" />
+        <HelpTOCNode Title="newPassword Field" Url="html/acf2ce6f-abc3-bc7b-86e1-a18334c6c527.htm" />
+        <HelpTOCNode Title="newPassword2 Field" Url="html/d21b1060-49b1-3751-a74f-a0711833ef73.htm" />
+        <HelpTOCNode Title="OldPassword Field" Url="html/1f18d10b-607a-d521-91dc-479236bb669f.htm" />
+        <HelpTOCNode Title="rightside Field" Url="html/36ba7730-1855-e5ba-0e7d-e9cc41bf63c6.htm" />
+        <HelpTOCNode Title="singletoneOBj Field" Url="html/fed69653-7d25-f28e-56b0-4951598f9a16.htm" />
+        <HelpTOCNode Title="SpeakerDevices Field" Url="html/1f514290-6725-76c5-452a-ec66b6e57556.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/3701346e-4ec8-0df8-5324-1bb36a0329f5.htm" />
+        <HelpTOCNode Title="UC Field" Url="html/7ff65e4e-0cef-96a2-d98f-b80df61b5bcd.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6b315e49-a3d0-4a2d-84f5-0b2b88e13dd2" Title="SingletoneObject Class" Url="html/aa7ce1b0-0d0a-2edb-3a84-74e1426b5a24.htm">
+      <HelpTOCNode Title="SingletoneObject Constructor " Url="html/322b760a-d86d-fac2-8000-cce33c831632.htm" />
+      <HelpTOCNode Title="SingletoneObject Constructor " Url="html/4cfaa0f5-54af-e6e7-279c-9e87f6862e6c.htm" />
+      <HelpTOCNode Id="df0c8cf1-f899-4fdf-8e2e-719174730d94" Title="SingletoneObject Properties" Url="html/b999874c-39c8-9666-3db5-84d7edb2b6f6.htm">
+        <HelpTOCNode Title="client Property " Url="html/179e6129-6db8-555e-96ac-9de069da2ed4.htm" />
+        <HelpTOCNode Title="Friends Property " Url="html/8112c999-0782-3eaf-da3b-ca9abb313f1d.htm" />
+        <HelpTOCNode Title="GetInstance Property " Url="html/4d7e3b10-fad6-12a5-7002-8ac044502938.htm" />
+        <HelpTOCNode Title="isloged Property " Url="html/fb65bf7d-ad4f-541e-1ea0-829023178bf5.htm" />
+        <HelpTOCNode Title="isOnlineThread Property " Url="html/d55e63e5-c641-bca6-fd7c-da39efd0d25c.htm" />
+        <HelpTOCNode Title="items Property " Url="html/fb887b44-590d-b971-5c95-d21978f75b32.htm" />
+        <HelpTOCNode Title="listusercompare Property " Url="html/25108a98-fbb7-31bb-834a-21366c4c7787.htm" />
+        <HelpTOCNode Title="listUsers Property " Url="html/177a068f-34a8-7f9b-d44b-5035064d7913.htm" />
+        <HelpTOCNode Title="listUserSearch Property " Url="html/4ffebc79-6135-ca95-dc28-2e6762fcf832.htm" />
+        <HelpTOCNode Title="mainwindow Property " Url="html/42ff61a5-69f6-cc76-59e6-884eab41a40d.htm" />
+        <HelpTOCNode Title="phoneVOIP Property " Url="html/24933cd4-5872-f14e-5efc-8a1c8a54aea4.htm" />
+        <HelpTOCNode Title="searchvalue Property " Url="html/5c3ee73c-bdc1-25e4-3d4b-c934c648af4e.htm" />
+        <HelpTOCNode Title="user Property " Url="html/8666a330-a520-c84c-bbeb-46142f87a915.htm" />
+        <HelpTOCNode Title="Users Property " Url="html/62a781d5-daa3-a86c-7015-6c530e959446.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3e9a6fcf-a566-48ec-a289-efeb1e069170" Title="SingletoneObject Methods" Url="html/b5903873-45f0-d3fb-8fd6-7b712f6f5ba9.htm">
+        <HelpTOCNode Title="setdefaultvalue Method " Url="html/8e80876a-c081-6560-3bd5-ff0eca4ad8f6.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f0cf63ef-2ba4-4553-830e-793caa8a26f5" Title="SingletoneObject Fields" Url="html/bd7ad8d1-19f6-f97f-4425-3ad02908d6ea.htm">
+        <HelpTOCNode Title="instance Field" Url="html/dd856ee4-3964-7563-1297-51c88add6366.htm" />
+        <HelpTOCNode Title="PadLock Field" Url="html/04c6cadc-4a6e-dd64-9927-100ea48c62f2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="267c6286-c7d4-4595-90be-7d231e06656b" Title="UCLoginRegisterSetings Class" Url="html/c68f2550-bf70-6ff6-7374-1fa5b791739e.htm">
+      <HelpTOCNode Title="UCLoginRegisterSetings Constructor " Url="html/f7276e71-c28c-bf98-6092-ab3271192644.htm" />
+      <HelpTOCNode Id="9e8ecaa7-f074-406d-8920-048860bc8464" Title="UCLoginRegisterSetings Methods" Url="html/a7a5fef7-af70-80e4-59ad-889c61f09f46.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/a5c9d36c-1982-20e3-ffdb-6d6f15f55ea3.htm" />
+        <HelpTOCNode Title="change_click Method " Url="html/b72c9ba1-885d-62b8-794c-c82e87772a74.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/6e20a176-3ef6-4f9f-307b-6e291ff4755e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e355d30b-4636-4975-93a6-60f477479b6a" Title="UCLoginRegisterSetings Fields" Url="html/ebc21efc-25b3-a39d-ddc8-186329624620.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/6098a072-4f45-107a-8eea-333cdfd760f6.htm" />
+        <HelpTOCNode Title="adresIPinput Field" Url="html/a0a0058c-a576-b282-2627-2a7a6d43d972.htm" />
+        <HelpTOCNode Title="numberPortInput Field" Url="html/6b54eee6-5a42-9c96-88a8-703b7c4f8554.htm" />
+        <HelpTOCNode Title="rs Field" Url="html/ae536927-3ac4-f9cd-8327-f61c08e313e2.htm" />
+        <HelpTOCNode Title="settingsLoginRegister Field" Url="html/4a2f72e7-6964-6536-126a-9cd87f86e2fe.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5198cf79-b699-43af-b7d3-ec866e420715" Title="UCMainLeftSide Class" Url="html/5aa09cac-2ccb-83f6-d883-5eef4fda8b8a.htm">
+      <HelpTOCNode Title="UCMainLeftSide Constructor " Url="html/e3110644-7095-3b01-38fe-b6b216189cc9.htm" />
+      <HelpTOCNode Id="b6ad54e1-7407-4f66-bfeb-38bb715528fc" Title="UCMainLeftSide Properties" Url="html/030b1d12-d3f5-34b2-2889-c54b81c7e4aa.htm">
+        <HelpTOCNode Title="refreshListThread Property " Url="html/3ce0605a-08b4-9202-ca10-55a747c25079.htm" />
+        <HelpTOCNode Title="SelectedItem Property " Url="html/3fb19461-440b-0ae6-2808-958e4b5fbf17.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="20294d87-928b-4e52-b481-6b26e5e0c0b2" Title="UCMainLeftSide Methods" Url="html/233b7643-c1d9-1b16-4415-252f2766b1dc.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/3b634e9f-3b64-6785-ff29-35b3a90c1146.htm" />
+        <HelpTOCNode Title="IStyleConnector.Connect Method " Url="html/748e76eb-06ec-086b-efc1-45b8cc64229e.htm" />
+        <HelpTOCNode Title="GetAllHistory Method " Url="html/4464b5d6-0e8b-f7bc-b6af-9319b0064e5a.htm" />
+        <HelpTOCNode Title="GetConcreteHistory Method " Url="html/71d6cd87-2978-d995-1e79-8d19f3355e50.htm" />
+        <HelpTOCNode Title="goToUser Method " Url="html/14ea9782-c391-1d0d-6eaf-99610a03c2cf.htm" />
+        <HelpTOCNode Title="historyTextboxaction Method " Url="html/7d469b61-176d-6860-21c2-726e8a9d7694.htm" />
+        <HelpTOCNode Title="homeTextboxaction Method " Url="html/8b0c4f62-7a10-3f50-759c-e3428757aea6.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/6bea641e-4a4f-9456-6188-ceca8a7dee1f.htm" />
+        <HelpTOCNode Title="ListRefreshloop Method " Url="html/331488eb-83ed-ae18-0d07-4af4cf61a356.htm" />
+        <HelpTOCNode Title="logOutTextboxaction Method " Url="html/086db58e-54c7-50d3-e4bd-4594d9b1f7e3.htm" />
+        <HelpTOCNode Title="MenuItemDelete_Click Method " Url="html/8f346842-4cfd-992f-919b-b52befaa489a.htm" />
+        <HelpTOCNode Title="searchupdate Method " Url="html/955cca13-0a96-1bf4-a667-66944e41d54b.htm" />
+        <HelpTOCNode Title="SearchUsers Method " Url="html/2ab0905d-e407-8ba8-fd6b-66255b10d4c9.htm" />
+        <HelpTOCNode Title="settingsTextboxaction Method " Url="html/e34f04ec-2b08-f788-5b77-99768e9c0060.htm" />
+        <HelpTOCNode Title="textBox_TextChanged Method " Url="html/e69ba056-0887-8775-7ce9-ad0d1ebf11f1.htm" />
+        <HelpTOCNode Title="updateFriendList Method " Url="html/87c140ed-30b6-a00a-7ea9-9c5245a8967f.htm" />
+        <HelpTOCNode Title="updateList Method " Url="html/4e4bd8c3-e0c0-5512-83e9-f5da7dd7590d.htm" />
+        <HelpTOCNode Title="userAction Method " Url="html/faeefe7c-2418-a5c3-40d1-f6458c39fa43.htm" />
+        <HelpTOCNode Title="UserControl1_Unloaded Method " Url="html/a5ef4747-7dda-57ac-1dbd-0f685256e299.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="81e6dd9b-b4f1-4da4-b1d2-6aaa492085d5" Title="UCMainLeftSide Fields" Url="html/13a03a2f-b811-a46b-eb09-48cdb88c8bad.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/681f17ae-4a4d-5e72-8e6c-7c9bbdb1a2bd.htm" />
+        <HelpTOCNode Title="contextmenu Field" Url="html/b18c67cd-40a8-027f-2202-766f239a0b34.htm" />
+        <HelpTOCNode Title="history Field" Url="html/1c9e44e5-260a-be3d-716a-53e45648f865.htm" />
+        <HelpTOCNode Title="lbUsers Field" Url="html/ab17573e-47f5-749f-ebea-aa5037d73dc4.htm" />
+        <HelpTOCNode Title="logOut Field" Url="html/5257da92-00cb-9127-6cd3-ac015bb8f6d8.htm" />
+        <HelpTOCNode Title="menuButtonbSP Field" Url="html/2747d93c-5a51-c7e2-71e6-ebd1f18c519e.htm" />
+        <HelpTOCNode Title="numberSelectedItem Field" Url="html/92b09d43-2c7a-11ac-6c6b-673ac62ce3fc.htm" />
+        <HelpTOCNode Title="searchInput Field" Url="html/0819198f-d6c5-1861-7990-652dd92036ae.htm" />
+        <HelpTOCNode Title="settings Field" Url="html/2d2e6bee-887b-22fd-c4d9-8db0d1824efd.htm" />
+        <HelpTOCNode Title="singletoneOBj Field" Url="html/aad9749c-0ffe-7581-3594-ffc58909fe82.htm" />
+        <HelpTOCNode Title="timeThreadloop Field" Url="html/d8702904-f669-5220-d90c-f1502a9d490d.htm" />
+        <HelpTOCNode Title="userNameTB Field" Url="html/dbb18933-9c99-dc5b-8b27-7ef2ddf43d03.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e272521f-3e7b-46ba-9dae-8894912adfea" Title="UCTitleBar Class" Url="html/013f7619-1546-fd3a-3027-0a40d6af9690.htm">
+      <HelpTOCNode Title="UCTitleBar Constructor " Url="html/91271b6c-1507-a704-884b-5efd780ac767.htm" />
+      <HelpTOCNode Id="7c48577d-4a8b-4d95-ac97-04f23dc66388" Title="UCTitleBar Methods" Url="html/62d8813c-1904-3fd2-1d06-6195478bf034.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/05f9c5ab-eede-b2b7-7e88-a29ac53851c8.htm" />
+        <HelpTOCNode Title="closeButon_Click Method " Url="html/b4100716-d35e-2b64-ca20-98b22a3393e0.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/d7267b72-7c11-5931-7608-5ad4f88920d1.htm" />
+        <HelpTOCNode Title="minimalizeButon_Click Method " Url="html/1fd1d49b-9735-5b7a-28e9-cfc2f0edfade.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="27622172-ea0c-4bff-b168-c750e7b344e6" Title="UCTitleBar Fields" Url="html/5e7095d8-9217-670e-66f0-025d4032a9a7.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/5b557810-8c1b-5199-a692-049942d97f76.htm" />
+        <HelpTOCNode Title="closeButon Field" Url="html/9ddb1f79-76ca-9618-2787-02235965ce85.htm" />
+        <HelpTOCNode Title="minimalizeButon Field" Url="html/e2a6a3f8-8109-b586-1e5e-a0ef056ae7f3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8cbd7c96-65b5-49cd-a4ee-3e7aa9986be3" Title="UCTitleBar2 Class" Url="html/d90da5d4-36fd-51fc-2bbd-d9d9bec964db.htm">
+      <HelpTOCNode Title="UCTitleBar2 Constructor " Url="html/bc345b42-c5b7-9120-5464-b78038d8326f.htm" />
+      <HelpTOCNode Id="4b23539b-701d-44f7-97f8-034939f95c1e" Title="UCTitleBar2 Methods" Url="html/659848b7-99e3-6316-d30e-9d1817d67c0a.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/c22d57ee-50f3-fa5b-6136-fcee2007214a.htm" />
+        <HelpTOCNode Title="closeButon_Click Method " Url="html/c09dd2a9-7d54-933c-74a5-46c6951f27a6.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/0f692989-a4b0-88ad-5313-e0a19dfea1e1.htm" />
+        <HelpTOCNode Title="minimalizeButon_Click Method " Url="html/e51a3474-cbdb-bea7-2a4f-37525d6cbfed.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="988700a3-f55c-46cd-af16-ec7687c3e2f6" Title="UCTitleBar2 Fields" Url="html/7a5a9e02-a67c-9b4c-9f62-559d521e06f7.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/06e85b2f-6bc0-42fa-3fed-50cac564bc6a.htm" />
+        <HelpTOCNode Title="closeButon Field" Url="html/65d46e49-2caa-3fba-fbad-b7cc6254f3ef.htm" />
+        <HelpTOCNode Title="minimalizeButon Field" Url="html/05e48bbc-3313-2946-e80d-989e3f92de32.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="474f8cef-c7d3-423a-a4b9-781774652722" Title="User Class" Url="html/6bc5e4ee-c229-a1d3-0fad-32aa1e555747.htm">
+      <HelpTOCNode Title="User Constructor " Url="html/fd8e80f9-aa6a-d16d-224b-314609a5f8e6.htm" />
+      <HelpTOCNode Id="364b5eff-8098-404a-a73f-98f909f7a0de" Title="User Properties" Url="html/468d3dc1-e360-147f-046c-1a15e5c421fd.htm">
+        <HelpTOCNode Title="IcoCall Property " Url="html/a98ef9df-0d16-60e7-5ac5-de7a939f771a.htm" />
+        <HelpTOCNode Title="IcoColor Property " Url="html/4cfc9195-efbe-f6d5-d20e-b14e855438a4.htm" />
+        <HelpTOCNode Title="IcoUser Property " Url="html/eaaed5d7-c379-2d51-4597-cbb4f4939756.htm" />
+        <HelpTOCNode Title="isActive Property " Url="html/c9f4f8b8-b5a4-331f-7d77-c91e2ae8b1f7.htm" />
+        <HelpTOCNode Title="isFriend Property " Url="html/918acf81-3620-4f29-9de0-ff65463456a3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ca259d45-ee62-4844-b146-2468849bd40b" Title="UserBase Class" Url="html/a64c4b49-52a9-7d80-9af4-15021b4328e2.htm">
+      <HelpTOCNode Title="UserBase Constructor " Url="html/828184f1-4830-d85a-c94f-f6020bfdc36e.htm" />
+      <HelpTOCNode Id="9f86f23b-590a-4732-b87f-bed2cf9a7e93" Title="UserBase Properties" Url="html/fe775c8d-1e67-a7f5-6870-fbee6f79c467.htm">
+        <HelpTOCNode Title="Name Property " Url="html/78486ff1-b354-7cc1-ec04-078d917a5cce.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d0d99b1e-41e8-4cb7-b617-179c9b548636" Title="UserPage Class" Url="html/d1204ca6-8b26-75a1-5603-21f34f2a9912.htm">
+      <HelpTOCNode Id="b776bd55-fd0f-4390-bdb4-779cc6e96405" Title="UserPage Constructor " Url="html/16104e83-73d1-9c4e-745d-a6dfdbe6ddf5.htm">
+        <HelpTOCNode Title="UserPage Constructor " Url="html/5bbf1e49-5ca8-34af-4bd0-a9f519bcdc2e.htm" />
+        <HelpTOCNode Title="UserPage Constructor (List(ListHistory), String)" Url="html/c426de63-e579-30bb-6f0b-2b89f7d9389b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="39738341-3dc8-4564-bf11-4e3fe492d06d" Title="UserPage Properties" Url="html/95c13c2a-c6c3-db7c-be4a-3aa268cf7e41.htm">
+        <HelpTOCNode Title="copyitems Property " Url="html/f438b859-a688-5915-df5e-d90b6e86d30b.htm" />
+        <HelpTOCNode Title="items Property " Url="html/3eab7a29-4579-fc66-a29a-280161ac87bc.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="34eb07ec-5af0-4a60-bb13-a65175097f98" Title="UserPage Methods" Url="html/4917f02a-08fa-0a8e-3f56-732c70efea25.htm">
+        <HelpTOCNode Title="IComponentConnector.Connect Method " Url="html/fb89971a-7e80-7c3b-300b-c6685c60f584.htm" />
+        <HelpTOCNode Title="_CreateDelegate Method " Url="html/20b8546d-bdd9-3e5f-27ee-d0245cc46067.htm" />
+        <HelpTOCNode Title="backAction Method " Url="html/0b7c44f8-dae5-9918-e124-03ad22c49018.htm" />
+        <HelpTOCNode Title="callToFriend Method " Url="html/be29a518-6d63-80da-26dc-e3f3ba10c3b7.htm" />
+        <HelpTOCNode Title="deleteFriend Method " Url="html/4082151b-3c1c-ad63-6f53-45bcee9fbac7.htm" />
+        <HelpTOCNode Title="historysearchinput_TextChanged Method " Url="html/366d0e3e-513a-405a-5917-47be8d118c85.htm" />
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/92136485-bdc8-6c1c-7b31-074095abb2ab.htm" />
+        <HelpTOCNode Title="searchClickHistoryuser Method " Url="html/0b13b8c4-af50-d8ac-c308-c1c994e6bf59.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6582b40a-c7b1-4539-9317-7f7c62a9381e" Title="UserPage Fields" Url="html/5214cbcc-ca4b-224e-bf61-edcd8186f598.htm">
+        <HelpTOCNode Title="_contentLoaded Field" Url="html/9c78d411-3e9d-9ecf-7c89-7aefddd4dd2c.htm" />
+        <HelpTOCNode Title="callToFriendIco Field" Url="html/26966e3f-7f20-e09a-5655-31743ab308e2.htm" />
+        <HelpTOCNode Title="lbHistoryAll Field" Url="html/69255913-51cf-4e2e-114d-f0a1fe7753a8.htm" />
+        <HelpTOCNode Title="menuSP Field" Url="html/9b3bb100-7321-2c9b-a330-d10660ca3fab.htm" />
+        <HelpTOCNode Title="singletoneOBJ Field" Url="html/623b6b44-a46c-9a6e-eac6-96d8840e7dfb.htm" />
+        <HelpTOCNode Title="stringInUserWindow Field" Url="html/adab9826-ed40-210a-9ce9-867b81ce4f1b.htm" />
+        <HelpTOCNode Title="textBlock1 Field" Url="html/70a5dfcc-e07b-2ee2-d90e-16fb1056f0f8.htm" />
+        <HelpTOCNode Title="textBlock10 Field" Url="html/8267a46c-2ee6-7511-3f64-d6c3b82aaa54.htm" />
+        <HelpTOCNode Title="textBlock7 Field" Url="html/a6225b66-bd48-7dc3-3c04-bf629452abf0.htm" />
+        <HelpTOCNode Title="titlebar Field" Url="html/f33e2600-5df8-4ae2-723c-af5c3d581db9.htm" />
+        <HelpTOCNode Title="userControlLeftSide Field" Url="html/b3c11990-8621-4ffc-ec8b-c598165bda3d.htm" />
+        <HelpTOCNode Title="userFriend Field" Url="html/28916896-778e-983c-7772-c13126195250.htm" />
+        <HelpTOCNode Title="userhistorysearchinput Field" Url="html/136eb5f3-7a28-2d42-01f2-fbd467e4b288.htm" />
+        <HelpTOCNode Title="userSP Field" Url="html/7c7fabee-890a-ccc9-c088-6dba85f1e472.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="00b189d5-faa9-4376-aa48-106919aad419" Title="ValidationClass Class" Url="html/33bf8761-a311-88a2-2ff2-22c8a9ef0711.htm">
+      <HelpTOCNode Id="cce26f74-6164-46e4-9058-24c91892a96a" Title="ValidationClass Methods" Url="html/14c13d1c-54a8-7019-3e55-43163fe6b44b.htm">
+        <HelpTOCNode Title="IsValidEmail Method " Url="html/8c304574-4c08-fe93-c056-9a600a1572e9.htm" />
+        <HelpTOCNode Title="isValidLogin Method " Url="html/e086921e-10e1-40fd-b113-258e2c816c04.htm" />
+        <HelpTOCNode Title="isValidPassword Method " Url="html/570a04cc-c4ff-e6e4-dc10-390214ee1eba.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

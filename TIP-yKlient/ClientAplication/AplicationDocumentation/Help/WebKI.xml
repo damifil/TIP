@@ -1,0 +1,1051 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="A field" Url="html/0868aaed-c952-c06b-727c-dc059c1a06d7.htm" />
+  <HelpKINode Title="a field" Url="html/64e166dd-3893-7c88-86b1-0191bf207acb.htm" />
+  <HelpKINode Title="active property" Url="html/4ea92548-2ad7-f56f-3529-7c950ab039c7.htm" />
+  <HelpKINode Title="adresIPinput field" Url="html/a0a0058c-a576-b282-2627-2a7a6d43d972.htm" />
+  <HelpKINode Title="AplicationUser class">
+    <HelpKINode Title="AplicationUser Class" Url="html/3c59e534-91aa-d274-f076-93da9b95c396.htm" />
+    <HelpKINode Title="about AplicationUser class" Url="html/3c59e534-91aa-d274-f076-93da9b95c396.htm" />
+    <HelpKINode Title="constructor" Url="html/a5719bf5-59cb-d301-f89a-2bc1c5986000.htm" />
+    <HelpKINode Title="properties" Url="html/bcd289cb-4b6c-520a-3c11-9dd42d17af12.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AplicationUser.AplicationUser constructor" Url="html/a5719bf5-59cb-d301-f89a-2bc1c5986000.htm" />
+  <HelpKINode Title="AplicationUser.lastActivity property" Url="html/02c6e762-0587-c1ca-2900-1eb1159d8b67.htm" />
+  <HelpKINode Title="AplicationUser.password property" Url="html/ea0bcf4e-6e70-a7cb-ff33-5885e888783d.htm" />
+  <HelpKINode Title="backAction method">
+    <HelpKINode Title="PageHistory.backAction Method " Url="html/ac096fd7-fac8-35a4-7afa-cd76a717ba51.htm" />
+    <HelpKINode Title="SettingsPage.backAction Method " Url="html/d7b7239b-560b-c4b5-cf1a-27c0577bcfa8.htm" />
+    <HelpKINode Title="UserPage.backAction Method " Url="html/0b7c44f8-dae5-9918-e124-03ad22c49018.htm" />
+  </HelpKINode>
+  <HelpKINode Title="baseStyle field" Url="html/c6e67721-b5f0-4712-cbf4-90aa674085b9.htm" />
+  <HelpKINode Title="btn_HangUp_Click method" Url="html/318327d5-2c55-11bb-c900-fd69d69d8848.htm" />
+  <HelpKINode Title="btn_PickUp_Click method" Url="html/3b0859f1-2dbc-9378-ed3d-9d457880b6fe.htm" />
+  <HelpKINode Title="Button_Click method" Url="html/378b5167-d154-1b07-e729-eed376b8e3f9.htm" />
+  <HelpKINode Title="Button_gotoLogin method" Url="html/d032a068-0ea4-fff9-6e61-d9a319dd5c1f.htm" />
+  <HelpKINode Title="Button_goToRegister method" Url="html/992b7e63-f869-bc8f-3f86-74bf9229185b.htm" />
+  <HelpKINode Title="Button_login method" Url="html/042a4397-e1b4-fb8d-8b96-196fd6d6a7c7.htm" />
+  <HelpKINode Title="Button_register method" Url="html/0f587964-386b-9d6a-0ecd-9651a1f19304.htm" />
+  <HelpKINode Title="callAceptTextboxaction method" Url="html/f1ec5484-624d-27b4-7a38-b5b49b3fa305.htm" />
+  <HelpKINode Title="callDisconectTextboxaction method">
+    <HelpKINode Title="CallFromWindow.callDisconectTextboxaction Method " Url="html/038dc7d5-a027-8ac9-d3f0-d00abb782519.htm" />
+    <HelpKINode Title="CallToWindow.callDisconectTextboxaction Method " Url="html/53b3899f-0ad1-368d-3e77-ef2687633741.htm" />
+    <HelpKINode Title="CallTransmisionWindow.callDisconectTextboxaction Method " Url="html/28ef17cc-06fc-b81a-c7eb-eda5d7913d69.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CallFromWindow class">
+    <HelpKINode Title="CallFromWindow Class" Url="html/8562ded1-5445-81c4-ac42-557710815cd8.htm" />
+    <HelpKINode Title="about CallFromWindow class" Url="html/8562ded1-5445-81c4-ac42-557710815cd8.htm" />
+    <HelpKINode Title="constructor" Url="html/766c6461-c0f6-5b32-0f9c-c6145b920b98.htm" />
+    <HelpKINode Title="fields" Url="html/73004b02-5e39-2370-e315-d70bd87ff2dd.htm" />
+    <HelpKINode Title="methods" Url="html/a5728e5c-e4f8-6ded-b0f0-bdd84aacf432.htm" />
+    <HelpKINode Title="properties" Url="html/161bde5a-fb05-0616-7dac-5c27488de066.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CallFromWindow.callAceptTextboxaction method" Url="html/f1ec5484-624d-27b4-7a38-b5b49b3fa305.htm" />
+  <HelpKINode Title="CallFromWindow.callDisconectTextboxaction method" Url="html/038dc7d5-a027-8ac9-d3f0-d00abb782519.htm" />
+  <HelpKINode Title="CallFromWindow.CallFromWindow constructor" Url="html/766c6461-c0f6-5b32-0f9c-c6145b920b98.htm" />
+  <HelpKINode Title="CallFromWindow.callIco field" Url="html/bdb07488-3a3c-fd16-5680-5873e668760e.htm" />
+  <HelpKINode Title="CallFromWindow.callIco2 field" Url="html/88ad7896-70ed-15cd-b8a9-658c51061152.htm" />
+  <HelpKINode Title="CallFromWindow.dateBegin property" Url="html/ce54cac4-60aa-35a4-f5f5-8d9232ed0edc.htm" />
+  <HelpKINode Title="CallFromWindow.IComponentConnector.Connect explicitly implemented method" Url="html/28502c84-5edd-db9d-5c03-a9a9b05ec042.htm" />
+  <HelpKINode Title="CallFromWindow.InitializeComponent method" Url="html/0e4d2096-fc82-553f-adab-41a9ff1fd913.htm" />
+  <HelpKINode Title="CallFromWindow.OnContentRendered method" Url="html/639b1dfb-ff50-fce1-837e-e733f0a2ac32.htm" />
+  <HelpKINode Title="CallFromWindow.OnMouseLeftButtonDown method" Url="html/9c903763-0c7e-90a4-d662-d156da445594.htm" />
+  <HelpKINode Title="CallFromWindow.singletoneOBJ field" Url="html/2a607171-d241-feb2-7f96-f9540bb6f07f.htm" />
+  <HelpKINode Title="CallFromWindow.stringWithName field" Url="html/a029c446-0cdd-d4ad-2253-5d40f98a153a.htm" />
+  <HelpKINode Title="CallFromWindow.user property" Url="html/c4095e6b-c3a8-27cd-3ef1-36a7861d70fd.htm" />
+  <HelpKINode Title="CallFromWindow._contentLoaded field" Url="html/4bbbaea3-75df-b09d-4c1f-93bb50d987f0.htm" />
+  <HelpKINode Title="CallFromWindow._shown field" Url="html/20260a8d-d942-1192-1853-5d6d3302a6b1.htm" />
+  <HelpKINode Title="callIco field">
+    <HelpKINode Title="CallFromWindow.callIco Field" Url="html/bdb07488-3a3c-fd16-5680-5873e668760e.htm" />
+    <HelpKINode Title="CallToWindow.callIco Field" Url="html/6ce3b373-ffda-dbb6-8eda-b96ad6cf0c0d.htm" />
+    <HelpKINode Title="CallTransmisionWindow.callIco Field" Url="html/d07142ef-d03a-2186-b69b-4b9e9c6bd11e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="callIco2 field" Url="html/88ad7896-70ed-15cd-b8a9-658c51061152.htm" />
+  <HelpKINode Title="callto property" Url="html/16aa014d-e7a6-77ea-606f-c393b00e90d9.htm" />
+  <HelpKINode Title="callToFriend method" Url="html/be29a518-6d63-80da-26dc-e3f3ba10c3b7.htm" />
+  <HelpKINode Title="callToFriendIco field" Url="html/26966e3f-7f20-e09a-5655-31743ab308e2.htm" />
+  <HelpKINode Title="callToUser method" Url="html/988ede0f-f269-658b-c8eb-ac5f8fe621b7.htm" />
+  <HelpKINode Title="CallToWindow class">
+    <HelpKINode Title="CallToWindow Class" Url="html/fe9cfaba-1c8d-a8e3-6028-cc1201f6afce.htm" />
+    <HelpKINode Title="about CallToWindow class" Url="html/fe9cfaba-1c8d-a8e3-6028-cc1201f6afce.htm" />
+    <HelpKINode Title="constructor" Url="html/67b70e2c-4d47-a4d5-8b6e-5fc2a1213ac8.htm" />
+    <HelpKINode Title="fields" Url="html/87167bfe-02dd-be77-5724-3571e3a5df88.htm" />
+    <HelpKINode Title="methods" Url="html/cc2c7cd3-fc91-2114-c665-d0c6f4ec5889.htm" />
+    <HelpKINode Title="properties" Url="html/f750d202-a4d3-8661-458d-d2badddf2096.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CallToWindow.callDisconectTextboxaction method" Url="html/53b3899f-0ad1-368d-3e77-ef2687633741.htm" />
+  <HelpKINode Title="CallToWindow.callIco field" Url="html/6ce3b373-ffda-dbb6-8eda-b96ad6cf0c0d.htm" />
+  <HelpKINode Title="CallToWindow.CallToWindow constructor" Url="html/67b70e2c-4d47-a4d5-8b6e-5fc2a1213ac8.htm" />
+  <HelpKINode Title="CallToWindow.dateBegin property" Url="html/b055b414-1a10-4bf6-9c38-292b4fc76001.htm" />
+  <HelpKINode Title="CallToWindow.IComponentConnector.Connect explicitly implemented method" Url="html/e5c4c350-daac-fe61-45f1-1c88e382af72.htm" />
+  <HelpKINode Title="CallToWindow.InitializeComponent method" Url="html/b44e86a0-8ca0-dcf7-dc44-3535a441f570.htm" />
+  <HelpKINode Title="CallToWindow.OnContentRendered method" Url="html/ea8c831b-9872-94c0-c451-2904a791e0c6.htm" />
+  <HelpKINode Title="CallToWindow.OnMouseLeftButtonDown method" Url="html/43ab2779-e0c8-cfc6-8509-c680b862051e.htm" />
+  <HelpKINode Title="CallToWindow.singletoneOBJ field" Url="html/73c9e4e2-3873-688a-5d19-3702a2dde77c.htm" />
+  <HelpKINode Title="CallToWindow.stringWithName field" Url="html/3cb36a0d-edee-a344-756f-e541c2bd8d4c.htm" />
+  <HelpKINode Title="CallToWindow.user property" Url="html/777fb765-80f2-2eb8-666b-6c38a367d320.htm" />
+  <HelpKINode Title="CallToWindow._contentLoaded field" Url="html/34ab005e-0765-a765-8393-04de3519face.htm" />
+  <HelpKINode Title="CallToWindow._shown field" Url="html/a22035e6-bdc8-994a-c8ac-49087aa9c4b6.htm" />
+  <HelpKINode Title="CallTransmisionWindow class">
+    <HelpKINode Title="CallTransmisionWindow Class" Url="html/c1b3a218-2d1c-918b-80fe-6a1021b012a0.htm" />
+    <HelpKINode Title="about CallTransmisionWindow class" Url="html/c1b3a218-2d1c-918b-80fe-6a1021b012a0.htm" />
+    <HelpKINode Title="constructor" Url="html/070142cc-518c-b852-ab23-b4932da10226.htm" />
+    <HelpKINode Title="fields" Url="html/a33b59f2-ecfb-c7ed-ffec-e778709353e6.htm" />
+    <HelpKINode Title="methods" Url="html/6045d4dd-fdf8-055d-2702-6d36d2f40ccb.htm" />
+    <HelpKINode Title="properties" Url="html/d59569ce-0973-ff8b-a73e-2a826674c611.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CallTransmisionWindow.callDisconectTextboxaction method" Url="html/28ef17cc-06fc-b81a-c7eb-eda5d7913d69.htm" />
+  <HelpKINode Title="CallTransmisionWindow.callIco field" Url="html/d07142ef-d03a-2186-b69b-4b9e9c6bd11e.htm" />
+  <HelpKINode Title="CallTransmisionWindow.CallTransmisionWindow constructor" Url="html/070142cc-518c-b852-ab23-b4932da10226.htm" />
+  <HelpKINode Title="CallTransmisionWindow.dateBegin property" Url="html/d6519ce9-ffbc-f4de-0f26-082409b35b47.htm" />
+  <HelpKINode Title="CallTransmisionWindow.dispatcherTimer field" Url="html/ecc4df53-4b24-5fd6-1e35-88cdf3bdbfe8.htm" />
+  <HelpKINode Title="CallTransmisionWindow.dispatcherTimer_Tick method" Url="html/653258b6-bd54-dde5-b954-f7004da8c872.htm" />
+  <HelpKINode Title="CallTransmisionWindow.IComponentConnector.Connect explicitly implemented method" Url="html/0e8c350d-7c62-1fca-62b5-25fb476094e7.htm" />
+  <HelpKINode Title="CallTransmisionWindow.InitializeComponent method" Url="html/847bf0ec-18ba-da7c-5137-c39a9a16514f.htm" />
+  <HelpKINode Title="CallTransmisionWindow.OnContentRendered method" Url="html/a179cc8d-51fa-10a4-3c18-335cb31f7d3b.htm" />
+  <HelpKINode Title="CallTransmisionWindow.OnMouseLeftButtonDown method" Url="html/09fbe2c3-6574-f673-20bd-256253ea5b56.htm" />
+  <HelpKINode Title="CallTransmisionWindow.stringWithName field" Url="html/8e0818f6-d92d-4ec5-3574-0b86b074d105.htm" />
+  <HelpKINode Title="CallTransmisionWindow.timeTextBlock field" Url="html/988cdb3e-34b6-a44e-3a5d-11409d5a9048.htm" />
+  <HelpKINode Title="CallTransmisionWindow.user property" Url="html/804f2bfa-690f-3c68-a2b8-b74b10c99ea2.htm" />
+  <HelpKINode Title="CallTransmisionWindow.Window_Closing method" Url="html/79989984-de46-53f4-d412-fcf30f2cab9f.htm" />
+  <HelpKINode Title="CallTransmisionWindow.Window_Loaded method" Url="html/6be6e4eb-4854-bce0-8d4f-4ca1881519cf.htm" />
+  <HelpKINode Title="CallTransmisionWindow._contentLoaded field" Url="html/a48757ec-3de0-47e1-0eda-d826ff2644ed.htm" />
+  <HelpKINode Title="CallTransmisionWindow._shown field" Url="html/39b59020-18c9-8a45-77d8-cc03caeee781.htm" />
+  <HelpKINode Title="call_CallStateChanged method" Url="html/3e42adbc-b570-25ad-6a47-ab9a59116257.htm" />
+  <HelpKINode Title="CBMicrophone field" Url="html/70a6b864-01a1-58c1-e8bb-e6b0767adcfa.htm" />
+  <HelpKINode Title="CBMicrophoneHandler method" Url="html/99b4262b-770e-4ded-c945-25bcc0600959.htm" />
+  <HelpKINode Title="CBSound field" Url="html/fa5db634-c31a-8bd3-c51a-09f4fc69d4e9.htm" />
+  <HelpKINode Title="CBSoundHandler method" Url="html/dcbd7a7f-fe12-f786-e674-c28758cd049c.htm" />
+  <HelpKINode Title="change_click method" Url="html/b72c9ba1-885d-62b8-794c-c82e87772a74.htm" />
+  <HelpKINode Title="Client class">
+    <HelpKINode Title="Client Class" Url="html/dc64ec22-66f5-ecd5-116b-1ed693a6d083.htm" />
+    <HelpKINode Title="about Client class" Url="html/dc64ec22-66f5-ecd5-116b-1ed693a6d083.htm" />
+    <HelpKINode Title="constructor" Url="html/194163a4-328f-b5cd-70ce-fbcb57434a2b.htm" />
+    <HelpKINode Title="fields" Url="html/68314203-e812-7a25-cd0e-1b6dfbe0b57b.htm" />
+    <HelpKINode Title="methods" Url="html/8acd3a86-ab08-19aa-512b-af8da8b08282.htm" />
+    <HelpKINode Title="properties" Url="html/cad1b8e9-1949-e1ca-98da-308626a96584.htm" />
+  </HelpKINode>
+  <HelpKINode Title="client field" Url="html/92d00713-9145-bb30-1bac-b0f5761ae2f1.htm" />
+  <HelpKINode Title="client property">
+    <HelpKINode Title="PhoneVOIP.client Property " Url="html/14df320b-b02a-6abb-7f66-d1354fe533bb.htm" />
+    <HelpKINode Title="SingletoneObject.client Property " Url="html/179e6129-6db8-555e-96ac-9de069da2ed4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Client.Client constructor" Url="html/194163a4-328f-b5cd-70ce-fbcb57434a2b.htm" />
+  <HelpKINode Title="Client.client field" Url="html/92d00713-9145-bb30-1bac-b0f5761ae2f1.htm" />
+  <HelpKINode Title="Client.destroyfunction method" Url="html/6bf2b131-c0b3-67f7-3c1a-bbae0ba1bf4e.htm" />
+  <HelpKINode Title="Client.diffieHelman field" Url="html/6ab693c8-5c68-048e-02d8-da1367380e0b.htm" />
+  <HelpKINode Title="Client.HandleCommunication method" Url="html/1ed1fd0f-e207-a246-f028-f9ac27dc257f.htm" />
+  <HelpKINode Title="Client.ipAddres property" Url="html/b154eb86-bb35-5cc3-5334-866a48db34c5.htm" />
+  <HelpKINode Title="Client.isConnected field" Url="html/8ec6a363-a80f-23fd-5099-c658403f1010.htm" />
+  <HelpKINode Title="Client.m_SyncObject field" Url="html/42b3942a-0465-b3e8-979b-249f221e7f1a.htm" />
+  <HelpKINode Title="Client.portnumber property" Url="html/5e856c75-a748-9502-7403-3f85850a2aa8.htm" />
+  <HelpKINode Title="Client.sendMessage method" Url="html/508a821e-cac2-eeaa-db29-1f979d160198.htm" />
+  <HelpKINode Title="Client.streamReader field" Url="html/81f2befb-a4f7-ccee-fd48-e7d047bcb7e6.htm" />
+  <HelpKINode Title="Client.streamWriter field" Url="html/a73ef438-ca2f-35a7-c7ab-0e4d9be2acab.htm" />
+  <HelpKINode Title="ClientAplication namespace" Url="html/33780fed-2f1c-8293-4845-209ee5625916.htm" />
+  <HelpKINode Title="ClientAplication.AplicationUser class" Url="html/3c59e534-91aa-d274-f076-93da9b95c396.htm" />
+  <HelpKINode Title="ClientAplication.CallFromWindow class" Url="html/8562ded1-5445-81c4-ac42-557710815cd8.htm" />
+  <HelpKINode Title="ClientAplication.CallToWindow class" Url="html/fe9cfaba-1c8d-a8e3-6028-cc1201f6afce.htm" />
+  <HelpKINode Title="ClientAplication.CallTransmisionWindow class" Url="html/c1b3a218-2d1c-918b-80fe-6a1021b012a0.htm" />
+  <HelpKINode Title="ClientAplication.Client class" Url="html/dc64ec22-66f5-ecd5-116b-1ed693a6d083.htm" />
+  <HelpKINode Title="ClientAplication.Cryptography class" Url="html/b4041f8e-620d-61cd-40a6-3c2051b42cd1.htm" />
+  <HelpKINode Title="ClientAplication.DiffieHelman class" Url="html/9f1e54b6-d565-13dd-75a3-5c18a96b56af.htm" />
+  <HelpKINode Title="ClientAplication.ItemTB class" Url="html/466fa0a2-185d-18ae-48a1-e78c41aee595.htm" />
+  <HelpKINode Title="ClientAplication.ListHistory class" Url="html/a91b91af-59a9-64cb-b934-97a1ba821b96.htm" />
+  <HelpKINode Title="ClientAplication.ListUser class" Url="html/202c0639-8523-599a-b915-7eacd4101e2c.htm" />
+  <HelpKINode Title="ClientAplication.LoginRegisterManagment class" Url="html/2d946f3d-5349-f223-9e77-d70ec16270b6.htm" />
+  <HelpKINode Title="ClientAplication.LoginRegisterWindow class" Url="html/7c97c6ef-ade0-7289-d4d9-9c9ce9c46685.htm" />
+  <HelpKINode Title="ClientAplication.MainWindow class" Url="html/39fac6e8-5af5-2dbc-7003-8af3db91c9f7.htm" />
+  <HelpKINode Title="ClientAplication.PageHistory class" Url="html/7d9818cf-3572-4fb6-d7fa-f5b4f0b80a46.htm" />
+  <HelpKINode Title="ClientAplication.PageLogin class" Url="html/59b914d7-d99f-d5e0-eb83-428e4a223162.htm" />
+  <HelpKINode Title="ClientAplication.PageMain class" Url="html/c90bd72f-6949-1f11-08d1-d3d013651a28.htm" />
+  <HelpKINode Title="ClientAplication.PageRegister class" Url="html/d1831bd3-c559-359b-dbc7-d37b0ecf1c5b.htm" />
+  <HelpKINode Title="ClientAplication.PhoneVOIP class" Url="html/25122d87-e7fc-a676-443d-6913c847ed29.htm" />
+  <HelpKINode Title="ClientAplication.ReadSettings class" Url="html/ec147653-e1be-81d3-6395-67dab6fda7e4.htm" />
+  <HelpKINode Title="ClientAplication.SettingsPage class" Url="html/bdb10194-4167-ed9e-fa1a-90e532979e15.htm" />
+  <HelpKINode Title="ClientAplication.SingletoneObject class" Url="html/aa7ce1b0-0d0a-2edb-3a84-74e1426b5a24.htm" />
+  <HelpKINode Title="ClientAplication.UCLoginRegisterSetings class" Url="html/c68f2550-bf70-6ff6-7374-1fa5b791739e.htm" />
+  <HelpKINode Title="ClientAplication.UCMainLeftSide class" Url="html/5aa09cac-2ccb-83f6-d883-5eef4fda8b8a.htm" />
+  <HelpKINode Title="ClientAplication.UCTitleBar class" Url="html/013f7619-1546-fd3a-3027-0a40d6af9690.htm" />
+  <HelpKINode Title="ClientAplication.UCTitleBar2 class" Url="html/d90da5d4-36fd-51fc-2bbd-d9d9bec964db.htm" />
+  <HelpKINode Title="ClientAplication.User class" Url="html/6bc5e4ee-c229-a1d3-0fad-32aa1e555747.htm" />
+  <HelpKINode Title="ClientAplication.UserBase class" Url="html/a64c4b49-52a9-7d80-9af4-15021b4328e2.htm" />
+  <HelpKINode Title="ClientAplication.UserPage class" Url="html/d1204ca6-8b26-75a1-5603-21f34f2a9912.htm" />
+  <HelpKINode Title="ClientAplication.ValidationClass class" Url="html/33bf8761-a311-88a2-2ff2-22c8a9ef0711.htm" />
+  <HelpKINode Title="closeButon field">
+    <HelpKINode Title="UCTitleBar.closeButon Field" Url="html/9ddb1f79-76ca-9618-2787-02235965ce85.htm" />
+    <HelpKINode Title="UCTitleBar2.closeButon Field" Url="html/65d46e49-2caa-3fba-fbad-b7cc6254f3ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="closeButon_Click method">
+    <HelpKINode Title="LoginRegisterWindow.closeButon_Click Method " Url="html/23f78f80-963d-aa77-e7bf-f7080e7c7b8f.htm" />
+    <HelpKINode Title="PageLogin.closeButon_Click Method " Url="html/604c8df2-ccd4-5de6-1df9-68418efa0a7c.htm" />
+    <HelpKINode Title="UCTitleBar.closeButon_Click Method " Url="html/b4100716-d35e-2b64-ca20-98b22a3393e0.htm" />
+    <HelpKINode Title="UCTitleBar2.closeButon_Click Method " Url="html/c09dd2a9-7d54-933c-74a5-46c6951f27a6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnectMedia method" Url="html/8084f993-167b-f7a3-5aec-5b1452888443.htm" />
+  <HelpKINode Title="contextmenu field" Url="html/b18c67cd-40a8-027f-2202-766f239a0b34.htm" />
+  <HelpKINode Title="copyitems property">
+    <HelpKINode Title="PageHistory.copyitems Property " Url="html/89cbc48f-1a28-9b14-100b-7f56d29d38b4.htm" />
+    <HelpKINode Title="UserPage.copyitems Property " Url="html/f438b859-a688-5915-df5e-d90b6e86d30b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateDH method" Url="html/84ea5c4a-9951-60a7-139b-24de1552e555.htm" />
+  <HelpKINode Title="Cryptography class">
+    <HelpKINode Title="Cryptography Class" Url="html/b4041f8e-620d-61cd-40a6-3c2051b42cd1.htm" />
+    <HelpKINode Title="about Cryptography class" Url="html/b4041f8e-620d-61cd-40a6-3c2051b42cd1.htm" />
+    <HelpKINode Title="constructor" Url="html/34d5e917-c2f8-dffa-9c94-c4e23554861f.htm" />
+    <HelpKINode Title="fields" Url="html/52df5051-c625-3f33-46c7-0eaec6214b71.htm" />
+    <HelpKINode Title="methods" Url="html/052eb602-9791-7064-9f47-69ed31ce61a6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cryptography.Cryptography constructor" Url="html/34d5e917-c2f8-dffa-9c94-c4e23554861f.htm" />
+  <HelpKINode Title="Cryptography.Decrypt method" Url="html/f4fdb410-dc52-b25e-a938-097313cc8326.htm" />
+  <HelpKINode Title="Cryptography.Encrypt method" Url="html/8029f8bc-7239-8011-a7a4-f1e13b0bac06.htm" />
+  <HelpKINode Title="Cryptography.hash field" Url="html/0c6288cd-c445-b548-e418-02129323ad2c.htm" />
+  <HelpKINode Title="Cryptography.iterations field" Url="html/a2f5a795-d467-83bd-d19d-3e784c2826fd.htm" />
+  <HelpKINode Title="Cryptography.keySize field" Url="html/304e133d-56e5-7bd4-c64d-e40255b9d5ba.htm" />
+  <HelpKINode Title="Cryptography.saltBytes field" Url="html/df83c4c3-89e0-cb67-9d0b-9f82291e195f.htm" />
+  <HelpKINode Title="Cryptography.vectorBytes field" Url="html/9b5c57ae-6301-2554-e653-d8400fe39237.htm" />
+  <HelpKINode Title="Date property" Url="html/b1f1be08-8d5e-21fd-8999-e530254d5f0d.htm" />
+  <HelpKINode Title="dateBegin property">
+    <HelpKINode Title="CallFromWindow.dateBegin Property " Url="html/ce54cac4-60aa-35a4-f5f5-8d9232ed0edc.htm" />
+    <HelpKINode Title="CallToWindow.dateBegin Property " Url="html/b055b414-1a10-4bf6-9c38-292b4fc76001.htm" />
+    <HelpKINode Title="CallTransmisionWindow.dateBegin Property " Url="html/d6519ce9-ffbc-f4de-0f26-082409b35b47.htm" />
+  </HelpKINode>
+  <HelpKINode Title="dayBegin property" Url="html/2bcc4a49-329b-b45c-4688-932cf84f053c.htm" />
+  <HelpKINode Title="dayEnd property" Url="html/4091f21e-a474-3485-a0fb-956ceb706722.htm" />
+  <HelpKINode Title="Decrypt method" Url="html/f4fdb410-dc52-b25e-a938-097313cc8326.htm" />
+  <HelpKINode Title="deleteAcount method" Url="html/b68152a0-f03f-1a31-daf3-eae624cd5068.htm" />
+  <HelpKINode Title="deleteFriend method" Url="html/4082151b-3c1c-ad63-6f53-45bcee9fbac7.htm" />
+  <HelpKINode Title="Describe property" Url="html/aebb519a-36ec-9d4f-274a-ac9ec650ef9f.htm" />
+  <HelpKINode Title="destroyfunction method" Url="html/6bf2b131-c0b3-67f7-3c1a-bbae0ba1bf4e.htm" />
+  <HelpKINode Title="DiffieHelman class">
+    <HelpKINode Title="DiffieHelman Class" Url="html/9f1e54b6-d565-13dd-75a3-5c18a96b56af.htm" />
+    <HelpKINode Title="about DiffieHelman class" Url="html/9f1e54b6-d565-13dd-75a3-5c18a96b56af.htm" />
+    <HelpKINode Title="constructor" Url="html/d9f24863-246e-3db8-eb9f-72021f1b1ca0.htm" />
+    <HelpKINode Title="fields" Url="html/bb252a4e-a1b6-fd0f-0684-d96f49b6ec88.htm" />
+    <HelpKINode Title="methods" Url="html/165a4a25-092e-6f19-ab9a-9103e99b1b46.htm" />
+  </HelpKINode>
+  <HelpKINode Title="diffieHelman field" Url="html/6ab693c8-5c68-048e-02d8-da1367380e0b.htm" />
+  <HelpKINode Title="DiffieHelman.a field" Url="html/64e166dd-3893-7c88-86b1-0191bf207acb.htm" />
+  <HelpKINode Title="DiffieHelman.A field" Url="html/0868aaed-c952-c06b-727c-dc059c1a06d7.htm" />
+  <HelpKINode Title="DiffieHelman.CreateDH method" Url="html/84ea5c4a-9951-60a7-139b-24de1552e555.htm" />
+  <HelpKINode Title="DiffieHelman.DiffieHelman constructor" Url="html/d9f24863-246e-3db8-eb9f-72021f1b1ca0.htm" />
+  <HelpKINode Title="DiffieHelman.G field" Url="html/538059fc-53bf-4103-1c7c-080d314878a6.htm" />
+  <HelpKINode Title="DiffieHelman.generateDoubleArrayFromStrin method" Url="html/93f7e9f8-f374-76cf-35ae-f4e4e4b2f5f2.htm" />
+  <HelpKINode Title="DiffieHelman.generateG method" Url="html/71da1069-4ba4-8c5d-c91d-c55f7ce12670.htm" />
+  <HelpKINode Title="DiffieHelman.generateP method" Url="html/e98a71a4-daa4-8949-d822-2ae4bc6786b5.htm" />
+  <HelpKINode Title="DiffieHelman.isPrimeNumber method" Url="html/43430268-86d7-4cb4-a46f-c4dc493bc579.htm" />
+  <HelpKINode Title="DiffieHelman.P field" Url="html/a912a0c0-b3ae-69fe-af40-db8c8e7e456c.htm" />
+  <HelpKINode Title="DiffieHelman.powMod method" Url="html/8d7f38f9-7d37-a7e5-d924-e81267985cc1.htm" />
+  <HelpKINode Title="DiffieHelman.reciveMessage method" Url="html/02338085-a65f-2202-221f-4bf43a91f4a3.htm" />
+  <HelpKINode Title="DiffieHelman.rnd field" Url="html/3d5799b6-7f59-02f2-689c-eae214b8de1a.htm" />
+  <HelpKINode Title="DiffieHelman.s field" Url="html/979ae73f-3ebd-cf19-1111-058c92f07f95.htm" />
+  <HelpKINode Title="DiffieHelman.secretByteArray field" Url="html/82dd1303-6603-e77b-b1f7-a5387073f9b8.htm" />
+  <HelpKINode Title="DiffieHelman.sendMessage method" Url="html/d10269b1-fa82-57ee-f7a6-eb92504655d5.htm" />
+  <HelpKINode Title="DiffieHelman.sendMessage1 method" Url="html/5ac07bcf-7d4f-339b-4b1f-3019f25cca47.htm" />
+  <HelpKINode Title="DisconnectMedia method" Url="html/0df1cf64-0408-3606-5340-55870a39349e.htm" />
+  <HelpKINode Title="dispatcherTimer field" Url="html/ecc4df53-4b24-5fd6-1e35-88cdf3bdbfe8.htm" />
+  <HelpKINode Title="dispatcherTimer_Tick method" Url="html/653258b6-bd54-dde5-b954-f7004da8c872.htm" />
+  <HelpKINode Title="Encrypt method" Url="html/8029f8bc-7239-8011-a7a4-f1e13b0bac06.htm" />
+  <HelpKINode Title="Friends property" Url="html/8112c999-0782-3eaf-da3b-ca9abb313f1d.htm" />
+  <HelpKINode Title="G field" Url="html/538059fc-53bf-4103-1c7c-080d314878a6.htm" />
+  <HelpKINode Title="generateDoubleArrayFromStrin method" Url="html/93f7e9f8-f374-76cf-35ae-f4e4e4b2f5f2.htm" />
+  <HelpKINode Title="generateG method" Url="html/71da1069-4ba4-8c5d-c91d-c55f7ce12670.htm" />
+  <HelpKINode Title="generateP method" Url="html/e98a71a4-daa4-8949-d822-2ae4bc6786b5.htm" />
+  <HelpKINode Title="GetAllHistory method" Url="html/4464b5d6-0e8b-f7bc-b6af-9319b0064e5a.htm" />
+  <HelpKINode Title="GetConcreteHistory method">
+    <HelpKINode Title="PageHistory.GetConcreteHistory Method " Url="html/d8821877-2597-072e-fa05-5e4582fab6ea.htm" />
+    <HelpKINode Title="UCMainLeftSide.GetConcreteHistory Method " Url="html/71d6cd87-2978-d995-1e79-8d19f3355e50.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetFriends method" Url="html/fb7a2cf1-5e33-1deb-31b1-49348833b9c2.htm" />
+  <HelpKINode Title="GetInstance property">
+    <HelpKINode Title="ReadSettings.GetInstance Property " Url="html/8d48d325-d375-0127-e446-b7756381229c.htm" />
+    <HelpKINode Title="SingletoneObject.GetInstance Property " Url="html/4d7e3b10-fad6-12a5-7002-8ac044502938.htm" />
+  </HelpKINode>
+  <HelpKINode Title="gotoLogin field" Url="html/f39f406a-ca9c-56b4-af00-95f903400934.htm" />
+  <HelpKINode Title="gotoRegisterButton field" Url="html/b2e69531-ec14-4b49-2a40-60a99e348227.htm" />
+  <HelpKINode Title="goToUser method" Url="html/14ea9782-c391-1d0d-6eaf-99610a03c2cf.htm" />
+  <HelpKINode Title="HandleCommunication method" Url="html/1ed1fd0f-e207-a246-f028-f9ac27dc257f.htm" />
+  <HelpKINode Title="hash field" Url="html/0c6288cd-c445-b548-e418-02129323ad2c.htm" />
+  <HelpKINode Title="HashPassword method">
+    <HelpKINode Title="LoginRegisterManagment.HashPassword Method " Url="html/f744fd97-d113-6a96-33ae-e81ddb418046.htm" />
+    <HelpKINode Title="PhoneVOIP.HashPassword Method " Url="html/b592c3d3-7e21-ef2b-6ca5-29f84f226207.htm" />
+  </HelpKINode>
+  <HelpKINode Title="history field" Url="html/1c9e44e5-260a-be3d-716a-53e45648f865.htm" />
+  <HelpKINode Title="historysearchinput field" Url="html/46324816-51d3-e0e5-7f1c-a0eb9bba6852.htm" />
+  <HelpKINode Title="historysearchinput_TextChanged method">
+    <HelpKINode Title="PageHistory.historysearchinput_TextChanged Method " Url="html/dfe696c8-865f-4c8d-6de7-311801853329.htm" />
+    <HelpKINode Title="UserPage.historysearchinput_TextChanged Method " Url="html/366d0e3e-513a-405a-5917-47be8d118c85.htm" />
+  </HelpKINode>
+  <HelpKINode Title="historyTextboxaction method" Url="html/7d469b61-176d-6860-21c2-726e8a9d7694.htm" />
+  <HelpKINode Title="homeTextboxaction method" Url="html/8b0c4f62-7a10-3f50-759c-e3428757aea6.htm" />
+  <HelpKINode Title="hourBegin property" Url="html/fce1db70-4525-1419-8fdc-8e62cc000a1a.htm" />
+  <HelpKINode Title="hourEnd property" Url="html/581efa40-7f99-3647-8ccc-7aba83753445.htm" />
+  <HelpKINode Title="IcoCall property" Url="html/a98ef9df-0d16-60e7-5ac5-de7a939f771a.htm" />
+  <HelpKINode Title="IcoColor property" Url="html/4cfc9195-efbe-f6d5-d20e-b14e855438a4.htm" />
+  <HelpKINode Title="IComponentConnector.Connect explicitly implemented method">
+    <HelpKINode Title="CallFromWindow.IComponentConnector.Connect Method " Url="html/28502c84-5edd-db9d-5c03-a9a9b05ec042.htm" />
+    <HelpKINode Title="CallToWindow.IComponentConnector.Connect Method " Url="html/e5c4c350-daac-fe61-45f1-1c88e382af72.htm" />
+    <HelpKINode Title="CallTransmisionWindow.IComponentConnector.Connect Method " Url="html/0e8c350d-7c62-1fca-62b5-25fb476094e7.htm" />
+    <HelpKINode Title="LoginRegisterWindow.IComponentConnector.Connect Method " Url="html/11203d65-1aa2-74f8-db6d-220f52104bad.htm" />
+    <HelpKINode Title="MainWindow.IComponentConnector.Connect Method " Url="html/a1ce7727-562b-65e7-91df-447dbdb4ead3.htm" />
+    <HelpKINode Title="PageHistory.IComponentConnector.Connect Method " Url="html/aabe23be-b931-573c-c216-c611a0102179.htm" />
+    <HelpKINode Title="PageLogin.IComponentConnector.Connect Method " Url="html/2a873872-a9cb-d3ac-ef9b-2058049aad5f.htm" />
+    <HelpKINode Title="PageMain.IComponentConnector.Connect Method " Url="html/12692bb7-1b6e-2d49-c552-7a68236a2c14.htm" />
+    <HelpKINode Title="PageRegister.IComponentConnector.Connect Method " Url="html/c0f0d261-660d-8d17-4d82-b88326906599.htm" />
+    <HelpKINode Title="SettingsPage.IComponentConnector.Connect Method " Url="html/37f07c59-f308-15b2-48d7-a2527add2449.htm" />
+    <HelpKINode Title="UCLoginRegisterSetings.IComponentConnector.Connect Method " Url="html/a5c9d36c-1982-20e3-ffdb-6d6f15f55ea3.htm" />
+    <HelpKINode Title="UCMainLeftSide.IComponentConnector.Connect Method " Url="html/3b634e9f-3b64-6785-ff29-35b3a90c1146.htm" />
+    <HelpKINode Title="UCTitleBar.IComponentConnector.Connect Method " Url="html/05f9c5ab-eede-b2b7-7e88-a29ac53851c8.htm" />
+    <HelpKINode Title="UCTitleBar2.IComponentConnector.Connect Method " Url="html/c22d57ee-50f3-fa5b-6136-fcee2007214a.htm" />
+    <HelpKINode Title="UserPage.IComponentConnector.Connect Method " Url="html/fb89971a-7e80-7c3b-300b-c6685c60f584.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IcoUser property" Url="html/eaaed5d7-c379-2d51-4597-cbb4f4939756.htm" />
+  <HelpKINode Title="InitializeComponent method">
+    <HelpKINode Title="CallFromWindow.InitializeComponent Method " Url="html/0e4d2096-fc82-553f-adab-41a9ff1fd913.htm" />
+    <HelpKINode Title="CallToWindow.InitializeComponent Method " Url="html/b44e86a0-8ca0-dcf7-dc44-3535a441f570.htm" />
+    <HelpKINode Title="CallTransmisionWindow.InitializeComponent Method " Url="html/847bf0ec-18ba-da7c-5137-c39a9a16514f.htm" />
+    <HelpKINode Title="LoginRegisterWindow.InitializeComponent Method " Url="html/d66a870d-2610-169d-b711-ad665590e387.htm" />
+    <HelpKINode Title="MainWindow.InitializeComponent Method " Url="html/31110036-65f0-dbd5-4c06-b321f455a8b1.htm" />
+    <HelpKINode Title="PageHistory.InitializeComponent Method " Url="html/2e531ea5-567b-04a3-7125-893abf55093c.htm" />
+    <HelpKINode Title="PageLogin.InitializeComponent Method " Url="html/500bd8a2-1e4d-a4da-8041-035393ca566e.htm" />
+    <HelpKINode Title="PageMain.InitializeComponent Method " Url="html/558b8079-95e7-0d66-db71-5ede2600958c.htm" />
+    <HelpKINode Title="PageRegister.InitializeComponent Method " Url="html/4b9ece61-a29d-6096-da3e-ef33359ef363.htm" />
+    <HelpKINode Title="SettingsPage.InitializeComponent Method " Url="html/180b19a3-f84e-2926-82cc-938039063155.htm" />
+    <HelpKINode Title="UCLoginRegisterSetings.InitializeComponent Method " Url="html/6e20a176-3ef6-4f9f-307b-6e291ff4755e.htm" />
+    <HelpKINode Title="UCMainLeftSide.InitializeComponent Method " Url="html/6bea641e-4a4f-9456-6188-ceca8a7dee1f.htm" />
+    <HelpKINode Title="UCTitleBar.InitializeComponent Method " Url="html/d7267b72-7c11-5931-7608-5ad4f88920d1.htm" />
+    <HelpKINode Title="UCTitleBar2.InitializeComponent Method " Url="html/0f692989-a4b0-88ad-5313-e0a19dfea1e1.htm" />
+    <HelpKINode Title="UserPage.InitializeComponent Method " Url="html/92136485-bdc8-6c1c-7b31-074095abb2ab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InitializeSoftPhone method" Url="html/e905fbc6-d4dc-46bd-24f0-9b72bd841a61.htm" />
+  <HelpKINode Title="instance field">
+    <HelpKINode Title="ReadSettings.instance Field" Url="html/7d4e7c91-a0a8-3c44-89f2-f9aa0363bb7d.htm" />
+    <HelpKINode Title="SingletoneObject.instance Field" Url="html/dd856ee4-3964-7563-1297-51c88add6366.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvokeGUIThread method" Url="html/4f78a949-03c8-3cee-fd5f-5b472602e679.htm" />
+  <HelpKINode Title="IP property" Url="html/595731f7-46c8-39a1-5cf8-239def833c70.htm" />
+  <HelpKINode Title="ipAddres property" Url="html/b154eb86-bb35-5cc3-5334-866a48db34c5.htm" />
+  <HelpKINode Title="isActive property" Url="html/c9f4f8b8-b5a4-331f-7d77-c91e2ae8b1f7.htm" />
+  <HelpKINode Title="isConnected field" Url="html/8ec6a363-a80f-23fd-5099-c658403f1010.htm" />
+  <HelpKINode Title="isFriend property" Url="html/918acf81-3620-4f29-9de0-ff65463456a3.htm" />
+  <HelpKINode Title="isloged property" Url="html/fb65bf7d-ad4f-541e-1ea0-829023178bf5.htm" />
+  <HelpKINode Title="isOnlineloop method" Url="html/01dcb711-5acf-a375-644f-5e12edaac4c6.htm" />
+  <HelpKINode Title="isOnlineThread property" Url="html/d55e63e5-c641-bca6-fd7c-da39efd0d25c.htm" />
+  <HelpKINode Title="isPrimeNumber method" Url="html/43430268-86d7-4cb4-a46f-c4dc493bc579.htm" />
+  <HelpKINode Title="IStyleConnector.Connect explicitly implemented method">
+    <HelpKINode Title="PageHistory.IStyleConnector.Connect Method " Url="html/425daa50-cdc7-cf50-ac0e-b398549f1b96.htm" />
+    <HelpKINode Title="SettingsPage.IStyleConnector.Connect Method " Url="html/20442a15-1dc3-ecc2-3cbb-4e8811af46c1.htm" />
+    <HelpKINode Title="UCMainLeftSide.IStyleConnector.Connect Method " Url="html/748e76eb-06ec-086b-efc1-45b8cc64229e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsValidEmail method" Url="html/8c304574-4c08-fe93-c056-9a600a1572e9.htm" />
+  <HelpKINode Title="isValidLogin method" Url="html/e086921e-10e1-40fd-b113-258e2c816c04.htm" />
+  <HelpKINode Title="isValidPassword method" Url="html/570a04cc-c4ff-e6e4-dc10-390214ee1eba.htm" />
+  <HelpKINode Title="items property">
+    <HelpKINode Title="PageHistory.items Property " Url="html/30659f69-2f74-1704-ad4e-c12e313c14f1.htm" />
+    <HelpKINode Title="SingletoneObject.items Property " Url="html/fb887b44-590d-b971-5c95-d21978f75b32.htm" />
+    <HelpKINode Title="UserPage.items Property " Url="html/3eab7a29-4579-fc66-a29a-280161ac87bc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemTB class">
+    <HelpKINode Title="ItemTB Class" Url="html/466fa0a2-185d-18ae-48a1-e78c41aee595.htm" />
+    <HelpKINode Title="about ItemTB class" Url="html/466fa0a2-185d-18ae-48a1-e78c41aee595.htm" />
+    <HelpKINode Title="constructor" Url="html/ca1ee884-1c29-0a6c-8f8e-2fd9608dd89f.htm" />
+    <HelpKINode Title="properties" Url="html/ff518737-ac20-04c7-1dae-817fefd7cf4a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemTB.Date property" Url="html/b1f1be08-8d5e-21fd-8999-e530254d5f0d.htm" />
+  <HelpKINode Title="ItemTB.Describe property" Url="html/aebb519a-36ec-9d4f-274a-ac9ec650ef9f.htm" />
+  <HelpKINode Title="ItemTB.ItemTB constructor" Url="html/ca1ee884-1c29-0a6c-8f8e-2fd9608dd89f.htm" />
+  <HelpKINode Title="ItemTB.Name property" Url="html/7081f545-43b5-514f-c594-af606ba58391.htm" />
+  <HelpKINode Title="iterations field" Url="html/a2f5a795-d467-83bd-d19d-3e784c2826fd.htm" />
+  <HelpKINode Title="keySize field" Url="html/304e133d-56e5-7bd4-c64d-e40255b9d5ba.htm" />
+  <HelpKINode Title="lastActivity property" Url="html/02c6e762-0587-c1ca-2900-1eb1159d8b67.htm" />
+  <HelpKINode Title="lbHistoryAll field">
+    <HelpKINode Title="PageHistory.lbHistoryAll Field" Url="html/06be249f-da2f-b07e-65a2-3d7657fbbd6c.htm" />
+    <HelpKINode Title="UserPage.lbHistoryAll Field" Url="html/69255913-51cf-4e2e-114d-f0a1fe7753a8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="lbUsers field" Url="html/ab17573e-47f5-749f-ebea-aa5037d73dc4.htm" />
+  <HelpKINode Title="ListHistory class">
+    <HelpKINode Title="ListHistory Class" Url="html/a91b91af-59a9-64cb-b934-97a1ba821b96.htm" />
+    <HelpKINode Title="about ListHistory class" Url="html/a91b91af-59a9-64cb-b934-97a1ba821b96.htm" />
+    <HelpKINode Title="constructor" Url="html/90001a18-4ae8-b38e-c8a8-1b8ac8277644.htm" />
+    <HelpKINode Title="properties" Url="html/d4904fc7-0b1c-9c43-82f9-7eb0a77a3c0f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListHistory.dayBegin property" Url="html/2bcc4a49-329b-b45c-4688-932cf84f053c.htm" />
+  <HelpKINode Title="ListHistory.dayEnd property" Url="html/4091f21e-a474-3485-a0fb-956ceb706722.htm" />
+  <HelpKINode Title="ListHistory.hourBegin property" Url="html/fce1db70-4525-1419-8fdc-8e62cc000a1a.htm" />
+  <HelpKINode Title="ListHistory.hourEnd property" Url="html/581efa40-7f99-3647-8ccc-7aba83753445.htm" />
+  <HelpKINode Title="ListHistory.ListHistory constructor" Url="html/90001a18-4ae8-b38e-c8a8-1b8ac8277644.htm" />
+  <HelpKINode Title="ListHistory.userName property" Url="html/a23d638c-292e-672b-c326-16bc362862d3.htm" />
+  <HelpKINode Title="ListRefreshloop method" Url="html/331488eb-83ed-ae18-0d07-4af4cf61a356.htm" />
+  <HelpKINode Title="ListUser class">
+    <HelpKINode Title="ListUser Class" Url="html/202c0639-8523-599a-b915-7eacd4101e2c.htm" />
+    <HelpKINode Title="about ListUser class" Url="html/202c0639-8523-599a-b915-7eacd4101e2c.htm" />
+    <HelpKINode Title="constructor" Url="html/4bf98bb9-0621-31a3-0d09-90009edeeff0.htm" />
+    <HelpKINode Title="properties" Url="html/47ec9ae4-f744-dd72-3d17-3d96483acd60.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ListUser.active property" Url="html/4ea92548-2ad7-f56f-3529-7c950ab039c7.htm" />
+  <HelpKINode Title="ListUser.ListUser constructor" Url="html/4bf98bb9-0621-31a3-0d09-90009edeeff0.htm" />
+  <HelpKINode Title="ListUser.name property" Url="html/8f85525f-e228-e1a7-6122-cf43909e1558.htm" />
+  <HelpKINode Title="listusercompare property" Url="html/25108a98-fbb7-31bb-834a-21366c4c7787.htm" />
+  <HelpKINode Title="listUsers property" Url="html/177a068f-34a8-7f9b-d44b-5035064d7913.htm" />
+  <HelpKINode Title="listUserSearch property" Url="html/4ffebc79-6135-ca95-dc28-2e6762fcf832.htm" />
+  <HelpKINode Title="loginButton field" Url="html/4cf1b88d-3f74-f9e0-e715-b48e71cca506.htm" />
+  <HelpKINode Title="loginInput field" Url="html/05f6d00f-3989-033c-381a-68751d93af3e.htm" />
+  <HelpKINode Title="loginInputRegister field" Url="html/a5291b60-351a-863b-434a-04c7b589b12c.htm" />
+  <HelpKINode Title="loginRegisterfunction method" Url="html/ba7a312f-7a01-54fc-767f-beb197e07d49.htm" />
+  <HelpKINode Title="LoginRegisterManagment class">
+    <HelpKINode Title="LoginRegisterManagment Class" Url="html/2d946f3d-5349-f223-9e77-d70ec16270b6.htm" />
+    <HelpKINode Title="about LoginRegisterManagment class" Url="html/2d946f3d-5349-f223-9e77-d70ec16270b6.htm" />
+    <HelpKINode Title="constructor" Url="html/2005429c-1053-957c-addd-8401109b0cb7.htm" />
+    <HelpKINode Title="fields" Url="html/a5b60ecf-e8e4-5ead-1f75-37dd59c87e2d.htm" />
+    <HelpKINode Title="methods" Url="html/2769c1d3-7c61-6bca-51af-1710c446f975.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LoginRegisterManagment.GetFriends method" Url="html/fb7a2cf1-5e33-1deb-31b1-49348833b9c2.htm" />
+  <HelpKINode Title="LoginRegisterManagment.HashPassword method" Url="html/f744fd97-d113-6a96-33ae-e81ddb418046.htm" />
+  <HelpKINode Title="LoginRegisterManagment.isOnlineloop method" Url="html/01dcb711-5acf-a375-644f-5e12edaac4c6.htm" />
+  <HelpKINode Title="LoginRegisterManagment.loginRegisterfunction method" Url="html/ba7a312f-7a01-54fc-767f-beb197e07d49.htm" />
+  <HelpKINode Title="LoginRegisterManagment.LoginRegisterManagment constructor" Url="html/2005429c-1053-957c-addd-8401109b0cb7.htm" />
+  <HelpKINode Title="LoginRegisterManagment.singletoneOBj field" Url="html/6ccf5f2f-03da-16ee-3d3d-be5d36de00a1.htm" />
+  <HelpKINode Title="LoginRegisterManagment.timeThreadloop field" Url="html/8acd8c05-7be7-80ee-7e55-04ea4a869585.htm" />
+  <HelpKINode Title="LoginRegisterWindow class">
+    <HelpKINode Title="LoginRegisterWindow Class" Url="html/7c97c6ef-ade0-7289-d4d9-9c9ce9c46685.htm" />
+    <HelpKINode Title="about LoginRegisterWindow class" Url="html/7c97c6ef-ade0-7289-d4d9-9c9ce9c46685.htm" />
+    <HelpKINode Title="constructor" Url="html/d65655f6-4726-02e5-90db-cfb7dd35ff97.htm" />
+    <HelpKINode Title="fields" Url="html/1ef73c80-3db9-a8da-e551-d16efe16eb04.htm" />
+    <HelpKINode Title="methods" Url="html/9d2124bb-a5fa-30b3-281b-32e00ea86d4c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LoginRegisterWindow.closeButon_Click method" Url="html/23f78f80-963d-aa77-e7bf-f7080e7c7b8f.htm" />
+  <HelpKINode Title="LoginRegisterWindow.IComponentConnector.Connect explicitly implemented method" Url="html/11203d65-1aa2-74f8-db6d-220f52104bad.htm" />
+  <HelpKINode Title="LoginRegisterWindow.InitializeComponent method" Url="html/d66a870d-2610-169d-b711-ad665590e387.htm" />
+  <HelpKINode Title="LoginRegisterWindow.LoginRegisterWindow constructor" Url="html/d65655f6-4726-02e5-90db-cfb7dd35ff97.htm" />
+  <HelpKINode Title="LoginRegisterWindow.OnMouseLeftButtonDown method" Url="html/0ca25097-138d-35f0-fe20-a5984c5d64da.htm" />
+  <HelpKINode Title="LoginRegisterWindow.rightSideWP field" Url="html/205ac1c8-0db9-f4bc-43f7-d7b20078fc23.htm" />
+  <HelpKINode Title="LoginRegisterWindow._contentLoaded field" Url="html/ad0b84f4-776d-d7b7-061b-aa50da075e09.htm" />
+  <HelpKINode Title="loginSP field" Url="html/0649762d-e768-be9f-dad1-74f7218d542c.htm" />
+  <HelpKINode Title="LogOff method" Url="html/8f122857-5621-828a-f7b8-3c04961c9ad9.htm" />
+  <HelpKINode Title="logOut field" Url="html/5257da92-00cb-9127-6cd3-ac015bb8f6d8.htm" />
+  <HelpKINode Title="logOutTextboxaction method" Url="html/086db58e-54c7-50d3-e4bd-4594d9b1f7e3.htm" />
+  <HelpKINode Title="LRM field">
+    <HelpKINode Title="PageLogin.LRM Field" Url="html/7dad4c5e-de37-bff3-fc79-f7e6502a64e9.htm" />
+    <HelpKINode Title="PageRegister.LRM Field" Url="html/fde5a10e-6c02-531c-abc1-5df470602a7b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="main field" Url="html/b4ca155f-2ab8-abf3-e22e-c84467bccfd6.htm" />
+  <HelpKINode Title="MainWindow class">
+    <HelpKINode Title="MainWindow Class" Url="html/39fac6e8-5af5-2dbc-7003-8af3db91c9f7.htm" />
+    <HelpKINode Title="about MainWindow class" Url="html/39fac6e8-5af5-2dbc-7003-8af3db91c9f7.htm" />
+    <HelpKINode Title="constructor" Url="html/9f01e74e-1f0e-c7a7-9cdb-1c89c60a0c60.htm" />
+    <HelpKINode Title="fields" Url="html/e36becd1-bb6a-c0d5-00a2-59af2b3e4bd3.htm" />
+    <HelpKINode Title="methods" Url="html/2a57ca8c-0382-4b65-c8b3-ceb548e98e68.htm" />
+  </HelpKINode>
+  <HelpKINode Title="mainwindow property" Url="html/42ff61a5-69f6-cc76-59e6-884eab41a40d.htm" />
+  <HelpKINode Title="MainWindow.IComponentConnector.Connect explicitly implemented method" Url="html/a1ce7727-562b-65e7-91df-447dbdb4ead3.htm" />
+  <HelpKINode Title="MainWindow.InitializeComponent method" Url="html/31110036-65f0-dbd5-4c06-b321f455a8b1.htm" />
+  <HelpKINode Title="MainWindow.MainWindow constructor" Url="html/9f01e74e-1f0e-c7a7-9cdb-1c89c60a0c60.htm" />
+  <HelpKINode Title="MainWindow.OnMouseLeftButtonDown method" Url="html/6ffb31a9-a63f-5d1c-8124-398bd06d69f9.htm" />
+  <HelpKINode Title="MainWindow._contentLoaded field" Url="html/ccc189c3-6133-dc3e-b690-f19766ba7722.htm" />
+  <HelpKINode Title="menuButtonbSP field" Url="html/2747d93c-5a51-c7e2-71e6-ebd1f18c519e.htm" />
+  <HelpKINode Title="MenuItemDelete_Click method" Url="html/8f346842-4cfd-992f-919b-b52befaa489a.htm" />
+  <HelpKINode Title="menuSP field">
+    <HelpKINode Title="PageHistory.menuSP Field" Url="html/82863dd8-ebba-2e5e-084a-4537ce21a387.htm" />
+    <HelpKINode Title="PageMain.menuSP Field" Url="html/50c73451-19dd-a120-1bae-757585d10bdc.htm" />
+    <HelpKINode Title="SettingsPage.menuSP Field" Url="html/99fe9a43-cee6-e638-025f-4f9978d6355c.htm" />
+    <HelpKINode Title="UserPage.menuSP Field" Url="html/9b3bb100-7321-2c9b-a330-d10660ca3fab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MIcrophoneDevices field" Url="html/7d73baf6-8ff0-ec2a-8e71-ee7cfaffe30d.htm" />
+  <HelpKINode Title="minimalizeButon field">
+    <HelpKINode Title="UCTitleBar.minimalizeButon Field" Url="html/e2a6a3f8-8109-b586-1e5e-a0ef056ae7f3.htm" />
+    <HelpKINode Title="UCTitleBar2.minimalizeButon Field" Url="html/05e48bbc-3313-2946-e80d-989e3f92de32.htm" />
+  </HelpKINode>
+  <HelpKINode Title="minimalizeButon_Click method">
+    <HelpKINode Title="UCTitleBar.minimalizeButon_Click Method " Url="html/1fd1d49b-9735-5b7a-28e9-cfc2f0edfade.htm" />
+    <HelpKINode Title="UCTitleBar2.minimalizeButon_Click Method " Url="html/e51a3474-cbdb-bea7-2a4f-37525d6cbfed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="m_SyncObject field" Url="html/42b3942a-0465-b3e8-979b-249f221e7f1a.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="ItemTB.Name Property " Url="html/7081f545-43b5-514f-c594-af606ba58391.htm" />
+    <HelpKINode Title="UserBase.Name Property " Url="html/78486ff1-b354-7cc1-ec04-078d917a5cce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="name property" Url="html/8f85525f-e228-e1a7-6122-cf43909e1558.htm" />
+  <HelpKINode Title="nameCallToUser property" Url="html/373ca18a-4896-1bd3-fe66-ccd2367d6b06.htm" />
+  <HelpKINode Title="newPassword field" Url="html/acf2ce6f-abc3-bc7b-86e1-a18334c6c527.htm" />
+  <HelpKINode Title="newPassword2 field" Url="html/d21b1060-49b1-3751-a74f-a0711833ef73.htm" />
+  <HelpKINode Title="numberPortInput field" Url="html/6b54eee6-5a42-9c96-88a8-703b7c4f8554.htm" />
+  <HelpKINode Title="numberSelectedItem field" Url="html/92b09d43-2c7a-11ac-6c6b-673ac62ce3fc.htm" />
+  <HelpKINode Title="OldPassword field" Url="html/1f18d10b-607a-d521-91dc-479236bb669f.htm" />
+  <HelpKINode Title="OnContentRendered method">
+    <HelpKINode Title="CallFromWindow.OnContentRendered Method " Url="html/639b1dfb-ff50-fce1-837e-e733f0a2ac32.htm" />
+    <HelpKINode Title="CallToWindow.OnContentRendered Method " Url="html/ea8c831b-9872-94c0-c451-2904a791e0c6.htm" />
+    <HelpKINode Title="CallTransmisionWindow.OnContentRendered Method " Url="html/a179cc8d-51fa-10a4-3c18-335cb31f7d3b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OnMouseLeftButtonDown method">
+    <HelpKINode Title="CallFromWindow.OnMouseLeftButtonDown Method " Url="html/9c903763-0c7e-90a4-d662-d156da445594.htm" />
+    <HelpKINode Title="CallToWindow.OnMouseLeftButtonDown Method " Url="html/43ab2779-e0c8-cfc6-8509-c680b862051e.htm" />
+    <HelpKINode Title="CallTransmisionWindow.OnMouseLeftButtonDown Method " Url="html/09fbe2c3-6574-f673-20bd-256253ea5b56.htm" />
+    <HelpKINode Title="LoginRegisterWindow.OnMouseLeftButtonDown Method " Url="html/0ca25097-138d-35f0-fe20-a5984c5d64da.htm" />
+    <HelpKINode Title="MainWindow.OnMouseLeftButtonDown Method " Url="html/6ffb31a9-a63f-5d1c-8124-398bd06d69f9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="P field" Url="html/a912a0c0-b3ae-69fe-af40-db8c8e7e456c.htm" />
+  <HelpKINode Title="PadLock field">
+    <HelpKINode Title="ReadSettings.PadLock Field" Url="html/55d3aab7-c8b9-5283-d970-444d441a118c.htm" />
+    <HelpKINode Title="SingletoneObject.PadLock Field" Url="html/04c6cadc-4a6e-dd64-9927-100ea48c62f2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageHistory class">
+    <HelpKINode Title="PageHistory Class" Url="html/7d9818cf-3572-4fb6-d7fa-f5b4f0b80a46.htm" />
+    <HelpKINode Title="about PageHistory class" Url="html/7d9818cf-3572-4fb6-d7fa-f5b4f0b80a46.htm" />
+    <HelpKINode Title="constructor" Url="html/5681abfa-d676-065a-bed1-b47e43e27b24.htm" />
+    <HelpKINode Title="fields" Url="html/36e39487-aaf7-28eb-d4e2-972aee09cacf.htm" />
+    <HelpKINode Title="methods" Url="html/2c6efda3-7dd4-1c7f-270b-ceda974dee3d.htm" />
+    <HelpKINode Title="properties" Url="html/5837996e-9833-7209-44c2-8b2897da5ed3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageHistory.backAction method" Url="html/ac096fd7-fac8-35a4-7afa-cd76a717ba51.htm" />
+  <HelpKINode Title="PageHistory.callToUser method" Url="html/988ede0f-f269-658b-c8eb-ac5f8fe621b7.htm" />
+  <HelpKINode Title="PageHistory.copyitems property" Url="html/89cbc48f-1a28-9b14-100b-7f56d29d38b4.htm" />
+  <HelpKINode Title="PageHistory.GetConcreteHistory method" Url="html/d8821877-2597-072e-fa05-5e4582fab6ea.htm" />
+  <HelpKINode Title="PageHistory.historysearchinput field" Url="html/46324816-51d3-e0e5-7f1c-a0eb9bba6852.htm" />
+  <HelpKINode Title="PageHistory.historysearchinput_TextChanged method" Url="html/dfe696c8-865f-4c8d-6de7-311801853329.htm" />
+  <HelpKINode Title="PageHistory.IComponentConnector.Connect explicitly implemented method" Url="html/aabe23be-b931-573c-c216-c611a0102179.htm" />
+  <HelpKINode Title="PageHistory.InitializeComponent method" Url="html/2e531ea5-567b-04a3-7125-893abf55093c.htm" />
+  <HelpKINode Title="PageHistory.IStyleConnector.Connect explicitly implemented method" Url="html/425daa50-cdc7-cf50-ac0e-b398549f1b96.htm" />
+  <HelpKINode Title="PageHistory.items property" Url="html/30659f69-2f74-1704-ad4e-c12e313c14f1.htm" />
+  <HelpKINode Title="PageHistory.lbHistoryAll field" Url="html/06be249f-da2f-b07e-65a2-3d7657fbbd6c.htm" />
+  <HelpKINode Title="PageHistory.menuSP field" Url="html/82863dd8-ebba-2e5e-084a-4537ce21a387.htm" />
+  <HelpKINode Title="PageHistory.PageHistory constructor" Url="html/5681abfa-d676-065a-bed1-b47e43e27b24.htm" />
+  <HelpKINode Title="PageHistory.rightside field" Url="html/2ed26ba5-46ba-6900-73ea-ac5e729c99c9.htm" />
+  <HelpKINode Title="PageHistory.searchClickHistory method" Url="html/0458439b-c40b-4f8a-43d6-2d02a625e990.htm" />
+  <HelpKINode Title="PageHistory.singletoneOBj field" Url="html/83fda9bb-ba27-7236-84c9-3f2177080434.htm" />
+  <HelpKINode Title="PageHistory.textBlock1 field" Url="html/ea145c22-f62d-51da-97e3-e2b03943ea5e.htm" />
+  <HelpKINode Title="PageHistory.textBlock7 field" Url="html/77f0815c-6edb-bfb6-d7ea-139f1bd56a7f.htm" />
+  <HelpKINode Title="PageHistory.titlebar field" Url="html/9f3fe4ed-ad20-9bc2-acb2-f374e38ff96e.htm" />
+  <HelpKINode Title="PageHistory.UC field" Url="html/bd9a2c9e-4525-6935-24e5-30428d22428c.htm" />
+  <HelpKINode Title="PageHistory._contentLoaded field" Url="html/a5123e58-6abd-698f-2fd8-adbe1a53c705.htm" />
+  <HelpKINode Title="PageHistory._CreateDelegate method" Url="html/cc623e95-535e-f1a7-93cf-df65d02f489a.htm" />
+  <HelpKINode Title="PageLogin class">
+    <HelpKINode Title="PageLogin Class" Url="html/59b914d7-d99f-d5e0-eb83-428e4a223162.htm" />
+    <HelpKINode Title="about PageLogin class" Url="html/59b914d7-d99f-d5e0-eb83-428e4a223162.htm" />
+    <HelpKINode Title="constructor" Url="html/73c48b83-9dab-0af4-b809-218a29426887.htm" />
+    <HelpKINode Title="fields" Url="html/93f1cb94-cfa2-f7e9-5971-454504a54631.htm" />
+    <HelpKINode Title="methods" Url="html/4ce0e93d-4e20-fa38-c454-0cf86fb39302.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageLogin.baseStyle field" Url="html/c6e67721-b5f0-4712-cbf4-90aa674085b9.htm" />
+  <HelpKINode Title="PageLogin.Button_goToRegister method" Url="html/992b7e63-f869-bc8f-3f86-74bf9229185b.htm" />
+  <HelpKINode Title="PageLogin.Button_login method" Url="html/042a4397-e1b4-fb8d-8b96-196fd6d6a7c7.htm" />
+  <HelpKINode Title="PageLogin.closeButon_Click method" Url="html/604c8df2-ccd4-5de6-1df9-68418efa0a7c.htm" />
+  <HelpKINode Title="PageLogin.gotoRegisterButton field" Url="html/b2e69531-ec14-4b49-2a40-60a99e348227.htm" />
+  <HelpKINode Title="PageLogin.IComponentConnector.Connect explicitly implemented method" Url="html/2a873872-a9cb-d3ac-ef9b-2058049aad5f.htm" />
+  <HelpKINode Title="PageLogin.InitializeComponent method" Url="html/500bd8a2-1e4d-a4da-8041-035393ca566e.htm" />
+  <HelpKINode Title="PageLogin.loginButton field" Url="html/4cf1b88d-3f74-f9e0-e715-b48e71cca506.htm" />
+  <HelpKINode Title="PageLogin.loginInput field" Url="html/05f6d00f-3989-033c-381a-68751d93af3e.htm" />
+  <HelpKINode Title="PageLogin.loginSP field" Url="html/0649762d-e768-be9f-dad1-74f7218d542c.htm" />
+  <HelpKINode Title="PageLogin.LRM field" Url="html/7dad4c5e-de37-bff3-fc79-f7e6502a64e9.htm" />
+  <HelpKINode Title="PageLogin.PageLogin constructor" Url="html/73c48b83-9dab-0af4-b809-218a29426887.htm" />
+  <HelpKINode Title="PageLogin.passwordInput field" Url="html/5acd6cde-61f6-fe28-eeb1-efc6656371e0.htm" />
+  <HelpKINode Title="PageLogin.readSettings field" Url="html/1e6fb654-306d-7958-b3c8-423d5de1ed84.htm" />
+  <HelpKINode Title="PageLogin.rightSideWP field" Url="html/dd72b52d-ecc4-24a7-46d7-2dd1c0b38820.htm" />
+  <HelpKINode Title="PageLogin.settings field" Url="html/0b34dc5d-247c-b29e-658b-73665b69843e.htm" />
+  <HelpKINode Title="PageLogin.settingsButoon field" Url="html/0ba7ab61-5efe-7f71-5a3e-b2fa1e310a57.htm" />
+  <HelpKINode Title="PageLogin.settingsTextboxaction method" Url="html/2ec847a8-17b8-7370-0c0e-f47945f2e468.htm" />
+  <HelpKINode Title="PageLogin.singletone field" Url="html/edab32fa-d0a9-0662-08ea-22283c1d4dc1.htm" />
+  <HelpKINode Title="PageLogin.titlebar field" Url="html/db35f47e-c2d6-77a1-3108-7c623c23ce03.htm" />
+  <HelpKINode Title="PageLogin._contentLoaded field" Url="html/8da58ce3-6844-b2a0-7c59-7ceb2e628a1c.htm" />
+  <HelpKINode Title="PageLogin._CreateDelegate method" Url="html/f948d2b5-855f-356d-9cb0-bd741770caef.htm" />
+  <HelpKINode Title="PageMain class">
+    <HelpKINode Title="PageMain Class" Url="html/c90bd72f-6949-1f11-08d1-d3d013651a28.htm" />
+    <HelpKINode Title="about PageMain class" Url="html/c90bd72f-6949-1f11-08d1-d3d013651a28.htm" />
+    <HelpKINode Title="constructor" Url="html/8b6e0796-318d-0118-6159-c5f195867ca1.htm" />
+    <HelpKINode Title="fields" Url="html/98e131fc-60d4-e837-2578-f15e7c096318.htm" />
+    <HelpKINode Title="methods" Url="html/678a5501-8dab-1afa-7549-c411cada3b49.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageMain.IComponentConnector.Connect explicitly implemented method" Url="html/12692bb7-1b6e-2d49-c552-7a68236a2c14.htm" />
+  <HelpKINode Title="PageMain.InitializeComponent method" Url="html/558b8079-95e7-0d66-db71-5ede2600958c.htm" />
+  <HelpKINode Title="PageMain.menuSP field" Url="html/50c73451-19dd-a120-1bae-757585d10bdc.htm" />
+  <HelpKINode Title="PageMain.PageMain constructor" Url="html/8b6e0796-318d-0118-6159-c5f195867ca1.htm" />
+  <HelpKINode Title="PageMain.titlebar field" Url="html/7fc343d6-27b0-134f-b654-d40ddaec6b30.htm" />
+  <HelpKINode Title="PageMain._contentLoaded field" Url="html/a9f83776-609b-f080-b6dc-68e9e6bcfc8e.htm" />
+  <HelpKINode Title="PageMain._CreateDelegate method" Url="html/9eadad51-3a93-fbd1-04f8-72ffd8f02a08.htm" />
+  <HelpKINode Title="PageRegister class">
+    <HelpKINode Title="PageRegister Class" Url="html/d1831bd3-c559-359b-dbc7-d37b0ecf1c5b.htm" />
+    <HelpKINode Title="about PageRegister class" Url="html/d1831bd3-c559-359b-dbc7-d37b0ecf1c5b.htm" />
+    <HelpKINode Title="constructor" Url="html/8821bcae-4623-84a7-53f3-59ee1855dcb1.htm" />
+    <HelpKINode Title="fields" Url="html/3356ec45-cf29-70b4-016f-874e8938d31e.htm" />
+    <HelpKINode Title="methods" Url="html/7e9f894d-a81e-9c4f-5199-ac48acd78e45.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PageRegister.Button_gotoLogin method" Url="html/d032a068-0ea4-fff9-6e61-d9a319dd5c1f.htm" />
+  <HelpKINode Title="PageRegister.Button_register method" Url="html/0f587964-386b-9d6a-0ecd-9651a1f19304.htm" />
+  <HelpKINode Title="PageRegister.gotoLogin field" Url="html/f39f406a-ca9c-56b4-af00-95f903400934.htm" />
+  <HelpKINode Title="PageRegister.IComponentConnector.Connect explicitly implemented method" Url="html/c0f0d261-660d-8d17-4d82-b88326906599.htm" />
+  <HelpKINode Title="PageRegister.InitializeComponent method" Url="html/4b9ece61-a29d-6096-da3e-ef33359ef363.htm" />
+  <HelpKINode Title="PageRegister.loginInputRegister field" Url="html/a5291b60-351a-863b-434a-04c7b589b12c.htm" />
+  <HelpKINode Title="PageRegister.LRM field" Url="html/fde5a10e-6c02-531c-abc1-5df470602a7b.htm" />
+  <HelpKINode Title="PageRegister.PageRegister constructor" Url="html/8821bcae-4623-84a7-53f3-59ee1855dcb1.htm" />
+  <HelpKINode Title="PageRegister.password1InputRegister field" Url="html/2ce5f27f-e2df-3cbb-3124-f8573a34ca8f.htm" />
+  <HelpKINode Title="PageRegister.password2InputRegister field" Url="html/055bda7a-d188-815a-c038-b68743abb9a1.htm" />
+  <HelpKINode Title="PageRegister.readSettings field" Url="html/6b522c11-8392-aa6a-646a-cdc96be317cc.htm" />
+  <HelpKINode Title="PageRegister.registerButton field" Url="html/f5ef7a99-bfcf-47dd-9a63-418c475d7850.htm" />
+  <HelpKINode Title="PageRegister.registerSP field" Url="html/12731ba5-99a8-2508-6904-7277e18c5a9f.htm" />
+  <HelpKINode Title="PageRegister.rightSideWP field" Url="html/ad95f842-4879-1949-7eee-a61ad90268ea.htm" />
+  <HelpKINode Title="PageRegister.settings field" Url="html/37b4cda1-390d-839e-fb1e-65c952dc4450.htm" />
+  <HelpKINode Title="PageRegister.settingsButoon field" Url="html/5632cca5-9140-3c0e-4213-b84c5f25fd22.htm" />
+  <HelpKINode Title="PageRegister.settingsTextboxaction method" Url="html/1e7b7740-128b-f94c-a1b0-b92b18c226b3.htm" />
+  <HelpKINode Title="PageRegister.singletone field" Url="html/69028f1b-4fa1-8d67-e8cf-e4d3e2c5d54f.htm" />
+  <HelpKINode Title="PageRegister.titlebar field" Url="html/e9737a14-e5fc-b632-c1ce-1599d22eba49.htm" />
+  <HelpKINode Title="PageRegister._contentLoaded field" Url="html/dbf1005a-4803-c9fe-b142-5600a591e01a.htm" />
+  <HelpKINode Title="PageRegister._CreateDelegate method" Url="html/80c214da-2567-4bec-63e3-5c37894518fe.htm" />
+  <HelpKINode Title="password property" Url="html/ea0bcf4e-6e70-a7cb-ff33-5885e888783d.htm" />
+  <HelpKINode Title="password1InputRegister field" Url="html/2ce5f27f-e2df-3cbb-3124-f8573a34ca8f.htm" />
+  <HelpKINode Title="password2InputRegister field" Url="html/055bda7a-d188-815a-c038-b68743abb9a1.htm" />
+  <HelpKINode Title="passwordInput field" Url="html/5acd6cde-61f6-fe28-eeb1-efc6656371e0.htm" />
+  <HelpKINode Title="phoneLine_PhoneLineInformation method" Url="html/da27e42f-205e-1063-c95c-7c48f840cf44.htm" />
+  <HelpKINode Title="PhoneVOIP class">
+    <HelpKINode Title="PhoneVOIP Class" Url="html/25122d87-e7fc-a676-443d-6913c847ed29.htm" />
+    <HelpKINode Title="about PhoneVOIP class" Url="html/25122d87-e7fc-a676-443d-6913c847ed29.htm" />
+    <HelpKINode Title="constructor" Url="html/f515de0e-3eaa-713b-bce7-033df182c3b9.htm" />
+    <HelpKINode Title="fields" Url="html/d0377b82-1cd5-e2d0-2915-c483a4af96a0.htm" />
+    <HelpKINode Title="methods" Url="html/cb28a30d-3134-5ce2-9ef8-8998ef07481e.htm" />
+    <HelpKINode Title="properties" Url="html/2018a70a-a6e8-ace2-3eb3-305970248413.htm" />
+  </HelpKINode>
+  <HelpKINode Title="phoneVOIP property" Url="html/24933cd4-5872-f14e-5efc-8a1c8a54aea4.htm" />
+  <HelpKINode Title="PhoneVOIP.btn_HangUp_Click method" Url="html/318327d5-2c55-11bb-c900-fd69d69d8848.htm" />
+  <HelpKINode Title="PhoneVOIP.btn_PickUp_Click method" Url="html/3b0859f1-2dbc-9378-ed3d-9d457880b6fe.htm" />
+  <HelpKINode Title="PhoneVOIP.callto property" Url="html/16aa014d-e7a6-77ea-606f-c393b00e90d9.htm" />
+  <HelpKINode Title="PhoneVOIP.call_CallStateChanged method" Url="html/3e42adbc-b570-25ad-6a47-ab9a59116257.htm" />
+  <HelpKINode Title="PhoneVOIP.client property" Url="html/14df320b-b02a-6abb-7f66-d1354fe533bb.htm" />
+  <HelpKINode Title="PhoneVOIP.ConnectMedia method" Url="html/8084f993-167b-f7a3-5aec-5b1452888443.htm" />
+  <HelpKINode Title="PhoneVOIP.DisconnectMedia method" Url="html/0df1cf64-0408-3606-5340-55870a39349e.htm" />
+  <HelpKINode Title="PhoneVOIP.HashPassword method" Url="html/b592c3d3-7e21-ef2b-6ca5-29f84f226207.htm" />
+  <HelpKINode Title="PhoneVOIP.InitializeSoftPhone method" Url="html/e905fbc6-d4dc-46bd-24f0-9b72bd841a61.htm" />
+  <HelpKINode Title="PhoneVOIP.InvokeGUIThread method" Url="html/4f78a949-03c8-3cee-fd5f-5b472602e679.htm" />
+  <HelpKINode Title="PhoneVOIP.LogOff method" Url="html/8f122857-5621-828a-f7b8-3c04961c9ad9.htm" />
+  <HelpKINode Title="PhoneVOIP.main field" Url="html/b4ca155f-2ab8-abf3-e22e-c84467bccfd6.htm" />
+  <HelpKINode Title="PhoneVOIP.nameCallToUser property" Url="html/373ca18a-4896-1bd3-fe66-ccd2367d6b06.htm" />
+  <HelpKINode Title="PhoneVOIP.phoneLine_PhoneLineInformation method" Url="html/da27e42f-205e-1063-c95c-7c48f840cf44.htm" />
+  <HelpKINode Title="PhoneVOIP.PhoneVOIP constructor" Url="html/f515de0e-3eaa-713b-bce7-033df182c3b9.htm" />
+  <HelpKINode Title="PhoneVOIP.sa field" Url="html/e4a36eec-56e6-45fb-6b55-742cbdd4a8e3.htm" />
+  <HelpKINode Title="PhoneVOIP.softPhone_inComingCall method" Url="html/93ddf289-75a7-9f8a-b560-3ce47d19bf47.htm" />
+  <HelpKINode Title="PhoneVOIP.StartDevices method" Url="html/9dc78d35-3d44-80aa-91ef-c9100c91f9dc.htm" />
+  <HelpKINode Title="PhoneVOIP.StopDevices method" Url="html/ded2392e-b35b-eac0-3fb9-aefabb50a2f8.htm" />
+  <HelpKINode Title="PhoneVOIP.transimiso property" Url="html/74ab62b5-8c12-ca8e-8351-16213d395d61.htm" />
+  <HelpKINode Title="PhoneVOIP.userLogged property" Url="html/d12c3349-5fab-d8cf-a4e5-6f062300c228.htm" />
+  <HelpKINode Title="PhoneVOIP.WireDownCallEvents method" Url="html/3876922d-6bed-9ee9-5504-34b939a44b57.htm" />
+  <HelpKINode Title="PhoneVOIP.WireUpCallEvents method" Url="html/a852dfb1-ae2e-5566-fd46-c8488a2d5a7b.htm" />
+  <HelpKINode Title="PhoneVOIP._call field" Url="html/0c51c29c-f6cb-0c04-4784-6701786639a5.htm" />
+  <HelpKINode Title="PhoneVOIP._connector field" Url="html/0cc43ee2-4ee0-686d-7686-6c02c20ced43.htm" />
+  <HelpKINode Title="PhoneVOIP._inComingCall field" Url="html/f53da496-7307-3427-b5aa-db2ca5a187aa.htm" />
+  <HelpKINode Title="PhoneVOIP._localHeld field" Url="html/55d7238e-fd51-8c36-0214-6b24abae70c6.htm" />
+  <HelpKINode Title="PhoneVOIP._mediaReceiver field" Url="html/53b4f3e7-eb09-e647-dd2f-c9145898e5e9.htm" />
+  <HelpKINode Title="PhoneVOIP._mediaSender field" Url="html/5c7c1dac-3e39-77f1-69c8-01d72d013ef1.htm" />
+  <HelpKINode Title="PhoneVOIP._microphone field" Url="html/05171514-2953-27bf-fdfb-aa7d2279f9d0.htm" />
+  <HelpKINode Title="PhoneVOIP._phoneLine field" Url="html/30fb964a-ee6b-e0bf-c69c-6cbafd5ac151.htm" />
+  <HelpKINode Title="PhoneVOIP._phoneLineInformation field" Url="html/289463bb-3a03-beb3-967f-50bbbd42c0c8.htm" />
+  <HelpKINode Title="PhoneVOIP._reDialNumber field" Url="html/4d3980d1-b0b8-1e77-8396-5510861ed669.htm" />
+  <HelpKINode Title="PhoneVOIP._softPhone field" Url="html/3b715340-6aa4-dafd-400b-7e44c742d497.htm" />
+  <HelpKINode Title="PhoneVOIP._speaker field" Url="html/38081d5e-405c-456a-a1a3-cac4582019bd.htm" />
+  <HelpKINode Title="PORT property" Url="html/e7159acc-9fd3-83b1-aabd-b903c7007e19.htm" />
+  <HelpKINode Title="portnumber property" Url="html/5e856c75-a748-9502-7403-3f85850a2aa8.htm" />
+  <HelpKINode Title="powMod method" Url="html/8d7f38f9-7d37-a7e5-d924-e81267985cc1.htm" />
+  <HelpKINode Title="ReadSettings class">
+    <HelpKINode Title="ReadSettings Class" Url="html/ec147653-e1be-81d3-6395-67dab6fda7e4.htm" />
+    <HelpKINode Title="about ReadSettings class" Url="html/ec147653-e1be-81d3-6395-67dab6fda7e4.htm" />
+    <HelpKINode Title="constructor" Url="html/22e44e5d-0fc7-84d9-f0e5-ad416b17244f.htm" />
+    <HelpKINode Title="constructor" Url="html/5b28eb6f-f213-5434-f1fb-b45f9255aebd.htm" />
+    <HelpKINode Title="fields" Url="html/15536482-b1a9-a1a5-0757-5445ea696fce.htm" />
+    <HelpKINode Title="methods" Url="html/b33dc987-5836-7905-2136-779070327f06.htm" />
+    <HelpKINode Title="properties" Url="html/d7a83372-fd09-8dd2-26f8-ca541fe52f9b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="readSettings field">
+    <HelpKINode Title="PageLogin.readSettings Field" Url="html/1e6fb654-306d-7958-b3c8-423d5de1ed84.htm" />
+    <HelpKINode Title="PageRegister.readSettings Field" Url="html/6b522c11-8392-aa6a-646a-cdc96be317cc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="readSettings method" Url="html/48adccb2-e78d-6917-0996-b0f43d7bbcf2.htm" />
+  <HelpKINode Title="ReadSettings.GetInstance property" Url="html/8d48d325-d375-0127-e446-b7756381229c.htm" />
+  <HelpKINode Title="ReadSettings.instance field" Url="html/7d4e7c91-a0a8-3c44-89f2-f9aa0363bb7d.htm" />
+  <HelpKINode Title="ReadSettings.IP property" Url="html/595731f7-46c8-39a1-5cf8-239def833c70.htm" />
+  <HelpKINode Title="ReadSettings.PadLock field" Url="html/55d3aab7-c8b9-5283-d970-444d441a118c.htm" />
+  <HelpKINode Title="ReadSettings.PORT property" Url="html/e7159acc-9fd3-83b1-aabd-b903c7007e19.htm" />
+  <HelpKINode Title="ReadSettings.ReadSettings constructor">
+    <HelpKINode Title="ReadSettings Constructor " Url="html/22e44e5d-0fc7-84d9-f0e5-ad416b17244f.htm" />
+    <HelpKINode Title="ReadSettings Constructor " Url="html/5b28eb6f-f213-5434-f1fb-b45f9255aebd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadSettings.readSettings method" Url="html/48adccb2-e78d-6917-0996-b0f43d7bbcf2.htm" />
+  <HelpKINode Title="ReadSettings.saveSettings method" Url="html/2175d740-b27b-52af-d084-8a34fd26a7a1.htm" />
+  <HelpKINode Title="reciveMessage method" Url="html/02338085-a65f-2202-221f-4bf43a91f4a3.htm" />
+  <HelpKINode Title="refreshListThread property" Url="html/3ce0605a-08b4-9202-ca10-55a747c25079.htm" />
+  <HelpKINode Title="registerButton field" Url="html/f5ef7a99-bfcf-47dd-9a63-418c475d7850.htm" />
+  <HelpKINode Title="registerSP field" Url="html/12731ba5-99a8-2508-6904-7277e18c5a9f.htm" />
+  <HelpKINode Title="rightside field">
+    <HelpKINode Title="PageHistory.rightside Field" Url="html/2ed26ba5-46ba-6900-73ea-ac5e729c99c9.htm" />
+    <HelpKINode Title="SettingsPage.rightside Field" Url="html/36ba7730-1855-e5ba-0e7d-e9cc41bf63c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="rightSideWP field">
+    <HelpKINode Title="LoginRegisterWindow.rightSideWP Field" Url="html/205ac1c8-0db9-f4bc-43f7-d7b20078fc23.htm" />
+    <HelpKINode Title="PageLogin.rightSideWP Field" Url="html/dd72b52d-ecc4-24a7-46d7-2dd1c0b38820.htm" />
+    <HelpKINode Title="PageRegister.rightSideWP Field" Url="html/ad95f842-4879-1949-7eee-a61ad90268ea.htm" />
+  </HelpKINode>
+  <HelpKINode Title="rnd field" Url="html/3d5799b6-7f59-02f2-689c-eae214b8de1a.htm" />
+  <HelpKINode Title="rs field" Url="html/ae536927-3ac4-f9cd-8327-f61c08e313e2.htm" />
+  <HelpKINode Title="s field" Url="html/979ae73f-3ebd-cf19-1111-058c92f07f95.htm" />
+  <HelpKINode Title="sa field" Url="html/e4a36eec-56e6-45fb-6b55-742cbdd4a8e3.htm" />
+  <HelpKINode Title="saltBytes field" Url="html/df83c4c3-89e0-cb67-9d0b-9f82291e195f.htm" />
+  <HelpKINode Title="saveSettings method" Url="html/2175d740-b27b-52af-d084-8a34fd26a7a1.htm" />
+  <HelpKINode Title="searchClickHistory method" Url="html/0458439b-c40b-4f8a-43d6-2d02a625e990.htm" />
+  <HelpKINode Title="searchClickHistoryuser method" Url="html/0b13b8c4-af50-d8ac-c308-c1c994e6bf59.htm" />
+  <HelpKINode Title="searchInput field" Url="html/0819198f-d6c5-1861-7990-652dd92036ae.htm" />
+  <HelpKINode Title="searchupdate method" Url="html/955cca13-0a96-1bf4-a667-66944e41d54b.htm" />
+  <HelpKINode Title="SearchUsers method" Url="html/2ab0905d-e407-8ba8-fd6b-66255b10d4c9.htm" />
+  <HelpKINode Title="searchvalue property" Url="html/5c3ee73c-bdc1-25e4-3d4b-c934c648af4e.htm" />
+  <HelpKINode Title="secretByteArray field" Url="html/82dd1303-6603-e77b-b1f7-a5387073f9b8.htm" />
+  <HelpKINode Title="SelectedItem property" Url="html/3fb19461-440b-0ae6-2808-958e4b5fbf17.htm" />
+  <HelpKINode Title="sendMessage method">
+    <HelpKINode Title="Client.sendMessage Method " Url="html/508a821e-cac2-eeaa-db29-1f979d160198.htm" />
+    <HelpKINode Title="DiffieHelman.sendMessage Method " Url="html/d10269b1-fa82-57ee-f7a6-eb92504655d5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="sendMessage1 method" Url="html/5ac07bcf-7d4f-339b-4b1f-3019f25cca47.htm" />
+  <HelpKINode Title="setdefaultvalue method" Url="html/8e80876a-c081-6560-3bd5-ff0eca4ad8f6.htm" />
+  <HelpKINode Title="settings field">
+    <HelpKINode Title="PageLogin.settings Field" Url="html/0b34dc5d-247c-b29e-658b-73665b69843e.htm" />
+    <HelpKINode Title="PageRegister.settings Field" Url="html/37b4cda1-390d-839e-fb1e-65c952dc4450.htm" />
+    <HelpKINode Title="UCMainLeftSide.settings Field" Url="html/2d2e6bee-887b-22fd-c4d9-8db0d1824efd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="settingsButoon field">
+    <HelpKINode Title="PageLogin.settingsButoon Field" Url="html/0ba7ab61-5efe-7f71-5a3e-b2fa1e310a57.htm" />
+    <HelpKINode Title="PageRegister.settingsButoon Field" Url="html/5632cca5-9140-3c0e-4213-b84c5f25fd22.htm" />
+  </HelpKINode>
+  <HelpKINode Title="settingsLoginRegister field" Url="html/4a2f72e7-6964-6536-126a-9cd87f86e2fe.htm" />
+  <HelpKINode Title="SettingsPage class">
+    <HelpKINode Title="SettingsPage Class" Url="html/bdb10194-4167-ed9e-fa1a-90e532979e15.htm" />
+    <HelpKINode Title="about SettingsPage class" Url="html/bdb10194-4167-ed9e-fa1a-90e532979e15.htm" />
+    <HelpKINode Title="constructor" Url="html/46a7b2b6-03a8-95dd-bff3-d726190f54f2.htm" />
+    <HelpKINode Title="fields" Url="html/b7a5fbb8-d488-3d17-11aa-3432400ed971.htm" />
+    <HelpKINode Title="methods" Url="html/da7d2f06-e9ca-b957-dbdd-4052de162407.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SettingsPage.backAction method" Url="html/d7b7239b-560b-c4b5-cf1a-27c0577bcfa8.htm" />
+  <HelpKINode Title="SettingsPage.Button_Click method" Url="html/378b5167-d154-1b07-e729-eed376b8e3f9.htm" />
+  <HelpKINode Title="SettingsPage.CBMicrophone field" Url="html/70a6b864-01a1-58c1-e8bb-e6b0767adcfa.htm" />
+  <HelpKINode Title="SettingsPage.CBMicrophoneHandler method" Url="html/99b4262b-770e-4ded-c945-25bcc0600959.htm" />
+  <HelpKINode Title="SettingsPage.CBSound field" Url="html/fa5db634-c31a-8bd3-c51a-09f4fc69d4e9.htm" />
+  <HelpKINode Title="SettingsPage.CBSoundHandler method" Url="html/dcbd7a7f-fe12-f786-e674-c28758cd049c.htm" />
+  <HelpKINode Title="SettingsPage.deleteAcount method" Url="html/b68152a0-f03f-1a31-daf3-eae624cd5068.htm" />
+  <HelpKINode Title="SettingsPage.IComponentConnector.Connect explicitly implemented method" Url="html/37f07c59-f308-15b2-48d7-a2527add2449.htm" />
+  <HelpKINode Title="SettingsPage.InitializeComponent method" Url="html/180b19a3-f84e-2926-82cc-938039063155.htm" />
+  <HelpKINode Title="SettingsPage.IStyleConnector.Connect explicitly implemented method" Url="html/20442a15-1dc3-ecc2-3cbb-4e8811af46c1.htm" />
+  <HelpKINode Title="SettingsPage.menuSP field" Url="html/99fe9a43-cee6-e638-025f-4f9978d6355c.htm" />
+  <HelpKINode Title="SettingsPage.MIcrophoneDevices field" Url="html/7d73baf6-8ff0-ec2a-8e71-ee7cfaffe30d.htm" />
+  <HelpKINode Title="SettingsPage.newPassword field" Url="html/acf2ce6f-abc3-bc7b-86e1-a18334c6c527.htm" />
+  <HelpKINode Title="SettingsPage.newPassword2 field" Url="html/d21b1060-49b1-3751-a74f-a0711833ef73.htm" />
+  <HelpKINode Title="SettingsPage.OldPassword field" Url="html/1f18d10b-607a-d521-91dc-479236bb669f.htm" />
+  <HelpKINode Title="SettingsPage.rightside field" Url="html/36ba7730-1855-e5ba-0e7d-e9cc41bf63c6.htm" />
+  <HelpKINode Title="SettingsPage.SettingsPage constructor" Url="html/46a7b2b6-03a8-95dd-bff3-d726190f54f2.htm" />
+  <HelpKINode Title="SettingsPage.singletoneOBj field" Url="html/fed69653-7d25-f28e-56b0-4951598f9a16.htm" />
+  <HelpKINode Title="SettingsPage.SpeakerDevices field" Url="html/1f514290-6725-76c5-452a-ec66b6e57556.htm" />
+  <HelpKINode Title="SettingsPage.titlebar field" Url="html/3701346e-4ec8-0df8-5324-1bb36a0329f5.htm" />
+  <HelpKINode Title="SettingsPage.UC field" Url="html/7ff65e4e-0cef-96a2-d98f-b80df61b5bcd.htm" />
+  <HelpKINode Title="SettingsPage._contentLoaded field" Url="html/95b3f652-f895-4500-7cb3-233e18900e02.htm" />
+  <HelpKINode Title="SettingsPage._CreateDelegate method" Url="html/b4f9cecd-20f1-872b-fa53-148f01eef74a.htm" />
+  <HelpKINode Title="settingsTextboxaction method">
+    <HelpKINode Title="PageLogin.settingsTextboxaction Method " Url="html/2ec847a8-17b8-7370-0c0e-f47945f2e468.htm" />
+    <HelpKINode Title="PageRegister.settingsTextboxaction Method " Url="html/1e7b7740-128b-f94c-a1b0-b92b18c226b3.htm" />
+    <HelpKINode Title="UCMainLeftSide.settingsTextboxaction Method " Url="html/e34f04ec-2b08-f788-5b77-99768e9c0060.htm" />
+  </HelpKINode>
+  <HelpKINode Title="singletone field">
+    <HelpKINode Title="PageLogin.singletone Field" Url="html/edab32fa-d0a9-0662-08ea-22283c1d4dc1.htm" />
+    <HelpKINode Title="PageRegister.singletone Field" Url="html/69028f1b-4fa1-8d67-e8cf-e4d3e2c5d54f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="singletoneOBj field">
+    <HelpKINode Title="PageHistory.singletoneOBj Field" Url="html/83fda9bb-ba27-7236-84c9-3f2177080434.htm" />
+    <HelpKINode Title="UCMainLeftSide.singletoneOBj Field" Url="html/aad9749c-0ffe-7581-3594-ffc58909fe82.htm" />
+    <HelpKINode Title="SettingsPage.singletoneOBj Field" Url="html/fed69653-7d25-f28e-56b0-4951598f9a16.htm" />
+    <HelpKINode Title="LoginRegisterManagment.singletoneOBj Field" Url="html/6ccf5f2f-03da-16ee-3d3d-be5d36de00a1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="singletoneOBJ field">
+    <HelpKINode Title="CallFromWindow.singletoneOBJ Field" Url="html/2a607171-d241-feb2-7f96-f9540bb6f07f.htm" />
+    <HelpKINode Title="UserPage.singletoneOBJ Field" Url="html/623b6b44-a46c-9a6e-eac6-96d8840e7dfb.htm" />
+    <HelpKINode Title="CallToWindow.singletoneOBJ Field" Url="html/73c9e4e2-3873-688a-5d19-3702a2dde77c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SingletoneObject class">
+    <HelpKINode Title="SingletoneObject Class" Url="html/aa7ce1b0-0d0a-2edb-3a84-74e1426b5a24.htm" />
+    <HelpKINode Title="about SingletoneObject class" Url="html/aa7ce1b0-0d0a-2edb-3a84-74e1426b5a24.htm" />
+    <HelpKINode Title="constructor" Url="html/322b760a-d86d-fac2-8000-cce33c831632.htm" />
+    <HelpKINode Title="constructor" Url="html/4cfaa0f5-54af-e6e7-279c-9e87f6862e6c.htm" />
+    <HelpKINode Title="fields" Url="html/bd7ad8d1-19f6-f97f-4425-3ad02908d6ea.htm" />
+    <HelpKINode Title="methods" Url="html/b5903873-45f0-d3fb-8fd6-7b712f6f5ba9.htm" />
+    <HelpKINode Title="properties" Url="html/b999874c-39c8-9666-3db5-84d7edb2b6f6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SingletoneObject.client property" Url="html/179e6129-6db8-555e-96ac-9de069da2ed4.htm" />
+  <HelpKINode Title="SingletoneObject.Friends property" Url="html/8112c999-0782-3eaf-da3b-ca9abb313f1d.htm" />
+  <HelpKINode Title="SingletoneObject.GetInstance property" Url="html/4d7e3b10-fad6-12a5-7002-8ac044502938.htm" />
+  <HelpKINode Title="SingletoneObject.instance field" Url="html/dd856ee4-3964-7563-1297-51c88add6366.htm" />
+  <HelpKINode Title="SingletoneObject.isloged property" Url="html/fb65bf7d-ad4f-541e-1ea0-829023178bf5.htm" />
+  <HelpKINode Title="SingletoneObject.isOnlineThread property" Url="html/d55e63e5-c641-bca6-fd7c-da39efd0d25c.htm" />
+  <HelpKINode Title="SingletoneObject.items property" Url="html/fb887b44-590d-b971-5c95-d21978f75b32.htm" />
+  <HelpKINode Title="SingletoneObject.listusercompare property" Url="html/25108a98-fbb7-31bb-834a-21366c4c7787.htm" />
+  <HelpKINode Title="SingletoneObject.listUsers property" Url="html/177a068f-34a8-7f9b-d44b-5035064d7913.htm" />
+  <HelpKINode Title="SingletoneObject.listUserSearch property" Url="html/4ffebc79-6135-ca95-dc28-2e6762fcf832.htm" />
+  <HelpKINode Title="SingletoneObject.mainwindow property" Url="html/42ff61a5-69f6-cc76-59e6-884eab41a40d.htm" />
+  <HelpKINode Title="SingletoneObject.PadLock field" Url="html/04c6cadc-4a6e-dd64-9927-100ea48c62f2.htm" />
+  <HelpKINode Title="SingletoneObject.phoneVOIP property" Url="html/24933cd4-5872-f14e-5efc-8a1c8a54aea4.htm" />
+  <HelpKINode Title="SingletoneObject.searchvalue property" Url="html/5c3ee73c-bdc1-25e4-3d4b-c934c648af4e.htm" />
+  <HelpKINode Title="SingletoneObject.setdefaultvalue method" Url="html/8e80876a-c081-6560-3bd5-ff0eca4ad8f6.htm" />
+  <HelpKINode Title="SingletoneObject.SingletoneObject constructor">
+    <HelpKINode Title="SingletoneObject Constructor " Url="html/322b760a-d86d-fac2-8000-cce33c831632.htm" />
+    <HelpKINode Title="SingletoneObject Constructor " Url="html/4cfaa0f5-54af-e6e7-279c-9e87f6862e6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SingletoneObject.user property" Url="html/8666a330-a520-c84c-bbeb-46142f87a915.htm" />
+  <HelpKINode Title="SingletoneObject.Users property" Url="html/62a781d5-daa3-a86c-7015-6c530e959446.htm" />
+  <HelpKINode Title="softPhone_inComingCall method" Url="html/93ddf289-75a7-9f8a-b560-3ce47d19bf47.htm" />
+  <HelpKINode Title="SpeakerDevices field" Url="html/1f514290-6725-76c5-452a-ec66b6e57556.htm" />
+  <HelpKINode Title="StartDevices method" Url="html/9dc78d35-3d44-80aa-91ef-c9100c91f9dc.htm" />
+  <HelpKINode Title="StopDevices method" Url="html/ded2392e-b35b-eac0-3fb9-aefabb50a2f8.htm" />
+  <HelpKINode Title="streamReader field" Url="html/81f2befb-a4f7-ccee-fd48-e7d047bcb7e6.htm" />
+  <HelpKINode Title="streamWriter field" Url="html/a73ef438-ca2f-35a7-c7ab-0e4d9be2acab.htm" />
+  <HelpKINode Title="stringInUserWindow field" Url="html/adab9826-ed40-210a-9ce9-867b81ce4f1b.htm" />
+  <HelpKINode Title="stringWithName field">
+    <HelpKINode Title="CallFromWindow.stringWithName Field" Url="html/a029c446-0cdd-d4ad-2253-5d40f98a153a.htm" />
+    <HelpKINode Title="CallToWindow.stringWithName Field" Url="html/3cb36a0d-edee-a344-756f-e541c2bd8d4c.htm" />
+    <HelpKINode Title="CallTransmisionWindow.stringWithName Field" Url="html/8e0818f6-d92d-4ec5-3574-0b86b074d105.htm" />
+  </HelpKINode>
+  <HelpKINode Title="textBlock1 field">
+    <HelpKINode Title="PageHistory.textBlock1 Field" Url="html/ea145c22-f62d-51da-97e3-e2b03943ea5e.htm" />
+    <HelpKINode Title="UserPage.textBlock1 Field" Url="html/70a5dfcc-e07b-2ee2-d90e-16fb1056f0f8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="textBlock10 field" Url="html/8267a46c-2ee6-7511-3f64-d6c3b82aaa54.htm" />
+  <HelpKINode Title="textBlock7 field">
+    <HelpKINode Title="PageHistory.textBlock7 Field" Url="html/77f0815c-6edb-bfb6-d7ea-139f1bd56a7f.htm" />
+    <HelpKINode Title="UserPage.textBlock7 Field" Url="html/a6225b66-bd48-7dc3-3c04-bf629452abf0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="textBox_TextChanged method" Url="html/e69ba056-0887-8775-7ce9-ad0d1ebf11f1.htm" />
+  <HelpKINode Title="timeTextBlock field" Url="html/988cdb3e-34b6-a44e-3a5d-11409d5a9048.htm" />
+  <HelpKINode Title="timeThreadloop field">
+    <HelpKINode Title="LoginRegisterManagment.timeThreadloop Field" Url="html/8acd8c05-7be7-80ee-7e55-04ea4a869585.htm" />
+    <HelpKINode Title="UCMainLeftSide.timeThreadloop Field" Url="html/d8702904-f669-5220-d90c-f1502a9d490d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="titlebar field">
+    <HelpKINode Title="PageHistory.titlebar Field" Url="html/9f3fe4ed-ad20-9bc2-acb2-f374e38ff96e.htm" />
+    <HelpKINode Title="PageLogin.titlebar Field" Url="html/db35f47e-c2d6-77a1-3108-7c623c23ce03.htm" />
+    <HelpKINode Title="PageMain.titlebar Field" Url="html/7fc343d6-27b0-134f-b654-d40ddaec6b30.htm" />
+    <HelpKINode Title="PageRegister.titlebar Field" Url="html/e9737a14-e5fc-b632-c1ce-1599d22eba49.htm" />
+    <HelpKINode Title="SettingsPage.titlebar Field" Url="html/3701346e-4ec8-0df8-5324-1bb36a0329f5.htm" />
+    <HelpKINode Title="UserPage.titlebar Field" Url="html/f33e2600-5df8-4ae2-723c-af5c3d581db9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="transimiso property" Url="html/74ab62b5-8c12-ca8e-8351-16213d395d61.htm" />
+  <HelpKINode Title="UC field">
+    <HelpKINode Title="PageHistory.UC Field" Url="html/bd9a2c9e-4525-6935-24e5-30428d22428c.htm" />
+    <HelpKINode Title="SettingsPage.UC Field" Url="html/7ff65e4e-0cef-96a2-d98f-b80df61b5bcd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UCLoginRegisterSetings class">
+    <HelpKINode Title="UCLoginRegisterSetings Class" Url="html/c68f2550-bf70-6ff6-7374-1fa5b791739e.htm" />
+    <HelpKINode Title="about UCLoginRegisterSetings class" Url="html/c68f2550-bf70-6ff6-7374-1fa5b791739e.htm" />
+    <HelpKINode Title="constructor" Url="html/f7276e71-c28c-bf98-6092-ab3271192644.htm" />
+    <HelpKINode Title="fields" Url="html/ebc21efc-25b3-a39d-ddc8-186329624620.htm" />
+    <HelpKINode Title="methods" Url="html/a7a5fef7-af70-80e4-59ad-889c61f09f46.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UCLoginRegisterSetings.adresIPinput field" Url="html/a0a0058c-a576-b282-2627-2a7a6d43d972.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.change_click method" Url="html/b72c9ba1-885d-62b8-794c-c82e87772a74.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.IComponentConnector.Connect explicitly implemented method" Url="html/a5c9d36c-1982-20e3-ffdb-6d6f15f55ea3.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.InitializeComponent method" Url="html/6e20a176-3ef6-4f9f-307b-6e291ff4755e.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.numberPortInput field" Url="html/6b54eee6-5a42-9c96-88a8-703b7c4f8554.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.rs field" Url="html/ae536927-3ac4-f9cd-8327-f61c08e313e2.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.settingsLoginRegister field" Url="html/4a2f72e7-6964-6536-126a-9cd87f86e2fe.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings.UCLoginRegisterSetings constructor" Url="html/f7276e71-c28c-bf98-6092-ab3271192644.htm" />
+  <HelpKINode Title="UCLoginRegisterSetings._contentLoaded field" Url="html/6098a072-4f45-107a-8eea-333cdfd760f6.htm" />
+  <HelpKINode Title="UCMainLeftSide class">
+    <HelpKINode Title="UCMainLeftSide Class" Url="html/5aa09cac-2ccb-83f6-d883-5eef4fda8b8a.htm" />
+    <HelpKINode Title="about UCMainLeftSide class" Url="html/5aa09cac-2ccb-83f6-d883-5eef4fda8b8a.htm" />
+    <HelpKINode Title="constructor" Url="html/e3110644-7095-3b01-38fe-b6b216189cc9.htm" />
+    <HelpKINode Title="fields" Url="html/13a03a2f-b811-a46b-eb09-48cdb88c8bad.htm" />
+    <HelpKINode Title="methods" Url="html/233b7643-c1d9-1b16-4415-252f2766b1dc.htm" />
+    <HelpKINode Title="properties" Url="html/030b1d12-d3f5-34b2-2889-c54b81c7e4aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UCMainLeftSide.contextmenu field" Url="html/b18c67cd-40a8-027f-2202-766f239a0b34.htm" />
+  <HelpKINode Title="UCMainLeftSide.GetAllHistory method" Url="html/4464b5d6-0e8b-f7bc-b6af-9319b0064e5a.htm" />
+  <HelpKINode Title="UCMainLeftSide.GetConcreteHistory method" Url="html/71d6cd87-2978-d995-1e79-8d19f3355e50.htm" />
+  <HelpKINode Title="UCMainLeftSide.goToUser method" Url="html/14ea9782-c391-1d0d-6eaf-99610a03c2cf.htm" />
+  <HelpKINode Title="UCMainLeftSide.history field" Url="html/1c9e44e5-260a-be3d-716a-53e45648f865.htm" />
+  <HelpKINode Title="UCMainLeftSide.historyTextboxaction method" Url="html/7d469b61-176d-6860-21c2-726e8a9d7694.htm" />
+  <HelpKINode Title="UCMainLeftSide.homeTextboxaction method" Url="html/8b0c4f62-7a10-3f50-759c-e3428757aea6.htm" />
+  <HelpKINode Title="UCMainLeftSide.IComponentConnector.Connect explicitly implemented method" Url="html/3b634e9f-3b64-6785-ff29-35b3a90c1146.htm" />
+  <HelpKINode Title="UCMainLeftSide.InitializeComponent method" Url="html/6bea641e-4a4f-9456-6188-ceca8a7dee1f.htm" />
+  <HelpKINode Title="UCMainLeftSide.IStyleConnector.Connect explicitly implemented method" Url="html/748e76eb-06ec-086b-efc1-45b8cc64229e.htm" />
+  <HelpKINode Title="UCMainLeftSide.lbUsers field" Url="html/ab17573e-47f5-749f-ebea-aa5037d73dc4.htm" />
+  <HelpKINode Title="UCMainLeftSide.ListRefreshloop method" Url="html/331488eb-83ed-ae18-0d07-4af4cf61a356.htm" />
+  <HelpKINode Title="UCMainLeftSide.logOut field" Url="html/5257da92-00cb-9127-6cd3-ac015bb8f6d8.htm" />
+  <HelpKINode Title="UCMainLeftSide.logOutTextboxaction method" Url="html/086db58e-54c7-50d3-e4bd-4594d9b1f7e3.htm" />
+  <HelpKINode Title="UCMainLeftSide.menuButtonbSP field" Url="html/2747d93c-5a51-c7e2-71e6-ebd1f18c519e.htm" />
+  <HelpKINode Title="UCMainLeftSide.MenuItemDelete_Click method" Url="html/8f346842-4cfd-992f-919b-b52befaa489a.htm" />
+  <HelpKINode Title="UCMainLeftSide.numberSelectedItem field" Url="html/92b09d43-2c7a-11ac-6c6b-673ac62ce3fc.htm" />
+  <HelpKINode Title="UCMainLeftSide.refreshListThread property" Url="html/3ce0605a-08b4-9202-ca10-55a747c25079.htm" />
+  <HelpKINode Title="UCMainLeftSide.searchInput field" Url="html/0819198f-d6c5-1861-7990-652dd92036ae.htm" />
+  <HelpKINode Title="UCMainLeftSide.searchupdate method" Url="html/955cca13-0a96-1bf4-a667-66944e41d54b.htm" />
+  <HelpKINode Title="UCMainLeftSide.SearchUsers method" Url="html/2ab0905d-e407-8ba8-fd6b-66255b10d4c9.htm" />
+  <HelpKINode Title="UCMainLeftSide.SelectedItem property" Url="html/3fb19461-440b-0ae6-2808-958e4b5fbf17.htm" />
+  <HelpKINode Title="UCMainLeftSide.settings field" Url="html/2d2e6bee-887b-22fd-c4d9-8db0d1824efd.htm" />
+  <HelpKINode Title="UCMainLeftSide.settingsTextboxaction method" Url="html/e34f04ec-2b08-f788-5b77-99768e9c0060.htm" />
+  <HelpKINode Title="UCMainLeftSide.singletoneOBj field" Url="html/aad9749c-0ffe-7581-3594-ffc58909fe82.htm" />
+  <HelpKINode Title="UCMainLeftSide.textBox_TextChanged method" Url="html/e69ba056-0887-8775-7ce9-ad0d1ebf11f1.htm" />
+  <HelpKINode Title="UCMainLeftSide.timeThreadloop field" Url="html/d8702904-f669-5220-d90c-f1502a9d490d.htm" />
+  <HelpKINode Title="UCMainLeftSide.UCMainLeftSide constructor" Url="html/e3110644-7095-3b01-38fe-b6b216189cc9.htm" />
+  <HelpKINode Title="UCMainLeftSide.updateFriendList method" Url="html/87c140ed-30b6-a00a-7ea9-9c5245a8967f.htm" />
+  <HelpKINode Title="UCMainLeftSide.updateList method" Url="html/4e4bd8c3-e0c0-5512-83e9-f5da7dd7590d.htm" />
+  <HelpKINode Title="UCMainLeftSide.userAction method" Url="html/faeefe7c-2418-a5c3-40d1-f6458c39fa43.htm" />
+  <HelpKINode Title="UCMainLeftSide.UserControl1_Unloaded method" Url="html/a5ef4747-7dda-57ac-1dbd-0f685256e299.htm" />
+  <HelpKINode Title="UCMainLeftSide.userNameTB field" Url="html/dbb18933-9c99-dc5b-8b27-7ef2ddf43d03.htm" />
+  <HelpKINode Title="UCMainLeftSide._contentLoaded field" Url="html/681f17ae-4a4d-5e72-8e6c-7c9bbdb1a2bd.htm" />
+  <HelpKINode Title="UCTitleBar class">
+    <HelpKINode Title="UCTitleBar Class" Url="html/013f7619-1546-fd3a-3027-0a40d6af9690.htm" />
+    <HelpKINode Title="about UCTitleBar class" Url="html/013f7619-1546-fd3a-3027-0a40d6af9690.htm" />
+    <HelpKINode Title="constructor" Url="html/91271b6c-1507-a704-884b-5efd780ac767.htm" />
+    <HelpKINode Title="fields" Url="html/5e7095d8-9217-670e-66f0-025d4032a9a7.htm" />
+    <HelpKINode Title="methods" Url="html/62d8813c-1904-3fd2-1d06-6195478bf034.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UCTitleBar.closeButon field" Url="html/9ddb1f79-76ca-9618-2787-02235965ce85.htm" />
+  <HelpKINode Title="UCTitleBar.closeButon_Click method" Url="html/b4100716-d35e-2b64-ca20-98b22a3393e0.htm" />
+  <HelpKINode Title="UCTitleBar.IComponentConnector.Connect explicitly implemented method" Url="html/05f9c5ab-eede-b2b7-7e88-a29ac53851c8.htm" />
+  <HelpKINode Title="UCTitleBar.InitializeComponent method" Url="html/d7267b72-7c11-5931-7608-5ad4f88920d1.htm" />
+  <HelpKINode Title="UCTitleBar.minimalizeButon field" Url="html/e2a6a3f8-8109-b586-1e5e-a0ef056ae7f3.htm" />
+  <HelpKINode Title="UCTitleBar.minimalizeButon_Click method" Url="html/1fd1d49b-9735-5b7a-28e9-cfc2f0edfade.htm" />
+  <HelpKINode Title="UCTitleBar.UCTitleBar constructor" Url="html/91271b6c-1507-a704-884b-5efd780ac767.htm" />
+  <HelpKINode Title="UCTitleBar._contentLoaded field" Url="html/5b557810-8c1b-5199-a692-049942d97f76.htm" />
+  <HelpKINode Title="UCTitleBar2 class">
+    <HelpKINode Title="UCTitleBar2 Class" Url="html/d90da5d4-36fd-51fc-2bbd-d9d9bec964db.htm" />
+    <HelpKINode Title="about UCTitleBar2 class" Url="html/d90da5d4-36fd-51fc-2bbd-d9d9bec964db.htm" />
+    <HelpKINode Title="constructor" Url="html/bc345b42-c5b7-9120-5464-b78038d8326f.htm" />
+    <HelpKINode Title="fields" Url="html/7a5a9e02-a67c-9b4c-9f62-559d521e06f7.htm" />
+    <HelpKINode Title="methods" Url="html/659848b7-99e3-6316-d30e-9d1817d67c0a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UCTitleBar2.closeButon field" Url="html/65d46e49-2caa-3fba-fbad-b7cc6254f3ef.htm" />
+  <HelpKINode Title="UCTitleBar2.closeButon_Click method" Url="html/c09dd2a9-7d54-933c-74a5-46c6951f27a6.htm" />
+  <HelpKINode Title="UCTitleBar2.IComponentConnector.Connect explicitly implemented method" Url="html/c22d57ee-50f3-fa5b-6136-fcee2007214a.htm" />
+  <HelpKINode Title="UCTitleBar2.InitializeComponent method" Url="html/0f692989-a4b0-88ad-5313-e0a19dfea1e1.htm" />
+  <HelpKINode Title="UCTitleBar2.minimalizeButon field" Url="html/05e48bbc-3313-2946-e80d-989e3f92de32.htm" />
+  <HelpKINode Title="UCTitleBar2.minimalizeButon_Click method" Url="html/e51a3474-cbdb-bea7-2a4f-37525d6cbfed.htm" />
+  <HelpKINode Title="UCTitleBar2.UCTitleBar2 constructor" Url="html/bc345b42-c5b7-9120-5464-b78038d8326f.htm" />
+  <HelpKINode Title="UCTitleBar2._contentLoaded field" Url="html/06e85b2f-6bc0-42fa-3fed-50cac564bc6a.htm" />
+  <HelpKINode Title="updateFriendList method" Url="html/87c140ed-30b6-a00a-7ea9-9c5245a8967f.htm" />
+  <HelpKINode Title="updateList method" Url="html/4e4bd8c3-e0c0-5512-83e9-f5da7dd7590d.htm" />
+  <HelpKINode Title="User class">
+    <HelpKINode Title="User Class" Url="html/6bc5e4ee-c229-a1d3-0fad-32aa1e555747.htm" />
+    <HelpKINode Title="about User class" Url="html/6bc5e4ee-c229-a1d3-0fad-32aa1e555747.htm" />
+    <HelpKINode Title="constructor" Url="html/fd8e80f9-aa6a-d16d-224b-314609a5f8e6.htm" />
+    <HelpKINode Title="properties" Url="html/468d3dc1-e360-147f-046c-1a15e5c421fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="user property">
+    <HelpKINode Title="CallFromWindow.user Property " Url="html/c4095e6b-c3a8-27cd-3ef1-36a7861d70fd.htm" />
+    <HelpKINode Title="CallToWindow.user Property " Url="html/777fb765-80f2-2eb8-666b-6c38a367d320.htm" />
+    <HelpKINode Title="CallTransmisionWindow.user Property " Url="html/804f2bfa-690f-3c68-a2b8-b74b10c99ea2.htm" />
+    <HelpKINode Title="SingletoneObject.user Property " Url="html/8666a330-a520-c84c-bbeb-46142f87a915.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User.IcoCall property" Url="html/a98ef9df-0d16-60e7-5ac5-de7a939f771a.htm" />
+  <HelpKINode Title="User.IcoColor property" Url="html/4cfc9195-efbe-f6d5-d20e-b14e855438a4.htm" />
+  <HelpKINode Title="User.IcoUser property" Url="html/eaaed5d7-c379-2d51-4597-cbb4f4939756.htm" />
+  <HelpKINode Title="User.isActive property" Url="html/c9f4f8b8-b5a4-331f-7d77-c91e2ae8b1f7.htm" />
+  <HelpKINode Title="User.isFriend property" Url="html/918acf81-3620-4f29-9de0-ff65463456a3.htm" />
+  <HelpKINode Title="User.User constructor" Url="html/fd8e80f9-aa6a-d16d-224b-314609a5f8e6.htm" />
+  <HelpKINode Title="userAction method" Url="html/faeefe7c-2418-a5c3-40d1-f6458c39fa43.htm" />
+  <HelpKINode Title="UserBase class">
+    <HelpKINode Title="UserBase Class" Url="html/a64c4b49-52a9-7d80-9af4-15021b4328e2.htm" />
+    <HelpKINode Title="about UserBase class" Url="html/a64c4b49-52a9-7d80-9af4-15021b4328e2.htm" />
+    <HelpKINode Title="constructor" Url="html/828184f1-4830-d85a-c94f-f6020bfdc36e.htm" />
+    <HelpKINode Title="properties" Url="html/fe775c8d-1e67-a7f5-6870-fbee6f79c467.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserBase.Name property" Url="html/78486ff1-b354-7cc1-ec04-078d917a5cce.htm" />
+  <HelpKINode Title="UserBase.UserBase constructor" Url="html/828184f1-4830-d85a-c94f-f6020bfdc36e.htm" />
+  <HelpKINode Title="UserControl1_Unloaded method" Url="html/a5ef4747-7dda-57ac-1dbd-0f685256e299.htm" />
+  <HelpKINode Title="userControlLeftSide field" Url="html/b3c11990-8621-4ffc-ec8b-c598165bda3d.htm" />
+  <HelpKINode Title="userFriend field" Url="html/28916896-778e-983c-7772-c13126195250.htm" />
+  <HelpKINode Title="userhistorysearchinput field" Url="html/136eb5f3-7a28-2d42-01f2-fbd467e4b288.htm" />
+  <HelpKINode Title="userLogged property" Url="html/d12c3349-5fab-d8cf-a4e5-6f062300c228.htm" />
+  <HelpKINode Title="userName property" Url="html/a23d638c-292e-672b-c326-16bc362862d3.htm" />
+  <HelpKINode Title="userNameTB field" Url="html/dbb18933-9c99-dc5b-8b27-7ef2ddf43d03.htm" />
+  <HelpKINode Title="UserPage class">
+    <HelpKINode Title="UserPage Class" Url="html/d1204ca6-8b26-75a1-5603-21f34f2a9912.htm" />
+    <HelpKINode Title="about UserPage class" Url="html/d1204ca6-8b26-75a1-5603-21f34f2a9912.htm" />
+    <HelpKINode Title="constructor" Url="html/16104e83-73d1-9c4e-745d-a6dfdbe6ddf5.htm" />
+    <HelpKINode Title="fields" Url="html/5214cbcc-ca4b-224e-bf61-edcd8186f598.htm" />
+    <HelpKINode Title="methods" Url="html/4917f02a-08fa-0a8e-3f56-732c70efea25.htm" />
+    <HelpKINode Title="properties" Url="html/95c13c2a-c6c3-db7c-be4a-3aa268cf7e41.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserPage.backAction method" Url="html/0b7c44f8-dae5-9918-e124-03ad22c49018.htm" />
+  <HelpKINode Title="UserPage.callToFriend method" Url="html/be29a518-6d63-80da-26dc-e3f3ba10c3b7.htm" />
+  <HelpKINode Title="UserPage.callToFriendIco field" Url="html/26966e3f-7f20-e09a-5655-31743ab308e2.htm" />
+  <HelpKINode Title="UserPage.copyitems property" Url="html/f438b859-a688-5915-df5e-d90b6e86d30b.htm" />
+  <HelpKINode Title="UserPage.deleteFriend method" Url="html/4082151b-3c1c-ad63-6f53-45bcee9fbac7.htm" />
+  <HelpKINode Title="UserPage.historysearchinput_TextChanged method" Url="html/366d0e3e-513a-405a-5917-47be8d118c85.htm" />
+  <HelpKINode Title="UserPage.IComponentConnector.Connect explicitly implemented method" Url="html/fb89971a-7e80-7c3b-300b-c6685c60f584.htm" />
+  <HelpKINode Title="UserPage.InitializeComponent method" Url="html/92136485-bdc8-6c1c-7b31-074095abb2ab.htm" />
+  <HelpKINode Title="UserPage.items property" Url="html/3eab7a29-4579-fc66-a29a-280161ac87bc.htm" />
+  <HelpKINode Title="UserPage.lbHistoryAll field" Url="html/69255913-51cf-4e2e-114d-f0a1fe7753a8.htm" />
+  <HelpKINode Title="UserPage.menuSP field" Url="html/9b3bb100-7321-2c9b-a330-d10660ca3fab.htm" />
+  <HelpKINode Title="UserPage.searchClickHistoryuser method" Url="html/0b13b8c4-af50-d8ac-c308-c1c994e6bf59.htm" />
+  <HelpKINode Title="UserPage.singletoneOBJ field" Url="html/623b6b44-a46c-9a6e-eac6-96d8840e7dfb.htm" />
+  <HelpKINode Title="UserPage.stringInUserWindow field" Url="html/adab9826-ed40-210a-9ce9-867b81ce4f1b.htm" />
+  <HelpKINode Title="UserPage.textBlock1 field" Url="html/70a5dfcc-e07b-2ee2-d90e-16fb1056f0f8.htm" />
+  <HelpKINode Title="UserPage.textBlock10 field" Url="html/8267a46c-2ee6-7511-3f64-d6c3b82aaa54.htm" />
+  <HelpKINode Title="UserPage.textBlock7 field" Url="html/a6225b66-bd48-7dc3-3c04-bf629452abf0.htm" />
+  <HelpKINode Title="UserPage.titlebar field" Url="html/f33e2600-5df8-4ae2-723c-af5c3d581db9.htm" />
+  <HelpKINode Title="UserPage.userControlLeftSide field" Url="html/b3c11990-8621-4ffc-ec8b-c598165bda3d.htm" />
+  <HelpKINode Title="UserPage.userFriend field" Url="html/28916896-778e-983c-7772-c13126195250.htm" />
+  <HelpKINode Title="UserPage.userhistorysearchinput field" Url="html/136eb5f3-7a28-2d42-01f2-fbd467e4b288.htm" />
+  <HelpKINode Title="UserPage.UserPage constructor" Url="html/16104e83-73d1-9c4e-745d-a6dfdbe6ddf5.htm" />
+  <HelpKINode Title="UserPage.userSP field" Url="html/7c7fabee-890a-ccc9-c088-6dba85f1e472.htm" />
+  <HelpKINode Title="UserPage._contentLoaded field" Url="html/9c78d411-3e9d-9ecf-7c89-7aefddd4dd2c.htm" />
+  <HelpKINode Title="UserPage._CreateDelegate method" Url="html/20b8546d-bdd9-3e5f-27ee-d0245cc46067.htm" />
+  <HelpKINode Title="Users property" Url="html/62a781d5-daa3-a86c-7015-6c530e959446.htm" />
+  <HelpKINode Title="userSP field" Url="html/7c7fabee-890a-ccc9-c088-6dba85f1e472.htm" />
+  <HelpKINode Title="ValidationClass class">
+    <HelpKINode Title="ValidationClass Class" Url="html/33bf8761-a311-88a2-2ff2-22c8a9ef0711.htm" />
+    <HelpKINode Title="about ValidationClass class" Url="html/33bf8761-a311-88a2-2ff2-22c8a9ef0711.htm" />
+    <HelpKINode Title="methods" Url="html/14c13d1c-54a8-7019-3e55-43163fe6b44b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidationClass.IsValidEmail method" Url="html/8c304574-4c08-fe93-c056-9a600a1572e9.htm" />
+  <HelpKINode Title="ValidationClass.isValidLogin method" Url="html/e086921e-10e1-40fd-b113-258e2c816c04.htm" />
+  <HelpKINode Title="ValidationClass.isValidPassword method" Url="html/570a04cc-c4ff-e6e4-dc10-390214ee1eba.htm" />
+  <HelpKINode Title="vectorBytes field" Url="html/9b5c57ae-6301-2554-e653-d8400fe39237.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/be4f8ea2-dfa0-49a1-80b5-61110782fcc9.htm" />
+    <HelpKINode Title="history" Url="html/bfd37f9d-87b1-4bbb-a463-fec084ea4d10.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/ce811561-cc58-42f1-bffb-a14d47ef99b8.htm" />
+  <HelpKINode Title="Window_Closing method" Url="html/79989984-de46-53f4-d412-fcf30f2cab9f.htm" />
+  <HelpKINode Title="Window_Loaded method" Url="html/6be6e4eb-4854-bce0-8d4f-4ca1881519cf.htm" />
+  <HelpKINode Title="WireDownCallEvents method" Url="html/3876922d-6bed-9ee9-5504-34b939a44b57.htm" />
+  <HelpKINode Title="WireUpCallEvents method" Url="html/a852dfb1-ae2e-5566-fd46-c8488a2d5a7b.htm" />
+  <HelpKINode Title="_call field" Url="html/0c51c29c-f6cb-0c04-4784-6701786639a5.htm" />
+  <HelpKINode Title="_connector field" Url="html/0cc43ee2-4ee0-686d-7686-6c02c20ced43.htm" />
+  <HelpKINode Title="_contentLoaded field">
+    <HelpKINode Title="CallFromWindow._contentLoaded Field" Url="html/4bbbaea3-75df-b09d-4c1f-93bb50d987f0.htm" />
+    <HelpKINode Title="CallToWindow._contentLoaded Field" Url="html/34ab005e-0765-a765-8393-04de3519face.htm" />
+    <HelpKINode Title="CallTransmisionWindow._contentLoaded Field" Url="html/a48757ec-3de0-47e1-0eda-d826ff2644ed.htm" />
+    <HelpKINode Title="LoginRegisterWindow._contentLoaded Field" Url="html/ad0b84f4-776d-d7b7-061b-aa50da075e09.htm" />
+    <HelpKINode Title="MainWindow._contentLoaded Field" Url="html/ccc189c3-6133-dc3e-b690-f19766ba7722.htm" />
+    <HelpKINode Title="PageHistory._contentLoaded Field" Url="html/a5123e58-6abd-698f-2fd8-adbe1a53c705.htm" />
+    <HelpKINode Title="PageLogin._contentLoaded Field" Url="html/8da58ce3-6844-b2a0-7c59-7ceb2e628a1c.htm" />
+    <HelpKINode Title="PageMain._contentLoaded Field" Url="html/a9f83776-609b-f080-b6dc-68e9e6bcfc8e.htm" />
+    <HelpKINode Title="PageRegister._contentLoaded Field" Url="html/dbf1005a-4803-c9fe-b142-5600a591e01a.htm" />
+    <HelpKINode Title="SettingsPage._contentLoaded Field" Url="html/95b3f652-f895-4500-7cb3-233e18900e02.htm" />
+    <HelpKINode Title="UCLoginRegisterSetings._contentLoaded Field" Url="html/6098a072-4f45-107a-8eea-333cdfd760f6.htm" />
+    <HelpKINode Title="UCMainLeftSide._contentLoaded Field" Url="html/681f17ae-4a4d-5e72-8e6c-7c9bbdb1a2bd.htm" />
+    <HelpKINode Title="UCTitleBar._contentLoaded Field" Url="html/5b557810-8c1b-5199-a692-049942d97f76.htm" />
+    <HelpKINode Title="UCTitleBar2._contentLoaded Field" Url="html/06e85b2f-6bc0-42fa-3fed-50cac564bc6a.htm" />
+    <HelpKINode Title="UserPage._contentLoaded Field" Url="html/9c78d411-3e9d-9ecf-7c89-7aefddd4dd2c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="_CreateDelegate method">
+    <HelpKINode Title="PageHistory._CreateDelegate Method " Url="html/cc623e95-535e-f1a7-93cf-df65d02f489a.htm" />
+    <HelpKINode Title="PageLogin._CreateDelegate Method " Url="html/f948d2b5-855f-356d-9cb0-bd741770caef.htm" />
+    <HelpKINode Title="PageMain._CreateDelegate Method " Url="html/9eadad51-3a93-fbd1-04f8-72ffd8f02a08.htm" />
+    <HelpKINode Title="PageRegister._CreateDelegate Method " Url="html/80c214da-2567-4bec-63e3-5c37894518fe.htm" />
+    <HelpKINode Title="SettingsPage._CreateDelegate Method " Url="html/b4f9cecd-20f1-872b-fa53-148f01eef74a.htm" />
+    <HelpKINode Title="UserPage._CreateDelegate Method " Url="html/20b8546d-bdd9-3e5f-27ee-d0245cc46067.htm" />
+  </HelpKINode>
+  <HelpKINode Title="_inComingCall field" Url="html/f53da496-7307-3427-b5aa-db2ca5a187aa.htm" />
+  <HelpKINode Title="_localHeld field" Url="html/55d7238e-fd51-8c36-0214-6b24abae70c6.htm" />
+  <HelpKINode Title="_mediaReceiver field" Url="html/53b4f3e7-eb09-e647-dd2f-c9145898e5e9.htm" />
+  <HelpKINode Title="_mediaSender field" Url="html/5c7c1dac-3e39-77f1-69c8-01d72d013ef1.htm" />
+  <HelpKINode Title="_microphone field" Url="html/05171514-2953-27bf-fdfb-aa7d2279f9d0.htm" />
+  <HelpKINode Title="_phoneLine field" Url="html/30fb964a-ee6b-e0bf-c69c-6cbafd5ac151.htm" />
+  <HelpKINode Title="_phoneLineInformation field" Url="html/289463bb-3a03-beb3-967f-50bbbd42c0c8.htm" />
+  <HelpKINode Title="_reDialNumber field" Url="html/4d3980d1-b0b8-1e77-8396-5510861ed669.htm" />
+  <HelpKINode Title="_shown field">
+    <HelpKINode Title="CallFromWindow._shown Field" Url="html/20260a8d-d942-1192-1853-5d6d3302a6b1.htm" />
+    <HelpKINode Title="CallToWindow._shown Field" Url="html/a22035e6-bdc8-994a-c8ac-49087aa9c4b6.htm" />
+    <HelpKINode Title="CallTransmisionWindow._shown Field" Url="html/39b59020-18c9-8a45-77d8-cc03caeee781.htm" />
+  </HelpKINode>
+  <HelpKINode Title="_softPhone field" Url="html/3b715340-6aa4-dafd-400b-7e44c742d497.htm" />
+  <HelpKINode Title="_speaker field" Url="html/38081d5e-405c-456a-a1a3-cac4582019bd.htm" />
+</HelpKI>
