@@ -251,10 +251,11 @@ namespace ClientAplication
                     if (transimiso == null)
                     {
                         transimiso = new CallTransmisionWindow();
+                        transimiso.user = new User(true, true);
                         transimiso.user.Name = nameCallToUser;
                         transimiso.dateBegin = DateTime.Now;
                   
-                        transimiso.user = new User(true, true);
+                       
                         transimiso.Show();
                     }
                 }));
